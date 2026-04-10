@@ -1,0 +1,5 @@
+﻿  server.cpp
+C:\Users\пп\Desktop\ЯП\server\server\server.cpp(14,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  (компиляция исходного файла "/server.cpp")
+  
+  server.vcxproj -> C:\Users\пп\Desktop\ЯП\server\x64\Debug\server.exe
