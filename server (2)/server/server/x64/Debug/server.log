@@ -1,0 +1,23 @@
+﻿  pch.cpp
+  TCPServer.cpp
+  server.cpp
+C:\Users\пп\Desktop\ЯП\server\server\TCPServer.cpp(6,17): warning C4244: =: преобразование "SOCKET" в "int", возможна потеря данных
+  Создание кода...
+  (компиляция исходного файла "/TCPServer.cpp")
+  
+C:\Users\пп\Desktop\ЯП\server\server\TCPServer.cpp(20,18): warning C4244: инициализация: преобразование "SOCKET" в "int", возможна потеря данных
+  (компиляция исходного файла "/TCPServer.cpp")
+  
+C:\Users\пп\Desktop\ЯП\server\server\TCPServer.cpp(35,42): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  (компиляция исходного файла "/TCPServer.cpp")
+  
+C:\Users\пп\Desktop\ЯП\server\server\TCPServer.cpp(92,59): warning C4267: аргумент: преобразование из "size_t" в "int"; возможна потеря данных
+  (компиляция исходного файла "/TCPServer.cpp")
+  
+C:\Users\пп\Desktop\ЯП\server\server\TCPServer.cpp(56,32): warning C4101: end: неиспользованная локальная переменная
+  (компиляция исходного файла "/TCPServer.cpp")
+  
+C:\Users\пп\Desktop\ЯП\server\server\TCPServer.cpp(56,25): warning C4101: start: неиспользованная локальная переменная
+  (компиляция исходного файла "/TCPServer.cpp")
+  
+  server.vcxproj -> C:\Users\пп\Desktop\ЯП\server\x64\Debug\server.exe
