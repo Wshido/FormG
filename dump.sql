@@ -106,8 +106,6 @@ CREATE TABLE public.users (
     name character varying(100) NOT NULL,
     email character varying(255) NOT NULL,
     password_hash text NOT NULL,
-    created_at timestamp with time zone DEFAULT now(),
-    updated_at timestamp with time zone DEFAULT now()
 );
 
 
