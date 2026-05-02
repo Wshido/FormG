@@ -1,0 +1,86 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{60733D6D-ECE2-4BEB-A83A-247F7FAA7429}|server\\server.vcxproj|C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\TCPServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{60733D6D-ECE2-4BEB-A83A-247F7FAA7429}|server\\server.vcxproj|solutionrelative:server\\TCPServer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60733D6D-ECE2-4BEB-A83A-247F7FAA7429}|server\\server.vcxproj|C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{60733D6D-ECE2-4BEB-A83A-247F7FAA7429}|server\\server.vcxproj|solutionrelative:server\\server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60733D6D-ECE2-4BEB-A83A-247F7FAA7429}|server\\server.vcxproj|C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\TCPServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{60733D6D-ECE2-4BEB-A83A-247F7FAA7429}|server\\server.vcxproj|solutionrelative:server\\TCPServer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60733D6D-ECE2-4BEB-A83A-247F7FAA7429}|server\\server.vcxproj|C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{60733D6D-ECE2-4BEB-A83A-247F7FAA7429}|server\\server.vcxproj|solutionrelative:server\\pch.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "pch.h",
+              "DocumentMoniker": "C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\pch.h",
+              "RelativeDocumentMoniker": "server\\pch.h",
+              "ToolTip": "C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\pch.h",
+              "RelativeToolTip": "server\\pch.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-09T20:48:38.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TCPServer.cpp",
+              "DocumentMoniker": "C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\TCPServer.cpp",
+              "RelativeDocumentMoniker": "server\\TCPServer.cpp",
+              "ToolTip": "C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\TCPServer.cpp*",
+              "RelativeToolTip": "server\\TCPServer.cpp*",
+              "ViewState": "AgIAACUAAAAAAAAAAAAwwDgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-09T14:52:55.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TCPServer.h",
+              "DocumentMoniker": "C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\TCPServer.h",
+              "RelativeDocumentMoniker": "server\\TCPServer.h",
+              "ToolTip": "C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\TCPServer.h",
+              "RelativeToolTip": "server\\TCPServer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-04-09T01:20:21.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "server.cpp",
+              "DocumentMoniker": "C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\server.cpp",
+              "RelativeDocumentMoniker": "server\\server.cpp",
+              "ToolTip": "C:\\Users\\\u043F\u043F\\Desktop\\\u042F\u041F\\server\\server\\server.cpp",
+              "RelativeToolTip": "server\\server.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-04-09T01:14:53.947Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
