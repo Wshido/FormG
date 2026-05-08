@@ -1,0 +1,3 @@
+﻿TCPServer.obj : error LNK2019: ссылка на неразрешенный внешний символ _func_system в функции "private: static void __cdecl TCPServer::Task(int)" (?Task@TCPServer@@CAXH@Z).
+C:\Users\пп\Desktop\ЯП\Funclib\x64\Debug\Funclib.lib : warning LNK4272: тип компьютера библиотеки "x64" конфликтует с типом целевого компьютера "x86"
+C:\Users\пп\Desktop\ЯП\server\Debug\server.exe : fatal error LNK1120: неразрешенных внешних элементов: 1

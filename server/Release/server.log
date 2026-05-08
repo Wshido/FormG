@@ -1,0 +1,2 @@
+﻿TCPServer.obj : error LNK2001: неразрешенный внешний символ _func_system.
+C:\Users\пп\Desktop\ЯП\server\Release\server.exe : fatal error LNK1120: неразрешенных внешних элементов: 1
