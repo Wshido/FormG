@@ -1,0 +1,329 @@
+\doxysubsection{Методы управления базой данных }
+\hypertarget{group__dbcpp}{}\label{group__dbcpp}\index{Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_database_manager}{Database\+Manager}} \& \doxymbox{\hyperlink{group__dbcpp_ga4abb527066e28f3928ef45af856e134c}{Database\+Manager::\+instance}} ()
+\begin{DoxyCompactList}\small\item\em Получение единственного экземпляра менеджера базы данных. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__dbcpp_gaebfb8cc7427256623ccbe059b30b6450}{Database\+Manager::\+\+Database\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \doxylink{class_database_manager}{Database\+Manager}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__dbcpp_gae9b3a5da1e04fbb00faf8a034da1d063}{Database\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Database\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор класса \doxylink{class_database_manager}{Database\+Manager}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga92088595633cff356e64628b5820f267}{Database\+Manager::\+init\+Database}} ()
+\begin{DoxyCompactList}\small\item\em Инициализация базы данных. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga90600e6de3ad5fd99a81409054626dfa}{Database\+Manager::\+create\+Tables}} ()
+\begin{DoxyCompactList}\small\item\em Создание таблиц базы данных. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__dbcpp_gab3d01b3b4889ddf1cb895733d1dfa1a7}{Database\+Manager::\+hash\+Login}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Хеширование логина. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__dbcpp_ga545ab5be9492a0ac13b1f984be211398}{Database\+Manager::\+hash\+Email}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Хеширование электронной почты. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__dbcpp_ga6cac023af947fa742fb00b4f3b36d030}{Database\+Manager::\+hash\+Password}} (const QString \&password)
+\begin{DoxyCompactList}\small\item\em Хеширование пароля. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga70191af866ccccca5db1477768c27033}{Database\+Manager::\+register\+User}} (const QString \&login, const QString \&email, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Регистрация нового пользователя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga7a2ac3defc8180a6ed7ce3d65df54b61}{Database\+Manager::\+login\+User}} (const QString \&login, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Авторизация пользователя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga4de8a21495a20fc23114c5293b0548d5}{Database\+Manager::\+user\+Exists}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Проверка существования пользователя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_gaf535cb24769e032ffe01884e3068adae}{Database\+Manager::\+email\+Exists}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Проверка существования электронной почты. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga0f0b21ce89ce569342ef8a75d2d2643e}{Database\+Manager::\+change\+Password}} (const QString \&login, const QString \&new\+Password)
+\begin{DoxyCompactList}\small\item\em Изменение пароля пользователя. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__dbcpp_gaeecf73be8fbb4cdead016bd7b700b2e7}{Database\+Manager::\+print\+All\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Вывод списка всех пользователей в консоль. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+
+
+\label{group__dbcpp_doc-func-members}
+\Hypertarget{group__dbcpp_doc-func-members}
+\doxysubsubsection{Функции}
+\Hypertarget{group__dbcpp_ga0f0b21ce89ce569342ef8a75d2d2643e}\index{Методы управления базой данных@{Методы управления базой данных}!changePassword@{changePassword}}
+\index{changePassword@{changePassword}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{changePassword()}{changePassword()}}
+{\footnotesize\ttfamily \label{group__dbcpp_ga0f0b21ce89ce569342ef8a75d2d2643e} 
+bool Database\+Manager::\+change\+Password (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{new\+Password}{}\end{DoxyParamCaption})}
+
+
+
+Изменение пароля пользователя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+{\em new\+Password} & Новый пароль. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true при успешном изменении пароля.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+{\em new\+Password} & Новый пароль. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true при успешной смене пароля. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_ga90600e6de3ad5fd99a81409054626dfa}\index{Методы управления базой данных@{Методы управления базой данных}!createTables@{createTables}}
+\index{createTables@{createTables}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{createTables()}{createTables()}}
+{\footnotesize\ttfamily \label{group__dbcpp_ga90600e6de3ad5fd99a81409054626dfa} 
+bool Database\+Manager::\+create\+Tables (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Создание таблиц базы данных. 
+
+\begin{DoxyReturn}{Возвращает}
+true при успешном создании таблиц.
+
+true если таблицы успешно созданы. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_gaebfb8cc7427256623ccbe059b30b6450}\index{Методы управления базой данных@{Методы управления базой данных}!DatabaseManager@{DatabaseManager}}
+\index{DatabaseManager@{DatabaseManager}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{DatabaseManager()}{DatabaseManager()}}
+{\footnotesize\ttfamily \label{group__dbcpp_gaebfb8cc7427256623ccbe059b30b6450} 
+Database\+Manager::\+\+Database\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+Конструктор класса \doxylink{class_database_manager}{Database\+Manager}. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em parent} & Родительский объект. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__dbcpp_gaf535cb24769e032ffe01884e3068adae}\index{Методы управления базой данных@{Методы управления базой данных}!emailExists@{emailExists}}
+\index{emailExists@{emailExists}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{emailExists()}{emailExists()}}
+{\footnotesize\ttfamily \label{group__dbcpp_gaf535cb24769e032ffe01884e3068adae} 
+bool Database\+Manager::\+email\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Проверка существования электронной почты. 
+
+Проверка существования email.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em email} & Адрес электронной почты. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если email уже зарегистрирован.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em email} & Электронная почта пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если email найден. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_ga545ab5be9492a0ac13b1f984be211398}\index{Методы управления базой данных@{Методы управления базой данных}!hashEmail@{hashEmail}}
+\index{hashEmail@{hashEmail}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{hashEmail()}{hashEmail()}}
+{\footnotesize\ttfamily \label{group__dbcpp_ga545ab5be9492a0ac13b1f984be211398} 
+QString Database\+Manager::\+hash\+Email (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Хеширование электронной почты. 
+
+Хеширование электронной почты пользователя.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em email} & Электронная почта пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хешированное значение email. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_gab3d01b3b4889ddf1cb895733d1dfa1a7}\index{Методы управления базой данных@{Методы управления базой данных}!hashLogin@{hashLogin}}
+\index{hashLogin@{hashLogin}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{hashLogin()}{hashLogin()}}
+{\footnotesize\ttfamily \label{group__dbcpp_gab3d01b3b4889ddf1cb895733d1dfa1a7} 
+QString Database\+Manager::\+hash\+Login (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Хеширование логина. 
+
+Хеширование логина пользователя.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хешированное значение логина. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_ga6cac023af947fa742fb00b4f3b36d030}\index{Методы управления базой данных@{Методы управления базой данных}!hashPassword@{hashPassword}}
+\index{hashPassword@{hashPassword}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{hashPassword()}{hashPassword()}}
+{\footnotesize\ttfamily \label{group__dbcpp_ga6cac023af947fa742fb00b4f3b36d030} 
+QString Database\+Manager::\+hash\+Password (\begin{DoxyParamCaption}\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Хеширование пароля. 
+
+Хеширование пароля пользователя.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em password} & Исходный пароль. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хешированное значение пароля.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em password} & Пароль пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хешированное значение пароля. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_ga92088595633cff356e64628b5820f267}\index{Методы управления базой данных@{Методы управления базой данных}!initDatabase@{initDatabase}}
+\index{initDatabase@{initDatabase}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{initDatabase()}{initDatabase()}}
+{\footnotesize\ttfamily \label{group__dbcpp_ga92088595633cff356e64628b5820f267} 
+bool Database\+Manager::\+init\+Database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Инициализация базы данных. 
+
+Инициализация базы данных SQLite.
+
+\begin{DoxyReturn}{Возвращает}
+true при успешной инициализации. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_ga4abb527066e28f3928ef45af856e134c}\index{Методы управления базой данных@{Методы управления базой данных}!instance@{instance}}
+\index{instance@{instance}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \label{group__dbcpp_ga4abb527066e28f3928ef45af856e134c} 
+\doxymbox{\hyperlink{class_database_manager}{Database\+Manager}} \& Database\+Manager::\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Получение единственного экземпляра менеджера базы данных. 
+
+Получение экземпляра \doxylink{class_database_manager}{Database\+Manager}.
+
+\begin{DoxyReturn}{Возвращает}
+Ссылка на объект \doxylink{class_database_manager}{Database\+Manager}.
+
+Ссылка на объект менеджера базы данных. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_ga7a2ac3defc8180a6ed7ce3d65df54b61}\index{Методы управления базой данных@{Методы управления базой данных}!loginUser@{loginUser}}
+\index{loginUser@{loginUser}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{loginUser()}{loginUser()}}
+{\footnotesize\ttfamily \label{group__dbcpp_ga7a2ac3defc8180a6ed7ce3d65df54b61} 
+bool Database\+Manager::\+login\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Авторизация пользователя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+{\em password} & Пароль пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true при успешной авторизации.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+{\em password} & Пароль пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если авторизация успешна. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_gaeecf73be8fbb4cdead016bd7b700b2e7}\index{Методы управления базой данных@{Методы управления базой данных}!printAllUsers@{printAllUsers}}
+\index{printAllUsers@{printAllUsers}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{printAllUsers()}{printAllUsers()}}
+{\footnotesize\ttfamily \label{group__dbcpp_gaeecf73be8fbb4cdead016bd7b700b2e7} 
+void Database\+Manager::\+print\+All\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Вывод списка всех пользователей в консоль. 
+
+Вывод всех пользователей базы данных.
+
+Используется для отладки приложения. \Hypertarget{group__dbcpp_ga70191af866ccccca5db1477768c27033}\index{Методы управления базой данных@{Методы управления базой данных}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily \label{group__dbcpp_ga70191af866ccccca5db1477768c27033} 
+bool Database\+Manager::\+register\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Регистрация нового пользователя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+{\em email} & Электронная почта пользователя. \\
+\hline
+{\em password} & Пароль пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true при успешной регистрации. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_ga4de8a21495a20fc23114c5293b0548d5}\index{Методы управления базой данных@{Методы управления базой данных}!userExists@{userExists}}
+\index{userExists@{userExists}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{userExists()}{userExists()}}
+{\footnotesize\ttfamily \label{group__dbcpp_ga4de8a21495a20fc23114c5293b0548d5} 
+bool Database\+Manager::\+user\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Проверка существования пользователя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если пользователь существует.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true если пользователь найден. 
+\end{DoxyReturn}
+\Hypertarget{group__dbcpp_gae9b3a5da1e04fbb00faf8a034da1d063}\index{Методы управления базой данных@{Методы управления базой данных}!````~DatabaseManager@{\texorpdfstring{$\sim$}{\string~}DatabaseManager}}
+\index{````~DatabaseManager@{\texorpdfstring{$\sim$}{\string~}DatabaseManager}!Методы управления базой данных@{Методы управления базой данных}}
+\doxysubsubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DatabaseManager()}{\string~DatabaseManager()}}
+{\footnotesize\ttfamily \label{group__dbcpp_gae9b3a5da1e04fbb00faf8a034da1d063} 
+Database\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Database\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Деструктор класса \doxylink{class_database_manager}{Database\+Manager}. 
+
