@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;: Методы окна регистрации нового пользователя</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__regcpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Методы окна регистрации нового пользователя <div class="ingroups"><a class="el" href="group__client.html">Клиент</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ga0afbe90533f73fb296bfd483c3738baf" id="r_ga0afbe90533f73fb296bfd483c3738baf"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ga0afbe90533f73fb296bfd483c3738baf">RegisterWindow::RegisterWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:ga0afbe90533f73fb296bfd483c3738baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор окна <a class="el" href="class_register_window.html" title="Окно регистрации нового пользователя.">RegisterWindow</a>.  <br /></td></tr>
+<tr class="memitem:gaaeb4a1dc724077a1c30dc96659371d42" id="r_gaaeb4a1dc724077a1c30dc96659371d42"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#gaaeb4a1dc724077a1c30dc96659371d42">RegisterWindow::~RegisterWindow</a> ()</td></tr>
+<tr class="memdesc:gaaeb4a1dc724077a1c30dc96659371d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор класса <a class="el" href="class_register_window.html" title="Окно регистрации нового пользователя.">RegisterWindow</a>.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slot-members" class="groupheader"><a id="pri-slot-members" name="pri-slot-members"></a>
+Закрытые слоты</h2></td></tr>
+<tr class="memitem:gaecf16f485f03b5464f773671a4cfb1f0" id="r_gaecf16f485f03b5464f773671a4cfb1f0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaecf16f485f03b5464f773671a4cfb1f0">RegisterWindow::on_createButton_clicked</a> ()</td></tr>
+<tr class="memdesc:gaecf16f485f03b5464f773671a4cfb1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик нажатия кнопки создания аккаунта.  <br /></td></tr>
+<tr class="memitem:gaba2b744664e7127e6dfa03783e67a194" id="r_gaba2b744664e7127e6dfa03783e67a194"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaba2b744664e7127e6dfa03783e67a194">RegisterWindow::on_backButton_clicked</a> ()</td></tr>
+<tr class="memdesc:gaba2b744664e7127e6dfa03783e67a194"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик нажатия кнопки возврата.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"></div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="ga0afbe90533f73fb296bfd483c3738baf" name="ga0afbe90533f73fb296bfd483c3738baf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0afbe90533f73fb296bfd483c3738baf">&#9670;&#160;</a></span>RegisterWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegisterWindow::RegisterWindow </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор окна <a class="el" href="class_register_window.html" title="Окно регистрации нового пользователя.">RegisterWindow</a>. </p>
+<p>Конструктор окна регистрации.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский виджет. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaaeb4a1dc724077a1c30dc96659371d42" name="gaaeb4a1dc724077a1c30dc96659371d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaeb4a1dc724077a1c30dc96659371d42">&#9670;&#160;</a></span>~RegisterWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RegisterWindow::~RegisterWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Деструктор класса <a class="el" href="class_register_window.html" title="Окно регистрации нового пользователя.">RegisterWindow</a>. </p>
+
+</div>
+</div>
+<a name="doc-pri-slot-members" id="doc-pri-slot-members"></a><h2 id="header-doc-pri-slot-members" class="groupheader">Закрытые слоты</h2>
+<a id="gaba2b744664e7127e6dfa03783e67a194" name="gaba2b744664e7127e6dfa03783e67a194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaba2b744664e7127e6dfa03783e67a194">&#9670;&#160;</a></span>on_backButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RegisterWindow::on_backButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик нажатия кнопки возврата. </p>
+<p>Обработчик кнопки возврата.</p>
+<p>Выполняет возврат к предыдущему окну. </p>
+
+</div>
+</div>
+<a id="gaecf16f485f03b5464f773671a4cfb1f0" name="gaecf16f485f03b5464f773671a4cfb1f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaecf16f485f03b5464f773671a4cfb1f0">&#9670;&#160;</a></span>on_createButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RegisterWindow::on_createButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик нажатия кнопки создания аккаунта. </p>
+<p>Обработчик кнопки создания аккаунта.</p>
+<p>Выполняет проверку введенных данных и регистрацию нового пользователя в базе данных. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

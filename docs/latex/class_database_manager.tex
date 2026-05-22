@@ -1,0 +1,85 @@
+\doxysection{Класс Database\+Manager}
+\hypertarget{class_database_manager}{}\label{class_database_manager}\index{DatabaseManager@{DatabaseManager}}
+
+
+Класс для управления базой данных приложения.  
+
+
+
+
+{\ttfamily \+\#include $<$databasemanager.\+h$>$}
+
+Граф наследования:\+Database\+Manager:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_database_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga92088595633cff356e64628b5820f267}{init\+Database}} ()
+\begin{DoxyCompactList}\small\item\em Инициализация базы данных. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga70191af866ccccca5db1477768c27033}{register\+User}} (const QString \&login, const QString \&email, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Регистрация нового пользователя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga7a2ac3defc8180a6ed7ce3d65df54b61}{login\+User}} (const QString \&login, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Авторизация пользователя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga4de8a21495a20fc23114c5293b0548d5}{user\+Exists}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Проверка существования пользователя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_gaf535cb24769e032ffe01884e3068adae}{email\+Exists}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Проверка существования электронной почты. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga0f0b21ce89ce569342ef8a75d2d2643e}{change\+Password}} (const QString \&login, const QString \&new\+Password)
+\begin{DoxyCompactList}\small\item\em Изменение пароля пользователя. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__dbcpp_ga6cac023af947fa742fb00b4f3b36d030}{hash\+Password}} (const QString \&password)
+\begin{DoxyCompactList}\small\item\em Хеширование пароля. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__dbcpp_gab3d01b3b4889ddf1cb895733d1dfa1a7}{hash\+Login}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Хеширование логина. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__dbcpp_ga545ab5be9492a0ac13b1f984be211398}{hash\+Email}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Хеширование электронной почты. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__dbcpp_gaeecf73be8fbb4cdead016bd7b700b2e7}{print\+All\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Вывод списка всех пользователей в консоль. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_database_manager}{Database\+Manager}} \& \doxymbox{\hyperlink{group__dbcpp_ga4abb527066e28f3928ef45af856e134c}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Получение единственного экземпляра менеджера базы данных. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__dbcpp_gaebfb8cc7427256623ccbe059b30b6450}{Database\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \doxylink{class_database_manager}{Database\+Manager}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__dbcpp_gae9b3a5da1e04fbb00faf8a034da1d063}{\texorpdfstring{$\sim$}{\string~}\+Database\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор класса \doxylink{class_database_manager}{Database\+Manager}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__dbcpp_ga90600e6de3ad5fd99a81409054626dfa}{create\+Tables}} ()
+\begin{DoxyCompactList}\small\item\em Создание таблиц базы данных. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+QSql\+Database \doxymbox{\hyperlink{class_database_manager_aed29e9d39dba375270f94caae3b8cb8c}{m\+\_\+db}}
+\begin{DoxyCompactList}\small\item\em Объект подключения к базе данных. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для управления базой данных приложения. 
+
+Выполняет подключение к базе данных, регистрацию и авторизацию пользователей, а также работу с пользовательскими данными. 
+
+\label{class_database_manager_doc-variable-members}
+\Hypertarget{class_database_manager_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{class_database_manager_aed29e9d39dba375270f94caae3b8cb8c}\index{DatabaseManager@{DatabaseManager}!m\_db@{m\_db}}
+\index{m\_db@{m\_db}!DatabaseManager@{DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{m\_db}{m\_db}}
+{\footnotesize\ttfamily \label{class_database_manager_aed29e9d39dba375270f94caae3b8cb8c} 
+QSql\+Database Database\+Manager::\+m\+\_\+db\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Объект подключения к базе данных. 
+
+
+
+Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+\doxymbox{\hyperlink{databasemanager_8h}{databasemanager.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+\doxymbox{\hyperlink{databasemanager_8cpp}{databasemanager.\+cpp}}\end{DoxyCompactItemize}
