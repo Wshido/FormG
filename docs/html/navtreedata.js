@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", ]
+  [ "Отчет по дисциплине \"Технологии и Методы Программирования\"", "index.html", ]
 ];
 
 var NAVTREEINDEX =
@@ -32,6 +32,6 @@ var NAVTREEINDEX =
 "index.html"
 ];
 
-const SYNCONMSG = 'click to disable panel synchronization';
-const SYNCOFFMSG = 'click to enable panel synchronization';
-const LISTOFALLMEMBERS = 'List of all members';
+const SYNCONMSG = 'нажмите на выключить для синхронизации панелей';
+const SYNCOFFMSG = 'нажмите на включить для синхронизации панелей';
+const LISTOFALLMEMBERS = 'Полный список членов класса';
