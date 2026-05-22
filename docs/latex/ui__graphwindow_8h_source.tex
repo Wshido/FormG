@@ -1,0 +1,104 @@
+\doxysection{ui\+\_\+graphwindow.\+h}
+\hypertarget{ui__graphwindow_8h_source}{}\label{ui__graphwindow_8h_source}\index{C:/Users/пп/Desktop/Исходники/Timpproject/build/Desktop\_Qt\_6\_10\_3\_MinGW\_64\_bit-\/u041eu0442u043bu0430u0434u043au0430/ui\_graphwindow.h@{C:/Users/пп/Desktop/Исходники/Timpproject/build/Desktop\_Qt\_6\_10\_3\_MinGW\_64\_bit-\/u041eu0442u043bu0430u0434u043au0430/ui\_graphwindow.h}}
+\doxymbox{\hyperlink{ui__graphwindow_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/********************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ Form\ generated\ from\ reading\ UI\ file\ 'graphwindow.ui'}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Created\ by:\ Qt\ User\ Interface\ Compiler\ version\ 6.10.3}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ WARNING!\ All\ changes\ made\ in\ this\ file\ will\ be\ lost\ when\ recompiling\ UI\ file!}}
+\DoxyCodeLine{00007\ \textcolor{comment}{********************************************************************************/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ UI\_GRAPHWINDOW\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ UI\_GRAPHWINDOW\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QtCore/QVariant>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QtWidgets/QApplication>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QtWidgets/QLabel>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QtWidgets/QSlider>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QtWidgets/QWidget>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{qcustomplot_8h}{qcustomplot.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ QT\_BEGIN\_NAMESPACE}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_ui___graph_window}{Ui\_GraphWindow}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \doxymbox{\hyperlink{class_q_custom_plot}{QCustomPlot}}\ *\doxymbox{\hyperlink{class_ui___graph_window_a4a399689ee31e8fa133093b1aa463b91}{customPlot}};}
+\DoxyCodeLine{00025\ \ \ \ \ QLabel\ *\doxymbox{\hyperlink{class_ui___graph_window_ad8491e699845f4c107eb68a56b98d89a}{titleLabel}};}
+\DoxyCodeLine{00026\ \ \ \ \ QLabel\ *\doxymbox{\hyperlink{class_ui___graph_window_aacfd636e4f354a18f08cd41805ec8423}{labelSin}};}
+\DoxyCodeLine{00027\ \ \ \ \ QSlider\ *\doxymbox{\hyperlink{class_ui___graph_window_a02df90f905e14d854fbf242c2861d480}{sliderSin}};}
+\DoxyCodeLine{00028\ \ \ \ \ QLabel\ *\doxymbox{\hyperlink{class_ui___graph_window_a79ef4fb06219339726585d353d60187e}{labelSqrt}};}
+\DoxyCodeLine{00029\ \ \ \ \ QSlider\ *\doxymbox{\hyperlink{class_ui___graph_window_a1d710e65505d10f8858a006699001c81}{sliderSqrt}};}
+\DoxyCodeLine{00030\ \ \ \ \ QLabel\ *\doxymbox{\hyperlink{class_ui___graph_window_a00daa1116954db06155be4e7ba6fade1}{labelFrac}};}
+\DoxyCodeLine{00031\ \ \ \ \ QSlider\ *\doxymbox{\hyperlink{class_ui___graph_window_afc1c9c8b19488fe0594756337137b8fa}{sliderFrac}};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_ui___graph_window_ae2b9a1610f761623bf96ea96e6559e55}{setupUi}}(QWidget\ *\doxymbox{\hyperlink{class_graph_window}{GraphWindow}})}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\doxymbox{\hyperlink{class_graph_window}{GraphWindow}}-\/>objectName().isEmpty())}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_graph_window}{GraphWindow}}-\/>setObjectName(\textcolor{stringliteral}{"{}GraphWindow"{}});}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_graph_window}{GraphWindow}}-\/>resize(1000,\ 800);}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a4a399689ee31e8fa133093b1aa463b91}{customPlot}}\ =\ \textcolor{keyword}{new}\ \doxymbox{\hyperlink{class_q_custom_plot}{QCustomPlot}}(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a4a399689ee31e8fa133093b1aa463b91}{customPlot}}-\/>setObjectName(\textcolor{stringliteral}{"{}customPlot"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a4a399689ee31e8fa133093b1aa463b91}{customPlot}}-\/>setGeometry(QRect(250,\ 40,\ 700,\ 650));}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_ad8491e699845f4c107eb68a56b98d89a}{titleLabel}}\ =\ \textcolor{keyword}{new}\ QLabel(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_ad8491e699845f4c107eb68a56b98d89a}{titleLabel}}-\/>setObjectName(\textcolor{stringliteral}{"{}titleLabel"{}});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_ad8491e699845f4c107eb68a56b98d89a}{titleLabel}}-\/>setGeometry(QRect(10,\ 20,\ 231,\ 30));}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_ad8491e699845f4c107eb68a56b98d89a}{titleLabel}}-\/>setStyleSheet(QString::fromUtf8(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00045\ \textcolor{stringliteral}{"{}font-\/size:20px;\(\backslash\)n"{}}}
+\DoxyCodeLine{00046\ \textcolor{stringliteral}{"{}font-\/weight:bold;\(\backslash\)n"{}}}
+\DoxyCodeLine{00047\ \textcolor{stringliteral}{"{}\ \ \ \ "{}}));}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_aacfd636e4f354a18f08cd41805ec8423}{labelSin}}\ =\ \textcolor{keyword}{new}\ QLabel(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_aacfd636e4f354a18f08cd41805ec8423}{labelSin}}-\/>setObjectName(\textcolor{stringliteral}{"{}labelSin"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_aacfd636e4f354a18f08cd41805ec8423}{labelSin}}-\/>setGeometry(QRect(20,\ 90,\ 150,\ 20));}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a02df90f905e14d854fbf242c2861d480}{sliderSin}}\ =\ \textcolor{keyword}{new}\ QSlider(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a02df90f905e14d854fbf242c2861d480}{sliderSin}}-\/>setObjectName(\textcolor{stringliteral}{"{}sliderSin"{}});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a02df90f905e14d854fbf242c2861d480}{sliderSin}}-\/>setGeometry(QRect(20,\ 120,\ 180,\ 22));}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a02df90f905e14d854fbf242c2861d480}{sliderSin}}-\/>setMinimum(-\/10);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a02df90f905e14d854fbf242c2861d480}{sliderSin}}-\/>setMaximum(10);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a02df90f905e14d854fbf242c2861d480}{sliderSin}}-\/>setOrientation(Qt::Orientation::Horizontal);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a79ef4fb06219339726585d353d60187e}{labelSqrt}}\ =\ \textcolor{keyword}{new}\ QLabel(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a79ef4fb06219339726585d353d60187e}{labelSqrt}}-\/>setObjectName(\textcolor{stringliteral}{"{}labelSqrt"{}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a79ef4fb06219339726585d353d60187e}{labelSqrt}}-\/>setGeometry(QRect(20,\ 180,\ 150,\ 20));}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a1d710e65505d10f8858a006699001c81}{sliderSqrt}}\ =\ \textcolor{keyword}{new}\ QSlider(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a1d710e65505d10f8858a006699001c81}{sliderSqrt}}-\/>setObjectName(\textcolor{stringliteral}{"{}sliderSqrt"{}});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a1d710e65505d10f8858a006699001c81}{sliderSqrt}}-\/>setGeometry(QRect(20,\ 210,\ 180,\ 22));}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a1d710e65505d10f8858a006699001c81}{sliderSqrt}}-\/>setMinimum(-\/10);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a1d710e65505d10f8858a006699001c81}{sliderSqrt}}-\/>setMaximum(10);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a1d710e65505d10f8858a006699001c81}{sliderSqrt}}-\/>setOrientation(Qt::Orientation::Horizontal);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a00daa1116954db06155be4e7ba6fade1}{labelFrac}}\ =\ \textcolor{keyword}{new}\ QLabel(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a00daa1116954db06155be4e7ba6fade1}{labelFrac}}-\/>setObjectName(\textcolor{stringliteral}{"{}labelFrac"{}});}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a00daa1116954db06155be4e7ba6fade1}{labelFrac}}-\/>setGeometry(QRect(20,\ 270,\ 150,\ 20));}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_afc1c9c8b19488fe0594756337137b8fa}{sliderFrac}}\ =\ \textcolor{keyword}{new}\ QSlider(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_afc1c9c8b19488fe0594756337137b8fa}{sliderFrac}}-\/>setObjectName(\textcolor{stringliteral}{"{}sliderFrac"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_afc1c9c8b19488fe0594756337137b8fa}{sliderFrac}}-\/>setGeometry(QRect(20,\ 300,\ 180,\ 22));}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_afc1c9c8b19488fe0594756337137b8fa}{sliderFrac}}-\/>setMinimum(-\/10);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_afc1c9c8b19488fe0594756337137b8fa}{sliderFrac}}-\/>setMaximum(10);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_afc1c9c8b19488fe0594756337137b8fa}{sliderFrac}}-\/>setOrientation(Qt::Orientation::Horizontal);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a113213fb6282f8648a73ef86447292b2}{retranslateUi}}(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ QMetaObject::connectSlotsByName(\doxymbox{\hyperlink{class_graph_window}{GraphWindow}});}
+\DoxyCodeLine{00079\ \ \ \ \ \}\ \textcolor{comment}{//\ setupUi}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_ui___graph_window_a113213fb6282f8648a73ef86447292b2}{retranslateUi}}(QWidget\ *\doxymbox{\hyperlink{class_graph_window}{GraphWindow}})}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_graph_window}{GraphWindow}}-\/>setWindowTitle(QCoreApplication::translate(\textcolor{stringliteral}{"{}GraphWindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)223\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)204\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)272\ \(\backslash\)321\(\backslash\)204\(\backslash\)321\(\backslash\)203\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)272\(\backslash\)321\(\backslash\)206\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)270"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_ad8491e699845f4c107eb68a56b98d89a}{titleLabel}}-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}GraphWindow"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)320\(\backslash\)243\(\backslash\)320\(\backslash\)277\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)260\(\backslash\)320\(\backslash\)262\(\backslash\)320\(\backslash\)273\(\backslash\)320\(\backslash\)265\(\backslash\)320\(\backslash\)275\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)265\ \(\backslash\)320\(\backslash\)263\(\backslash\)321\(\backslash\)200\(\backslash\)320\(\backslash\)260\(\backslash\)321\(\backslash\)204\(\backslash\)320\(\backslash\)270\(\backslash\)320\(\backslash\)272\(\backslash\)320\(\backslash\)276\(\backslash\)320\(\backslash\)274"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_aacfd636e4f354a18f08cd41805ec8423}{labelSin}}-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}GraphWindow"{}},\ \textcolor{stringliteral}{"{}sin(ax)"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a79ef4fb06219339726585d353d60187e}{labelSqrt}}-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}GraphWindow"{}},\ \textcolor{stringliteral}{"{}sqrt(x+b)"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \doxymbox{\hyperlink{class_ui___graph_window_a00daa1116954db06155be4e7ba6fade1}{labelFrac}}-\/>setText(QCoreApplication::translate(\textcolor{stringliteral}{"{}GraphWindow"{}},\ \textcolor{stringliteral}{"{}1\ /\ (x\ -\/\ c)"{}},\ \textcolor{keyword}{nullptr}));}
+\DoxyCodeLine{00088\ \ \ \ \ \}\ \textcolor{comment}{//\ retranslateUi}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_ui_1_1_graph_window}{GraphWindow}}:\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_ui___graph_window}{Ui\_GraphWindow}}\ \{\};}
+\DoxyCodeLine{00094\ \}\ \textcolor{comment}{//\ namespace\ Ui}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ QT\_END\_NAMESPACE}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UI\_GRAPHWINDOW\_H}}
+
+\end{DoxyCode}
