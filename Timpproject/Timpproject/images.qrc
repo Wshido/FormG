@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>build/Desktop_Qt_6_10_3_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/debug/funcqt.PNG</file>
+        <file>build/Desktop_Qt_6_10_3_MinGW_64_bit-u041eu0442u043bu0430u0434u043au0430/debug/uniqueqt.PNG</file>
+    </qresource>
+</RCC>
