@@ -1,0 +1,28 @@
+name: Deploy Doxygen Docs
+
+on:
+  push:
+    branches:
+      - main  # или master, ветка, в которую вы заливаете изменения
+      - Server
+      - UI
+      - BD
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen
+        uses: srt32/action-doxygen@v0 # Готовый экшен для установки Doxygen
+        
+      - name: Run Doxygen
+        run: doxygen Doxyfile # Генерирует документацию на основе вашего Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: docs # Убедитесь, что ваш Doxyfile выводит результат в папку docs/
+          branch: doxypages
