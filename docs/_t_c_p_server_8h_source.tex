@@ -1,0 +1,25 @@
+\doxysection{TCPServer.\+h}
+\hypertarget{_t_c_p_server_8h_source}{}\label{_t_c_p_server_8h_source}\index{C:/Users/пп/Desktop/Исходники/server/server/TCPServer.h@{C:/Users/пп/Desktop/Исходники/server/server/TCPServer.h}}
+\doxymbox{\hyperlink{_t_c_p_server_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ TCP\_SERVER\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ TCP\_SERVER\_H}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{pch_8h}{pch.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_t_c_p_server}{TCPServer}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_t_c_p_server_a5760b0d1dad5583ccf109256ff28cc08}{sockfd}};\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{struct\ }sockaddr\_in\ \doxymbox{\hyperlink{class_t_c_p_server_a8158542abc8b434935935452e7bbba5e}{serverAddress}};\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{struct\ }sockaddr\_in\ \doxymbox{\hyperlink{class_t_c_p_server_ad701eade413d190ae412033e924df362}{clientAddress}};\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servercpp_ga5fe156c6ef8e554b61805a5093bc3f72}{setup}}(\textcolor{keywordtype}{int}\ port);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{string}\ \doxymbox{\hyperlink{group__servercpp_gaec7165331f5c13317ad31529167760dc}{receive}}();}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servercpp_ga4619223db24f14afec55a32abda5d456}{Task}}(\textcolor{keywordtype}{int}\ clientSock);}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

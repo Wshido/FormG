@@ -1,0 +1,54 @@
+\doxysection{databasemanager.\+h}
+\hypertarget{databasemanager_8h_source}{}\label{databasemanager_8h_source}\index{C:/Users/пп/Desktop/Исходники/Timpproject/databasemanager.h@{C:/Users/пп/Desktop/Исходники/Timpproject/databasemanager.h}}
+\doxymbox{\hyperlink{databasemanager_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DATABASEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DATABASEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QSqlDatabase>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QSqlQuery>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QSqlError>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QCryptographicHash>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__dbcpp_gaebfb8cc7427256623ccbe059b30b6450}{DatabaseManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{group__dbcpp_gaebfb8cc7427256623ccbe059b30b6450}{DatabaseManager}}\&\ \doxymbox{\hyperlink{group__dbcpp_ga4abb527066e28f3928ef45af856e134c}{instance}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__dbcpp_ga92088595633cff356e64628b5820f267}{initDatabase}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__dbcpp_ga70191af866ccccca5db1477768c27033}{registerUser}}(\textcolor{keyword}{const}\ QString\&\ login,\ \textcolor{keyword}{const}\ QString\&\ email,\ \textcolor{keyword}{const}\ QString\&\ password);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__dbcpp_ga7a2ac3defc8180a6ed7ce3d65df54b61}{loginUser}}(\textcolor{keyword}{const}\ QString\&\ login,\ \textcolor{keyword}{const}\ QString\&\ password);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__dbcpp_ga4de8a21495a20fc23114c5293b0548d5}{userExists}}(\textcolor{keyword}{const}\ QString\&\ login);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__dbcpp_gaf535cb24769e032ffe01884e3068adae}{emailExists}}(\textcolor{keyword}{const}\ QString\&\ email);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__dbcpp_ga0f0b21ce89ce569342ef8a75d2d2643e}{changePassword}}(\textcolor{keyword}{const}\ QString\&\ login,\ \textcolor{keyword}{const}\ QString\&\ newPassword);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__dbcpp_ga6cac023af947fa742fb00b4f3b36d030}{hashPassword}}(\textcolor{keyword}{const}\ QString\&\ password);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__dbcpp_gab3d01b3b4889ddf1cb895733d1dfa1a7}{hashLogin}}(\textcolor{keyword}{const}\ QString\&\ login);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__dbcpp_ga545ab5be9492a0ac13b1f984be211398}{hashEmail}}(\textcolor{keyword}{const}\ QString\&\ email);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__dbcpp_gaeecf73be8fbb4cdead016bd7b700b2e7}{printAllUsers}}();}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{group__dbcpp_gaebfb8cc7427256623ccbe059b30b6450}{DatabaseManager}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00115\ \ \ \ \ \doxymbox{\hyperlink{group__dbcpp_gae9b3a5da1e04fbb00faf8a034da1d063}{\string~DatabaseManager}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00120\ \ \ \ \ QSqlDatabase\ \doxymbox{\hyperlink{class_database_manager_aed29e9d39dba375270f94caae3b8cb8c}{m\_db}};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__dbcpp_ga90600e6de3ad5fd99a81409054626dfa}{createTables}}();}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DATABASEMANAGER\_H}}
+
+\end{DoxyCode}
