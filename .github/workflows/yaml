@@ -1,0 +1,30 @@
+name: Generate Doxygen Docs
+
+on:
+  push:
+    branches: [ "main" ] # Ветка, из которой берется код
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen and Graphviz
+        run: sudo apt-get install doxygen graphviz -y
+
+      - name: Run Doxygen
+        run: doxygen Doxyfile # Укажите путь к вашему Doxyfile, если он в другом месте
+
+      - name: Create .nojekyll
+        run: touch docs/.nojekyll # Имя папки должно совпадать с HTML_OUTPUT из вашего Doxyfile
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: docs # Папка, куда Doxygen сохранил HTML-файлы
