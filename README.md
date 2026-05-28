@@ -23,6 +23,7 @@
 ├── server/          # TCP-сервер + БД + SMTP
 ├── docker/          # Dockerfile и скрипты
 ├── tests/           # Модульные тесты (Qt Test)
+│   ├── Test_doc.docx  # Документация к тестированию
 ├── docs/            # Doxygen-конфиг и сгенерированная документация
 │   ├── Doxyfile
 │   ├── html/    # HTML-документация
