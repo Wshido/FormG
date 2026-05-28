@@ -19,7 +19,7 @@
 ## Структура проекта
 
 ```text
-├── client/          # GUI-клиент (Qt Widgets)
+├── UI/Timpproject/          # GUI-клиент (Qt Widgets)
 ├── server/          # TCP-сервер + БД + SMTP
 ├── docker/          # Dockerfile и скрипты
 ├── tests/           # Модульные тесты (Qt Test)
