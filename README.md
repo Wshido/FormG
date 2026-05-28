@@ -25,8 +25,7 @@
 ├── tests/           # Модульные тесты (Qt Test)
 ├── docs/            # Doxygen-конфиг и сгенерированная документация
 │   ├── Doxyfile
-│   ├── output/
-│   │   └── html/    # HTML-документация
+│   ├── html/    # HTML-документация
 ├── .gitignore
 └── README.md
 ```
