@@ -6,159 +6,271 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>420</width>
-    <height>460</height>
+    <width>440</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Регистрация</string>
   </property>
-
   <property name="styleSheet">
    <string notr="true">
 QWidget {
-    background-color: #f2f4f8;
-    font-family: Segoe UI, Arial;
+    background-color: #eef3fb;
+    font-family: "Segoe UI", Arial;
 }
 
 QFrame#frame {
-    background-color: #d9ecff;
+    background-color: white;
     border-radius: 20px;
-    border: 1px solid #bcd6f0;
+    border: 1px solid #d5dde8;
 }
 
 QLabel {
-    color: black;
+    color: #2c3e50;
+    background: transparent;
+    font-size: 13px;
 }
 
 QLabel#titleLabel {
-    font-size: 26px;
+    font-size: 28px;
     font-weight: bold;
-    color: black;
+    color: #1a5276;
     background: transparent;
 }
 
 QLineEdit {
-    background: white;
-    border: 2px solid #b0c4de;
+    background-color: #f8f9fa;
+    border: 2px solid #d5dde8;
     border-radius: 10px;
-    padding: 8px;
+    padding: 10px 12px;
+    color: #2c3e50;
+    font-size: 14px;
+    selection-background-color: #3498db;
 }
 
 QLineEdit:focus {
-    border: 2px solid #4a90e2;
+    border: 2px solid #3498db;
+    background-color: #ffffff;
+}
+
+QPushButton#getCodeButton {
+    background-color: #3498db;
+    color: white;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+}
+
+QPushButton#getCodeButton:hover {
+    background-color: #5dade2;
+}
+
+QPushButton#getCodeButton:pressed {
+    background-color: #2471a3;
+}
+
+QPushButton#getCodeButton:disabled {
+    background-color: #bdc3c7;
 }
 
 QPushButton#createButton {
-    background-color: #7fb800;
+    background-color: #27ae60;
     color: white;
-    border-radius: 12px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 14px;
     font-weight: bold;
+    border: none;
 }
 
 QPushButton#createButton:hover {
-    background-color: #95c11f;
+    background-color: #2ecc71;
+}
+
+QPushButton#createButton:pressed {
+    background-color: #1e8449;
+}
+
+QPushButton#createButton:disabled {
+    background-color: #bdc3c7;
 }
 
 QPushButton#backButton {
-    font-size: 18px;
-    padding: 6px;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
     border-radius: 10px;
+    font-size: 16px;
+    padding: 6px 12px;
+    border: none;
+}
+
+QPushButton#backButton:hover {
+    background-color: #d5dbdb;
 }
    </string>
   </property>
-
   <layout class="QVBoxLayout">
-   <item alignment="Qt::AlignCenter">
+   <item>
     <widget class="QFrame" name="frame">
      <layout class="QVBoxLayout">
-
+      <item>
+       <spacer name="topSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>15</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
       <item>
        <widget class="QLabel" name="titleLabel">
         <property name="text">
-         <string>  Регистрация  </string>
+         <string>Регистрация</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
-
-      <!-- ЛОГИН -->
+      <item>
+       <spacer name="spacer1">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>8</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
       <item>
        <widget class="QLineEdit" name="loginEdit">
         <property name="placeholderText">
-         <string>Введите логин</string>
+         <string>Логин (мин. 3 символа)</string>
         </property>
        </widget>
       </item>
-
-      <!-- EMAIL -->
       <item>
        <widget class="QLineEdit" name="emailEdit">
         <property name="placeholderText">
-         <string>Введите почту</string>
+         <string>Электронная почта</string>
         </property>
        </widget>
       </item>
-
-      <!-- ПАРОЛЬ -->
       <item>
        <widget class="QLineEdit" name="passwordEdit">
         <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
+         <enum>QLineEdit::EchoMode::Password</enum>
         </property>
         <property name="placeholderText">
-         <string>Введите пароль</string>
+         <string>Пароль (мин. 8 символов, латиница/цифры)</string>
         </property>
        </widget>
       </item>
-
-      <!-- ПОВТОР ПАРОЛЯ -->
       <item>
        <widget class="QLineEdit" name="repeatPasswordEdit">
         <property name="echoMode">
-         <enum>QLineEdit::Password</enum>
+         <enum>QLineEdit::EchoMode::Password</enum>
         </property>
         <property name="placeholderText">
          <string>Повторите пароль</string>
         </property>
        </widget>
       </item>
-
-      <!-- КНОПКА -->
       <item>
-       <widget class="QPushButton" name="createButton">
+       <spacer name="spacer2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>5</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="getCodeButton">
         <property name="text">
-         <string>Создать</string>
+         <string>Получить код подтверждения</string>
         </property>
        </widget>
       </item>
-
-      <!-- НАЗАД -->
+      <item>
+       <widget class="QLineEdit" name="codeEdit">
+        <property name="placeholderText">
+         <string>Введите код из письма</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="maxLength">
+         <number>6</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="createButton">
+        <property name="text">
+         <string>Зарегистрироваться</string>
+        </property>
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
       <item>
        <layout class="QHBoxLayout">
         <item>
          <spacer>
           <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+           <enum>Qt::Orientation::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
           </property>
          </spacer>
         </item>
         <item>
          <widget class="QPushButton" name="backButton">
           <property name="text">
-           <string>◀</string>
+           <string>&#9664;</string>
           </property>
          </widget>
         </item>
        </layout>
       </item>
-
+      <item>
+       <spacer name="bottomSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
      </layout>
     </widget>
    </item>
   </layout>
  </widget>
+ <resources/>
+ <connections/>
 </ui>

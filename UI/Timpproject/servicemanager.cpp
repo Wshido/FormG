@@ -9,6 +9,7 @@ ServiceManager& ServiceManager::instance()
 ServiceManager::ServiceManager(QObject *parent)
     : QObject(parent)
     , m_socket(nullptr)
+    , m_receivingGraphData(false)
 {
 }
 
@@ -56,78 +57,164 @@ void ServiceManager::sendRequest(const QString& request)
     }
 
     qDebug() << "Отправка:" << request;
-    m_socket->write(request.toUtf8());
+    m_socket->write(request.toUtf8() + "\n");
     m_socket->flush();
 }
 
+// ========== РЕГИСТРАЦИЯ (2 шага) ==========
+void ServiceManager::sendRegRequestCode(const QString& email)
+{
+    QString request = QString("reg_request_code&%1").arg(email);
+    sendRequest(request);
+}
+
+void ServiceManager::sendRegConfirm(const QString& login, const QString& password, const QString& email, const QString& code)
+{
+    QString request = QString("reg_confirm&%1&%2&%3&%4").arg(login).arg(password).arg(email).arg(code);
+    sendRequest(request);
+}
+
+// ========== АВТОРИЗАЦИЯ (2 шага) ==========
+void ServiceManager::sendAuthRequestCode(const QString& login, const QString& password)
+{
+    QString request = QString("auth_request_code&%1&%2").arg(login).arg(password);
+    sendRequest(request);
+}
+
+void ServiceManager::sendAuthConfirm(const QString& email, const QString& code)
+{
+    QString request = QString("auth_confirm&%1&%2").arg(email).arg(code);
+    sendRequest(request);
+}
+
+// ========== ВОССТАНОВЛЕНИЕ ПАРОЛЯ (по ЛОГИНУ) ==========
+void ServiceManager::sendRequestCode(const QString& login)
+{
+    QString request = QString("reset_request_code&%1").arg(login);
+    sendRequest(request);
+}
+
+void ServiceManager::sendChangePasswordWithCode(const QString& login, const QString& code, const QString& newPassword)
+{
+    QString request = QString("reset_confirm&%1&%2&%3").arg(login).arg(code).arg(newPassword);
+    sendRequest(request);
+}
+
+// ========== ДЛЯ ГРАФИКА ==========
+void ServiceManager::sendFunctionParams(double a, double b, double c)
+{
+    double step = 0.1;
+    QByteArray sendData;
+    sendData.append('F');
+    sendData.append(reinterpret_cast<const char*>(&a), sizeof(double));
+    sendData.append(reinterpret_cast<const char*>(&b), sizeof(double));
+    sendData.append(reinterpret_cast<const char*>(&c), sizeof(double));
+    sendData.append(reinterpret_cast<const char*>(&step), sizeof(double));
+
+    if (isConnected()) {
+        m_socket->write(sendData);
+        m_socket->flush();
+    }
+}
+
+// ========== СТАРЫЕ МЕТОДЫ (для совместимости) ==========
 void ServiceManager::sendAuth(const QString& login, const QString& password)
 {
-    QString request = QString("auth&%1&%2").arg(login).arg(password);
-    sendRequest(request);
+    Q_UNUSED(login)
+    Q_UNUSED(password)
+    sendAuthRequestCode(login, password);
 }
 
 void ServiceManager::sendReg(const QString& login, const QString& password, const QString& email)
 {
-    QString request = QString("reg&%1&%2&%3").arg(login).arg(password).arg(email);
-    sendRequest(request);
-}
-
-void ServiceManager::sendFunctionParams(double a, double b, double c)
-{
-    QString request = QString("func&%1&%2&%3").arg(a).arg(b).arg(c);
-    sendRequest(request);
-}
-
-// НОВЫЙ МЕТОД: запрос кода подтверждения
-void ServiceManager::sendRequestCode(const QString& email)
-{
-    QString request = QString("request_code&%1").arg(email);
-    sendRequest(request);
-}
-
-// НОВЫЙ МЕТОД: смена пароля с кодом
-void ServiceManager::sendChangePasswordWithCode(const QString& email, const QString& code, const QString& newPassword)
-{
-    QString request = QString("changepass_code&%1&%2&%3").arg(email).arg(code).arg(newPassword);
-    sendRequest(request);
+    Q_UNUSED(login)
+    Q_UNUSED(password)
+    sendRegRequestCode(email);
 }
 
 void ServiceManager::onReadyRead()
 {
-    QByteArray data = m_socket->readAll();
-    QString response = QString::fromUtf8(data);
+    m_readBuffer.append(m_socket->readAll());
 
-    qDebug() << "Получено:" << response;
+    while (m_readBuffer.contains('\n')) {
+        int idx = m_readBuffer.indexOf('\n');
+        QByteArray line = m_readBuffer.left(idx);
+        m_readBuffer.remove(0, idx + 1);
 
-    QStringList parts = response.split('&');
+        QString response = QString::fromUtf8(line).trimmed();
+        if (response.isEmpty()) continue;
 
-    if (parts[0] == "auth+") {
-        emit authResult(true, parts[1]);
+        qDebug() << "Получено:" << response;
+
+        // Graph data lines start with "1 ", "2 ", or "3 "
+        if (response.startsWith("1 ") || response.startsWith("2 ") || response.startsWith("3 ")) {
+            if (!m_receivingGraphData) {
+                m_receivingGraphData = true;
+                m_graphDataBuffer.clear();
+            }
+            m_graphDataBuffer.append((response + "\n").toUtf8());
+            continue;
+        }
+
+        // If we were accumulating graph data, emit it now
+        if (m_receivingGraphData) {
+            emit functionDataReceived(QString::fromUtf8(m_graphDataBuffer));
+            m_graphDataBuffer.clear();
+            m_receivingGraphData = false;
+        }
+
+        QStringList parts = response.split('&');
+
+        if (parts[0] == "reg_request_code+") {
+            emit regRequestCodeResult(true, "");
+        }
+        else if (parts[0] == "reg_request_code-") {
+            emit regRequestCodeResult(false, "");
+        }
+        else if (parts[0] == "reg_confirm+") {
+            emit regConfirmResult(true);
+        }
+        else if (parts[0] == "reg_confirm-") {
+            emit regConfirmResult(false);
+        }
+        else if (parts[0] == "auth_request_code+") {
+            QString email = parts.size() > 1 ? parts[1] : "";
+            emit authRequestCodeResult(true, email, "");
+        }
+        else if (parts[0] == "auth_request_code-") {
+            emit authRequestCodeResult(false, "", "");
+        }
+        else if (parts[0] == "auth_confirm+") {
+            QString sessionToken = parts.size() > 1 ? parts[1] : "";
+            emit authConfirmResult(true, sessionToken);
+            emit authResult(true, "");
+        }
+        else if (parts[0] == "auth_confirm-") {
+            emit authConfirmResult(false, "");
+            emit authResult(false, "");
+        }
+        else if (parts[0] == "reset_request_code+") {
+            emit codeRequestResult(true);
+        }
+        else if (parts[0] == "reset_request_code-") {
+            emit codeRequestResult(false);
+        }
+        else if (parts[0] == "reset_confirm+") {
+            emit passwordChangeWithCodeResult(true);
+        }
+        else if (parts[0] == "reset_confirm-") {
+            emit passwordChangeWithCodeResult(false);
+        }
+        else {
+            emit functionDataReceived(response);
+        }
     }
-    else if (parts[0] == "auth-") {
-        emit authResult(false, "");
-    }
-    else if (parts[0] == "reg+") {
-        emit regResult(true);
-    }
-    else if (parts[0] == "reg-") {
-        emit regResult(false);
-    }
-    // НОВЫЕ ОБРАБОТЧИКИ
-    else if (parts[0] == "code_sent+") {
-        emit codeRequestResult(true);
-    }
-    else if (parts[0] == "code_sent-") {
-        emit codeRequestResult(false);
-    }
-    else if (parts[0] == "changepass+") {
-        emit passwordChangeWithCodeResult(true);
-    }
-    else if (parts[0] == "changepass-") {
-        emit passwordChangeWithCodeResult(false);
-    }
-    else {
-        emit functionDataReceived(response);
+
+    // Emit any remaining graph data
+    if (m_receivingGraphData && !m_graphDataBuffer.isEmpty()) {
+        emit functionDataReceived(QString::fromUtf8(m_graphDataBuffer));
+        m_graphDataBuffer.clear();
+        m_receivingGraphData = false;
     }
 }
 
@@ -140,6 +227,13 @@ void ServiceManager::onConnected()
 void ServiceManager::onDisconnected()
 {
     qDebug() << "Отключен от сервера";
+
+    if (m_receivingGraphData && !m_graphDataBuffer.isEmpty()) {
+        emit functionDataReceived(QString::fromUtf8(m_graphDataBuffer));
+        m_graphDataBuffer.clear();
+        m_receivingGraphData = false;
+    }
+
     emit disconnected();
 }
 
