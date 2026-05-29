@@ -1,0 +1,32 @@
+=== SMTP TEST ===
+SSL supported: YES
+SSL build: OpenSSL 3.0.7 1 Nov 2022
+SSL runtime: OpenSSL 3.5.5 27 Jan 2026
+
+--- Connecting to smtp.gmail.com:465 ---
+[OK] SSL connected
+<<220 smtp.gmail.com ESMTP 5b1f17b1804b1-4909d68b853sm18270505e9.3 - gsmtp
+
+--- EHLO ---
+<<250 SMTPUTF8
+
+--- AUTH LOGIN ---
+<<334 VXNlcm5hbWU6
+Username: forproject2026formg@gmail.com
+<<334 UGFzc3dvcmQ6
+Password: [hidden]
+<<235 2.7.0 Accepted
+[OK] Authenticated!
+
+--- MAIL FROM ---
+<<250 2.1.0 OK 5b1f17b1804b1-4909d68b853sm18270505e9.3 - gsmtp
+--- RCPT TO ---
+<<250 2.1.5 OK 5b1f17b1804b1-4909d68b853sm18270505e9.3 - gsmtp
+--- DATA ---
+<<354 Go ahead 5b1f17b1804b1-4909d68b853sm18270505e9.3 - gsmtp
+<<250 2.0.0 OK  1780036676 5b1f17b1804b1-4909d68b853sm18270505e9.3 - gsmtp
+
+--- QUIT ---
+<<221 2.0.0 closing connection 5b1f17b1804b1-4909d68b853sm18270505e9.3 - gsmtp
+
+=== SUCCESS: EMAIL SENT ===

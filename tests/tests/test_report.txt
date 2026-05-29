@@ -1,0 +1,74 @@
+TIMP Test Report - 2026-05-29 14:10:06
+============================================================
+Total:  66
+Pass:   65
+Fail:   1
+Rate:   98%
+============================================================
+
+[PASS] TC-VAL-001: validateLogin('abc') == True
+[PASS] TC-VAL-001: validateLogin('ab') == False
+[PASS] TC-VAL-001: validateLogin('aaaaaaaaaaaaaaaa') == True
+[PASS] TC-VAL-001: validateLogin('aaaaaaaaaaaaaaaaa') == False
+[PASS] TC-VAL-001: validateLogin('') == False
+[PASS] TC-VAL-001: validateLogin('test123') == True
+[PASS] TC-VAL-001: validateLogin('тест') == True
+[PASS] TC-VAL-001: validateLogin('a@b') == True
+[PASS] TC-VAL-002: validateEmail('test@mail.com') == True
+[PASS] TC-VAL-002: validateEmail('no-at.com') == False
+[PASS] TC-VAL-002: validateEmail('') == False
+[PASS] TC-VAL-002: validateEmail('a@b.c') == True
+[PASS] TC-VAL-002: validateEmail('test@aaaaaaaaaaaaaaa...') == True
+[PASS] TC-VAL-002: validateEmail('test@aaaaaaaaaaaaaaa...') == False
+[PASS] TC-VAL-003: validatePassword('Pass1234...') == True
+[PASS] TC-VAL-003: validatePassword('short1...') == False
+[PASS] TC-VAL-003: validatePassword('...') == False
+[PASS] TC-VAL-003: validatePassword('aaaaaaaa...') == True
+[PASS] TC-VAL-003: validatePassword('aaaaaaaaaa...') == True
+[PASS] TC-VAL-003: validatePassword('aaaaaaaaaa...') == False
+[PASS] TC-VAL-003: validatePassword('Pass word1...') == False
+[PASS] TC-VAL-003: validatePassword('Pass@1234...') == False
+[PASS] TC-VAL-003: validatePassword('Pass1234!...') == False
+[PASS] TC-VAL-003: validatePassword('aA1bB2cC...') == True
+[PASS] TC-VAL-003: validatePassword('12345678...') == True
+[PASS] TC-MATH-001: f(1,1,1,-1) = -0.8415 (expected -0.8415)
+[PASS] TC-MATH-002: f(1,1,1,-0.5) = -0.4794 (expected -0.4794)
+[PASS] TC-MATH-003: f(2,1,1,-1) = -0.9093 (expected -0.9093)
+[PASS] TC-MATH-004: f(1,4,1,0.25) = 1.0000 (expected 1.0000)
+[PASS] TC-MATH-005: f(1,1,1,0.5) = 0.7071 (expected 0.7071)
+[PASS] TC-MATH-006: f(1,1,1,0) = 0.0000 (expected 0.0000)
+[PASS] TC-MATH-007: f(1,1,1,0.9) = 0.9487 (expected 0.9487)
+[PASS] TC-MATH-008: f(1,1,1,1.0) = 0.0000 (expected 0.0000)
+[PASS] TC-MATH-009: f(1,1,1,2.0) = 1.0000 (expected 1.0000)
+[PASS] TC-MATH-010: f(1,1,1,1.5) = 2.0000 (expected 2.0000)
+[PASS] TC-MATH-011: f(1,1,1,3.0) = 0.5000 (expected 0.5000)
+[PASS] TC-MATH-012: f(1,1,2,2.0) = 0.3333 (expected 0.3333)
+[PASS] TC-MATH-013: f(0,0,0,-1) = 0.0000 (expected 0.0000)
+[PASS] TC-MATH-014: f(1,0,1,0.5) = 0.0000 (expected 0.0000)
+[PASS] TC-MATH-015: f(1,-1,1,0.5) = 0.0000 (expected 0.0000)
+[PASS] TC-HASH-001: Same input -> same hash
+[PASS] TC-HASH-002: Different salt -> different hash
+[PASS] TC-HASH-003: Different password -> different hash
+[PASS] TC-HASH-004: Empty salt generates random salt
+[FAIL] TC-HASH-005: Salt length = 6
+[PASS] TC-HASH-006: Hash hex length = 64
+[PASS] TC-HASH-007: Hash starts with salt:
+[PASS] TC-RL-001: 1st attempt -> not limited
+[PASS] TC-RL-002: 2nd attempt -> not limited
+[PASS] TC-RL-003: 3rd attempt -> not limited
+[PASS] TC-RL-004: 4th attempt -> limited
+[PASS] TC-RL-005: Different user -> not limited
+[PASS] TC-RL-006: After window expires -> not limited
+[PASS] TC-BF-001: 0 failures -> not blocked
+[PASS] TC-BF-002: 1 failure -> not blocked
+[PASS] TC-BF-003: 2 failures -> not blocked
+[PASS] TC-BF-004: 3 failures -> blocked
+[PASS] TC-BF-005: Blocked during lockout
+[PASS] TC-BF-006: After lockout expires -> not blocked
+[PASS] TC-BF-007: After reset -> not blocked
+[PASS] TC-SES-001: Create session -> exists
+[PASS] TC-SES-002: Wrong token -> rejected
+[PASS] TC-SES-003: Unknown login -> rejected
+[PASS] TC-SES-004: After TTL expires -> rejected
+[PASS] TC-SES-005: Activity refreshes session
+[PASS] TC-SES-006: Logout removes session
