@@ -38,7 +38,7 @@
 ```text
 ├── UI/Timpproject/          # GUI-клиент (Qt Widgets)
 ├── server/                  # TCP-сервер + БД + SMTP
-├── docker/                  # Dockerfile, docker-compose и скрипты запуска
+│    └── docker/                  # Dockerfile, docker-compose и скрипты запуска
 ├── tests/                   # Модульные тесты (Qt Test)
 │   ├── Test_doc.docx        # Документация к тестированию
 ├── docs/                    # Doxygen-конфиг и сгенерированная документация
