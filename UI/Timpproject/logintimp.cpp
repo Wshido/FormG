@@ -93,14 +93,13 @@ void LoginTimp::on_loginButton_clicked()
     ServiceManager::instance().sendAuthRequestCode(username, password);
 }
 
-void LoginTimp::onAuthRequestCodeResult(bool success, const QString& email, const QString& code)
+void LoginTimp::onAuthRequestCodeResult(bool success, const QString& email, const QString& /*code*/)
 {
     ui->loginButton->setEnabled(true);
     ui->loginButton->setText("Войти");
 
     if (success) {
         m_tempEmail = email;
-        m_tempCode = code;
 
         // Показываем поля для ввода кода
         ui->codeLabel->setVisible(true);
@@ -119,7 +118,7 @@ void LoginTimp::onAuthRequestCodeResult(bool success, const QString& email, cons
 
         QMessageBox::information(this, "Код отправлен",
                                  QString("На почту %1 отправлен код подтверждения.\n\n"
-                                         "Введите его для входа.\nКод действителен 5 минут.")
+                                         "Проверьте почту и введите код для входа.")
                                      .arg(email));
     } else {
         QMessageBox::warning(this, "Ошибка", "Неверный логин или пароль!");

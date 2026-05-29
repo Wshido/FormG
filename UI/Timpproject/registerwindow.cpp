@@ -110,10 +110,9 @@ void RegisterWindow::on_getCodeButton_clicked()
     ServiceManager::instance().sendRegRequestCode(email);
 }
 
-void RegisterWindow::onRegRequestCodeResult(bool success, const QString& code)
+void RegisterWindow::onRegRequestCodeResult(bool success, const QString& /*code*/)
 {
     if (success) {
-        m_tempCode = code;
         ui->getCodeButton->setText("Код отправлен!");
         ui->codeEdit->setEnabled(true);
         ui->codeEdit->setFocus();
@@ -121,7 +120,7 @@ void RegisterWindow::onRegRequestCodeResult(bool success, const QString& code)
 
         QMessageBox::information(this, "Код отправлен",
                                  QString("На почту %1 отправлен код подтверждения.\n\n"
-                                         "Введите его для завершения регистрации.")
+                                         "Проверьте почту и введите код для завершения регистрации.")
                                      .arg(m_tempEmail));
 
         startCodeTimer();

@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
     server.setSmtpConfig(
         "smtp.gmail.com",
         465,
-        "forproject2026FormG@gmail.com",
-        "Forproject2026!",
-        "forproject2026FormG@gmail.com"
+        "forproject2026formg@gmail.com",
+        "vukjgfzhnrxyujwv",
+        "forproject2026formg@gmail.com"
     );
 
     if (server.start(11999)) {

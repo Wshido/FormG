@@ -166,8 +166,7 @@ void ServiceManager::onReadyRead()
         QStringList parts = response.split('&');
 
         if (parts[0] == "reg_request_code+") {
-            QString code = parts.size() > 1 ? parts[1] : "";
-            emit regRequestCodeResult(true, code);
+            emit regRequestCodeResult(true, "");
         }
         else if (parts[0] == "reg_request_code-") {
             emit regRequestCodeResult(false, "");
@@ -180,8 +179,7 @@ void ServiceManager::onReadyRead()
         }
         else if (parts[0] == "auth_request_code+") {
             QString email = parts.size() > 1 ? parts[1] : "";
-            QString code = parts.size() > 2 ? parts[2] : "";
-            emit authRequestCodeResult(true, email, code);
+            emit authRequestCodeResult(true, email, "");
         }
         else if (parts[0] == "auth_request_code-") {
             emit authRequestCodeResult(false, "", "");

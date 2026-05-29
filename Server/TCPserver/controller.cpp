@@ -72,7 +72,7 @@ QString Controller::process(const QString &request)
                     "Код действителен 5 минут.\n\n"
                     "Если вы не регистрировались — проигнорируйте письмо."
                 );
-                return "reg_request_code+&" + code;
+                return "reg_request_code+";
             }
             qDebug() << "reg_request_code- (email уже существует)";
             return "reg_request_code-";
@@ -149,7 +149,7 @@ QString Controller::process(const QString &request)
                     "Код действителен 5 минут.\n\n"
                     "Если вы не пытались войти — немедленно смените пароль."
                 );
-                return "auth_request_code+&" + email + "&" + code;
+                return "auth_request_code+&" + email;
             }
             qDebug() << "auth_request_code- (неверный логин или пароль)";
             return "auth_request_code-";
@@ -199,7 +199,7 @@ QString Controller::process(const QString &request)
                     "Код действителен 5 минут.\n\n"
                     "Если вы не запрашивали сброс — проигнорируйте письмо."
                 );
-                return "reset_request_code+&" + code;
+                return "reset_request_code+";
             }
             qDebug() << "reset_request_code- (пользователь не найден)";
             return "reset_request_code-";
