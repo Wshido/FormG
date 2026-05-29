@@ -2,7 +2,7 @@
 \hypertarget{class_login_timp}{}\label{class_login_timp}\index{LoginTimp@{LoginTimp}}
 
 
-Окно авторизации пользователя.  
+Класс окна авторизации пользователя.  
 
 
 
@@ -18,36 +18,99 @@
 \doxysubsubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{group__logincpp_gac6ae6157f5f9df2e3e32e86d0a4f8c0f}{Login\+Timp}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\begin{DoxyCompactList}\small\item\em Конструктор окна \doxylink{class_login_timp}{Login\+Timp}. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{group__logincpp_ga74c13a23b2d8fd7e9eed1f864fd2eb67}{\texorpdfstring{$\sim$}{\string~}\+Login\+Timp}} ()
-\begin{DoxyCompactList}\small\item\em Деструктор класса \doxylink{class_login_timp}{Login\+Timp}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxymbox{\hyperlink{group__logintimp__impl_gac6ae6157f5f9df2e3e32e86d0a4f8c0f}{Login\+Timp}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__logintimp__impl_ga74c13a23b2d8fd7e9eed1f864fd2eb67}{\texorpdfstring{$\sim$}{\string~}\+Login\+Timp}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Закрытые слоты}
 \begin{DoxyCompactItemize}
 \item 
-void \doxymbox{\hyperlink{group__logincpp_gaceaf43a6f8d65cecde9020d470f87b0b}{on\+\_\+login\+Button\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки входа. \end{DoxyCompactList}\item 
-void \doxymbox{\hyperlink{group__logincpp_ga5b5852e171cb2a0d270ecee76c752348}{on\+\_\+back\+Button\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки возврата. \end{DoxyCompactList}\item 
-void \doxymbox{\hyperlink{group__logincpp_ga0073fa7faca8bf8c1224d3ff55acdc4f}{on\+\_\+forgot\+Label\+\_\+link\+Activated}} (const QString \&link)
-\begin{DoxyCompactList}\small\item\em Обработчик перехода по ссылке восстановления пароля. \end{DoxyCompactList}\item 
-void \doxymbox{\hyperlink{group__logincpp_gad5b2a563320b03efcee945f98fa1cb53}{on\+\_\+register\+Button\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки регистрации. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \doxymbox{\hyperlink{group__logintimp__impl_gaceaf43a6f8d65cecde9020d470f87b0b}{on\+\_\+login\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Войти"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_gad54ec26857a7b44dffe43dfae106071b}{on\+\_\+confirm\+Code\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик подтверждения кода из email. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga5b5852e171cb2a0d270ecee76c752348}{on\+\_\+back\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик кнопки "{}Назад"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga0073fa7faca8bf8c1224d3ff55acdc4f}{on\+\_\+forgot\+Label\+\_\+link\+Activated}} (const QString \&link)
+\begin{DoxyCompactList}\small\item\em Обработчик клика по ссылке "{}Забыли пароль?"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_gad5b2a563320b03efcee945f98fa1cb53}{on\+\_\+register\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик перехода на окно регистрации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga8de99e24ea72174104bdb1d41b984fae}{on\+\_\+logout\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик кнопки выхода из аккаунта. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_gaaffdd63f28783267b58d5b7aa2307b2e}{on\+Auth\+Request\+Code\+Result}} (bool success, const QString \&email, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Слот обработки результата запроса кода подтверждения. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga71770db937a97694c7bf316da730a95f}{on\+Auth\+Confirm\+Result}} (bool success, const QString \&session\+Token)
+\begin{DoxyCompactList}\small\item\em Слот обработки результата подтверждения кода. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga064f14cab3d572f6db66c5b7f45da0e2}{start\+Code\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Запускает таймер обратного отсчёта кода. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga79d1dfe3c3fad81791afc05fabe1dfd4}{update\+Timer\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Обновляет отображение оставшегося времени на форме. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Закрытые данные}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{class_ui_1_1_login_timp}{Ui::\+\+Login\+Timp}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_login_timp_a4a96ff2c0b1c6dfab243808dd53c2124}{ui}}
-\begin{DoxyCompactList}\small\item\em Указатель на пользовательский интерфейс окна. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Указатель на UI-\/форму. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_login_timp_a41225c5d3182d22a87a3996320668d2f}{m\+\_\+temp\+Email}}
+\begin{DoxyCompactList}\small\item\em Временное хранение email пользователя. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_login_timp_a609d19c13074a7f4db6030c672402e2c}{m\+\_\+temp\+Code}}
+\begin{DoxyCompactList}\small\item\em Временное хранение отправленного кода подтверждения. \end{DoxyCompactList}\item 
+QTimer \doxymbox{\hyperlink{class_login_timp_a4e08ac9460b88e7faad0880419fa0271}{m\+\_\+code\+Timer}}
+\begin{DoxyCompactList}\small\item\em Таймер обратного отсчёта для кода подтверждения. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_login_timp_a3c797f773404d1f72452283b4610be9a}{m\+\_\+remaining\+Seconds}}
+\begin{DoxyCompactList}\small\item\em Оставшееся время действия кода (в секундах). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Окно авторизации пользователя. 
+Класс окна авторизации пользователя. 
 
-Класс реализует интерфейс входа в систему, а также переходы к регистрации и восстановлению пароля. 
+Реализует процесс входа с двухфакторной аутентификацией (код подтверждения), переход на восстановление пароля и регистрацию. 
 
 \label{class_login_timp_doc-variable-members}
 \Hypertarget{class_login_timp_doc-variable-members}
 \doxysubsection{Данные класса}
+\Hypertarget{class_login_timp_a4e08ac9460b88e7faad0880419fa0271}\index{LoginTimp@{LoginTimp}!m\_codeTimer@{m\_codeTimer}}
+\index{m\_codeTimer@{m\_codeTimer}!LoginTimp@{LoginTimp}}
+\doxysubsubsection{\texorpdfstring{m\_codeTimer}{m\_codeTimer}}
+{\footnotesize\ttfamily \label{class_login_timp_a4e08ac9460b88e7faad0880419fa0271} 
+QTimer Login\+Timp::\+m\+\_\+code\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Таймер обратного отсчёта для кода подтверждения. 
+
+\Hypertarget{class_login_timp_a3c797f773404d1f72452283b4610be9a}\index{LoginTimp@{LoginTimp}!m\_remainingSeconds@{m\_remainingSeconds}}
+\index{m\_remainingSeconds@{m\_remainingSeconds}!LoginTimp@{LoginTimp}}
+\doxysubsubsection{\texorpdfstring{m\_remainingSeconds}{m\_remainingSeconds}}
+{\footnotesize\ttfamily \label{class_login_timp_a3c797f773404d1f72452283b4610be9a} 
+int Login\+Timp::\+m\+\_\+remaining\+Seconds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Оставшееся время действия кода (в секундах). 
+
+\Hypertarget{class_login_timp_a609d19c13074a7f4db6030c672402e2c}\index{LoginTimp@{LoginTimp}!m\_tempCode@{m\_tempCode}}
+\index{m\_tempCode@{m\_tempCode}!LoginTimp@{LoginTimp}}
+\doxysubsubsection{\texorpdfstring{m\_tempCode}{m\_tempCode}}
+{\footnotesize\ttfamily \label{class_login_timp_a609d19c13074a7f4db6030c672402e2c} 
+QString Login\+Timp::\+m\+\_\+temp\+Code\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Временное хранение отправленного кода подтверждения. 
+
+\Hypertarget{class_login_timp_a41225c5d3182d22a87a3996320668d2f}\index{LoginTimp@{LoginTimp}!m\_tempEmail@{m\_tempEmail}}
+\index{m\_tempEmail@{m\_tempEmail}!LoginTimp@{LoginTimp}}
+\doxysubsubsection{\texorpdfstring{m\_tempEmail}{m\_tempEmail}}
+{\footnotesize\ttfamily \label{class_login_timp_a41225c5d3182d22a87a3996320668d2f} 
+QString Login\+Timp::\+m\+\_\+temp\+Email\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Временное хранение email пользователя. 
+
 \Hypertarget{class_login_timp_a4a96ff2c0b1c6dfab243808dd53c2124}\index{LoginTimp@{LoginTimp}!ui@{ui}}
 \index{ui@{ui}!LoginTimp@{LoginTimp}}
 \doxysubsubsection{\texorpdfstring{ui}{ui}}
@@ -56,11 +119,11 @@ void \doxymbox{\hyperlink{group__logincpp_gad5b2a563320b03efcee945f98fa1cb53}{on
 
 
 
-Указатель на пользовательский интерфейс окна. 
+Указатель на UI-\/форму. 
 
 
 
 Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
 \item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+\doxymbox{\hyperlink{logintimp_8h}{logintimp.\+h}}\item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+\doxymbox{\hyperlink{logintimp_8cpp}{logintimp.\+cpp}}\end{DoxyCompactItemize}
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{logintimp_8h}{logintimp.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{logintimp_8cpp}{logintimp.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\doxysection{controller.\+h}
+\hypertarget{controller_8h_source}{}\label{controller_8h_source}\index{C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/controller.h@{C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/controller.h}}
+\doxymbox{\hyperlink{controller_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CONTROLLER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CONTROLLER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{serverdb_8h}{serverdb.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{emailservice_8h}{emailservice.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__controller_ga95c56822d667e94b031451729ce069a9}{Controller}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \doxymbox{\hyperlink{group__controller_ga95c56822d667e94b031451729ce069a9}{Controller}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00030\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__controller_gab9de7dfc73df67eb6f51258b33cdfa31}{process}}(\textcolor{keyword}{const}\ QString\ \&request);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{group__controller_ga59793d21ac5bac4ca1853ac4609e5c1b}{calculateFunction}}(\textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c,\ \textcolor{keywordtype}{double}\ x);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__controller_gac252bdbeb217f75564a8940ca5c5bb8e}{setSmtpConfig}}(\textcolor{keyword}{const}\ QString\ \&host,\ quint16\ port,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&user,\ \textcolor{keyword}{const}\ QString\ \&pass,}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&from);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__controller_gaa918698c2c3e9268a26d035a0629b95b}{handleClientDisconnect}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \ \ \doxymbox{\hyperlink{class_server_d_b}{ServerDB}}\ \doxymbox{\hyperlink{group__controller_ga125d43afccc14cd1596289b44da6c3cf}{m\_db}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \doxymbox{\hyperlink{class_email_service}{EmailService}}\ \doxymbox{\hyperlink{group__controller_ga49b67cf30d75fe84d7ce0c69cae9a707}{m\_emailService}};\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__controller_gacc00842dd4577f55afeb9f07322d9c40}{checkTask}}(\textcolor{keywordtype}{int}\ task,\ \textcolor{keywordtype}{int}\ variant,\ \textcolor{keywordtype}{int}\ answer);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ QStringList\ \doxymbox{\hyperlink{group__controller_ga721d9e73bdd9db76e1f95094a495ccf9}{split}}(\textcolor{keyword}{const}\ QString\ \&str,\ QChar\ delim);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__controller_ga75676e801a96d59ef4491b3a3ea3bb5f}{sendEmail}}(\textcolor{keyword}{const}\ QString\ \&to,\ \textcolor{keyword}{const}\ QString\ \&subject,\ \textcolor{keyword}{const}\ QString\ \&body);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__controller_ga37b277caf40a9a8e6d72092c3fef84d9}{validatePassword}}(\textcolor{keyword}{const}\ QString\ \&password);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__controller_gaa9cb9f2b56737421df7ee1f738cddf8c}{validateLogin}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__controller_gaecf725cf38c5d80256f48222516528b9}{validateEmail}}(\textcolor{keyword}{const}\ QString\ \&email);}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONTROLLER\_H}}
+
+\end{DoxyCode}

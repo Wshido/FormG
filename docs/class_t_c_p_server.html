@@ -115,91 +115,44 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_t_c_p_se
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Класс TCPServer<div class="ingroups"><a class="el" href="group__server.html">Сервер</a></div></div></div>
+  <div class="headertitle"><div class="title">Класс TCPServer<div class="ingroups"><a class="el" href="group__server.html">Сервер</a> &raquo; <a class="el" href="group__tcpserver.html">Обработчик клиентского соединения</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Класс TCP-сервера для проекта по предмету "Технологии и методы программирования".  
+<p>TCP сервер для обработки клиентских подключений.  
  <a href="#details">Подробнее...</a></p>
 
-<p><code>#include &lt;<a class="el" href="_t_c_p_server_8h_source.html">TCPServer.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="tcpserver_8h_source.html">tcpserver.h</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:TCPServer:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_t_c_p_server.png" alt=""/>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:ga5fe156c6ef8e554b61805a5093bc3f72" id="r_ga5fe156c6ef8e554b61805a5093bc3f72"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__servercpp.html#ga5fe156c6ef8e554b61805a5093bc3f72">setup</a> (int port)</td></tr>
-<tr class="memdesc:ga5fe156c6ef8e554b61805a5093bc3f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Метод для запуска сервера  <br /></td></tr>
-<tr class="memitem:gaec7165331f5c13317ad31529167760dc" id="r_gaec7165331f5c13317ad31529167760dc"><td class="memItemLeft">string&#160;</td><td class="memItemRight"><a class="el" href="group__servercpp.html#gaec7165331f5c13317ad31529167760dc">receive</a> ()</td></tr>
-<tr class="memdesc:gaec7165331f5c13317ad31529167760dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Принятие сообщения от клиента  <br /></td></tr>
+<tr class="memitem:gaf9980f4c39e88fb8d8ff473764d3723d" id="r_gaf9980f4c39e88fb8d8ff473764d3723d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__tcpserver.html#gaf9980f4c39e88fb8d8ff473764d3723d">TCPServer</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:gaf9980f4c39e88fb8d8ff473764d3723d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор <a class="el" href="class_t_c_p_server.html" title="TCP сервер для обработки клиентских подключений.">TCPServer</a>.  <br /></td></tr>
+<tr class="memitem:gaa944cbd79352ca38fdb431f92f7ba88c" id="r_gaa944cbd79352ca38fdb431f92f7ba88c"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__tcpserver.html#gaa944cbd79352ca38fdb431f92f7ba88c">start</a> (quint16 port)</td></tr>
+<tr class="memdesc:gaa944cbd79352ca38fdb431f92f7ba88c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запуск сервера.  <br /></td></tr>
+<tr class="memitem:gac69710216804516e5a91f4dff2bb2771" id="r_gac69710216804516e5a91f4dff2bb2771"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__tcpserver.html#gac69710216804516e5a91f4dff2bb2771">setSmtpConfig</a> (const QString &amp;host, quint16 port, const QString &amp;user, const QString &amp;pass, const QString &amp;from)</td></tr>
+<tr class="memdesc:gac69710216804516e5a91f4dff2bb2771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка SMTP для контроллера.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Открытые атрибуты</h2></td></tr>
-<tr class="memitem:a5760b0d1dad5583ccf109256ff28cc08" id="r_a5760b0d1dad5583ccf109256ff28cc08"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a5760b0d1dad5583ccf109256ff28cc08">sockfd</a></td></tr>
-<tr class="memdesc:a5760b0d1dad5583ccf109256ff28cc08"><td class="mdescLeft">&#160;</td><td class="mdescRight">сокет сервера  <br /></td></tr>
-<tr class="memitem:a8158542abc8b434935935452e7bbba5e" id="r_a8158542abc8b434935935452e7bbba5e"><td class="memItemLeft">struct sockaddr_in&#160;</td><td class="memItemRight"><a class="el" href="#a8158542abc8b434935935452e7bbba5e">serverAddress</a></td></tr>
-<tr class="memdesc:a8158542abc8b434935935452e7bbba5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">адрес сервера  <br /></td></tr>
-<tr class="memitem:ad701eade413d190ae412033e924df362" id="r_ad701eade413d190ae412033e924df362"><td class="memItemLeft">struct sockaddr_in&#160;</td><td class="memItemRight"><a class="el" href="#ad701eade413d190ae412033e924df362">clientAddress</a></td></tr>
-<tr class="memdesc:ad701eade413d190ae412033e924df362"><td class="mdescLeft">&#160;</td><td class="mdescRight">адрес клиента  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:gaf1df9d80f25034148ed588e7fa2d4ab7" id="r_gaf1df9d80f25034148ed588e7fa2d4ab7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__tcpserver.html#gaf1df9d80f25034148ed588e7fa2d4ab7">incomingConnection</a> (qintptr socketDescriptor) override</td></tr>
+<tr class="memdesc:gaf1df9d80f25034148ed588e7fa2d4ab7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработка входящего подключения.  <br /></td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-pri-static-methods" class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
-Закрытые статические члены</h2></td></tr>
-<tr class="memitem:ga4619223db24f14afec55a32abda5d456" id="r_ga4619223db24f14afec55a32abda5d456"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="group__servercpp.html#ga4619223db24f14afec55a32abda5d456">Task</a> (int clientSock)</td></tr>
-<tr class="memdesc:ga4619223db24f14afec55a32abda5d456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Работа с запросами клиентом  <br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:ga755a1b7ced220307fe724f6d3c0ee723" id="r_ga755a1b7ced220307fe724f6d3c0ee723"><td class="memItemLeft"><a class="el" href="class_controller.html">Controller</a>&#160;</td><td class="memItemRight"><a class="el" href="group__tcpserver.html#ga755a1b7ced220307fe724f6d3c0ee723">m_controller</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Класс TCP-сервера для проекта по предмету "Технологии и методы программирования". </p>
-<p>Сервер способен принимать запросы и отправлять данные </p>
-</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
-<a id="ad701eade413d190ae412033e924df362" name="ad701eade413d190ae412033e924df362"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad701eade413d190ae412033e924df362">&#9670;&#160;</a></span>clientAddress</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct sockaddr_in TCPServer::clientAddress</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>адрес клиента </p>
-
-</div>
-</div>
-<a id="a8158542abc8b434935935452e7bbba5e" name="a8158542abc8b434935935452e7bbba5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8158542abc8b434935935452e7bbba5e">&#9670;&#160;</a></span>serverAddress</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct sockaddr_in TCPServer::serverAddress</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>адрес сервера </p>
-
-</div>
-</div>
-<a id="a5760b0d1dad5583ccf109256ff28cc08" name="a5760b0d1dad5583ccf109256ff28cc08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5760b0d1dad5583ccf109256ff28cc08">&#9670;&#160;</a></span>sockfd</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int TCPServer::sockfd</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>сокет сервера </p>
-
-</div>
-</div>
-<hr/>Объявления и описания членов классов находятся в файлах:<ul>
-<li>C:/Users/пп/Desktop/Исходники/server/server/<a class="el" href="_t_c_p_server_8h_source.html">TCPServer.h</a></li>
-<li>C:/Users/пп/Desktop/Исходники/server/server/<a class="el" href="_t_c_p_server_8cpp.html">TCPServer.cpp</a></li>
+<div class="textblock"><p>TCP сервер для обработки клиентских подключений. </p>
+</div><hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/<a class="el" href="tcpserver_8h_source.html">tcpserver.h</a></li>
+<li>C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/<a class="el" href="tcpserver_8cpp.html">tcpserver.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,9 +1,8 @@
 var class_t_c_p_server =
 [
-    [ "receive", "group__servercpp.html#gaec7165331f5c13317ad31529167760dc", null ],
-    [ "setup", "group__servercpp.html#ga5fe156c6ef8e554b61805a5093bc3f72", null ],
-    [ "Task", "group__servercpp.html#ga4619223db24f14afec55a32abda5d456", null ],
-    [ "clientAddress", "class_t_c_p_server.html#ad701eade413d190ae412033e924df362", null ],
-    [ "serverAddress", "class_t_c_p_server.html#a8158542abc8b434935935452e7bbba5e", null ],
-    [ "sockfd", "class_t_c_p_server.html#a5760b0d1dad5583ccf109256ff28cc08", null ]
+    [ "TCPServer", "group__tcpserver.html#gaf9980f4c39e88fb8d8ff473764d3723d", null ],
+    [ "incomingConnection", "group__tcpserver.html#gaf1df9d80f25034148ed588e7fa2d4ab7", null ],
+    [ "setSmtpConfig", "group__tcpserver.html#gac69710216804516e5a91f4dff2bb2771", null ],
+    [ "start", "group__tcpserver.html#gaa944cbd79352ca38fdb431f92f7ba88c", null ],
+    [ "m_controller", "group__tcpserver.html#ga755a1b7ced220307fe724f6d3c0ee723", null ]
 ];

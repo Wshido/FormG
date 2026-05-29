@@ -1,0 +1,144 @@
+\doxysection{Класс Server\+DB}
+\hypertarget{class_server_d_b}{}\label{class_server_d_b}\index{ServerDB@{ServerDB}}
+
+
+Работа с базой данных сервера и управлением сессиями.  
+
+
+
+
+{\ttfamily \+\#include $<$serverdb.\+h$>$}
+
+\doxysubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_session_data}{Session\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные сессии. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reg_data}{Temp\+Reg\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные временной регистрации. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_auth_data}{Temp\+Auth\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные временной авторизации. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reset_data}{Temp\+Reset\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные сброса пароля. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_rate_limit_data}{Rate\+Limit\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные rate limit. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_brute_force_data}{Brute\+Force\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные защиты от brute force. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__serverdb_ga16de4b24afb55595bfb5859324ec60fa}{Server\+DB}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_server_d_b}{Server\+DB}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__serverdb_ga3a79b19dddda5b43bf0bf9a1d8cb1491}{\texorpdfstring{$\sim$}{\string~}\+Server\+DB}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор \doxylink{class_server_d_b}{Server\+DB}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga36ac2e1ef9f0c32549515d6ef55ad773}{request\+Reg\+Code}} (const QString \&email, QString \&code)
+\begin{DoxyCompactList}\small\item\em Запрос регистрационного кода. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga994ac2d5c132cfc9f9bd1356731edda1}{confirm\+Reg}} (const QString \&login, const QString \&password, const QString \&email, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Подтверждение регистрации. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_gaf12d0258f79d2e1d0d9b65d1ea2a0f97}{request\+Auth\+Code}} (const QString \&login, const QString \&password, QString \&email, QString \&code)
+\begin{DoxyCompactList}\small\item\em Запрос кода авторизации. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga1b9ee71036824da8376e7b4bf3a6afc5}{confirm\+Auth}} (const QString \&email, const QString \&code, QString \&session\+Token)
+\begin{DoxyCompactList}\small\item\em Подтверждение авторизации. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga1bf6da3938e44f7f01e6b6cca636a5a8}{request\+Reset\+Code}} (const QString \&login\+Or\+Email, QString \&code, QString \&out\+Email)
+\begin{DoxyCompactList}\small\item\em Запрос кода сброса пароля. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_gaaab5737ce3cfd315699697037db34c19}{confirm\+Reset\+Password}} (const QString \&email, const QString \&code, const QString \&new\+Password)
+\begin{DoxyCompactList}\small\item\em Подтверждение сброса пароля. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gad10fa166639efe678c2ef0f838b16a8c}{get\+Stat}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Получение статистики пользователя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_gaf1c086f5b5f988311b427a5acd4124db}{check\+Session}} (const QString \&login, const QString \&session\+Token)
+\begin{DoxyCompactList}\small\item\em Проверка сессии. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gadb401b2e1e6008328125e4aa97d6df39}{get\+Email\+By\+Login\+Or\+Email}} (const QString \&login\+Or\+Email)
+\begin{DoxyCompactList}\small\item\em Получение email по логину или email. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga29840ab235049436a5d7a0490a3d7587}{logout\+Session}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Завершение сессии пользователя. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga16416b749e67eac8a9cbe95c02c57b8d}{logout\+All\+Sessions}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Завершение всех сессий пользователя. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_gae6e3113ec64b259e8aa2763a12b8e4af}{cleanup\+Expired\+Sessions}} ()
+\begin{DoxyCompactList}\small\item\em Очистка просроченных сессий. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga93f29f71d6a4b9410202891b35867000}{refresh\+Token}} (const QString \&login, const QString \&old\+Token, QString \&new\+Token)
+\begin{DoxyCompactList}\small\item\em Обновление токена сессии. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga2ba8c2228e0fb8ab015b3d2317711037}{is\+Rate\+Limited}} (const QString \&identifier)
+\begin{DoxyCompactList}\small\item\em Проверка rate limit. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga01bda8412bffb2fb13ee6082a549d8e7}{is\+Brute\+Force\+Blocked}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Проверка блокировки brute force. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga50c90efdde5f057f115ffa395ffc2aa1}{record\+Failed\+Attempt}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Запись неудачной попытки входа. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_gaf25d4c2c73bb88c62ada8ba06c398ce7}{reset\+Failed\+Attempts}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Сброс неудачных попыток. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Статические открытые данные}
+\begin{DoxyCompactItemize}
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_gae61a68c8c2b2f426cc729c581eddafaa}{MAX\+\_\+\+LOGIN\+\_\+\+LENGTH}} = 16
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_ga7fdcbdd4312b9432834059c53c5b4635}{MAX\+\_\+\+EMAIL\+\_\+\+LENGTH}} = 100
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_gaca59ab9db5bea5ac6cc3bc107488450b}{MAX\+\_\+\+PASSWORD\+\_\+\+LENGTH}} = 64
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga30c1f4dbc30c1f3c91c6cd01df0bd2c1}{connect\+To\+DB}} ()
+\begin{DoxyCompactList}\small\item\em Подключение к базе данных. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gafea47eb5d3c5eba7585fbc7d3807604c}{hash\+Password}} (const QString \&password, const QString \&salt=QString())
+\begin{DoxyCompactList}\small\item\em Хеширование пароля. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_ga9b63d8ad80969b2bdf2564f11fd413eb}{generate\+Salt}} ()
+\begin{DoxyCompactList}\small\item\em Генерация соли. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gac5357b70af1adf828816f14c6505157c}{generate\+Session\+Token}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Генерация токена сессии. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_ga23862f00ad76853e89f0d77639061f34}{generate\+Verification\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Генерация кода подтверждения. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga1ec6994696b70eb747e89c7fe27ed603}{cleanup\+Expired\+Codes}} ()
+\begin{DoxyCompactList}\small\item\em Очистка просроченных кодов. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gad546286597a31595e531db8e55748cd1}{get\+Email\+By\+Login}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Получение email по логину. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_gac92a1cc800b6c58386e7fef2554a025a}{check\+Email\+Exists}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Проверка существования email. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga77c8b9b85320af631c01d76b03c957e0}{check\+Login\+Exists}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Проверка существования логина. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga642aac0dc186c6d53addfc833c554a96}{validate\+Input\+Length}} (const QString \&login, const QString \&email, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Проверка длины входных данных. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga240ecff1deb8d18f397d7e981dbb00e3}{update\+Session\+Activity}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Обновление активности сессии. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+PGconn \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__serverdb_ga08a5e08f3aef18146cc9c23c9abbbf6f}{m\+\_\+conn}}
+\item 
+QMutex \doxymbox{\hyperlink{group__serverdb_ga105a514d477fa54440bff554943d7323}{m\+\_\+mutex}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_session_data}{Session\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga9a5c3606cb4ac2883efb7cb38825fa6b}{m\+\_\+session\+Cache}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reg_data}{Temp\+Reg\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga28a4d734f897b1a2f3e69803e9817f57}{m\+\_\+temp\+Regs}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_auth_data}{Temp\+Auth\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_gaadb320472cc15fafebfc04e4af7d4d85}{m\+\_\+temp\+Auths}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reset_data}{Temp\+Reset\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga33f2c9f8fe02efbe806344260ad446bb}{m\+\_\+temp\+Resets}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_rate_limit_data}{Rate\+Limit\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga61763a32ff9a93cda0ce7ff492fe7c31}{m\+\_\+rate\+Limits}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_brute_force_data}{Brute\+Force\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga4337d1854419b1fe1132595028266cbc}{m\+\_\+brute\+Force}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые статические данные}
+\begin{DoxyCompactItemize}
+\item 
+static const qint64 \doxymbox{\hyperlink{group__serverdb_gacaf460b147f596440afd6992ae52d423}{CODE\+\_\+\+EXPIRY\+\_\+\+MS}} = 5 \texorpdfstring{$\ast$}{*} 60 \texorpdfstring{$\ast$}{*} 1000
+\item 
+static const qint64 \doxymbox{\hyperlink{group__serverdb_ga700ad026b4ae53cea9dfe2c31a63c1ac}{SESSION\+\_\+\+TTL\+\_\+\+MS}} = 30 \texorpdfstring{$\ast$}{*} 60 \texorpdfstring{$\ast$}{*} 1000
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_gadfbecd665825b46deb74d92665cd6cf1}{RATE\+\_\+\+LIMIT\+\_\+\+MAX\+\_\+\+ATTEMPTS}} = 10
+\item 
+static const qint64 \doxymbox{\hyperlink{group__serverdb_ga7f64051d1e530064726ce7b9b85218a2}{RATE\+\_\+\+LIMIT\+\_\+\+WINDOW\+\_\+\+MS}} = 60 \texorpdfstring{$\ast$}{*} 1000
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_gaf975a14f1744972fcc55b36be00d3dd5}{BRUTE\+\_\+\+FORCE\+\_\+\+MAX\+\_\+\+ATTEMPTS}} = 5
+\item 
+static const qint64 \doxymbox{\hyperlink{group__serverdb_gac8dab327f34ef6f5bcad00871830e5fb}{BRUTE\+\_\+\+FORCE\+\_\+\+LOCKOUT\+\_\+\+MS}} = 15 \texorpdfstring{$\ast$}{*} 60 \texorpdfstring{$\ast$}{*} 1000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Работа с базой данных сервера и управлением сессиями. 
+
+Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Serverdox/\+002\+TCPserver/\+\+TCPserver/\+\doxymbox{\hyperlink{serverdb_8h}{serverdb.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Serverdox/\+002\+TCPserver/\+\+TCPserver/\+\doxymbox{\hyperlink{serverdb_8cpp}{serverdb.\+cpp}}\end{DoxyCompactItemize}

@@ -1,7 +1,10 @@
 var hierarchy =
 [
+    [ "ServerDB::BruteForceData", "struct_server_d_b_1_1_brute_force_data.html", null ],
     [ "QCPAxisPainterPrivate::CachedLabel", "struct_q_c_p_axis_painter_private_1_1_cached_label.html", null ],
     [ "QCPLabelPainterPrivate::CachedLabel", "struct_q_c_p_label_painter_private_1_1_cached_label.html", null ],
+    [ "Controller", "class_controller.html", null ],
+    [ "EmailService", "class_email_service.html", null ],
     [ "QCPLabelPainterPrivate::LabelData", "struct_q_c_p_label_painter_private_1_1_label_data.html", null ],
     [ "QCPAbstractPaintBuffer", "class_q_c_p_abstract_paint_buffer.html", [
       [ "QCPPaintBufferPixmap", "class_q_c_p_paint_buffer_pixmap.html", null ]
@@ -63,7 +66,9 @@ var hierarchy =
       [ "MainTimp", "class_main_timp.html", null ]
     ] ],
     [ "QObject", null, [
+      [ "ClientHandler", "class_client_handler.html", null ],
       [ "DatabaseManager", "class_database_manager.html", null ],
+      [ "EmailSender", "class_email_sender.html", null ],
       [ "QCPBarsGroup", "class_q_c_p_bars_group.html", null ],
       [ "QCPLayer", "class_q_c_p_layer.html", null ],
       [ "QCPLayerable", "class_q_c_p_layerable.html", [
@@ -113,20 +118,27 @@ var hierarchy =
         [ "QCPPolarGrid", "class_q_c_p_polar_grid.html", null ],
         [ "QCPSelectionRect", "class_q_c_p_selection_rect.html", null ]
       ] ],
-      [ "QCPMarginGroup", "class_q_c_p_margin_group.html", null ]
+      [ "QCPMarginGroup", "class_q_c_p_margin_group.html", null ],
+      [ "ServiceManager", "class_service_manager.html", null ]
     ] ],
     [ "QPainter", null, [
       [ "QCPPainter", "class_q_c_p_painter.html", null ]
     ] ],
     [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN10QCPPainterE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n10_q_c_p_painter_e__t.html", null ],
     [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN11AboutWindowE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n11_about_window_e__t.html", null ],
+    [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN11EmailSenderE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n11_email_sender_e__t.html", null ],
     [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN11GraphWindowE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n11_graph_window_e__t.html", null ],
+    [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN13ClientHandlerE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n13_client_handler_e__t.html", null ],
     [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN13WelcomeWindowE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n13_welcome_window_e__t.html", null ],
     [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN14ForgotPasswordE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n14_forgot_password_e__t.html", null ],
     [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN14RegisterWindowE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n14_register_window_e__t.html", null ],
+    [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN14ServiceManagerE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n14_service_manager_e__t.html", null ],
     [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN15DatabaseManagerE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n15_database_manager_e__t.html", null ],
     [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN8MainTimpE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n8_main_timp_e__t.html", null ],
     [ "QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN9LoginTimpE_t", "struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n9_login_timp_e__t.html", null ],
+    [ "QTcpServer", null, [
+      [ "TCPServer", "class_t_c_p_server.html", null ]
+    ] ],
     [ "QWidget", null, [
       [ "AboutWindow", "class_about_window.html", null ],
       [ "ForgotPassword", "class_forgot_password.html", null ],
@@ -135,27 +147,39 @@ var hierarchy =
       [ "RegisterWindow", "class_register_window.html", null ],
       [ "WelcomeWindow", "class_welcome_window.html", null ]
     ] ],
-    [ "TCPServer", "class_t_c_p_server.html", null ],
+    [ "ServerDB::RateLimitData", "struct_server_d_b_1_1_rate_limit_data.html", null ],
+    [ "ServerDB", "class_server_d_b.html", null ],
+    [ "ServerDB::SessionData", "struct_server_d_b_1_1_session_data.html", null ],
+    [ "ServerDB::TempAuthData", "struct_server_d_b_1_1_temp_auth_data.html", null ],
+    [ "ServerDB::TempRegData", "struct_server_d_b_1_1_temp_reg_data.html", null ],
+    [ "ServerDB::TempResetData", "struct_server_d_b_1_1_temp_reset_data.html", null ],
     [ "QCPAxisPainterPrivate::TickLabelData", "struct_q_c_p_axis_painter_private_1_1_tick_label_data.html", null ],
     [ "Ui_AboutWindow", "class_ui___about_window.html", [
+      [ "Ui::AboutWindow", "class_ui_1_1_about_window.html", null ],
       [ "Ui::AboutWindow", "class_ui_1_1_about_window.html", null ]
     ] ],
     [ "Ui_ForgotPassword", "class_ui___forgot_password.html", [
+      [ "Ui::ForgotPassword", "class_ui_1_1_forgot_password.html", null ],
       [ "Ui::ForgotPassword", "class_ui_1_1_forgot_password.html", null ]
     ] ],
     [ "Ui_GraphWindow", "class_ui___graph_window.html", [
+      [ "Ui::GraphWindow", "class_ui_1_1_graph_window.html", null ],
       [ "Ui::GraphWindow", "class_ui_1_1_graph_window.html", null ]
     ] ],
     [ "Ui_LoginTimp", "class_ui___login_timp.html", [
+      [ "Ui::LoginTimp", "class_ui_1_1_login_timp.html", null ],
       [ "Ui::LoginTimp", "class_ui_1_1_login_timp.html", null ]
     ] ],
     [ "Ui_MainTimp", "class_ui___main_timp.html", [
+      [ "Ui::MainTimp", "class_ui_1_1_main_timp.html", null ],
       [ "Ui::MainTimp", "class_ui_1_1_main_timp.html", null ]
     ] ],
     [ "Ui_RegisterWindow", "class_ui___register_window.html", [
+      [ "Ui::RegisterWindow", "class_ui_1_1_register_window.html", null ],
       [ "Ui::RegisterWindow", "class_ui_1_1_register_window.html", null ]
     ] ],
     [ "Ui_WelcomeWindow", "class_ui___welcome_window.html", [
+      [ "Ui::WelcomeWindow", "class_ui_1_1_welcome_window.html", null ],
       [ "Ui::WelcomeWindow", "class_ui_1_1_welcome_window.html", null ]
     ] ]
 ];

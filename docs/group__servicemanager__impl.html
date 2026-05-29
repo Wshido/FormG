@@ -1,0 +1,952 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;: Реализация сетевого менеджера</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__servicemanager__impl.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Реализация сетевого менеджера <div class="ingroups"><a class="el" href="group__client.html">Клиент</a> &raquo; <a class="el" href="group__servicemanager.html">Сервисный менеджер</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:gad78e686a5fcf0c9a345fa67fd5128009" id="r_gad78e686a5fcf0c9a345fa67fd5128009"><td class="memItemLeft">static <a class="el" href="class_service_manager.html">ServiceManager</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#gad78e686a5fcf0c9a345fa67fd5128009">ServiceManager::instance</a> ()</td></tr>
+<tr class="memdesc:gad78e686a5fcf0c9a345fa67fd5128009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает единственный экземпляр сервисного менеджера.  <br /></td></tr>
+<tr class="memitem:gaeb86d399546b8e9a6af17f4e1cc7e879" id="r_gaeb86d399546b8e9a6af17f4e1cc7e879"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#gaeb86d399546b8e9a6af17f4e1cc7e879">ServiceManager::ServiceManager</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:gaeb86d399546b8e9a6af17f4e1cc7e879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приватный конструктор (Singleton).  <br /></td></tr>
+<tr class="memitem:ga87b207df58ccd316320d490c003c7eda" id="r_ga87b207df58ccd316320d490c003c7eda"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ga87b207df58ccd316320d490c003c7eda">ServiceManager::~ServiceManager</a> ()</td></tr>
+<tr class="memdesc:ga87b207df58ccd316320d490c003c7eda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор.  <br /></td></tr>
+<tr class="memitem:ga6eb6b09949825b1b7f51bb72970f11bd" id="r_ga6eb6b09949825b1b7f51bb72970f11bd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6eb6b09949825b1b7f51bb72970f11bd">ServiceManager::connectToServer</a> (const QString &amp;host=&quot;127.0.0.1&quot;, int port=11999)</td></tr>
+<tr class="memdesc:ga6eb6b09949825b1b7f51bb72970f11bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подключается к серверу.  <br /></td></tr>
+<tr class="memitem:ga05ea46d1f2b9bb23755f1321b6fa06d1" id="r_ga05ea46d1f2b9bb23755f1321b6fa06d1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga05ea46d1f2b9bb23755f1321b6fa06d1">ServiceManager::disconnectFromServer</a> ()</td></tr>
+<tr class="memdesc:ga05ea46d1f2b9bb23755f1321b6fa06d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отключается от сервера.  <br /></td></tr>
+<tr class="memitem:ga31a8621f6e76064f79904d4ef73beaaf" id="r_ga31a8621f6e76064f79904d4ef73beaaf"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga31a8621f6e76064f79904d4ef73beaaf">ServiceManager::isConnected</a> () const</td></tr>
+<tr class="memdesc:ga31a8621f6e76064f79904d4ef73beaaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет, установлено ли соединение.  <br /></td></tr>
+<tr class="memitem:ga6a16c2a7297161552f5f77b9449f4a70" id="r_ga6a16c2a7297161552f5f77b9449f4a70"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6a16c2a7297161552f5f77b9449f4a70">ServiceManager::sendRequest</a> (const QString &amp;request)</td></tr>
+<tr class="memdesc:ga6a16c2a7297161552f5f77b9449f4a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет запрос на сервер.  <br /></td></tr>
+<tr class="memitem:ga338f5d7e72952a3cac5ef214c270d0e7" id="r_ga338f5d7e72952a3cac5ef214c270d0e7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga338f5d7e72952a3cac5ef214c270d0e7">ServiceManager::sendRegRequestCode</a> (const QString &amp;email)</td></tr>
+<tr class="memdesc:ga338f5d7e72952a3cac5ef214c270d0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет запрос на получение кода подтверждения регистрации.  <br /></td></tr>
+<tr class="memitem:ga77b9b876c6a64bb59bd784c2eef6ec04" id="r_ga77b9b876c6a64bb59bd784c2eef6ec04"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga77b9b876c6a64bb59bd784c2eef6ec04">ServiceManager::sendRegConfirm</a> (const QString &amp;login, const QString &amp;password, const QString &amp;email, const QString &amp;code)</td></tr>
+<tr class="memdesc:ga77b9b876c6a64bb59bd784c2eef6ec04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет подтверждение регистрации.  <br /></td></tr>
+<tr class="memitem:ga3d8d6ea1f956a24cde338fface093520" id="r_ga3d8d6ea1f956a24cde338fface093520"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga3d8d6ea1f956a24cde338fface093520">ServiceManager::sendAuthRequestCode</a> (const QString &amp;login, const QString &amp;password)</td></tr>
+<tr class="memdesc:ga3d8d6ea1f956a24cde338fface093520"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет запрос кода для двухфакторной авторизации.  <br /></td></tr>
+<tr class="memitem:ga9c4e411c5ac14aabad536257243ec40a" id="r_ga9c4e411c5ac14aabad536257243ec40a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga9c4e411c5ac14aabad536257243ec40a">ServiceManager::sendAuthConfirm</a> (const QString &amp;email, const QString &amp;code)</td></tr>
+<tr class="memdesc:ga9c4e411c5ac14aabad536257243ec40a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подтверждает код при авторизации.  <br /></td></tr>
+<tr class="memitem:ga6081858496466768d87050382a8b82b3" id="r_ga6081858496466768d87050382a8b82b3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6081858496466768d87050382a8b82b3">ServiceManager::sendRequestCode</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga6081858496466768d87050382a8b82b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запрашивает код для восстановления пароля.  <br /></td></tr>
+<tr class="memitem:ga792b61f20d9babf739d7976337e91c00" id="r_ga792b61f20d9babf739d7976337e91c00"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga792b61f20d9babf739d7976337e91c00">ServiceManager::sendChangePasswordWithCode</a> (const QString &amp;login, const QString &amp;code, const QString &amp;newPassword)</td></tr>
+<tr class="memdesc:ga792b61f20d9babf739d7976337e91c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет новый пароль вместе с кодом подтверждения.  <br /></td></tr>
+<tr class="memitem:ga41127553579ebfc8e21b21783d409d2c" id="r_ga41127553579ebfc8e21b21783d409d2c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga41127553579ebfc8e21b21783d409d2c">ServiceManager::sendLogout</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga41127553579ebfc8e21b21783d409d2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выход из текущей сессии.  <br /></td></tr>
+<tr class="memitem:ga238b45437f4c66c7e068f1b09d402290" id="r_ga238b45437f4c66c7e068f1b09d402290"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga238b45437f4c66c7e068f1b09d402290">ServiceManager::sendLogoutAll</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga238b45437f4c66c7e068f1b09d402290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выход из всех сессий пользователя.  <br /></td></tr>
+<tr class="memitem:ga97a89354b8e2be0667c0f3459cd6a101" id="r_ga97a89354b8e2be0667c0f3459cd6a101"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga97a89354b8e2be0667c0f3459cd6a101">ServiceManager::sendRefreshToken</a> (const QString &amp;login, const QString &amp;oldToken)</td></tr>
+<tr class="memdesc:ga97a89354b8e2be0667c0f3459cd6a101"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет токен сессии.  <br /></td></tr>
+<tr class="memitem:ga1cf5fb001fa93bf1ea2315a445677c68" id="r_ga1cf5fb001fa93bf1ea2315a445677c68"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga1cf5fb001fa93bf1ea2315a445677c68">ServiceManager::setCurrentLogin</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga1cf5fb001fa93bf1ea2315a445677c68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает текущий логин пользователя.  <br /></td></tr>
+<tr class="memitem:ga5a089f552b3e77023e4521a6afa98e7b" id="r_ga5a089f552b3e77023e4521a6afa98e7b"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#ga5a089f552b3e77023e4521a6afa98e7b">ServiceManager::currentLogin</a> () const</td></tr>
+<tr class="memdesc:ga5a089f552b3e77023e4521a6afa98e7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает текущий логин.  <br /></td></tr>
+<tr class="memitem:ga83fda3f1765b8cc39da671590a9a79fb" id="r_ga83fda3f1765b8cc39da671590a9a79fb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga83fda3f1765b8cc39da671590a9a79fb">ServiceManager::setCurrentToken</a> (const QString &amp;token)</td></tr>
+<tr class="memdesc:ga83fda3f1765b8cc39da671590a9a79fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Устанавливает текущий токен сессии.  <br /></td></tr>
+<tr class="memitem:gad2fa0e0146bab5c947b5f98d0762ac0a" id="r_gad2fa0e0146bab5c947b5f98d0762ac0a"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#gad2fa0e0146bab5c947b5f98d0762ac0a">ServiceManager::currentToken</a> () const</td></tr>
+<tr class="memdesc:gad2fa0e0146bab5c947b5f98d0762ac0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает токен сессии.  <br /></td></tr>
+<tr class="memitem:ga7c1b088e492bd88eeb6fcb4304d43d06" id="r_ga7c1b088e492bd88eeb6fcb4304d43d06"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga7c1b088e492bd88eeb6fcb4304d43d06">ServiceManager::sendFunctionParams</a> (double a, double b, double c)</td></tr>
+<tr class="memdesc:ga7c1b088e492bd88eeb6fcb4304d43d06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет параметры функций для построения графика.  <br /></td></tr>
+<tr class="memitem:ga016f586efe7cfe024c7fb4e74af2255d" id="r_ga016f586efe7cfe024c7fb4e74af2255d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga016f586efe7cfe024c7fb4e74af2255d">ServiceManager::sendAuth</a> (const QString &amp;login, const QString &amp;password)</td></tr>
+<tr class="memdesc:ga016f586efe7cfe024c7fb4e74af2255d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет запрос авторизации.  <br /></td></tr>
+<tr class="memitem:gaf43cf19ef918401a69a702ce5c79f554" id="r_gaf43cf19ef918401a69a702ce5c79f554"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaf43cf19ef918401a69a702ce5c79f554">ServiceManager::sendReg</a> (const QString &amp;login, const QString &amp;password, const QString &amp;email)</td></tr>
+<tr class="memdesc:gaf43cf19ef918401a69a702ce5c79f554"><td class="mdescLeft">&#160;</td><td class="mdescRight">Отправляет запрос регистрации.  <br /></td></tr>
+<tr class="memitem:gae4e561638332a03d6230e30427b0b097" id="r_gae4e561638332a03d6230e30427b0b097"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gae4e561638332a03d6230e30427b0b097">ServiceManager::attemptReconnect</a> ()</td></tr>
+<tr class="memdesc:gae4e561638332a03d6230e30427b0b097"><td class="mdescLeft">&#160;</td><td class="mdescRight">Пытается переподключиться к серверу.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slot-members" class="groupheader"><a id="pri-slot-members" name="pri-slot-members"></a>
+Закрытые слоты</h2></td></tr>
+<tr class="memitem:ga5b35f8aebcb6b449ffd188e3e36d17bb" id="r_ga5b35f8aebcb6b449ffd188e3e36d17bb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga5b35f8aebcb6b449ffd188e3e36d17bb">ServiceManager::onReconnectTimer</a> ()</td></tr>
+<tr class="memdesc:ga5b35f8aebcb6b449ffd188e3e36d17bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик таймера переподключения.  <br /></td></tr>
+<tr class="memitem:gadf23733f9c3b0b2618fee492fe84e76a" id="r_gadf23733f9c3b0b2618fee492fe84e76a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gadf23733f9c3b0b2618fee492fe84e76a">ServiceManager::onReadyRead</a> ()</td></tr>
+<tr class="memdesc:gadf23733f9c3b0b2618fee492fe84e76a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обрабатывает входящие данные от сервера.  <br /></td></tr>
+<tr class="memitem:ga453a8f166f6b86e15aa3d21d339ead6f" id="r_ga453a8f166f6b86e15aa3d21d339ead6f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga453a8f166f6b86e15aa3d21d339ead6f">ServiceManager::onConnected</a> ()</td></tr>
+<tr class="memdesc:ga453a8f166f6b86e15aa3d21d339ead6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик успешного подключения к серверу.  <br /></td></tr>
+<tr class="memitem:ga1d705e073fc7abb0ec77f58cf95eab09" id="r_ga1d705e073fc7abb0ec77f58cf95eab09"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga1d705e073fc7abb0ec77f58cf95eab09">ServiceManager::onDisconnected</a> ()</td></tr>
+<tr class="memdesc:ga1d705e073fc7abb0ec77f58cf95eab09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик отключения от сервера.  <br /></td></tr>
+<tr class="memitem:ga28a94cb6435600716ea479fc30ad68b4" id="r_ga28a94cb6435600716ea479fc30ad68b4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga28a94cb6435600716ea479fc30ad68b4">ServiceManager::onError</a> (QAbstractSocket::SocketError socketError)</td></tr>
+<tr class="memdesc:ga28a94cb6435600716ea479fc30ad68b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик ошибок сокета.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"></div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="gae4e561638332a03d6230e30427b0b097" name="gae4e561638332a03d6230e30427b0b097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae4e561638332a03d6230e30427b0b097">&#9670;&#160;</a></span>attemptReconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::attemptReconnect </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Пытается переподключиться к серверу. </p>
+<p>Выполняет попытку переподключения к серверу. </p>
+
+</div>
+</div>
+<a id="ga6eb6b09949825b1b7f51bb72970f11bd" name="ga6eb6b09949825b1b7f51bb72970f11bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6eb6b09949825b1b7f51bb72970f11bd">&#9670;&#160;</a></span>connectToServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::connectToServer </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>host</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;127.0.0.1&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>port</em></span><span class="paramdefsep"> = </span><span class="paramdefval">11999</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Подключается к серверу. </p>
+<p>Подключение к серверу.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>Адрес сервера. </td></tr>
+    <tr><td class="paramname">port</td><td>Порт сервера.</td></tr>
+    <tr><td class="paramname">host</td><td>адрес сервера </td></tr>
+    <tr><td class="paramname">port</td><td>порт сервера </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga5a089f552b3e77023e4521a6afa98e7b" name="ga5a089f552b3e77023e4521a6afa98e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a089f552b3e77023e4521a6afa98e7b">&#9670;&#160;</a></span>currentLogin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ServiceManager::currentLogin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает текущий логин. </p>
+
+</div>
+</div>
+<a id="gad2fa0e0146bab5c947b5f98d0762ac0a" name="gad2fa0e0146bab5c947b5f98d0762ac0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad2fa0e0146bab5c947b5f98d0762ac0a">&#9670;&#160;</a></span>currentToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString ServiceManager::currentToken </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает токен сессии. </p>
+
+</div>
+</div>
+<a id="ga05ea46d1f2b9bb23755f1321b6fa06d1" name="ga05ea46d1f2b9bb23755f1321b6fa06d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga05ea46d1f2b9bb23755f1321b6fa06d1">&#9670;&#160;</a></span>disconnectFromServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::disconnectFromServer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отключается от сервера. </p>
+<p>Отключение от сервера. </p>
+
+</div>
+</div>
+<a id="gad78e686a5fcf0c9a345fa67fd5128009" name="gad78e686a5fcf0c9a345fa67fd5128009"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad78e686a5fcf0c9a345fa67fd5128009">&#9670;&#160;</a></span>instance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_service_manager.html">ServiceManager</a> &amp; ServiceManager::instance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает единственный экземпляр сервисного менеджера. </p>
+<p>Возвращает singleton-экземпляр <a class="el" href="class_service_manager.html" title="Singleton-класс для управления TCP-соединением и обменом данными с сервером.">ServiceManager</a>.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на экземпляр <a class="el" href="class_service_manager.html" title="Singleton-класс для управления TCP-соединением и обменом данными с сервером.">ServiceManager</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ga31a8621f6e76064f79904d4ef73beaaf" name="ga31a8621f6e76064f79904d4ef73beaaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga31a8621f6e76064f79904d4ef73beaaf">&#9670;&#160;</a></span>isConnected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ServiceManager::isConnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет, установлено ли соединение. </p>
+<p>Проверяет состояние подключения.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если подключено. </dd></dl>
+
+</div>
+</div>
+<a id="ga016f586efe7cfe024c7fb4e74af2255d" name="ga016f586efe7cfe024c7fb4e74af2255d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga016f586efe7cfe024c7fb4e74af2255d">&#9670;&#160;</a></span>sendAuth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendAuth </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправляет запрос авторизации. </p>
+
+</div>
+</div>
+<a id="ga9c4e411c5ac14aabad536257243ec40a" name="ga9c4e411c5ac14aabad536257243ec40a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c4e411c5ac14aabad536257243ec40a">&#9670;&#160;</a></span>sendAuthConfirm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendAuthConfirm </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Подтверждает код при авторизации. </p>
+<p>Подтверждение авторизации по email-коду. </p>
+
+</div>
+</div>
+<a id="ga3d8d6ea1f956a24cde338fface093520" name="ga3d8d6ea1f956a24cde338fface093520"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3d8d6ea1f956a24cde338fface093520">&#9670;&#160;</a></span>sendAuthRequestCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendAuthRequestCode </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправляет запрос кода для двухфакторной авторизации. </p>
+<p>Запрос кода авторизации. </p>
+
+</div>
+</div>
+<a id="ga792b61f20d9babf739d7976337e91c00" name="ga792b61f20d9babf739d7976337e91c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga792b61f20d9babf739d7976337e91c00">&#9670;&#160;</a></span>sendChangePasswordWithCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendChangePasswordWithCode </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>code</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>newPassword</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправляет новый пароль вместе с кодом подтверждения. </p>
+<p>Подтверждение смены пароля по коду. </p>
+
+</div>
+</div>
+<a id="ga7c1b088e492bd88eeb6fcb4304d43d06" name="ga7c1b088e492bd88eeb6fcb4304d43d06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7c1b088e492bd88eeb6fcb4304d43d06">&#9670;&#160;</a></span>sendFunctionParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendFunctionParams </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправляет параметры функций для построения графика. </p>
+<p>Отправка параметров функции для построения графика. </p>
+
+</div>
+</div>
+<a id="ga41127553579ebfc8e21b21783d409d2c" name="ga41127553579ebfc8e21b21783d409d2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41127553579ebfc8e21b21783d409d2c">&#9670;&#160;</a></span>sendLogout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendLogout </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выход из текущей сессии. </p>
+<p>Выход из аккаунта. </p>
+
+</div>
+</div>
+<a id="ga238b45437f4c66c7e068f1b09d402290" name="ga238b45437f4c66c7e068f1b09d402290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga238b45437f4c66c7e068f1b09d402290">&#9670;&#160;</a></span>sendLogoutAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendLogoutAll </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выход из всех сессий пользователя. </p>
+<p>Выход со всех устройств. </p>
+
+</div>
+</div>
+<a id="ga97a89354b8e2be0667c0f3459cd6a101" name="ga97a89354b8e2be0667c0f3459cd6a101"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga97a89354b8e2be0667c0f3459cd6a101">&#9670;&#160;</a></span>sendRefreshToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendRefreshToken </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>oldToken</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Обновляет токен сессии. </p>
+<p>Обновление токена сессии. </p>
+
+</div>
+</div>
+<a id="gaf43cf19ef918401a69a702ce5c79f554" name="gaf43cf19ef918401a69a702ce5c79f554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf43cf19ef918401a69a702ce5c79f554">&#9670;&#160;</a></span>sendReg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendReg </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправляет запрос регистрации. </p>
+
+</div>
+</div>
+<a id="ga77b9b876c6a64bb59bd784c2eef6ec04" name="ga77b9b876c6a64bb59bd784c2eef6ec04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga77b9b876c6a64bb59bd784c2eef6ec04">&#9670;&#160;</a></span>sendRegConfirm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendRegConfirm </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправляет подтверждение регистрации. </p>
+<p>Подтверждение регистрации. </p>
+
+</div>
+</div>
+<a id="ga338f5d7e72952a3cac5ef214c270d0e7" name="ga338f5d7e72952a3cac5ef214c270d0e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga338f5d7e72952a3cac5ef214c270d0e7">&#9670;&#160;</a></span>sendRegRequestCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendRegRequestCode </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Отправляет запрос на получение кода подтверждения регистрации. </p>
+<p>Запрос кода регистрации на email.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6a16c2a7297161552f5f77b9449f4a70" name="ga6a16c2a7297161552f5f77b9449f4a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6a16c2a7297161552f5f77b9449f4a70">&#9670;&#160;</a></span>sendRequest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendRequest </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>request</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Отправляет запрос на сервер. </p>
+<p>Отправляет сырой запрос на сервер.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">request</td><td>Текст запроса.</td></tr>
+    <tr><td class="paramname">request</td><td>строка запроса </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga6081858496466768d87050382a8b82b3" name="ga6081858496466768d87050382a8b82b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6081858496466768d87050382a8b82b3">&#9670;&#160;</a></span>sendRequestCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::sendRequestCode </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Запрашивает код для восстановления пароля. </p>
+<p>Запрос кода восстановления пароля.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaeb86d399546b8e9a6af17f4e1cc7e879" name="gaeb86d399546b8e9a6af17f4e1cc7e879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeb86d399546b8e9a6af17f4e1cc7e879">&#9670;&#160;</a></span>ServiceManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServiceManager::ServiceManager </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приватный конструктор (Singleton). </p>
+<p>Конструктор <a class="el" href="class_service_manager.html" title="Singleton-класс для управления TCP-соединением и обменом данными с сервером.">ServiceManager</a>.</p>
+<p>Инициализирует сокет, таймер переподключения и внутреннее состояние. </p>
+
+</div>
+</div>
+<a id="ga1cf5fb001fa93bf1ea2315a445677c68" name="ga1cf5fb001fa93bf1ea2315a445677c68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1cf5fb001fa93bf1ea2315a445677c68">&#9670;&#160;</a></span>setCurrentLogin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::setCurrentLogin </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает текущий логин пользователя. </p>
+<p>Устанавливает текущий логин. </p>
+
+</div>
+</div>
+<a id="ga83fda3f1765b8cc39da671590a9a79fb" name="ga83fda3f1765b8cc39da671590a9a79fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga83fda3f1765b8cc39da671590a9a79fb">&#9670;&#160;</a></span>setCurrentToken()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::setCurrentToken </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>token</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Устанавливает текущий токен сессии. </p>
+<p>Устанавливает токен сессии. </p>
+
+</div>
+</div>
+<a id="ga87b207df58ccd316320d490c003c7eda" name="ga87b207df58ccd316320d490c003c7eda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga87b207df58ccd316320d490c003c7eda">&#9670;&#160;</a></span>~ServiceManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServiceManager::~ServiceManager </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор. </p>
+<p>Деструктор <a class="el" href="class_service_manager.html" title="Singleton-класс для управления TCP-соединением и обменом данными с сервером.">ServiceManager</a>.</p>
+<p>Останавливает таймер и отключается от сервера. </p>
+
+</div>
+</div>
+<a name="doc-pri-slot-members" id="doc-pri-slot-members"></a><h2 id="header-doc-pri-slot-members" class="groupheader">Закрытые слоты</h2>
+<a id="ga453a8f166f6b86e15aa3d21d339ead6f" name="ga453a8f166f6b86e15aa3d21d339ead6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga453a8f166f6b86e15aa3d21d339ead6f">&#9670;&#160;</a></span>onConnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::onConnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик успешного подключения к серверу. </p>
+<p>Метод вызывается после успешного соединения с сервером и сбрасывает состояние переподключения. </p>
+
+</div>
+</div>
+<a id="ga1d705e073fc7abb0ec77f58cf95eab09" name="ga1d705e073fc7abb0ec77f58cf95eab09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1d705e073fc7abb0ec77f58cf95eab09">&#9670;&#160;</a></span>onDisconnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::onDisconnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик отключения от сервера. </p>
+<p>Метод вызывается при потере соединения. Запускает механизм автоматического переподключения. </p>
+
+</div>
+</div>
+<a id="ga28a94cb6435600716ea479fc30ad68b4" name="ga28a94cb6435600716ea479fc30ad68b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga28a94cb6435600716ea479fc30ad68b4">&#9670;&#160;</a></span>onError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::onError </td>
+          <td>(</td>
+          <td class="paramtype">QAbstractSocket::SocketError</td>          <td class="paramname"><span class="paramname"><em>socketError</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик ошибок сокета. </p>
+
+</div>
+</div>
+<a id="gadf23733f9c3b0b2618fee492fe84e76a" name="gadf23733f9c3b0b2618fee492fe84e76a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadf23733f9c3b0b2618fee492fe84e76a">&#9670;&#160;</a></span>onReadyRead</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::onReadyRead </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обрабатывает входящие данные от сервера. </p>
+
+</div>
+</div>
+<a id="ga5b35f8aebcb6b449ffd188e3e36d17bb" name="ga5b35f8aebcb6b449ffd188e3e36d17bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b35f8aebcb6b449ffd188e3e36d17bb">&#9670;&#160;</a></span>onReconnectTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServiceManager::onReconnectTimer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик таймера переподключения. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

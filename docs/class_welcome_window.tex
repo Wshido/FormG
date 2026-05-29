@@ -2,7 +2,7 @@
 \hypertarget{class_welcome_window}{}\label{class_welcome_window}\index{WelcomeWindow@{WelcomeWindow}}
 
 
-Приветственное окно приложения.  
+Класс приветственного окна.  
 
 
 
@@ -19,32 +19,36 @@
 \begin{DoxyCompactItemize}
 \item 
 void \doxymbox{\hyperlink{class_welcome_window_a276da58c7676e1d61c3694acd16f9a5b}{back\+Requested}} ()
-\begin{DoxyCompactList}\small\item\em Сигнал возврата к предыдущему окну. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Сигнал запроса возврата на предыдущее окно. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_welcome_window_ad66e2c9a962c8a583ae395b4264c0298}{logout\+Requested}} ()
+\begin{DoxyCompactList}\small\item\em Сигнал запроса выхода из аккаунта. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{group__welcomecpp_ga7a3e2e0f8890a94a985b7969f2ed102d}{Welcome\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\begin{DoxyCompactList}\small\item\em Конструктор окна \doxylink{class_welcome_window}{Welcome\+Window}. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{group__welcomecpp_ga19e92915de4238d9cebfc94c6ff0ed28}{\texorpdfstring{$\sim$}{\string~}\+Welcome\+Window}} ()
-\begin{DoxyCompactList}\small\item\em Деструктор класса \doxylink{class_welcome_window}{Welcome\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxymbox{\hyperlink{group__welcomewindow__impl_ga7a3e2e0f8890a94a985b7969f2ed102d}{Welcome\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__welcomewindow__impl_ga19e92915de4238d9cebfc94c6ff0ed28}{\texorpdfstring{$\sim$}{\string~}\+Welcome\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Закрытые слоты}
 \begin{DoxyCompactItemize}
 \item 
-void \doxymbox{\hyperlink{group__welcomecpp_ga1027251367480c3f81d4957b6006b47e}{on\+\_\+next\+Button\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки перехода. \end{DoxyCompactList}\item 
-void \doxymbox{\hyperlink{group__welcomecpp_gab21e7b7f4be909321ef9474447e4f5d8}{on\+\_\+back\+Button\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки возврата. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \doxymbox{\hyperlink{group__welcomewindow__impl_ga1027251367480c3f81d4957b6006b47e}{on\+\_\+next\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Далее"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__welcomewindow__impl_gab21e7b7f4be909321ef9474447e4f5d8}{on\+\_\+back\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Назад"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__welcomewindow__impl_ga2d324de3a7bfb01141196bf960445c3f}{on\+\_\+logout\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Выйти"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Закрытые данные}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{class_ui_1_1_welcome_window}{Ui::\+\+Welcome\+Window}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_welcome_window_aa2be557d2fb45693e8e0b5c32a464d6e}{ui}}
-\begin{DoxyCompactList}\small\item\em Указатель на пользовательский интерфейс окна. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Указатель на UI-\/форму. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Приветственное окно приложения. 
+Класс приветственного окна. 
 
-Класс отображает стартовый экран программы и обрабатывает навигацию между окнами. 
+Отображается после успешной авторизации и предлагает переход к основным функциям приложения. 
 
 \label{class_welcome_window_doc-func-members}
 \Hypertarget{class_welcome_window_doc-func-members}
@@ -57,7 +61,17 @@ void Welcome\+Window::\+back\+Requested (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 
 
 
-Сигнал возврата к предыдущему окну. 
+Сигнал запроса возврата на предыдущее окно. 
+
+\Hypertarget{class_welcome_window_ad66e2c9a962c8a583ae395b4264c0298}\index{WelcomeWindow@{WelcomeWindow}!logoutRequested@{logoutRequested}}
+\index{logoutRequested@{logoutRequested}!WelcomeWindow@{WelcomeWindow}}
+\doxysubsubsection{\texorpdfstring{logoutRequested}{logoutRequested}}
+{\footnotesize\ttfamily \label{class_welcome_window_ad66e2c9a962c8a583ae395b4264c0298} 
+void Welcome\+Window::\+logout\+Requested (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Сигнал запроса выхода из аккаунта. 
 
 
 
@@ -72,12 +86,12 @@ void Welcome\+Window::\+back\+Requested (\begin{DoxyParamCaption}{}{}\end{DoxyPa
 
 
 
-Указатель на пользовательский интерфейс окна. 
+Указатель на UI-\/форму. 
 
 
 
 Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
 \item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+\doxymbox{\hyperlink{welcomewindow_8h}{welcomewindow.\+h}}\item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+build/\+\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+10\+\_\+3\+\_\+\+Min\+GW\+\_\+64\+\_\+bit-\/u041eu0442u043bu0430u0434u043au0430/\+debug/\+\doxymbox{\hyperlink{moc__welcomewindow_8cpp}{moc\+\_\+welcomewindow.\+cpp}}\item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+\doxymbox{\hyperlink{welcomewindow_8cpp}{welcomewindow.\+cpp}}\end{DoxyCompactItemize}
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{welcomewindow_8h}{welcomewindow.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+build/\+\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+10\+\_\+3\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/u041eu0442u043bu0430u0434u043au0430/\+debug/\+\doxymbox{\hyperlink{moc__welcomewindow_8cpp}{moc\+\_\+welcomewindow.\+cpp}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{welcomewindow_8cpp}{welcomewindow.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,382 @@
+\doxysection{Класс Service\+Manager}
+\hypertarget{class_service_manager}{}\label{class_service_manager}\index{ServiceManager@{ServiceManager}}
+
+
+Singleton-\/класс для управления TCP-\/соединением и обменом данными с сервером.  
+
+
+
+
+{\ttfamily \+\#include $<$servicemanager.\+h$>$}
+
+Граф наследования:\+Service\+Manager:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_service_manager}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Сигналы}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a8e5729ef7eeb92652fc51a97b558f937}{connected}} ()
+\item 
+void \doxymbox{\hyperlink{class_service_manager_aa6d1c5e9701142ea2d474d933bcfa405}{disconnected}} ()
+\item 
+void \doxymbox{\hyperlink{class_service_manager_adc1f5d3380975102d4e7ece7e8d31d08}{error}} (const QString \&message)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_aaee6db2df0974351a4752aa8ccdd360d}{connection\+Failed}} ()
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a44415aacd9e6b656b2c6bae17312532e}{reconnecting}} ()
+\item 
+void \doxymbox{\hyperlink{class_service_manager_ae0fcd2837b882e6d0aed75d9ace40f6f}{reg\+Request\+Code\+Result}} (bool success, const QString \&code)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_adc5d5613f83ad7151de7fc42ce1ff7e2}{reg\+Confirm\+Result}} (bool success)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a70796b3bb4080b26c96fb0b83a61f7fb}{auth\+Request\+Code\+Result}} (bool success, const QString \&email, const QString \&code)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a328f0bcd1a0bda2c8b27f8c48d3a81e6}{auth\+Confirm\+Result}} (bool success, const QString \&session\+Token)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a8aafa68a396536066074a5de9399d59a}{code\+Request\+Result}} (bool success)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a74ff0745275d3cdd6a9096164d573e1f}{password\+Change\+With\+Code\+Result}} (bool success)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a4c8c0abcc256c3b33d5b0f5e4027d4e9}{function\+Data\+Received}} (const QString \&data)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a3c615d44e04e16d7617fd0e81b79fff5}{auth\+Result}} (bool success, const QString \&login)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a20bbdbf993af6d8328ac7929896539d1}{logout\+Result}} (bool success)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_a3ec9dbcb12a0fcd45dc1084e2d8c18ee}{logout\+All\+Result}} (bool success)
+\item 
+void \doxymbox{\hyperlink{class_service_manager_af4623e3acffff271b765bc7d929f4fcb}{refresh\+Token\+Result}} (bool success, const QString \&new\+Token)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga6eb6b09949825b1b7f51bb72970f11bd}{connect\+To\+Server}} (const QString \&host="{}127.\+0.\+0.\+1"{}, int port=11999)
+\begin{DoxyCompactList}\small\item\em Подключается к серверу. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga05ea46d1f2b9bb23755f1321b6fa06d1}{disconnect\+From\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Отключается от сервера. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__servicemanager__impl_ga31a8621f6e76064f79904d4ef73beaaf}{is\+Connected}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет, установлено ли соединение. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga338f5d7e72952a3cac5ef214c270d0e7}{send\+Reg\+Request\+Code}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос на получение кода подтверждения регистрации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga77b9b876c6a64bb59bd784c2eef6ec04}{send\+Reg\+Confirm}} (const QString \&login, const QString \&password, const QString \&email, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Отправляет подтверждение регистрации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga3d8d6ea1f956a24cde338fface093520}{send\+Auth\+Request\+Code}} (const QString \&login, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос кода для двухфакторной авторизации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga9c4e411c5ac14aabad536257243ec40a}{send\+Auth\+Confirm}} (const QString \&email, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Подтверждает код при авторизации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga6081858496466768d87050382a8b82b3}{send\+Request\+Code}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Запрашивает код для восстановления пароля. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga792b61f20d9babf739d7976337e91c00}{send\+Change\+Password\+With\+Code}} (const QString \&login, const QString \&code, const QString \&new\+Password)
+\begin{DoxyCompactList}\small\item\em Отправляет новый пароль вместе с кодом подтверждения. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga7c1b088e492bd88eeb6fcb4304d43d06}{send\+Function\+Params}} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Отправляет параметры функций для построения графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga41127553579ebfc8e21b21783d409d2c}{send\+Logout}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Выход из текущей сессии. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga238b45437f4c66c7e068f1b09d402290}{send\+Logout\+All}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Выход из всех сессий пользователя. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga97a89354b8e2be0667c0f3459cd6a101}{send\+Refresh\+Token}} (const QString \&login, const QString \&old\+Token)
+\begin{DoxyCompactList}\small\item\em Обновляет токен сессии. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga1cf5fb001fa93bf1ea2315a445677c68}{set\+Current\+Login}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Устанавливает текущий логин пользователя. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__servicemanager__impl_ga5a089f552b3e77023e4521a6afa98e7b}{current\+Login}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает текущий логин. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga83fda3f1765b8cc39da671590a9a79fb}{set\+Current\+Token}} (const QString \&token)
+\begin{DoxyCompactList}\small\item\em Устанавливает текущий токен сессии. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__servicemanager__impl_gad2fa0e0146bab5c947b5f98d0762ac0a}{current\+Token}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает токен сессии. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga016f586efe7cfe024c7fb4e74af2255d}{send\+Auth}} (const QString \&login, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос авторизации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_gaf43cf19ef918401a69a702ce5c79f554}{send\+Reg}} (const QString \&login, const QString \&password, const QString \&email)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос регистрации. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_service_manager}{Service\+Manager}} \& \doxymbox{\hyperlink{group__servicemanager__impl_gad78e686a5fcf0c9a345fa67fd5128009}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает единственный экземпляр сервисного менеджера. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые слоты}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_gadf23733f9c3b0b2618fee492fe84e76a}{on\+Ready\+Read}} ()
+\begin{DoxyCompactList}\small\item\em Обрабатывает входящие данные от сервера. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga453a8f166f6b86e15aa3d21d339ead6f}{on\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик успешного подключения к серверу. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga1d705e073fc7abb0ec77f58cf95eab09}{on\+Disconnected}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик отключения от сервера. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga28a94cb6435600716ea479fc30ad68b4}{on\+Error}} (QAbstract\+Socket::\+\+Socket\+Error socket\+Error)
+\begin{DoxyCompactList}\small\item\em Обработчик ошибок сокета. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga5b35f8aebcb6b449ffd188e3e36d17bb}{on\+Reconnect\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик таймера переподключения. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__servicemanager__impl_gaeb86d399546b8e9a6af17f4e1cc7e879}{Service\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Приватный конструктор (Singleton). \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__servicemanager__impl_ga87b207df58ccd316320d490c003c7eda}{\texorpdfstring{$\sim$}{\string~}\+Service\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga6a16c2a7297161552f5f77b9449f4a70}{send\+Request}} (const QString \&request)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос на сервер. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_gae4e561638332a03d6230e30427b0b097}{attempt\+Reconnect}} ()
+\begin{DoxyCompactList}\small\item\em Пытается переподключиться к серверу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+QTcp\+Socket \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_service_manager_a46c313a6bded6dbe4b7509d632c444c1}{m\+\_\+socket}}
+\begin{DoxyCompactList}\small\item\em TCP-\/сокет для связи с сервером. \end{DoxyCompactList}\item 
+QByte\+Array \doxymbox{\hyperlink{class_service_manager_a08407e0a88621534010948a42799b490}{m\+\_\+read\+Buffer}}
+\begin{DoxyCompactList}\small\item\em Буфер для чтения входящих данных. \end{DoxyCompactList}\item 
+QByte\+Array \doxymbox{\hyperlink{class_service_manager_a28c567a9ef815c545de379497632d260}{m\+\_\+graph\+Data\+Buffer}}
+\begin{DoxyCompactList}\small\item\em Буфер для приёма данных графика. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_service_manager_aba7e7ded1195e030a3b9aa118663fd62}{m\+\_\+receiving\+Graph\+Data}}
+\begin{DoxyCompactList}\small\item\em Флаг, указывающий, что сейчас принимаются данные графика. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_service_manager_a3b64a950eb8268e24646c0fec4e185d2}{m\+\_\+current\+Login}}
+\begin{DoxyCompactList}\small\item\em Текущий залогиненный пользователь. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_service_manager_aea3170c33b7b56e74a6c9f01657b7a61}{m\+\_\+current\+Token}}
+\begin{DoxyCompactList}\small\item\em Текущий токен сессии. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_service_manager_a426cce7dd115376e793cae597440be25}{m\+\_\+reconnect\+Attempts}}
+\begin{DoxyCompactList}\small\item\em Количество попыток переподключения. \end{DoxyCompactList}\item 
+QTimer \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_service_manager_ab88019d81dd9a431f2631c884115b815}{m\+\_\+reconnect\+Timer}}
+\begin{DoxyCompactList}\small\item\em Таймер переподключения. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_service_manager_aac51e466240c22b86bd414b7c867b41f}{m\+\_\+host}}
+\begin{DoxyCompactList}\small\item\em Сохранённый хост сервера. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_service_manager_abeb49f0cef292e0d314fa91d24c7dca3}{m\+\_\+port}}
+\begin{DoxyCompactList}\small\item\em Сохранённый порт сервера. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые статические данные}
+\begin{DoxyCompactItemize}
+\item 
+static const int \doxymbox{\hyperlink{class_service_manager_a4c8a5c33817d69e217ff03dbe65b38b1}{MAX\+\_\+\+RECONNECT\+\_\+\+ATTEMPTS}} = 5
+\item 
+static const int \doxymbox{\hyperlink{class_service_manager_aa263d9769dbaf6de72577d9e70965722}{RECONNECT\+\_\+\+INTERVAL\+\_\+\+MS}} = 3000
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Singleton-\/класс для управления TCP-\/соединением и обменом данными с сервером. 
+
+Обеспечивает все виды запросов:\+ регистрацию, авторизацию, восстановление пароля, работу с графиками, управление сессией и т.\+д. 
+
+\label{class_service_manager_doc-func-members}
+\Hypertarget{class_service_manager_doc-func-members}
+\doxysubsection{Методы}
+\Hypertarget{class_service_manager_a328f0bcd1a0bda2c8b27f8c48d3a81e6}\index{ServiceManager@{ServiceManager}!authConfirmResult@{authConfirmResult}}
+\index{authConfirmResult@{authConfirmResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{authConfirmResult}{authConfirmResult}}
+{\footnotesize\ttfamily \label{class_service_manager_a328f0bcd1a0bda2c8b27f8c48d3a81e6} 
+void Service\+Manager::\+auth\+Confirm\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{, }\item[{const QString \&}]{session\+Token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_a70796b3bb4080b26c96fb0b83a61f7fb}\index{ServiceManager@{ServiceManager}!authRequestCodeResult@{authRequestCodeResult}}
+\index{authRequestCodeResult@{authRequestCodeResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{authRequestCodeResult}{authRequestCodeResult}}
+{\footnotesize\ttfamily \label{class_service_manager_a70796b3bb4080b26c96fb0b83a61f7fb} 
+void Service\+Manager::\+auth\+Request\+Code\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_a3c615d44e04e16d7617fd0e81b79fff5}\index{ServiceManager@{ServiceManager}!authResult@{authResult}}
+\index{authResult@{authResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{authResult}{authResult}}
+{\footnotesize\ttfamily \label{class_service_manager_a3c615d44e04e16d7617fd0e81b79fff5} 
+void Service\+Manager::\+auth\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{, }\item[{const QString \&}]{login}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_a8aafa68a396536066074a5de9399d59a}\index{ServiceManager@{ServiceManager}!codeRequestResult@{codeRequestResult}}
+\index{codeRequestResult@{codeRequestResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{codeRequestResult}{codeRequestResult}}
+{\footnotesize\ttfamily \label{class_service_manager_a8aafa68a396536066074a5de9399d59a} 
+void Service\+Manager::\+code\+Request\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_a8e5729ef7eeb92652fc51a97b558f937}\index{ServiceManager@{ServiceManager}!connected@{connected}}
+\index{connected@{connected}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{connected}{connected}}
+{\footnotesize\ttfamily \label{class_service_manager_a8e5729ef7eeb92652fc51a97b558f937} 
+void Service\+Manager::\+connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_aaee6db2df0974351a4752aa8ccdd360d}\index{ServiceManager@{ServiceManager}!connectionFailed@{connectionFailed}}
+\index{connectionFailed@{connectionFailed}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{connectionFailed}{connectionFailed}}
+{\footnotesize\ttfamily \label{class_service_manager_aaee6db2df0974351a4752aa8ccdd360d} 
+void Service\+Manager::\+connection\+Failed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_aa6d1c5e9701142ea2d474d933bcfa405}\index{ServiceManager@{ServiceManager}!disconnected@{disconnected}}
+\index{disconnected@{disconnected}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{disconnected}{disconnected}}
+{\footnotesize\ttfamily \label{class_service_manager_aa6d1c5e9701142ea2d474d933bcfa405} 
+void Service\+Manager::\+disconnected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_adc1f5d3380975102d4e7ece7e8d31d08}\index{ServiceManager@{ServiceManager}!error@{error}}
+\index{error@{error}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \label{class_service_manager_adc1f5d3380975102d4e7ece7e8d31d08} 
+void Service\+Manager::\+error (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_a4c8c0abcc256c3b33d5b0f5e4027d4e9}\index{ServiceManager@{ServiceManager}!functionDataReceived@{functionDataReceived}}
+\index{functionDataReceived@{functionDataReceived}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{functionDataReceived}{functionDataReceived}}
+{\footnotesize\ttfamily \label{class_service_manager_a4c8c0abcc256c3b33d5b0f5e4027d4e9} 
+void Service\+Manager::\+function\+Data\+Received (\begin{DoxyParamCaption}\item[{const QString \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_a3ec9dbcb12a0fcd45dc1084e2d8c18ee}\index{ServiceManager@{ServiceManager}!logoutAllResult@{logoutAllResult}}
+\index{logoutAllResult@{logoutAllResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{logoutAllResult}{logoutAllResult}}
+{\footnotesize\ttfamily \label{class_service_manager_a3ec9dbcb12a0fcd45dc1084e2d8c18ee} 
+void Service\+Manager::\+logout\+All\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_a20bbdbf993af6d8328ac7929896539d1}\index{ServiceManager@{ServiceManager}!logoutResult@{logoutResult}}
+\index{logoutResult@{logoutResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{logoutResult}{logoutResult}}
+{\footnotesize\ttfamily \label{class_service_manager_a20bbdbf993af6d8328ac7929896539d1} 
+void Service\+Manager::\+logout\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_a74ff0745275d3cdd6a9096164d573e1f}\index{ServiceManager@{ServiceManager}!passwordChangeWithCodeResult@{passwordChangeWithCodeResult}}
+\index{passwordChangeWithCodeResult@{passwordChangeWithCodeResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{passwordChangeWithCodeResult}{passwordChangeWithCodeResult}}
+{\footnotesize\ttfamily \label{class_service_manager_a74ff0745275d3cdd6a9096164d573e1f} 
+void Service\+Manager::\+password\+Change\+With\+Code\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_a44415aacd9e6b656b2c6bae17312532e}\index{ServiceManager@{ServiceManager}!reconnecting@{reconnecting}}
+\index{reconnecting@{reconnecting}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{reconnecting}{reconnecting}}
+{\footnotesize\ttfamily \label{class_service_manager_a44415aacd9e6b656b2c6bae17312532e} 
+void Service\+Manager::\+reconnecting (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_af4623e3acffff271b765bc7d929f4fcb}\index{ServiceManager@{ServiceManager}!refreshTokenResult@{refreshTokenResult}}
+\index{refreshTokenResult@{refreshTokenResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{refreshTokenResult}{refreshTokenResult}}
+{\footnotesize\ttfamily \label{class_service_manager_af4623e3acffff271b765bc7d929f4fcb} 
+void Service\+Manager::\+refresh\+Token\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{, }\item[{const QString \&}]{new\+Token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_adc5d5613f83ad7151de7fc42ce1ff7e2}\index{ServiceManager@{ServiceManager}!regConfirmResult@{regConfirmResult}}
+\index{regConfirmResult@{regConfirmResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{regConfirmResult}{regConfirmResult}}
+{\footnotesize\ttfamily \label{class_service_manager_adc5d5613f83ad7151de7fc42ce1ff7e2} 
+void Service\+Manager::\+reg\+Confirm\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_service_manager_ae0fcd2837b882e6d0aed75d9ace40f6f}\index{ServiceManager@{ServiceManager}!regRequestCodeResult@{regRequestCodeResult}}
+\index{regRequestCodeResult@{regRequestCodeResult}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{regRequestCodeResult}{regRequestCodeResult}}
+{\footnotesize\ttfamily \label{class_service_manager_ae0fcd2837b882e6d0aed75d9ace40f6f} 
+void Service\+Manager::\+reg\+Request\+Code\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{, }\item[{const QString \&}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\label{class_service_manager_doc-variable-members}
+\Hypertarget{class_service_manager_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{class_service_manager_a3b64a950eb8268e24646c0fec4e185d2}\index{ServiceManager@{ServiceManager}!m\_currentLogin@{m\_currentLogin}}
+\index{m\_currentLogin@{m\_currentLogin}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_currentLogin}{m\_currentLogin}}
+{\footnotesize\ttfamily \label{class_service_manager_a3b64a950eb8268e24646c0fec4e185d2} 
+QString Service\+Manager::\+m\+\_\+current\+Login\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Текущий залогиненный пользователь. 
+
+\Hypertarget{class_service_manager_aea3170c33b7b56e74a6c9f01657b7a61}\index{ServiceManager@{ServiceManager}!m\_currentToken@{m\_currentToken}}
+\index{m\_currentToken@{m\_currentToken}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_currentToken}{m\_currentToken}}
+{\footnotesize\ttfamily \label{class_service_manager_aea3170c33b7b56e74a6c9f01657b7a61} 
+QString Service\+Manager::\+m\+\_\+current\+Token\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Текущий токен сессии. 
+
+\Hypertarget{class_service_manager_a28c567a9ef815c545de379497632d260}\index{ServiceManager@{ServiceManager}!m\_graphDataBuffer@{m\_graphDataBuffer}}
+\index{m\_graphDataBuffer@{m\_graphDataBuffer}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_graphDataBuffer}{m\_graphDataBuffer}}
+{\footnotesize\ttfamily \label{class_service_manager_a28c567a9ef815c545de379497632d260} 
+QByte\+Array Service\+Manager::\+m\+\_\+graph\+Data\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Буфер для приёма данных графика. 
+
+\Hypertarget{class_service_manager_aac51e466240c22b86bd414b7c867b41f}\index{ServiceManager@{ServiceManager}!m\_host@{m\_host}}
+\index{m\_host@{m\_host}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_host}{m\_host}}
+{\footnotesize\ttfamily \label{class_service_manager_aac51e466240c22b86bd414b7c867b41f} 
+QString Service\+Manager::\+m\+\_\+host\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Сохранённый хост сервера. 
+
+\Hypertarget{class_service_manager_abeb49f0cef292e0d314fa91d24c7dca3}\index{ServiceManager@{ServiceManager}!m\_port@{m\_port}}
+\index{m\_port@{m\_port}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_port}{m\_port}}
+{\footnotesize\ttfamily \label{class_service_manager_abeb49f0cef292e0d314fa91d24c7dca3} 
+int Service\+Manager::\+m\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Сохранённый порт сервера. 
+
+\Hypertarget{class_service_manager_a08407e0a88621534010948a42799b490}\index{ServiceManager@{ServiceManager}!m\_readBuffer@{m\_readBuffer}}
+\index{m\_readBuffer@{m\_readBuffer}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_readBuffer}{m\_readBuffer}}
+{\footnotesize\ttfamily \label{class_service_manager_a08407e0a88621534010948a42799b490} 
+QByte\+Array Service\+Manager::\+m\+\_\+read\+Buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Буфер для чтения входящих данных. 
+
+\Hypertarget{class_service_manager_aba7e7ded1195e030a3b9aa118663fd62}\index{ServiceManager@{ServiceManager}!m\_receivingGraphData@{m\_receivingGraphData}}
+\index{m\_receivingGraphData@{m\_receivingGraphData}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_receivingGraphData}{m\_receivingGraphData}}
+{\footnotesize\ttfamily \label{class_service_manager_aba7e7ded1195e030a3b9aa118663fd62} 
+bool Service\+Manager::\+m\+\_\+receiving\+Graph\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Флаг, указывающий, что сейчас принимаются данные графика. 
+
+\Hypertarget{class_service_manager_a426cce7dd115376e793cae597440be25}\index{ServiceManager@{ServiceManager}!m\_reconnectAttempts@{m\_reconnectAttempts}}
+\index{m\_reconnectAttempts@{m\_reconnectAttempts}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_reconnectAttempts}{m\_reconnectAttempts}}
+{\footnotesize\ttfamily \label{class_service_manager_a426cce7dd115376e793cae597440be25} 
+int Service\+Manager::\+m\+\_\+reconnect\+Attempts\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Количество попыток переподключения. 
+
+\Hypertarget{class_service_manager_ab88019d81dd9a431f2631c884115b815}\index{ServiceManager@{ServiceManager}!m\_reconnectTimer@{m\_reconnectTimer}}
+\index{m\_reconnectTimer@{m\_reconnectTimer}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_reconnectTimer}{m\_reconnectTimer}}
+{\footnotesize\ttfamily \label{class_service_manager_ab88019d81dd9a431f2631c884115b815} 
+QTimer\texorpdfstring{$\ast$}{*} Service\+Manager::\+m\+\_\+reconnect\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Таймер переподключения. 
+
+\Hypertarget{class_service_manager_a46c313a6bded6dbe4b7509d632c444c1}\index{ServiceManager@{ServiceManager}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily \label{class_service_manager_a46c313a6bded6dbe4b7509d632c444c1} 
+QTcp\+Socket\texorpdfstring{$\ast$}{*} Service\+Manager::\+m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+TCP-\/сокет для связи с сервером. 
+
+\Hypertarget{class_service_manager_a4c8a5c33817d69e217ff03dbe65b38b1}\index{ServiceManager@{ServiceManager}!MAX\_RECONNECT\_ATTEMPTS@{MAX\_RECONNECT\_ATTEMPTS}}
+\index{MAX\_RECONNECT\_ATTEMPTS@{MAX\_RECONNECT\_ATTEMPTS}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{MAX\_RECONNECT\_ATTEMPTS}{MAX\_RECONNECT\_ATTEMPTS}}
+{\footnotesize\ttfamily \label{class_service_manager_a4c8a5c33817d69e217ff03dbe65b38b1} 
+const int Service\+Manager::\+\+MAX\+\_\+\+RECONNECT\+\_\+\+ATTEMPTS = 5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{class_service_manager_aa263d9769dbaf6de72577d9e70965722}\index{ServiceManager@{ServiceManager}!RECONNECT\_INTERVAL\_MS@{RECONNECT\_INTERVAL\_MS}}
+\index{RECONNECT\_INTERVAL\_MS@{RECONNECT\_INTERVAL\_MS}!ServiceManager@{ServiceManager}}
+\doxysubsubsection{\texorpdfstring{RECONNECT\_INTERVAL\_MS}{RECONNECT\_INTERVAL\_MS}}
+{\footnotesize\ttfamily \label{class_service_manager_aa263d9769dbaf6de72577d9e70965722} 
+const int Service\+Manager::\+\+RECONNECT\+\_\+\+INTERVAL\+\_\+\+MS = 3000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{servicemanager_8h}{servicemanager.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+build/\+\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+10\+\_\+3\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/u041eu0442u043bu0430u0434u043au0430/\+debug/\+\doxymbox{\hyperlink{moc__servicemanager_8cpp}{moc\+\_\+servicemanager.\+cpp}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{servicemanager_8cpp}{servicemanager.\+cpp}}\end{DoxyCompactItemize}

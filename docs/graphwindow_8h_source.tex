@@ -1,46 +1,107 @@
 \doxysection{graphwindow.\+h}
-\hypertarget{graphwindow_8h_source}{}\label{graphwindow_8h_source}\index{C:/Users/пп/Desktop/Исходники/Timpproject/graphwindow.h@{C:/Users/пп/Desktop/Исходники/Timpproject/graphwindow.h}}
+\hypertarget{graphwindow_8h_source}{}\label{graphwindow_8h_source}\index{C:/Users/пп/Desktop/New/Clientdox/Timpproject/graphwindow.h@{C:/Users/пп/Desktop/New/Clientdox/Timpproject/graphwindow.h}}
 \doxymbox{\hyperlink{graphwindow_8h}{См. документацию.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ GRAPHWINDOW\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ GRAPHWINDOW\_H}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QByteArray>}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{qcustomplot_8h}{qcustomplot.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{qcustomplot_8h}{qcustomplot.h}}"{}}}
+\DoxyCodeLine{00012\ }
 \DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_ui}{Ui}}\ \{}
 \DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_ui_1_1_graph_window}{GraphWindow}};}
 \DoxyCodeLine{00015\ \}}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_graph_window_a68f193cacc0237a41d8c44923b53c11a}{GraphWindow}}\ :\ \textcolor{keyword}{public}\ QWidget}
-\DoxyCodeLine{00024\ \{}
-\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{class_graph_window_a68f193cacc0237a41d8c44923b53c11a}{GraphWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00037\ \ \ \ \ \doxymbox{\hyperlink{class_graph_window_acca1dc8c3eefe6608ae2de3cee2e22ee}{\string~GraphWindow}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__graphwindow__impl_ga68f193cacc0237a41d8c44923b53c11a}{GraphWindow}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga68f193cacc0237a41d8c44923b53c11a}{GraphWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{private}\ slots:}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_graph_window_a15bda247268f26b45a583eab5ba5d725}{onSliderChanged}}();}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_graph_window_adcba78f9f4bfda717686e5c48dc11a48}{onReadyRead}}();}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00054\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00058\ \ \ \ \ \doxymbox{\hyperlink{class_ui_1_1_graph_window}{Ui::GraphWindow}}\ *\doxymbox{\hyperlink{class_graph_window_a3b5fbf4682a8712745b3845f595cb851}{ui}};}
+\DoxyCodeLine{00042\ \ \ \ \ \doxymbox{\hyperlink{group__graphwindow__impl_gacca1dc8c3eefe6608ae2de3cee2e22ee}{\string~GraphWindow}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga15bda247268f26b45a583eab5ba5d725}{onSliderChanged}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga1d47676c2decdaafd45f2c566a7f4889}{onExportPNG}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga1e5cb4d993ea6ae86482d7c522ebbbb1}{onExportPDF}}();}
 \DoxyCodeLine{00059\ }
-\DoxyCodeLine{00063\ \ \ \ \ QTcpSocket\ *\doxymbox{\hyperlink{class_graph_window_a0867c157661b36b3651fe455a811f4d4}{socket}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga995b6c258c4be1386b4c4addb29b4410}{onSaveToFile}}();}
 \DoxyCodeLine{00064\ }
-\DoxyCodeLine{00068\ \ \ \ \ QByteArray\ \doxymbox{\hyperlink{class_graph_window_acc17d171885733d9f7afb48635df3b12}{buffer}};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga6fe5959aeb025689ef9a5eaec2793a5e}{onLoadFromFile}}();}
 \DoxyCodeLine{00069\ }
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_graph_window_afdfcd0a42fc95bee3d0efc3ff6320920}{data}}[4]\ =\ \{1,\ 2,\ 3,\ 0.01\};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga35740ef1f5af4c41dcf8a2459165a0d0}{onDeleteFromFile}}();}
 \DoxyCodeLine{00074\ }
-\DoxyCodeLine{00078\ \ \ \ \ QVector<double>\ \doxymbox{\hyperlink{class_graph_window_ae5c7eab02fb7be9cba92ec1ab095feea}{xData}};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga7b4c8a1e56aac849ba89ffe2b591ce2a}{onClearGraph}}();}
 \DoxyCodeLine{00079\ }
-\DoxyCodeLine{00083\ \ \ \ \ QVector<double>\ \doxymbox{\hyperlink{class_graph_window_a361ad2f79eaef0cb5abf5fb35cf64672}{yData}};}
-\DoxyCodeLine{00084\ \};}
-\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_gaa877ad44e207acbe1ce314beaf29f0e1}{onColorButtonClicked}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga16fc3589840eaa3490cffe9d3a12c405}{onZoomChanged}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ \ \ \doxymbox{\hyperlink{class_ui_1_1_graph_window}{Ui::GraphWindow}}\ *\doxymbox{\hyperlink{class_graph_window_a3b5fbf4682a8712745b3845f595cb851}{ui}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Данные\ графиков}}
+\DoxyCodeLine{00097\ \ \ \ \ QVector<double>\ \doxymbox{\hyperlink{class_graph_window_a501c6c5d372094e07eb54ed60888f8e5}{xDataSin}};}
+\DoxyCodeLine{00098\ \ \ \ \ QVector<double>\ \doxymbox{\hyperlink{class_graph_window_a552f899c6d6c5d5d93f13af62c7e8bb0}{yDataSin}};}
+\DoxyCodeLine{00099\ \ \ \ \ QVector<double>\ \doxymbox{\hyperlink{class_graph_window_a0a4648170caa2e3f026a120bee9cfbf7}{xDataSqrt}};}
+\DoxyCodeLine{00100\ \ \ \ \ QVector<double>\ \doxymbox{\hyperlink{class_graph_window_a0fb1bbdcdc2c903340759fa64ccba647}{yDataSqrt}};}
+\DoxyCodeLine{00101\ \ \ \ \ QVector<double>\ \doxymbox{\hyperlink{class_graph_window_a8d7ca89bbc0a2cbbb5c056518657d2e2}{xDataFrac}};}
+\DoxyCodeLine{00102\ \ \ \ \ QVector<double>\ \doxymbox{\hyperlink{class_graph_window_ad3f5905a42f3c24aa96cc5ff6d3620ad}{yDataFrac}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \ \ \ \ QMap<QString,\ QPair<QVector<double>,\ QVector<double>>>\ \doxymbox{\hyperlink{class_graph_window_a56b7be35c4cc8e57013fee5ae6b191fb}{m\_cache}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \ \ \ \ QColor\ \doxymbox{\hyperlink{class_graph_window_ab3d5ac2c6c7bd6a248d5c2d3c0642793}{m\_sinColor}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00117\ \ \ \ \ QColor\ \doxymbox{\hyperlink{class_graph_window_a56f0532c709be24ebb53f272af1959f1}{m\_sqrtColor}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00122\ \ \ \ \ QColor\ \doxymbox{\hyperlink{class_graph_window_ab84db4e51b17c15e86c9e614b33fd303}{m\_fracColor}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00127\ \ \ \ \ QTimer*\ \doxymbox{\hyperlink{class_graph_window_ab6a430427f006692e94d9eaffc34ad51}{m\_sessionCheckTimer}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_graph_window_af59c2c8e0ce83a0b6611305ff5a72e64}{m\_sessionCheckInterval}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ Кнопки\ управления}}
+\DoxyCodeLine{00135\ \ \ \ \ QPushButton*\ \doxymbox{\hyperlink{class_graph_window_ad860010ed27a641078bc43cdfaaa3b14}{m\_exportPNGBtn}};}
+\DoxyCodeLine{00136\ \ \ \ \ QPushButton*\ \doxymbox{\hyperlink{class_graph_window_a9032a7cc614a99f64db079fbbd7be3a7}{m\_exportPDFBtn}};}
+\DoxyCodeLine{00137\ \ \ \ \ QPushButton*\ \doxymbox{\hyperlink{class_graph_window_a203d5a74bab656d09e99118fcd9ce071}{m\_saveBtn}};}
+\DoxyCodeLine{00138\ \ \ \ \ QPushButton*\ \doxymbox{\hyperlink{class_graph_window_aa8964a979591eb83ab82d9ebaf8cae65}{m\_loadBtn}};}
+\DoxyCodeLine{00139\ \ \ \ \ QPushButton*\ \doxymbox{\hyperlink{class_graph_window_a15d2321cdfa7d5ce272e6a6715f0013a}{m\_deleteBtn}};}
+\DoxyCodeLine{00140\ \ \ \ \ QPushButton*\ \doxymbox{\hyperlink{class_graph_window_a479c7727e934814edd44513715399ca9}{m\_clearBtn}};}
+\DoxyCodeLine{00141\ \ \ \ \ QPushButton*\ \doxymbox{\hyperlink{class_graph_window_a5036995a458785e5149a1eef1bb17dbe}{m\_colorBtn}};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga4b03485cf882a3f877b9e5deb224e031}{parseServerData}}(\textcolor{keyword}{const}\ QString\&\ response);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_gabbf7f8452a63d2869e9e20a97208c46d}{computeLocal}}(\textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga770987712af13f4e4bcf2a39d2cfd504}{calculateFunction}}(\textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c,\ \textcolor{keywordtype}{double}\ x);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga406bf05becacaa723de2ca91ec842d41}{updateParameterLabels}}();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_gab0d531603118d01a7bf74bd4de515522}{setupGraphStyle}}();}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga2169d6bf25fc610c707949e7d75c36fb}{setupExportButtons}}();}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga55f65b01e22c63714d02c5e162f4e6ba}{setupZoomDrag}}();}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_gaa6a4422e499c500a28408fb9a9ce972f}{setupKeyboardNav}}();}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga04f862d37034c141071e10029dc1bf8d}{updateGraphColors}}();}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00194\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__graphwindow__impl_ga5946cbbc48379f6f1378ae468d78c324}{getCacheKey}}(\textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c);}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__graphwindow__impl_ga24612ecaac3563e66d289832471c5bf4}{checkSessionValid}}();}
+\DoxyCodeLine{00201\ \};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GRAPHWINDOW\_H}}
 
 \end{DoxyCode}

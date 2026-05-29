@@ -1,0 +1,46 @@
+\doxysection{emailservice.\+h}
+\hypertarget{emailservice_8h_source}{}\label{emailservice_8h_source}\index{C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/emailservice.h@{C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/emailservice.h}}
+\doxymbox{\hyperlink{emailservice_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EMAILSERVICE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EMAILSERVICE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QSslSocket>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QByteArray>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__emailservice_ga4320aeb9b8f0ccbdb11cf66ba2f5c524}{EmailService}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \doxymbox{\hyperlink{group__emailservice_ga4320aeb9b8f0ccbdb11cf66ba2f5c524}{EmailService}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__emailservice_gae28763d6fe820a38a396eb47ca4013c6}{setSmtpConfig}}(\textcolor{keyword}{const}\ QString\ \&host,\ quint16\ port,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&username,\ \textcolor{keyword}{const}\ QString\ \&password,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&fromEmail);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailservice_gaec3104589c9f21167e4e034388a9252d}{sendEmail}}(\textcolor{keyword}{const}\ QString\ \&to,\ \textcolor{keyword}{const}\ QString\ \&subject,\ \textcolor{keyword}{const}\ QString\ \&body);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00039\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__emailservice_gaaadcfc8d97ce2454428ed08d80db018a}{m\_smtpHost}};\ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ quint16\ \doxymbox{\hyperlink{group__emailservice_ga929b4c6a088ec396b3a1cb581a0258ad}{m\_smtpPort}};\ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__emailservice_gacffe9bad52a91f235fdec5bc1488616e}{m\_smtpUsername}};\ }
+\DoxyCodeLine{00042\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__emailservice_ga4898ad71d30ce7809d7771e49116d83b}{m\_smtpPassword}};\ }
+\DoxyCodeLine{00043\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__emailservice_gac2abb57ea02abda5dee0cdf53d5866d9}{m\_fromEmail}};\ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailservice_ga1c15208c5c118bfd22b45dc24f3235f1}{m\_configured}};\ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailservice_gafacd4e437e1ca3206bd0c599acec926b}{m\_sslAvailable}};\ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{mutable}\ QMutex\ \doxymbox{\hyperlink{group__emailservice_ga156bf5f4ad34d1d0ecd2b069bdb55b6c}{m\_mutex}};\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailservice_ga8d93c2d6f288040137407e4497d0e342}{sendViaSmtp}}(\textcolor{keyword}{const}\ QString\ \&to,\ \textcolor{keyword}{const}\ QString\ \&subject,\ \textcolor{keyword}{const}\ QString\ \&body);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailservice_ga172088fab7d205980d71402884a03fbf}{waitForResponse}}(QSslSocket\ \&socket,\ \textcolor{keywordtype}{int}\ expectedCode\ =\ -\/1);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00061\ \ \ \ \ QByteArray\ \doxymbox{\hyperlink{group__emailservice_ga69e50484bf28b74fc7cdc70b5a570b5a}{base64Encode}}(\textcolor{keyword}{const}\ QString\ \&str);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailservice_ga1e804ab94bf8cd580d866dc4e582cf55}{checkSslAvailable}}();}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EMAILSERVICE\_H}}
+
+\end{DoxyCode}

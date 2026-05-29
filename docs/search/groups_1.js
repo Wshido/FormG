@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['базой_20данных_0',['базой данных',['../group__dbcpp.html',1,'Методы управления базой данных'],['../group__db.html',1,'Управление базой данных']]]
+  ['smtp_0',['Сервис отправки email через SMTP',['../group__emailservice.html',1,'']]],
+  ['smtp_20клиент_1',['Реализация отправки email (SMTP клиент)',['../group__emailsender__impl.html',1,'']]]
 ];

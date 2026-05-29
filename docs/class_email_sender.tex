@@ -1,0 +1,151 @@
+\doxysection{Класс Email\+Sender}
+\hypertarget{class_email_sender}{}\label{class_email_sender}\index{EmailSender@{EmailSender}}
+
+
+Singleton-\/класс для отправки email-\/сообщений.  
+
+
+
+
+{\ttfamily \+\#include $<$emailsender.\+h$>$}
+
+Граф наследования:\+Email\+Sender:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_email_sender}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__emailsender__impl_gacb886a9a6244609bdddef4f4e7f1f4a9}{set\+Smtp\+Config}} (const QString \&host, quint16 port, const QString \&username, const QString \&password, const QString \&from\+Email)
+\begin{DoxyCompactList}\small\item\em Устанавливает конфигурацию SMTP-\/сервера. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_ga23f1ecae960428cf50947cce69e25c0e}{send\+Verification\+Code}} (const QString \&to, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Отправляет код подтверждения на email. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_gacf5f9677ecd112635307c722872bcb1c}{send\+Welcome\+Email}} (const QString \&to, const QString \&username)
+\begin{DoxyCompactList}\small\item\em Отправляет приветственное письмо новому пользователю. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_ga9f00bb572e89a4e6d5c725b724a32988}{send\+Password\+Changed\+Email}} (const QString \&to, const QString \&username)
+\begin{DoxyCompactList}\small\item\em Отправляет уведомление об изменении пароля. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_ga0cb3d2ce5ba83a884edf32846f6a62dd}{is\+Ssl\+Available}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет доступность SSL-\/поддержки. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Открытые статические члены}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_email_sender}{Email\+Sender}} \& \doxymbox{\hyperlink{group__emailsender__impl_ga0933b0cefaf8b7be6c1edc540bd94099}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает единственный экземпляр отправителя email. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__emailsender__impl_ga65c111763fafc4468dc0da07f4db8da1}{Email\+Sender}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Приватный конструктор (Singleton). \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_ga3f11a5360b244cd559dc698e60d29492}{send\+Email}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Общая функция отправки email. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_gadaa872a3cf77107935d8d674593b7292}{send\+Via\+Smtp}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Отправка письма через SMTP-\/протокол. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_gaa4f7e0040a3a65fba1f0bf503c5328d0}{wait\+For\+Response}} (QSsl\+Socket \&socket, int expected\+Code=-\/1)
+\begin{DoxyCompactList}\small\item\em Ожидает ответ от SMTP-\/сервера. \end{DoxyCompactList}\item 
+QByte\+Array \doxymbox{\hyperlink{group__emailsender__impl_ga5ddbf2201ab1aa39c0ca5ac28c2d1d36}{base64\+Encode}} (const QString \&str)
+\begin{DoxyCompactList}\small\item\em Кодирует строку в Base64. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+QString \doxymbox{\hyperlink{class_email_sender_ad18558efacc73b39c5d2f1bd709b9d1a}{m\+\_\+smtp\+Host}}
+\begin{DoxyCompactList}\small\item\em SMTP-\/хост сервера. \end{DoxyCompactList}\item 
+quint16 \doxymbox{\hyperlink{class_email_sender_a6397b9d4ac3d19e656a1f33d7f2522ab}{m\+\_\+smtp\+Port}}
+\begin{DoxyCompactList}\small\item\em Порт SMTP-\/сервера. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_email_sender_adc018f22a27ba32fc4a0e367e74ecd18}{m\+\_\+smtp\+Username}}
+\begin{DoxyCompactList}\small\item\em Имя пользователя для SMTP-\/авторизации. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_email_sender_a21d86bec61c3b637021f7aa0c95ab54c}{m\+\_\+smtp\+Password}}
+\begin{DoxyCompactList}\small\item\em Пароль для SMTP-\/авторизации. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_email_sender_a104d84a3303eea853720347923080a9b}{m\+\_\+from\+Email}}
+\begin{DoxyCompactList}\small\item\em Email-\/адрес отправителя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_email_sender_a4e7159a2491763c0a474cd48651e570e}{m\+\_\+configured}}
+\begin{DoxyCompactList}\small\item\em Флаг, указывающий, что конфигурация была задана. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_email_sender_a24bda734294a753f5f71290115b31502}{m\+\_\+ssl\+Available}}
+\begin{DoxyCompactList}\small\item\em Флаг доступности SSL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Singleton-\/класс для отправки email-\/сообщений. 
+
+Используется для отправки кодов подтверждения, приветственных писем и уведомлений об изменении пароля. 
+
+\label{class_email_sender_doc-variable-members}
+\Hypertarget{class_email_sender_doc-variable-members}
+\doxysubsection{Данные класса}
+\Hypertarget{class_email_sender_a4e7159a2491763c0a474cd48651e570e}\index{EmailSender@{EmailSender}!m\_configured@{m\_configured}}
+\index{m\_configured@{m\_configured}!EmailSender@{EmailSender}}
+\doxysubsubsection{\texorpdfstring{m\_configured}{m\_configured}}
+{\footnotesize\ttfamily \label{class_email_sender_a4e7159a2491763c0a474cd48651e570e} 
+bool Email\+Sender::\+m\+\_\+configured\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Флаг, указывающий, что конфигурация была задана. 
+
+\Hypertarget{class_email_sender_a104d84a3303eea853720347923080a9b}\index{EmailSender@{EmailSender}!m\_fromEmail@{m\_fromEmail}}
+\index{m\_fromEmail@{m\_fromEmail}!EmailSender@{EmailSender}}
+\doxysubsubsection{\texorpdfstring{m\_fromEmail}{m\_fromEmail}}
+{\footnotesize\ttfamily \label{class_email_sender_a104d84a3303eea853720347923080a9b} 
+QString Email\+Sender::\+m\+\_\+from\+Email\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Email-\/адрес отправителя. 
+
+\Hypertarget{class_email_sender_ad18558efacc73b39c5d2f1bd709b9d1a}\index{EmailSender@{EmailSender}!m\_smtpHost@{m\_smtpHost}}
+\index{m\_smtpHost@{m\_smtpHost}!EmailSender@{EmailSender}}
+\doxysubsubsection{\texorpdfstring{m\_smtpHost}{m\_smtpHost}}
+{\footnotesize\ttfamily \label{class_email_sender_ad18558efacc73b39c5d2f1bd709b9d1a} 
+QString Email\+Sender::\+m\+\_\+smtp\+Host\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+SMTP-\/хост сервера. 
+
+\Hypertarget{class_email_sender_a21d86bec61c3b637021f7aa0c95ab54c}\index{EmailSender@{EmailSender}!m\_smtpPassword@{m\_smtpPassword}}
+\index{m\_smtpPassword@{m\_smtpPassword}!EmailSender@{EmailSender}}
+\doxysubsubsection{\texorpdfstring{m\_smtpPassword}{m\_smtpPassword}}
+{\footnotesize\ttfamily \label{class_email_sender_a21d86bec61c3b637021f7aa0c95ab54c} 
+QString Email\+Sender::\+m\+\_\+smtp\+Password\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Пароль для SMTP-\/авторизации. 
+
+\Hypertarget{class_email_sender_a6397b9d4ac3d19e656a1f33d7f2522ab}\index{EmailSender@{EmailSender}!m\_smtpPort@{m\_smtpPort}}
+\index{m\_smtpPort@{m\_smtpPort}!EmailSender@{EmailSender}}
+\doxysubsubsection{\texorpdfstring{m\_smtpPort}{m\_smtpPort}}
+{\footnotesize\ttfamily \label{class_email_sender_a6397b9d4ac3d19e656a1f33d7f2522ab} 
+quint16 Email\+Sender::\+m\+\_\+smtp\+Port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Порт SMTP-\/сервера. 
+
+\Hypertarget{class_email_sender_adc018f22a27ba32fc4a0e367e74ecd18}\index{EmailSender@{EmailSender}!m\_smtpUsername@{m\_smtpUsername}}
+\index{m\_smtpUsername@{m\_smtpUsername}!EmailSender@{EmailSender}}
+\doxysubsubsection{\texorpdfstring{m\_smtpUsername}{m\_smtpUsername}}
+{\footnotesize\ttfamily \label{class_email_sender_adc018f22a27ba32fc4a0e367e74ecd18} 
+QString Email\+Sender::\+m\+\_\+smtp\+Username\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Имя пользователя для SMTP-\/авторизации. 
+
+\Hypertarget{class_email_sender_a24bda734294a753f5f71290115b31502}\index{EmailSender@{EmailSender}!m\_sslAvailable@{m\_sslAvailable}}
+\index{m\_sslAvailable@{m\_sslAvailable}!EmailSender@{EmailSender}}
+\doxysubsubsection{\texorpdfstring{m\_sslAvailable}{m\_sslAvailable}}
+{\footnotesize\ttfamily \label{class_email_sender_a24bda734294a753f5f71290115b31502} 
+bool Email\+Sender::\+m\+\_\+ssl\+Available\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Флаг доступности SSL. 
+
+
+
+Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{emailsender_8h}{emailsender.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{emailsender_8cpp}{emailsender.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;: Реализация окна авторизации</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__logintimp__impl.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Реализация окна авторизации <div class="ingroups"><a class="el" href="group__client.html">Клиент</a> &raquo; <a class="el" href="group__logintimp.html">Окно авторизации</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:gac6ae6157f5f9df2e3e32e86d0a4f8c0f" id="r_gac6ae6157f5f9df2e3e32e86d0a4f8c0f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#gac6ae6157f5f9df2e3e32e86d0a4f8c0f">LoginTimp::LoginTimp</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:gac6ae6157f5f9df2e3e32e86d0a4f8c0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор.  <br /></td></tr>
+<tr class="memitem:ga74c13a23b2d8fd7e9eed1f864fd2eb67" id="r_ga74c13a23b2d8fd7e9eed1f864fd2eb67"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ga74c13a23b2d8fd7e9eed1f864fd2eb67">LoginTimp::~LoginTimp</a> ()</td></tr>
+<tr class="memdesc:ga74c13a23b2d8fd7e9eed1f864fd2eb67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор.  <br /></td></tr>
+<tr class="memitem:ga79d1dfe3c3fad81791afc05fabe1dfd4" id="r_ga79d1dfe3c3fad81791afc05fabe1dfd4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga79d1dfe3c3fad81791afc05fabe1dfd4">LoginTimp::updateTimerDisplay</a> ()</td></tr>
+<tr class="memdesc:ga79d1dfe3c3fad81791afc05fabe1dfd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновляет отображение оставшегося времени на форме.  <br /></td></tr>
+<tr class="memitem:ga064f14cab3d572f6db66c5b7f45da0e2" id="r_ga064f14cab3d572f6db66c5b7f45da0e2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga064f14cab3d572f6db66c5b7f45da0e2">LoginTimp::startCodeTimer</a> ()</td></tr>
+<tr class="memdesc:ga064f14cab3d572f6db66c5b7f45da0e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Запускает таймер обратного отсчёта кода.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slot-members" class="groupheader"><a id="pri-slot-members" name="pri-slot-members"></a>
+Закрытые слоты</h2></td></tr>
+<tr class="memitem:gaceaf43a6f8d65cecde9020d470f87b0b" id="r_gaceaf43a6f8d65cecde9020d470f87b0b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaceaf43a6f8d65cecde9020d470f87b0b">LoginTimp::on_loginButton_clicked</a> ()</td></tr>
+<tr class="memdesc:gaceaf43a6f8d65cecde9020d470f87b0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик нажатия кнопки "Войти".  <br /></td></tr>
+<tr class="memitem:gaaffdd63f28783267b58d5b7aa2307b2e" id="r_gaaffdd63f28783267b58d5b7aa2307b2e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaaffdd63f28783267b58d5b7aa2307b2e">LoginTimp::onAuthRequestCodeResult</a> (bool success, const QString &amp;email, const QString &amp;code)</td></tr>
+<tr class="memdesc:gaaffdd63f28783267b58d5b7aa2307b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот обработки результата запроса кода подтверждения.  <br /></td></tr>
+<tr class="memitem:gad54ec26857a7b44dffe43dfae106071b" id="r_gad54ec26857a7b44dffe43dfae106071b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gad54ec26857a7b44dffe43dfae106071b">LoginTimp::on_confirmCodeButton_clicked</a> ()</td></tr>
+<tr class="memdesc:gad54ec26857a7b44dffe43dfae106071b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик подтверждения кода из email.  <br /></td></tr>
+<tr class="memitem:ga71770db937a97694c7bf316da730a95f" id="r_ga71770db937a97694c7bf316da730a95f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga71770db937a97694c7bf316da730a95f">LoginTimp::onAuthConfirmResult</a> (bool success, const QString &amp;sessionToken)</td></tr>
+<tr class="memdesc:ga71770db937a97694c7bf316da730a95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Слот обработки результата подтверждения кода.  <br /></td></tr>
+<tr class="memitem:ga5b5852e171cb2a0d270ecee76c752348" id="r_ga5b5852e171cb2a0d270ecee76c752348"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga5b5852e171cb2a0d270ecee76c752348">LoginTimp::on_backButton_clicked</a> ()</td></tr>
+<tr class="memdesc:ga5b5852e171cb2a0d270ecee76c752348"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик кнопки "Назад".  <br /></td></tr>
+<tr class="memitem:ga0073fa7faca8bf8c1224d3ff55acdc4f" id="r_ga0073fa7faca8bf8c1224d3ff55acdc4f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga0073fa7faca8bf8c1224d3ff55acdc4f">LoginTimp::on_forgotLabel_linkActivated</a> (const QString &amp;link)</td></tr>
+<tr class="memdesc:ga0073fa7faca8bf8c1224d3ff55acdc4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик клика по ссылке "Забыли пароль?".  <br /></td></tr>
+<tr class="memitem:gad5b2a563320b03efcee945f98fa1cb53" id="r_gad5b2a563320b03efcee945f98fa1cb53"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gad5b2a563320b03efcee945f98fa1cb53">LoginTimp::on_registerButton_clicked</a> ()</td></tr>
+<tr class="memdesc:gad5b2a563320b03efcee945f98fa1cb53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик перехода на окно регистрации.  <br /></td></tr>
+<tr class="memitem:ga8de99e24ea72174104bdb1d41b984fae" id="r_ga8de99e24ea72174104bdb1d41b984fae"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga8de99e24ea72174104bdb1d41b984fae">LoginTimp::on_logoutButton_clicked</a> ()</td></tr>
+<tr class="memdesc:ga8de99e24ea72174104bdb1d41b984fae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик кнопки выхода из аккаунта.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"></div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="gac6ae6157f5f9df2e3e32e86d0a4f8c0f" name="gac6ae6157f5f9df2e3e32e86d0a4f8c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac6ae6157f5f9df2e3e32e86d0a4f8c0f">&#9670;&#160;</a></span>LoginTimp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">LoginTimp::LoginTimp </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор. </p>
+<p>Конструктор <a class="el" href="class_login_timp.html" title="Класс окна авторизации пользователя.">LoginTimp</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский виджет.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Инициализирует UI, подключает сервер и настраивает таймер кода подтверждения. </p>
+
+</div>
+</div>
+<a id="ga064f14cab3d572f6db66c5b7f45da0e2" name="ga064f14cab3d572f6db66c5b7f45da0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga064f14cab3d572f6db66c5b7f45da0e2">&#9670;&#160;</a></span>startCodeTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::startCodeTimer </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Запускает таймер обратного отсчёта кода. </p>
+<p>Запускает таймер кода подтверждения (5 минут). </p>
+
+</div>
+</div>
+<a id="ga79d1dfe3c3fad81791afc05fabe1dfd4" name="ga79d1dfe3c3fad81791afc05fabe1dfd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga79d1dfe3c3fad81791afc05fabe1dfd4">&#9670;&#160;</a></span>updateTimerDisplay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::updateTimerDisplay </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновляет отображение оставшегося времени на форме. </p>
+<p>Обновляет отображение таймера кода подтверждения. </p>
+
+</div>
+</div>
+<a id="ga74c13a23b2d8fd7e9eed1f864fd2eb67" name="ga74c13a23b2d8fd7e9eed1f864fd2eb67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74c13a23b2d8fd7e9eed1f864fd2eb67">&#9670;&#160;</a></span>~LoginTimp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LoginTimp::~LoginTimp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Деструктор. </p>
+<p>Деструктор <a class="el" href="class_login_timp.html" title="Класс окна авторизации пользователя.">LoginTimp</a>. </p>
+
+</div>
+</div>
+<a name="doc-pri-slot-members" id="doc-pri-slot-members"></a><h2 id="header-doc-pri-slot-members" class="groupheader">Закрытые слоты</h2>
+<a id="ga5b5852e171cb2a0d270ecee76c752348" name="ga5b5852e171cb2a0d270ecee76c752348"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b5852e171cb2a0d270ecee76c752348">&#9670;&#160;</a></span>on_backButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::on_backButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик кнопки "Назад". </p>
+
+</div>
+</div>
+<a id="gad54ec26857a7b44dffe43dfae106071b" name="gad54ec26857a7b44dffe43dfae106071b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad54ec26857a7b44dffe43dfae106071b">&#9670;&#160;</a></span>on_confirmCodeButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::on_confirmCodeButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик подтверждения кода из email. </p>
+<p>Обработчик ввода кода подтверждения. </p>
+
+</div>
+</div>
+<a id="ga0073fa7faca8bf8c1224d3ff55acdc4f" name="ga0073fa7faca8bf8c1224d3ff55acdc4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0073fa7faca8bf8c1224d3ff55acdc4f">&#9670;&#160;</a></span>on_forgotLabel_linkActivated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::on_forgotLabel_linkActivated </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>link</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик клика по ссылке "Забыли пароль?". </p>
+<p>Открывает окно восстановления пароля.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">link</td><td>Текст ссылки. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaceaf43a6f8d65cecde9020d470f87b0b" name="gaceaf43a6f8d65cecde9020d470f87b0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaceaf43a6f8d65cecde9020d470f87b0b">&#9670;&#160;</a></span>on_loginButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::on_loginButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик нажатия кнопки "Войти". </p>
+<p>Обработчик кнопки входа.</p>
+<p>Отправляет запрос авторизации на сервер. </p>
+
+</div>
+</div>
+<a id="ga8de99e24ea72174104bdb1d41b984fae" name="ga8de99e24ea72174104bdb1d41b984fae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8de99e24ea72174104bdb1d41b984fae">&#9670;&#160;</a></span>on_logoutButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::on_logoutButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик кнопки выхода из аккаунта. </p>
+<p>Выполняет выход пользователя. </p>
+
+</div>
+</div>
+<a id="gad5b2a563320b03efcee945f98fa1cb53" name="gad5b2a563320b03efcee945f98fa1cb53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad5b2a563320b03efcee945f98fa1cb53">&#9670;&#160;</a></span>on_registerButton_clicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::on_registerButton_clicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик перехода на окно регистрации. </p>
+<p>Открывает окно регистрации. </p>
+
+</div>
+</div>
+<a id="ga71770db937a97694c7bf316da730a95f" name="ga71770db937a97694c7bf316da730a95f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga71770db937a97694c7bf316da730a95f">&#9670;&#160;</a></span>onAuthConfirmResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::onAuthConfirmResult </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>success</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>sessionToken</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот обработки результата подтверждения кода. </p>
+<p>Результат подтверждения кода авторизации.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">success</td><td>Успешность подтверждения. </td></tr>
+    <tr><td class="paramname">sessionToken</td><td>Токен сессии при успешном входе. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaaffdd63f28783267b58d5b7aa2307b2e" name="gaaffdd63f28783267b58d5b7aa2307b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaffdd63f28783267b58d5b7aa2307b2e">&#9670;&#160;</a></span>onAuthRequestCodeResult</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoginTimp::onAuthRequestCodeResult </td>
+          <td>(</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>success</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>code</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Слот обработки результата запроса кода подтверждения. </p>
+<p>Результат запроса кода авторизации.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">success</td><td>Успешность запроса. </td></tr>
+    <tr><td class="paramname">email</td><td>Email пользователя. </td></tr>
+    <tr><td class="paramname">code</td><td>Отправленный код (для отладки/тестирования). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

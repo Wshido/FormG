@@ -1,0 +1,247 @@
+\doxysubsubsection{Реализация отправки email (SMTP клиент) }
+\hypertarget{group__emailsender__impl}{}\label{group__emailsender__impl}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_email_sender}{Email\+Sender}} \& \doxymbox{\hyperlink{group__emailsender__impl_ga0933b0cefaf8b7be6c1edc540bd94099}{Email\+Sender::\+instance}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает единственный экземпляр отправителя email. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__emailsender__impl_ga65c111763fafc4468dc0da07f4db8da1}{Email\+Sender::\+\+Email\+Sender}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Приватный конструктор (Singleton). \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_ga0cb3d2ce5ba83a884edf32846f6a62dd}{Email\+Sender::\+is\+Ssl\+Available}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет доступность SSL-\/поддержки. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__emailsender__impl_gacb886a9a6244609bdddef4f4e7f1f4a9}{Email\+Sender::\+set\+Smtp\+Config}} (const QString \&host, quint16 port, const QString \&username, const QString \&password, const QString \&from\+Email)
+\begin{DoxyCompactList}\small\item\em Устанавливает конфигурацию SMTP-\/сервера. \end{DoxyCompactList}\item 
+QByte\+Array \doxymbox{\hyperlink{group__emailsender__impl_ga5ddbf2201ab1aa39c0ca5ac28c2d1d36}{Email\+Sender::\+base64\+Encode}} (const QString \&str)
+\begin{DoxyCompactList}\small\item\em Кодирует строку в Base64. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_gaa4f7e0040a3a65fba1f0bf503c5328d0}{Email\+Sender::\+wait\+For\+Response}} (QSsl\+Socket \&socket, int expected\+Code=-\/1)
+\begin{DoxyCompactList}\small\item\em Ожидает ответ от SMTP-\/сервера. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_ga3f11a5360b244cd559dc698e60d29492}{Email\+Sender::\+send\+Email}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Общая функция отправки email. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_gadaa872a3cf77107935d8d674593b7292}{Email\+Sender::\+send\+Via\+Smtp}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Отправка письма через SMTP-\/протокол. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_ga23f1ecae960428cf50947cce69e25c0e}{Email\+Sender::\+send\+Verification\+Code}} (const QString \&to, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Отправляет код подтверждения на email. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_gacf5f9677ecd112635307c722872bcb1c}{Email\+Sender::\+send\+Welcome\+Email}} (const QString \&to, const QString \&username)
+\begin{DoxyCompactList}\small\item\em Отправляет приветственное письмо новому пользователю. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailsender__impl_ga9f00bb572e89a4e6d5c725b724a32988}{Email\+Sender::\+send\+Password\+Changed\+Email}} (const QString \&to, const QString \&username)
+\begin{DoxyCompactList}\small\item\em Отправляет уведомление об изменении пароля. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Подробное описание}
+
+
+\label{group__emailsender__impl_doc-func-members}
+\Hypertarget{group__emailsender__impl_doc-func-members}
+\doxysubsubsubsection{Функции}
+\Hypertarget{group__emailsender__impl_ga5ddbf2201ab1aa39c0ca5ac28c2d1d36}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!base64Encode@{base64Encode}}
+\index{base64Encode@{base64Encode}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{base64Encode()}{base64Encode()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_ga5ddbf2201ab1aa39c0ca5ac28c2d1d36} 
+QByte\+Array Email\+Sender::\+base64\+Encode (\begin{DoxyParamCaption}\item[{const QString \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Кодирует строку в Base64. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em str} & Строка для кодирования. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Base64-\/представление. 
+\end{DoxyReturn}
+\Hypertarget{group__emailsender__impl_ga65c111763fafc4468dc0da07f4db8da1}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!EmailSender@{EmailSender}}
+\index{EmailSender@{EmailSender}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{EmailSender()}{EmailSender()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_ga65c111763fafc4468dc0da07f4db8da1} 
+Email\+Sender::\+\+Email\+Sender (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+Приватный конструктор (Singleton). 
+
+Конструктор \doxylink{class_email_sender}{Email\+Sender}.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em parent} & Родительский объект.\\
+\hline
+\end{DoxyParams}
+Проверяет доступность SSL и инициализирует параметры SMTP. \Hypertarget{group__emailsender__impl_ga0933b0cefaf8b7be6c1edc540bd94099}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!instance@{instance}}
+\index{instance@{instance}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_ga0933b0cefaf8b7be6c1edc540bd94099} 
+\doxymbox{\hyperlink{class_email_sender}{Email\+Sender}} \& Email\+Sender::\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Возвращает единственный экземпляр отправителя email. 
+
+Возвращает singleton-\/экземпляр \doxylink{class_email_sender}{Email\+Sender}.
+
+\begin{DoxyReturn}{Возвращает}
+Ссылка на экземпляр \doxylink{class_email_sender}{Email\+Sender}. 
+\end{DoxyReturn}
+\Hypertarget{group__emailsender__impl_ga0cb3d2ce5ba83a884edf32846f6a62dd}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!isSslAvailable@{isSslAvailable}}
+\index{isSslAvailable@{isSslAvailable}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{isSslAvailable()}{isSslAvailable()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_ga0cb3d2ce5ba83a884edf32846f6a62dd} 
+bool Email\+Sender::\+is\+Ssl\+Available (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет доступность SSL-\/поддержки. 
+
+Проверяет доступность SSL.
+
+\begin{DoxyReturn}{Возвращает}
+true, если SSL доступен. 
+\end{DoxyReturn}
+\Hypertarget{group__emailsender__impl_ga3f11a5360b244cd559dc698e60d29492}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!sendEmail@{sendEmail}}
+\index{sendEmail@{sendEmail}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{sendEmail()}{sendEmail()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_ga3f11a5360b244cd559dc698e60d29492} 
+bool Email\+Sender::\+send\+Email (\begin{DoxyParamCaption}\item[{const QString \&}]{to}{, }\item[{const QString \&}]{subject}{, }\item[{const QString \&}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Общая функция отправки email. 
+
+Отправляет email (общий интерфейс).
+
+
+\begin{DoxyParams}{Аргументы}
+{\em to} & Получатель. \\
+\hline
+{\em subject} & Тема письма. \\
+\hline
+{\em body} & Тело письма. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true в случае успеха. 
+\end{DoxyReturn}
+\Hypertarget{group__emailsender__impl_ga9f00bb572e89a4e6d5c725b724a32988}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!sendPasswordChangedEmail@{sendPasswordChangedEmail}}
+\index{sendPasswordChangedEmail@{sendPasswordChangedEmail}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{sendPasswordChangedEmail()}{sendPasswordChangedEmail()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_ga9f00bb572e89a4e6d5c725b724a32988} 
+bool Email\+Sender::\+send\+Password\+Changed\+Email (\begin{DoxyParamCaption}\item[{const QString \&}]{to}{, }\item[{const QString \&}]{username}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет уведомление об изменении пароля. 
+
+Уведомление об изменении пароля.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em to} & Адрес получателя. \\
+\hline
+{\em username} & Имя пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true в случае успешной отправки. 
+\end{DoxyReturn}
+\Hypertarget{group__emailsender__impl_ga23f1ecae960428cf50947cce69e25c0e}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!sendVerificationCode@{sendVerificationCode}}
+\index{sendVerificationCode@{sendVerificationCode}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{sendVerificationCode()}{sendVerificationCode()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_ga23f1ecae960428cf50947cce69e25c0e} 
+bool Email\+Sender::\+send\+Verification\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{to}{, }\item[{const QString \&}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет код подтверждения на email. 
+
+Отправляет письмо с кодом подтверждения.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em to} & Адрес получателя. \\
+\hline
+{\em code} & Код подтверждения. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true в случае успешной отправки. 
+\end{DoxyReturn}
+\Hypertarget{group__emailsender__impl_gadaa872a3cf77107935d8d674593b7292}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!sendViaSmtp@{sendViaSmtp}}
+\index{sendViaSmtp@{sendViaSmtp}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{sendViaSmtp()}{sendViaSmtp()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_gadaa872a3cf77107935d8d674593b7292} 
+bool Email\+Sender::\+send\+Via\+Smtp (\begin{DoxyParamCaption}\item[{const QString \&}]{to}{, }\item[{const QString \&}]{subject}{, }\item[{const QString \&}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Отправка письма через SMTP-\/протокол. 
+
+Отправка email через SMTP (низкоуровневая реализация). \Hypertarget{group__emailsender__impl_gacf5f9677ecd112635307c722872bcb1c}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!sendWelcomeEmail@{sendWelcomeEmail}}
+\index{sendWelcomeEmail@{sendWelcomeEmail}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{sendWelcomeEmail()}{sendWelcomeEmail()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_gacf5f9677ecd112635307c722872bcb1c} 
+bool Email\+Sender::\+send\+Welcome\+Email (\begin{DoxyParamCaption}\item[{const QString \&}]{to}{, }\item[{const QString \&}]{username}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет приветственное письмо новому пользователю. 
+
+Отправляет письмо с приветствием после регистрации.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em to} & Адрес получателя. \\
+\hline
+{\em username} & Имя пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true в случае успешной отправки. 
+\end{DoxyReturn}
+\Hypertarget{group__emailsender__impl_gacb886a9a6244609bdddef4f4e7f1f4a9}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!setSmtpConfig@{setSmtpConfig}}
+\index{setSmtpConfig@{setSmtpConfig}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{setSmtpConfig()}{setSmtpConfig()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_gacb886a9a6244609bdddef4f4e7f1f4a9} 
+void Email\+Sender::\+set\+Smtp\+Config (\begin{DoxyParamCaption}\item[{const QString \&}]{host}{, }\item[{quint16}]{port}{, }\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{from\+Email}{}\end{DoxyParamCaption})}
+
+
+
+Устанавливает конфигурацию SMTP-\/сервера. 
+
+Устанавливает SMTP конфигурацию.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em host} & Адрес SMTP-\/сервера. \\
+\hline
+{\em port} & Порт SMTP-\/сервера. \\
+\hline
+{\em username} & Имя пользователя для авторизации. \\
+\hline
+{\em password} & Пароль для авторизации. \\
+\hline
+{\em from\+Email} & Email-\/адрес отправителя. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__emailsender__impl_gaa4f7e0040a3a65fba1f0bf503c5328d0}\index{Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}!waitForResponse@{waitForResponse}}
+\index{waitForResponse@{waitForResponse}!Реализация отправки email (SMTP клиент)@{Реализация отправки email (SMTP клиент)}}
+\doxysubsubsubsubsection{\texorpdfstring{waitForResponse()}{waitForResponse()}}
+{\footnotesize\ttfamily \label{group__emailsender__impl_gaa4f7e0040a3a65fba1f0bf503c5328d0} 
+bool Email\+Sender::\+wait\+For\+Response (\begin{DoxyParamCaption}\item[{QSsl\+Socket \&}]{socket}{, }\item[{int}]{expected\+Code}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ожидает ответ от SMTP-\/сервера. 
+
+Ожидает ответ от SMTP сервера и проверяет код ответа.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em socket} & Сокет. \\
+\hline
+{\em expected\+Code} & Ожидаемый код ответа. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если получен ожидаемый код. 
+\end{DoxyReturn}

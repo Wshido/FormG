@@ -1,0 +1,5 @@
+var dir_173b4495512f0ccb9d6971030043c60d =
+[
+    [ "moc_predefs.h", "_serverdox_2002_t_c_pserver_2_t_c_pserver_2build_2_desktop___qt__6__10__3___min_g_w__64__bit-u04012691694c6a51b8a1ca2e1a7498e5f7.html", "_serverdox_2002_t_c_pserver_2_t_c_pserver_2build_2_desktop___qt__6__10__3___min_g_w__64__bit-u04012691694c6a51b8a1ca2e1a7498e5f7" ],
+    [ "moc_tcpserver.cpp", "build_2_desktop___qt__6__10__3___min_g_w__64__bit-u041eu0442u043bu0430u0434u043au0430_2debug_2moc__tcpserver_8cpp.html", "build_2_desktop___qt__6__10__3___min_g_w__64__bit-u041eu0442u043bu0430u0434u043au0430_2debug_2moc__tcpserver_8cpp" ]
+];

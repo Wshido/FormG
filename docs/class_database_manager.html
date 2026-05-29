@@ -115,11 +115,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_database
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Класс DatabaseManager<div class="ingroups"><a class="el" href="group__client.html">Клиент</a> &raquo; <a class="el" href="group__db.html">Управление базой данных</a></div></div></div>
+  <div class="headertitle"><div class="title">Класс DatabaseManager<div class="ingroups"><a class="el" href="group__client.html">Клиент</a> &raquo; <a class="el" href="group__databasemanager.html">Менеджер базы данных</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Класс для управления базой данных приложения.  
+<p>Singleton-класс для управления базой данных.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="databasemanager_8h_source.html">databasemanager.h</a>&gt;</code></p>
@@ -132,49 +132,55 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_database
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:ga92088595633cff356e64628b5820f267" id="r_ga92088595633cff356e64628b5820f267"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#ga92088595633cff356e64628b5820f267">initDatabase</a> ()</td></tr>
-<tr class="memdesc:ga92088595633cff356e64628b5820f267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализация базы данных.  <br /></td></tr>
-<tr class="memitem:ga70191af866ccccca5db1477768c27033" id="r_ga70191af866ccccca5db1477768c27033"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#ga70191af866ccccca5db1477768c27033">registerUser</a> (const QString &amp;login, const QString &amp;email, const QString &amp;password)</td></tr>
-<tr class="memdesc:ga70191af866ccccca5db1477768c27033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Регистрация нового пользователя.  <br /></td></tr>
-<tr class="memitem:ga7a2ac3defc8180a6ed7ce3d65df54b61" id="r_ga7a2ac3defc8180a6ed7ce3d65df54b61"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#ga7a2ac3defc8180a6ed7ce3d65df54b61">loginUser</a> (const QString &amp;login, const QString &amp;password)</td></tr>
-<tr class="memdesc:ga7a2ac3defc8180a6ed7ce3d65df54b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Авторизация пользователя.  <br /></td></tr>
-<tr class="memitem:ga4de8a21495a20fc23114c5293b0548d5" id="r_ga4de8a21495a20fc23114c5293b0548d5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#ga4de8a21495a20fc23114c5293b0548d5">userExists</a> (const QString &amp;login)</td></tr>
-<tr class="memdesc:ga4de8a21495a20fc23114c5293b0548d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка существования пользователя.  <br /></td></tr>
-<tr class="memitem:gaf535cb24769e032ffe01884e3068adae" id="r_gaf535cb24769e032ffe01884e3068adae"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#gaf535cb24769e032ffe01884e3068adae">emailExists</a> (const QString &amp;email)</td></tr>
-<tr class="memdesc:gaf535cb24769e032ffe01884e3068adae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка существования электронной почты.  <br /></td></tr>
-<tr class="memitem:ga0f0b21ce89ce569342ef8a75d2d2643e" id="r_ga0f0b21ce89ce569342ef8a75d2d2643e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#ga0f0b21ce89ce569342ef8a75d2d2643e">changePassword</a> (const QString &amp;login, const QString &amp;newPassword)</td></tr>
-<tr class="memdesc:ga0f0b21ce89ce569342ef8a75d2d2643e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменение пароля пользователя.  <br /></td></tr>
-<tr class="memitem:ga6cac023af947fa742fb00b4f3b36d030" id="r_ga6cac023af947fa742fb00b4f3b36d030"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#ga6cac023af947fa742fb00b4f3b36d030">hashPassword</a> (const QString &amp;password)</td></tr>
-<tr class="memdesc:ga6cac023af947fa742fb00b4f3b36d030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хеширование пароля.  <br /></td></tr>
-<tr class="memitem:gab3d01b3b4889ddf1cb895733d1dfa1a7" id="r_gab3d01b3b4889ddf1cb895733d1dfa1a7"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#gab3d01b3b4889ddf1cb895733d1dfa1a7">hashLogin</a> (const QString &amp;login)</td></tr>
-<tr class="memdesc:gab3d01b3b4889ddf1cb895733d1dfa1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хеширование логина.  <br /></td></tr>
-<tr class="memitem:ga545ab5be9492a0ac13b1f984be211398" id="r_ga545ab5be9492a0ac13b1f984be211398"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#ga545ab5be9492a0ac13b1f984be211398">hashEmail</a> (const QString &amp;email)</td></tr>
-<tr class="memdesc:ga545ab5be9492a0ac13b1f984be211398"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хеширование электронной почты.  <br /></td></tr>
-<tr class="memitem:gaeecf73be8fbb4cdead016bd7b700b2e7" id="r_gaeecf73be8fbb4cdead016bd7b700b2e7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#gaeecf73be8fbb4cdead016bd7b700b2e7">printAllUsers</a> ()</td></tr>
-<tr class="memdesc:gaeecf73be8fbb4cdead016bd7b700b2e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вывод списка всех пользователей в консоль.  <br /></td></tr>
+<tr class="memitem:ga92088595633cff356e64628b5820f267" id="r_ga92088595633cff356e64628b5820f267"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga92088595633cff356e64628b5820f267">initDatabase</a> ()</td></tr>
+<tr class="memdesc:ga92088595633cff356e64628b5820f267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует подключение к базе данных.  <br /></td></tr>
+<tr class="memitem:ga70191af866ccccca5db1477768c27033" id="r_ga70191af866ccccca5db1477768c27033"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga70191af866ccccca5db1477768c27033">registerUser</a> (const QString &amp;login, const QString &amp;email, const QString &amp;password)</td></tr>
+<tr class="memdesc:ga70191af866ccccca5db1477768c27033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Регистрирует нового пользователя.  <br /></td></tr>
+<tr class="memitem:ga7a2ac3defc8180a6ed7ce3d65df54b61" id="r_ga7a2ac3defc8180a6ed7ce3d65df54b61"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga7a2ac3defc8180a6ed7ce3d65df54b61">loginUser</a> (const QString &amp;login, const QString &amp;password)</td></tr>
+<tr class="memdesc:ga7a2ac3defc8180a6ed7ce3d65df54b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет вход пользователя.  <br /></td></tr>
+<tr class="memitem:ga4de8a21495a20fc23114c5293b0548d5" id="r_ga4de8a21495a20fc23114c5293b0548d5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga4de8a21495a20fc23114c5293b0548d5">userExists</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga4de8a21495a20fc23114c5293b0548d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет существование пользователя по логину.  <br /></td></tr>
+<tr class="memitem:gaf535cb24769e032ffe01884e3068adae" id="r_gaf535cb24769e032ffe01884e3068adae"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#gaf535cb24769e032ffe01884e3068adae">emailExists</a> (const QString &amp;email)</td></tr>
+<tr class="memdesc:gaf535cb24769e032ffe01884e3068adae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет существование email в базе.  <br /></td></tr>
+<tr class="memitem:ga0f0b21ce89ce569342ef8a75d2d2643e" id="r_ga0f0b21ce89ce569342ef8a75d2d2643e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga0f0b21ce89ce569342ef8a75d2d2643e">changePassword</a> (const QString &amp;login, const QString &amp;newPassword)</td></tr>
+<tr class="memdesc:ga0f0b21ce89ce569342ef8a75d2d2643e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменяет пароль пользователя.  <br /></td></tr>
+<tr class="memitem:ga7f6378423887ad229790d1efcad835ad" id="r_ga7f6378423887ad229790d1efcad835ad"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga7f6378423887ad229790d1efcad835ad">getEmailByLogin</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga7f6378423887ad229790d1efcad835ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает email пользователя по логину.  <br /></td></tr>
+<tr class="memitem:gae79ef8e7770a0b50d919f7c84b112d48" id="r_gae79ef8e7770a0b50d919f7c84b112d48"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#gae79ef8e7770a0b50d919f7c84b112d48">getFailedAttempts</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:gae79ef8e7770a0b50d919f7c84b112d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает количество неудачных попыток входа.  <br /></td></tr>
+<tr class="memitem:gadc0902f7d0e2b4b99285d5b31431bbd3" id="r_gadc0902f7d0e2b4b99285d5b31431bbd3"><td class="memItemLeft">QDateTime&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#gadc0902f7d0e2b4b99285d5b31431bbd3">getLockUntil</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:gadc0902f7d0e2b4b99285d5b31431bbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает время, до которого аккаунт заблокирован.  <br /></td></tr>
+<tr class="memitem:ga6825517c8d4bf091e1c863494a109fc0" id="r_ga6825517c8d4bf091e1c863494a109fc0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga6825517c8d4bf091e1c863494a109fc0">incrementFailedAttempts</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga6825517c8d4bf091e1c863494a109fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Увеличивает счётчик неудачных попыток входа.  <br /></td></tr>
+<tr class="memitem:gabdd9d9f3740b6af3f41f1fc4eab73fc8" id="r_gabdd9d9f3740b6af3f41f1fc4eab73fc8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#gabdd9d9f3740b6af3f41f1fc4eab73fc8">resetFailedAttempts</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:gabdd9d9f3740b6af3f41f1fc4eab73fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает счётчик неудачных попыток.  <br /></td></tr>
+<tr class="memitem:ga6cac023af947fa742fb00b4f3b36d030" id="r_ga6cac023af947fa742fb00b4f3b36d030"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga6cac023af947fa742fb00b4f3b36d030">hashPassword</a> (const QString &amp;password)</td></tr>
+<tr class="memdesc:ga6cac023af947fa742fb00b4f3b36d030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хэширует пароль с использованием соли.  <br /></td></tr>
+<tr class="memitem:gaeecf73be8fbb4cdead016bd7b700b2e7" id="r_gaeecf73be8fbb4cdead016bd7b700b2e7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#gaeecf73be8fbb4cdead016bd7b700b2e7">printAllUsers</a> ()</td></tr>
+<tr class="memdesc:gaeecf73be8fbb4cdead016bd7b700b2e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит всех пользователей в консоль (для отладки).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Открытые статические члены</h2></td></tr>
-<tr class="memitem:ga4abb527066e28f3928ef45af856e134c" id="r_ga4abb527066e28f3928ef45af856e134c"><td class="memItemLeft">static <a class="el" href="class_database_manager.html">DatabaseManager</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#ga4abb527066e28f3928ef45af856e134c">instance</a> ()</td></tr>
-<tr class="memdesc:ga4abb527066e28f3928ef45af856e134c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Получение единственного экземпляра менеджера базы данных.  <br /></td></tr>
+<tr class="memitem:ga4abb527066e28f3928ef45af856e134c" id="r_ga4abb527066e28f3928ef45af856e134c"><td class="memItemLeft">static <a class="el" href="class_database_manager.html">DatabaseManager</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga4abb527066e28f3928ef45af856e134c">instance</a> ()</td></tr>
+<tr class="memdesc:ga4abb527066e28f3928ef45af856e134c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает единственный экземпляр менеджера базы данных.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Закрытые члены</h2></td></tr>
-<tr class="memitem:gaebfb8cc7427256623ccbe059b30b6450" id="r_gaebfb8cc7427256623ccbe059b30b6450"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#gaebfb8cc7427256623ccbe059b30b6450">DatabaseManager</a> (QObject *parent=nullptr)</td></tr>
-<tr class="memdesc:gaebfb8cc7427256623ccbe059b30b6450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор класса <a class="el" href="class_database_manager.html" title="Класс для управления базой данных приложения.">DatabaseManager</a>.  <br /></td></tr>
-<tr class="memitem:gae9b3a5da1e04fbb00faf8a034da1d063" id="r_gae9b3a5da1e04fbb00faf8a034da1d063"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#gae9b3a5da1e04fbb00faf8a034da1d063">~DatabaseManager</a> ()</td></tr>
-<tr class="memdesc:gae9b3a5da1e04fbb00faf8a034da1d063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор класса <a class="el" href="class_database_manager.html" title="Класс для управления базой данных приложения.">DatabaseManager</a>.  <br /></td></tr>
-<tr class="memitem:ga90600e6de3ad5fd99a81409054626dfa" id="r_ga90600e6de3ad5fd99a81409054626dfa"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__dbcpp.html#ga90600e6de3ad5fd99a81409054626dfa">createTables</a> ()</td></tr>
-<tr class="memdesc:ga90600e6de3ad5fd99a81409054626dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создание таблиц базы данных.  <br /></td></tr>
+<tr class="memitem:gaebfb8cc7427256623ccbe059b30b6450" id="r_gaebfb8cc7427256623ccbe059b30b6450"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#gaebfb8cc7427256623ccbe059b30b6450">DatabaseManager</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:gaebfb8cc7427256623ccbe059b30b6450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приватный конструктор (Singleton).  <br /></td></tr>
+<tr class="memitem:gae9b3a5da1e04fbb00faf8a034da1d063" id="r_gae9b3a5da1e04fbb00faf8a034da1d063"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#gae9b3a5da1e04fbb00faf8a034da1d063">~DatabaseManager</a> ()</td></tr>
+<tr class="memdesc:gae9b3a5da1e04fbb00faf8a034da1d063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор.  <br /></td></tr>
+<tr class="memitem:ga90600e6de3ad5fd99a81409054626dfa" id="r_ga90600e6de3ad5fd99a81409054626dfa"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__databasemanager__impl.html#ga90600e6de3ad5fd99a81409054626dfa">createTables</a> ()</td></tr>
+<tr class="memdesc:ga90600e6de3ad5fd99a81409054626dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт необходимые таблицы в базе данных.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
 <tr class="memitem:aed29e9d39dba375270f94caae3b8cb8c" id="r_aed29e9d39dba375270f94caae3b8cb8c"><td class="memItemLeft">QSqlDatabase&#160;</td><td class="memItemRight"><a class="el" href="#aed29e9d39dba375270f94caae3b8cb8c">m_db</a></td></tr>
-<tr class="memdesc:aed29e9d39dba375270f94caae3b8cb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Объект подключения к базе данных.  <br /></td></tr>
+<tr class="memdesc:aed29e9d39dba375270f94caae3b8cb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экземпляр базы данных Qt.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Класс для управления базой данных приложения. </p>
-<p>Выполняет подключение к базе данных, регистрацию и авторизацию пользователей, а также работу с пользовательскими данными. </p>
+<div class="textblock"><p>Singleton-класс для управления базой данных. </p>
+<p>Обеспечивает подключение, регистрацию, авторизацию пользователей и работу с системой блокировки аккаунтов. </p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
 <a id="aed29e9d39dba375270f94caae3b8cb8c" name="aed29e9d39dba375270f94caae3b8cb8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed29e9d39dba375270f94caae3b8cb8c">&#9670;&#160;</a></span>m_db</h2>
@@ -196,13 +202,13 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_database
 </table>
 </div><div class="memdoc">
 
-<p>Объект подключения к базе данных. </p>
+<p>Экземпляр базы данных Qt. </p>
 
 </div>
 </div>
 <hr/>Объявления и описания членов классов находятся в файлах:<ul>
-<li>C:/Users/пп/Desktop/Исходники/Timpproject/<a class="el" href="databasemanager_8h_source.html">databasemanager.h</a></li>
-<li>C:/Users/пп/Desktop/Исходники/Timpproject/<a class="el" href="databasemanager_8cpp.html">databasemanager.cpp</a></li>
+<li>C:/Users/пп/Desktop/New/Clientdox/Timpproject/<a class="el" href="databasemanager_8h_source.html">databasemanager.h</a></li>
+<li>C:/Users/пп/Desktop/New/Clientdox/Timpproject/<a class="el" href="databasemanager_8cpp.html">databasemanager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

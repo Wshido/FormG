@@ -1,0 +1,190 @@
+\doxysubsection{Основной контроллер }
+\hypertarget{group__controller}{}\label{group__controller}\index{Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection*{Разделы}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__controller__impl}{Описание основного контроллера}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_controller}{Controller}}
+\begin{DoxyCompactList}\small\item\em Основной контроллер обработки запросов клиента. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__controller_ga95c56822d667e94b031451729ce069a9}{Controller::\+\+Controller}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_controller}{Controller}. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__controller_gab9de7dfc73df67eb6f51258b33cdfa31}{Controller::\+process}} (const QString \&request)
+\begin{DoxyCompactList}\small\item\em Обрабатывает входящий запрос. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{group__controller_ga59793d21ac5bac4ca1853ac4609e5c1b}{Controller::\+calculate\+Function}} (double a, double b, double c, double x)
+\begin{DoxyCompactList}\small\item\em Вычисляет функцию по заданным параметрам. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__controller_gac252bdbeb217f75564a8940ca5c5bb8e}{Controller::\+set\+Smtp\+Config}} (const QString \&host, quint16 port, const QString \&user, const QString \&pass, const QString \&from)
+\begin{DoxyCompactList}\small\item\em Настройка SMTP конфигурации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__controller_gaa918698c2c3e9268a26d035a0629b95b}{Controller::\+handle\+Client\+Disconnect}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Обработка отключения клиента. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__controller_gacc00842dd4577f55afeb9f07322d9c40}{Controller::\+check\+Task}} (int task, int variant, int answer)
+\begin{DoxyCompactList}\small\item\em Проверка задания. \end{DoxyCompactList}\item 
+QString\+List \doxymbox{\hyperlink{group__controller_ga721d9e73bdd9db76e1f95094a495ccf9}{Controller::\+split}} (const QString \&str, QChar delim)
+\begin{DoxyCompactList}\small\item\em Разбиение строки по разделителю. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__controller_ga75676e801a96d59ef4491b3a3ea3bb5f}{Controller::\+send\+Email}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Отправка email. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__controller_ga37b277caf40a9a8e6d72092c3fef84d9}{Controller::\+validate\+Password}} (const QString \&password)
+\begin{DoxyCompactList}\small\item\em Проверка пароля. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__controller_gaa9cb9f2b56737421df7ee1f738cddf8c}{Controller::\+validate\+Login}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Проверка логина. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__controller_gaecf725cf38c5d80256f48222516528b9}{Controller::\+validate\+Email}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Проверка email. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_server_d_b}{Server\+DB}} \doxymbox{\hyperlink{group__controller_ga125d43afccc14cd1596289b44da6c3cf}{Controller::\+m\+\_\+db}}
+\item 
+\doxymbox{\hyperlink{class_email_service}{Email\+Service}} \doxymbox{\hyperlink{group__controller_ga49b67cf30d75fe84d7ce0c69cae9a707}{Controller::\+m\+\_\+email\+Service}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+
+
+\label{group__controller_doc-func-members}
+\Hypertarget{group__controller_doc-func-members}
+\doxysubsubsection{Функции}
+\Hypertarget{group__controller_ga59793d21ac5bac4ca1853ac4609e5c1b}\index{Основной контроллер@{Основной контроллер}!calculateFunction@{calculateFunction}}
+\index{calculateFunction@{calculateFunction}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{calculateFunction()}{calculateFunction()}}
+{\footnotesize\ttfamily \label{group__controller_ga59793d21ac5bac4ca1853ac4609e5c1b} 
+double Controller::\+calculate\+Function (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{c}{, }\item[{double}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Вычисляет функцию по заданным параметрам. 
+
+Вычисление кусочной функции. \Hypertarget{group__controller_gacc00842dd4577f55afeb9f07322d9c40}\index{Основной контроллер@{Основной контроллер}!checkTask@{checkTask}}
+\index{checkTask@{checkTask}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{checkTask()}{checkTask()}}
+{\footnotesize\ttfamily \label{group__controller_gacc00842dd4577f55afeb9f07322d9c40} 
+bool Controller::\+check\+Task (\begin{DoxyParamCaption}\item[{int}]{task}{, }\item[{int}]{variant}{, }\item[{int}]{answer}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка задания. 
+
+\Hypertarget{group__controller_ga95c56822d667e94b031451729ce069a9}\index{Основной контроллер@{Основной контроллер}!Controller@{Controller}}
+\index{Controller@{Controller}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily \label{group__controller_ga95c56822d667e94b031451729ce069a9} 
+Controller::\+\+Controller (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор \doxylink{class_controller}{Controller}. 
+
+\Hypertarget{group__controller_gaa918698c2c3e9268a26d035a0629b95b}\index{Основной контроллер@{Основной контроллер}!handleClientDisconnect@{handleClientDisconnect}}
+\index{handleClientDisconnect@{handleClientDisconnect}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{handleClientDisconnect()}{handleClientDisconnect()}}
+{\footnotesize\ttfamily \label{group__controller_gaa918698c2c3e9268a26d035a0629b95b} 
+void Controller::\+handle\+Client\+Disconnect (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Обработка отключения клиента. 
+
+\Hypertarget{group__controller_gab9de7dfc73df67eb6f51258b33cdfa31}\index{Основной контроллер@{Основной контроллер}!process@{process}}
+\index{process@{process}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{group__controller_gab9de7dfc73df67eb6f51258b33cdfa31} 
+QString Controller::\+process (\begin{DoxyParamCaption}\item[{const QString \&}]{request}{}\end{DoxyParamCaption})}
+
+
+
+Обрабатывает входящий запрос. 
+
+Основная обработка запросов клиента.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em request} & строка запроса клиента \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+результат обработки 
+\end{DoxyReturn}
+\Hypertarget{group__controller_ga75676e801a96d59ef4491b3a3ea3bb5f}\index{Основной контроллер@{Основной контроллер}!sendEmail@{sendEmail}}
+\index{sendEmail@{sendEmail}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{sendEmail()}{sendEmail()}}
+{\footnotesize\ttfamily \label{group__controller_ga75676e801a96d59ef4491b3a3ea3bb5f} 
+bool Controller::\+send\+Email (\begin{DoxyParamCaption}\item[{const QString \&}]{to}{, }\item[{const QString \&}]{subject}{, }\item[{const QString \&}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Отправка email. 
+
+Отправка email через \doxylink{class_email_service}{Email\+Service}. \Hypertarget{group__controller_gac252bdbeb217f75564a8940ca5c5bb8e}\index{Основной контроллер@{Основной контроллер}!setSmtpConfig@{setSmtpConfig}}
+\index{setSmtpConfig@{setSmtpConfig}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{setSmtpConfig()}{setSmtpConfig()}}
+{\footnotesize\ttfamily \label{group__controller_gac252bdbeb217f75564a8940ca5c5bb8e} 
+void Controller::\+set\+Smtp\+Config (\begin{DoxyParamCaption}\item[{const QString \&}]{host}{, }\item[{quint16}]{port}{, }\item[{const QString \&}]{user}{, }\item[{const QString \&}]{pass}{, }\item[{const QString \&}]{from}{}\end{DoxyParamCaption})}
+
+
+
+Настройка SMTP конфигурации. 
+
+\Hypertarget{group__controller_ga721d9e73bdd9db76e1f95094a495ccf9}\index{Основной контроллер@{Основной контроллер}!split@{split}}
+\index{split@{split}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily \label{group__controller_ga721d9e73bdd9db76e1f95094a495ccf9} 
+QString\+List Controller::\+split (\begin{DoxyParamCaption}\item[{const QString \&}]{str}{, }\item[{QChar}]{delim}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Разбиение строки по разделителю. 
+
+\Hypertarget{group__controller_gaecf725cf38c5d80256f48222516528b9}\index{Основной контроллер@{Основной контроллер}!validateEmail@{validateEmail}}
+\index{validateEmail@{validateEmail}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{validateEmail()}{validateEmail()}}
+{\footnotesize\ttfamily \label{group__controller_gaecf725cf38c5d80256f48222516528b9} 
+bool Controller::\+validate\+Email (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка email. 
+
+\Hypertarget{group__controller_gaa9cb9f2b56737421df7ee1f738cddf8c}\index{Основной контроллер@{Основной контроллер}!validateLogin@{validateLogin}}
+\index{validateLogin@{validateLogin}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{validateLogin()}{validateLogin()}}
+{\footnotesize\ttfamily \label{group__controller_gaa9cb9f2b56737421df7ee1f738cddf8c} 
+bool Controller::\+validate\+Login (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка логина. 
+
+\Hypertarget{group__controller_ga37b277caf40a9a8e6d72092c3fef84d9}\index{Основной контроллер@{Основной контроллер}!validatePassword@{validatePassword}}
+\index{validatePassword@{validatePassword}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{validatePassword()}{validatePassword()}}
+{\footnotesize\ttfamily \label{group__controller_ga37b277caf40a9a8e6d72092c3fef84d9} 
+bool Controller::\+validate\+Password (\begin{DoxyParamCaption}\item[{const QString \&}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка пароля. 
+
+
+
+\label{group__controller_doc-var-members}
+\Hypertarget{group__controller_doc-var-members}
+\doxysubsubsection{Переменные}
+\Hypertarget{group__controller_ga125d43afccc14cd1596289b44da6c3cf}\index{Основной контроллер@{Основной контроллер}!m\_db@{m\_db}}
+\index{m\_db@{m\_db}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{m\_db}{m\_db}}
+{\footnotesize\ttfamily \label{group__controller_ga125d43afccc14cd1596289b44da6c3cf} 
+\doxymbox{\hyperlink{class_server_d_b}{Server\+DB}} Controller::\+m\+\_\+db\hspace{0.3cm}{\ttfamily [private]}}
+
+База данных сервера \Hypertarget{group__controller_ga49b67cf30d75fe84d7ce0c69cae9a707}\index{Основной контроллер@{Основной контроллер}!m\_emailService@{m\_emailService}}
+\index{m\_emailService@{m\_emailService}!Основной контроллер@{Основной контроллер}}
+\doxysubsubsubsection{\texorpdfstring{m\_emailService}{m\_emailService}}
+{\footnotesize\ttfamily \label{group__controller_ga49b67cf30d75fe84d7ce0c69cae9a707} 
+\doxymbox{\hyperlink{class_email_service}{Email\+Service}} Controller::\+m\+\_\+email\+Service\hspace{0.3cm}{\ttfamily [private]}}
+
+Сервис отправки email \input{group__controller__impl}

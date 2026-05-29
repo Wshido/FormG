@@ -115,11 +115,11 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">Класс GraphWindow<div class="ingroups"><a class="el" href="group__client.html">Клиент</a> &raquo; <a class="el" href="group__graph.html">Окно отображения графиков</a></div></div></div>
+  <div class="headertitle"><div class="title">Класс GraphWindow<div class="ingroups"><a class="el" href="group__client.html">Клиент</a> &raquo; <a class="el" href="group__graphwindow.html">Окно графиков</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Окно отображения графиков.  
+<p>Класс окна для построения графиков функций.  
  <a href="#details">Подробнее...</a></p>
 
 <p><code>#include &lt;<a class="el" href="graphwindow_8h_source.html">graphwindow.h</a>&gt;</code></p>
@@ -132,39 +132,93 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Открытые члены</h2></td></tr>
-<tr class="memitem:a68f193cacc0237a41d8c44923b53c11a" id="r_a68f193cacc0237a41d8c44923b53c11a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a68f193cacc0237a41d8c44923b53c11a">GraphWindow</a> (QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a68f193cacc0237a41d8c44923b53c11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор окна <a class="el" href="class_graph_window.html" title="Окно отображения графиков.">GraphWindow</a>.  <br /></td></tr>
-<tr class="memitem:acca1dc8c3eefe6608ae2de3cee2e22ee" id="r_acca1dc8c3eefe6608ae2de3cee2e22ee"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#acca1dc8c3eefe6608ae2de3cee2e22ee">~GraphWindow</a> ()</td></tr>
-<tr class="memdesc:acca1dc8c3eefe6608ae2de3cee2e22ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор класса <a class="el" href="class_graph_window.html" title="Окно отображения графиков.">GraphWindow</a>.  <br /></td></tr>
+<tr class="memitem:ga68f193cacc0237a41d8c44923b53c11a" id="r_ga68f193cacc0237a41d8c44923b53c11a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga68f193cacc0237a41d8c44923b53c11a">GraphWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:ga68f193cacc0237a41d8c44923b53c11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор.  <br /></td></tr>
+<tr class="memitem:gacca1dc8c3eefe6608ae2de3cee2e22ee" id="r_gacca1dc8c3eefe6608ae2de3cee2e22ee"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#gacca1dc8c3eefe6608ae2de3cee2e22ee">~GraphWindow</a> ()</td></tr>
+<tr class="memdesc:gacca1dc8c3eefe6608ae2de3cee2e22ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-slots" class="groupheader"><a id="pri-slots" name="pri-slots"></a>
 Закрытые слоты</h2></td></tr>
-<tr class="memitem:a15bda247268f26b45a583eab5ba5d725" id="r_a15bda247268f26b45a583eab5ba5d725"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a15bda247268f26b45a583eab5ba5d725">onSliderChanged</a> ()</td></tr>
-<tr class="memdesc:a15bda247268f26b45a583eab5ba5d725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик изменения значения слайдера.  <br /></td></tr>
-<tr class="memitem:adcba78f9f4bfda717686e5c48dc11a48" id="r_adcba78f9f4bfda717686e5c48dc11a48"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adcba78f9f4bfda717686e5c48dc11a48">onReadyRead</a> ()</td></tr>
-<tr class="memdesc:adcba78f9f4bfda717686e5c48dc11a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик поступления данных от сокета.  <br /></td></tr>
+<tr class="memitem:ga15bda247268f26b45a583eab5ba5d725" id="r_ga15bda247268f26b45a583eab5ba5d725"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga15bda247268f26b45a583eab5ba5d725">onSliderChanged</a> ()</td></tr>
+<tr class="memdesc:ga15bda247268f26b45a583eab5ba5d725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик изменения значений слайдеров параметров.  <br /></td></tr>
+<tr class="memitem:ga1d47676c2decdaafd45f2c566a7f4889" id="r_ga1d47676c2decdaafd45f2c566a7f4889"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga1d47676c2decdaafd45f2c566a7f4889">onExportPNG</a> ()</td></tr>
+<tr class="memdesc:ga1d47676c2decdaafd45f2c566a7f4889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспорт графика в PNG.  <br /></td></tr>
+<tr class="memitem:ga1e5cb4d993ea6ae86482d7c522ebbbb1" id="r_ga1e5cb4d993ea6ae86482d7c522ebbbb1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga1e5cb4d993ea6ae86482d7c522ebbbb1">onExportPDF</a> ()</td></tr>
+<tr class="memdesc:ga1e5cb4d993ea6ae86482d7c522ebbbb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспорт графика в PDF.  <br /></td></tr>
+<tr class="memitem:ga995b6c258c4be1386b4c4addb29b4410" id="r_ga995b6c258c4be1386b4c4addb29b4410"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga995b6c258c4be1386b4c4addb29b4410">onSaveToFile</a> ()</td></tr>
+<tr class="memdesc:ga995b6c258c4be1386b4c4addb29b4410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохранение текущих параметров графика в файл.  <br /></td></tr>
+<tr class="memitem:ga6fe5959aeb025689ef9a5eaec2793a5e" id="r_ga6fe5959aeb025689ef9a5eaec2793a5e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga6fe5959aeb025689ef9a5eaec2793a5e">onLoadFromFile</a> ()</td></tr>
+<tr class="memdesc:ga6fe5959aeb025689ef9a5eaec2793a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загрузка параметров графика из файла.  <br /></td></tr>
+<tr class="memitem:ga35740ef1f5af4c41dcf8a2459165a0d0" id="r_ga35740ef1f5af4c41dcf8a2459165a0d0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga35740ef1f5af4c41dcf8a2459165a0d0">onDeleteFromFile</a> ()</td></tr>
+<tr class="memdesc:ga35740ef1f5af4c41dcf8a2459165a0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление сохранённого графика.  <br /></td></tr>
+<tr class="memitem:ga7b4c8a1e56aac849ba89ffe2b591ce2a" id="r_ga7b4c8a1e56aac849ba89ffe2b591ce2a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga7b4c8a1e56aac849ba89ffe2b591ce2a">onClearGraph</a> ()</td></tr>
+<tr class="memdesc:ga7b4c8a1e56aac849ba89ffe2b591ce2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистка графика.  <br /></td></tr>
+<tr class="memitem:gaa877ad44e207acbe1ce314beaf29f0e1" id="r_gaa877ad44e207acbe1ce314beaf29f0e1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#gaa877ad44e207acbe1ce314beaf29f0e1">onColorButtonClicked</a> ()</td></tr>
+<tr class="memdesc:gaa877ad44e207acbe1ce314beaf29f0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик нажатия кнопки изменения цвета.  <br /></td></tr>
+<tr class="memitem:ga16fc3589840eaa3490cffe9d3a12c405" id="r_ga16fc3589840eaa3490cffe9d3a12c405"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga16fc3589840eaa3490cffe9d3a12c405">onZoomChanged</a> ()</td></tr>
+<tr class="memdesc:ga16fc3589840eaa3490cffe9d3a12c405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик изменения зума графика.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:ga4b03485cf882a3f877b9e5deb224e031" id="r_ga4b03485cf882a3f877b9e5deb224e031"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga4b03485cf882a3f877b9e5deb224e031">parseServerData</a> (const QString &amp;response)</td></tr>
+<tr class="memdesc:ga4b03485cf882a3f877b9e5deb224e031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбор данных, полученных от сервера.  <br /></td></tr>
+<tr class="memitem:gabbf7f8452a63d2869e9e20a97208c46d" id="r_gabbf7f8452a63d2869e9e20a97208c46d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#gabbf7f8452a63d2869e9e20a97208c46d">computeLocal</a> (double a, double b, double c)</td></tr>
+<tr class="memdesc:gabbf7f8452a63d2869e9e20a97208c46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Локальный расчёт значений функций.  <br /></td></tr>
+<tr class="memitem:ga770987712af13f4e4bcf2a39d2cfd504" id="r_ga770987712af13f4e4bcf2a39d2cfd504"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga770987712af13f4e4bcf2a39d2cfd504">calculateFunction</a> (double a, double b, double c, double x)</td></tr>
+<tr class="memdesc:ga770987712af13f4e4bcf2a39d2cfd504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисление значения функции по параметрам.  <br /></td></tr>
+<tr class="memitem:ga406bf05becacaa723de2ca91ec842d41" id="r_ga406bf05becacaa723de2ca91ec842d41"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga406bf05becacaa723de2ca91ec842d41">updateParameterLabels</a> ()</td></tr>
+<tr class="memdesc:ga406bf05becacaa723de2ca91ec842d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление значений параметров на лейблах.  <br /></td></tr>
+<tr class="memitem:gab0d531603118d01a7bf74bd4de515522" id="r_gab0d531603118d01a7bf74bd4de515522"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#gab0d531603118d01a7bf74bd4de515522">setupGraphStyle</a> ()</td></tr>
+<tr class="memdesc:gab0d531603118d01a7bf74bd4de515522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка внешнего вида графика.  <br /></td></tr>
+<tr class="memitem:ga2169d6bf25fc610c707949e7d75c36fb" id="r_ga2169d6bf25fc610c707949e7d75c36fb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga2169d6bf25fc610c707949e7d75c36fb">setupExportButtons</a> ()</td></tr>
+<tr class="memdesc:ga2169d6bf25fc610c707949e7d75c36fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка кнопок экспорта.  <br /></td></tr>
+<tr class="memitem:ga55f65b01e22c63714d02c5e162f4e6ba" id="r_ga55f65b01e22c63714d02c5e162f4e6ba"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga55f65b01e22c63714d02c5e162f4e6ba">setupZoomDrag</a> ()</td></tr>
+<tr class="memdesc:ga55f65b01e22c63714d02c5e162f4e6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка зума и перетаскивания графика.  <br /></td></tr>
+<tr class="memitem:gaa6a4422e499c500a28408fb9a9ce972f" id="r_gaa6a4422e499c500a28408fb9a9ce972f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#gaa6a4422e499c500a28408fb9a9ce972f">setupKeyboardNav</a> ()</td></tr>
+<tr class="memdesc:gaa6a4422e499c500a28408fb9a9ce972f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка управления с клавиатуры.  <br /></td></tr>
+<tr class="memitem:ga04f862d37034c141071e10029dc1bf8d" id="r_ga04f862d37034c141071e10029dc1bf8d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga04f862d37034c141071e10029dc1bf8d">updateGraphColors</a> ()</td></tr>
+<tr class="memdesc:ga04f862d37034c141071e10029dc1bf8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление цветов графиков.  <br /></td></tr>
+<tr class="memitem:ga5946cbbc48379f6f1378ae468d78c324" id="r_ga5946cbbc48379f6f1378ae468d78c324"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga5946cbbc48379f6f1378ae468d78c324">getCacheKey</a> (double a, double b, double c)</td></tr>
+<tr class="memdesc:ga5946cbbc48379f6f1378ae468d78c324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Генерация ключа для кэша по параметрам.  <br /></td></tr>
+<tr class="memitem:ga24612ecaac3563e66d289832471c5bf4" id="r_ga24612ecaac3563e66d289832471c5bf4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="group__graphwindow__impl.html#ga24612ecaac3563e66d289832471c5bf4">checkSessionValid</a> ()</td></tr>
+<tr class="memdesc:ga24612ecaac3563e66d289832471c5bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка валидности текущей сессии.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Закрытые данные</h2></td></tr>
 <tr class="memitem:a3b5fbf4682a8712745b3845f595cb851" id="r_a3b5fbf4682a8712745b3845f595cb851"><td class="memItemLeft"><a class="el" href="class_ui_1_1_graph_window.html">Ui::GraphWindow</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a3b5fbf4682a8712745b3845f595cb851">ui</a></td></tr>
-<tr class="memdesc:a3b5fbf4682a8712745b3845f595cb851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на пользовательский интерфейс окна.  <br /></td></tr>
-<tr class="memitem:a0867c157661b36b3651fe455a811f4d4" id="r_a0867c157661b36b3651fe455a811f4d4"><td class="memItemLeft">QTcpSocket *&#160;</td><td class="memItemRight"><a class="el" href="#a0867c157661b36b3651fe455a811f4d4">socket</a> = nullptr</td></tr>
-<tr class="memdesc:a0867c157661b36b3651fe455a811f4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">TCP-сокет для получения данных.  <br /></td></tr>
-<tr class="memitem:acc17d171885733d9f7afb48635df3b12" id="r_acc17d171885733d9f7afb48635df3b12"><td class="memItemLeft">QByteArray&#160;</td><td class="memItemRight"><a class="el" href="#acc17d171885733d9f7afb48635df3b12">buffer</a></td></tr>
-<tr class="memdesc:acc17d171885733d9f7afb48635df3b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Буфер для хранения входящих данных.  <br /></td></tr>
-<tr class="memitem:afdfcd0a42fc95bee3d0efc3ff6320920" id="r_afdfcd0a42fc95bee3d0efc3ff6320920"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#afdfcd0a42fc95bee3d0efc3ff6320920">data</a> [4] = {1, 2, 3, 0.01}</td></tr>
-<tr class="memdesc:afdfcd0a42fc95bee3d0efc3ff6320920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Массив параметров для построения графика.  <br /></td></tr>
-<tr class="memitem:ae5c7eab02fb7be9cba92ec1ab095feea" id="r_ae5c7eab02fb7be9cba92ec1ab095feea"><td class="memItemLeft">QVector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ae5c7eab02fb7be9cba92ec1ab095feea">xData</a></td></tr>
-<tr class="memdesc:ae5c7eab02fb7be9cba92ec1ab095feea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Массив данных по оси X.  <br /></td></tr>
-<tr class="memitem:a361ad2f79eaef0cb5abf5fb35cf64672" id="r_a361ad2f79eaef0cb5abf5fb35cf64672"><td class="memItemLeft">QVector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a361ad2f79eaef0cb5abf5fb35cf64672">yData</a></td></tr>
-<tr class="memdesc:a361ad2f79eaef0cb5abf5fb35cf64672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Массив данных по оси Y.  <br /></td></tr>
+<tr class="memdesc:a3b5fbf4682a8712745b3845f595cb851"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на UI-форму.  <br /></td></tr>
+<tr class="memitem:a501c6c5d372094e07eb54ed60888f8e5" id="r_a501c6c5d372094e07eb54ed60888f8e5"><td class="memItemLeft">QVector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a501c6c5d372094e07eb54ed60888f8e5">xDataSin</a></td></tr>
+<tr class="memitem:a552f899c6d6c5d5d93f13af62c7e8bb0" id="r_a552f899c6d6c5d5d93f13af62c7e8bb0"><td class="memItemLeft">QVector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a552f899c6d6c5d5d93f13af62c7e8bb0">yDataSin</a></td></tr>
+<tr class="memitem:a0a4648170caa2e3f026a120bee9cfbf7" id="r_a0a4648170caa2e3f026a120bee9cfbf7"><td class="memItemLeft">QVector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0a4648170caa2e3f026a120bee9cfbf7">xDataSqrt</a></td></tr>
+<tr class="memitem:a0fb1bbdcdc2c903340759fa64ccba647" id="r_a0fb1bbdcdc2c903340759fa64ccba647"><td class="memItemLeft">QVector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a0fb1bbdcdc2c903340759fa64ccba647">yDataSqrt</a></td></tr>
+<tr class="memitem:a8d7ca89bbc0a2cbbb5c056518657d2e2" id="r_a8d7ca89bbc0a2cbbb5c056518657d2e2"><td class="memItemLeft">QVector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a8d7ca89bbc0a2cbbb5c056518657d2e2">xDataFrac</a></td></tr>
+<tr class="memitem:ad3f5905a42f3c24aa96cc5ff6d3620ad" id="r_ad3f5905a42f3c24aa96cc5ff6d3620ad"><td class="memItemLeft">QVector&lt; double &gt;&#160;</td><td class="memItemRight"><a class="el" href="#ad3f5905a42f3c24aa96cc5ff6d3620ad">yDataFrac</a></td></tr>
+<tr class="memitem:a56b7be35c4cc8e57013fee5ae6b191fb" id="r_a56b7be35c4cc8e57013fee5ae6b191fb"><td class="memItemLeft">QMap&lt; QString, QPair&lt; QVector&lt; double &gt;, QVector&lt; double &gt; &gt; &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a56b7be35c4cc8e57013fee5ae6b191fb">m_cache</a></td></tr>
+<tr class="memdesc:a56b7be35c4cc8e57013fee5ae6b191fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Кэш ранее вычисленных данных функций.  <br /></td></tr>
+<tr class="memitem:ab3d5ac2c6c7bd6a248d5c2d3c0642793" id="r_ab3d5ac2c6c7bd6a248d5c2d3c0642793"><td class="memItemLeft">QColor&#160;</td><td class="memItemRight"><a class="el" href="#ab3d5ac2c6c7bd6a248d5c2d3c0642793">m_sinColor</a></td></tr>
+<tr class="memdesc:ab3d5ac2c6c7bd6a248d5c2d3c0642793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Цвет графика sin.  <br /></td></tr>
+<tr class="memitem:a56f0532c709be24ebb53f272af1959f1" id="r_a56f0532c709be24ebb53f272af1959f1"><td class="memItemLeft">QColor&#160;</td><td class="memItemRight"><a class="el" href="#a56f0532c709be24ebb53f272af1959f1">m_sqrtColor</a></td></tr>
+<tr class="memdesc:a56f0532c709be24ebb53f272af1959f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Цвет графика sqrt.  <br /></td></tr>
+<tr class="memitem:ab84db4e51b17c15e86c9e614b33fd303" id="r_ab84db4e51b17c15e86c9e614b33fd303"><td class="memItemLeft">QColor&#160;</td><td class="memItemRight"><a class="el" href="#ab84db4e51b17c15e86c9e614b33fd303">m_fracColor</a></td></tr>
+<tr class="memdesc:ab84db4e51b17c15e86c9e614b33fd303"><td class="mdescLeft">&#160;</td><td class="mdescRight">Цвет графика дробно-линейной функции.  <br /></td></tr>
+<tr class="memitem:ab6a430427f006692e94d9eaffc34ad51" id="r_ab6a430427f006692e94d9eaffc34ad51"><td class="memItemLeft">QTimer *&#160;</td><td class="memItemRight"><a class="el" href="#ab6a430427f006692e94d9eaffc34ad51">m_sessionCheckTimer</a></td></tr>
+<tr class="memdesc:ab6a430427f006692e94d9eaffc34ad51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Таймер проверки актуальности сессии.  <br /></td></tr>
+<tr class="memitem:af59c2c8e0ce83a0b6611305ff5a72e64" id="r_af59c2c8e0ce83a0b6611305ff5a72e64"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#af59c2c8e0ce83a0b6611305ff5a72e64">m_sessionCheckInterval</a></td></tr>
+<tr class="memdesc:af59c2c8e0ce83a0b6611305ff5a72e64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Интервал проверки сессии (в миллисекундах).  <br /></td></tr>
+<tr class="memitem:ad860010ed27a641078bc43cdfaaa3b14" id="r_ad860010ed27a641078bc43cdfaaa3b14"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#ad860010ed27a641078bc43cdfaaa3b14">m_exportPNGBtn</a></td></tr>
+<tr class="memitem:a9032a7cc614a99f64db079fbbd7be3a7" id="r_a9032a7cc614a99f64db079fbbd7be3a7"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#a9032a7cc614a99f64db079fbbd7be3a7">m_exportPDFBtn</a></td></tr>
+<tr class="memitem:a203d5a74bab656d09e99118fcd9ce071" id="r_a203d5a74bab656d09e99118fcd9ce071"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#a203d5a74bab656d09e99118fcd9ce071">m_saveBtn</a></td></tr>
+<tr class="memitem:aa8964a979591eb83ab82d9ebaf8cae65" id="r_aa8964a979591eb83ab82d9ebaf8cae65"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#aa8964a979591eb83ab82d9ebaf8cae65">m_loadBtn</a></td></tr>
+<tr class="memitem:a15d2321cdfa7d5ce272e6a6715f0013a" id="r_a15d2321cdfa7d5ce272e6a6715f0013a"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#a15d2321cdfa7d5ce272e6a6715f0013a">m_deleteBtn</a></td></tr>
+<tr class="memitem:a479c7727e934814edd44513715399ca9" id="r_a479c7727e934814edd44513715399ca9"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#a479c7727e934814edd44513715399ca9">m_clearBtn</a></td></tr>
+<tr class="memitem:a5036995a458785e5149a1eef1bb17dbe" id="r_a5036995a458785e5149a1eef1bb17dbe"><td class="memItemLeft">QPushButton *&#160;</td><td class="memItemRight"><a class="el" href="#a5036995a458785e5149a1eef1bb17dbe">m_colorBtn</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
-<div class="textblock"><p>Окно отображения графиков. </p>
-<p>Класс предназначен для получения данных по сети и построения графиков с использованием библиотеки <a class="el" href="class_q_custom_plot.html" title="The central class of the library. This is the QWidget which displays the plot and interacts with the ...">QCustomPlot</a>. </p>
-</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Конструктор(ы)</h2>
-<a id="a68f193cacc0237a41d8c44923b53c11a" name="a68f193cacc0237a41d8c44923b53c11a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68f193cacc0237a41d8c44923b53c11a">&#9670;&#160;</a></span>GraphWindow()</h2>
+<div class="textblock"><p>Класс окна для построения графиков функций. </p>
+<p>Поддерживает визуализацию функций sin, sqrt и дробно-линейной функции, работу с кэшем, экспорт графиков и управление сессией. </p>
+</div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
+<a id="a56b7be35c4cc8e57013fee5ae6b191fb" name="a56b7be35c4cc8e57013fee5ae6b191fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56b7be35c4cc8e57013fee5ae6b191fb">&#9670;&#160;</a></span>m_cache</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,117 +227,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">GraphWindow::GraphWindow </td>
-          <td>(</td>
-          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Конструктор окна <a class="el" href="class_graph_window.html" title="Окно отображения графиков.">GraphWindow</a>. </p>
-<dl class="params"><dt>Аргументы</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>Родительский виджет. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="acca1dc8c3eefe6608ae2de3cee2e22ee" name="acca1dc8c3eefe6608ae2de3cee2e22ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acca1dc8c3eefe6608ae2de3cee2e22ee">&#9670;&#160;</a></span>~GraphWindow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">GraphWindow::~GraphWindow </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Деструктор класса <a class="el" href="class_graph_window.html" title="Окно отображения графиков.">GraphWindow</a>. </p>
-
-</div>
-</div>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Методы</h2>
-<a id="adcba78f9f4bfda717686e5c48dc11a48" name="adcba78f9f4bfda717686e5c48dc11a48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcba78f9f4bfda717686e5c48dc11a48">&#9670;&#160;</a></span>onReadyRead</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GraphWindow::onReadyRead </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Обработчик поступления данных от сокета. </p>
-<p>Выполняет чтение входящих данных и обновление графика. </p>
-
-</div>
-</div>
-<a id="a15bda247268f26b45a583eab5ba5d725" name="a15bda247268f26b45a583eab5ba5d725"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a15bda247268f26b45a583eab5ba5d725">&#9670;&#160;</a></span>onSliderChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void GraphWindow::onSliderChanged </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Обработчик изменения значения слайдера. </p>
-<p>Используется для обновления параметров графика. </p>
-
-</div>
-</div>
-<a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Данные класса</h2>
-<a id="acc17d171885733d9f7afb48635df3b12" name="acc17d171885733d9f7afb48635df3b12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc17d171885733d9f7afb48635df3b12">&#9670;&#160;</a></span>buffer</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QByteArray GraphWindow::buffer</td>
+          <td class="memname">QMap&lt;QString, QPair&lt;QVector&lt;double&gt;, QVector&lt;double&gt; &gt; &gt; GraphWindow::m_cache</td>
         </tr>
       </table>
   </td>
@@ -293,12 +237,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
 </table>
 </div><div class="memdoc">
 
-<p>Буфер для хранения входящих данных. </p>
+<p>Кэш ранее вычисленных данных функций. </p>
 
 </div>
 </div>
-<a id="afdfcd0a42fc95bee3d0efc3ff6320920" name="afdfcd0a42fc95bee3d0efc3ff6320920"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdfcd0a42fc95bee3d0efc3ff6320920">&#9670;&#160;</a></span>data</h2>
+<a id="a479c7727e934814edd44513715399ca9" name="a479c7727e934814edd44513715399ca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a479c7727e934814edd44513715399ca9">&#9670;&#160;</a></span>m_clearBtn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -307,7 +251,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double GraphWindow::data[4] = {1, 2, 3, 0.01}</td>
+          <td class="memname">QPushButton* GraphWindow::m_clearBtn</td>
         </tr>
       </table>
   </td>
@@ -317,12 +261,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
 </table>
 </div><div class="memdoc">
 
-<p>Массив параметров для построения графика. </p>
-
 </div>
 </div>
-<a id="a0867c157661b36b3651fe455a811f4d4" name="a0867c157661b36b3651fe455a811f4d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0867c157661b36b3651fe455a811f4d4">&#9670;&#160;</a></span>socket</h2>
+<a id="a5036995a458785e5149a1eef1bb17dbe" name="a5036995a458785e5149a1eef1bb17dbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5036995a458785e5149a1eef1bb17dbe">&#9670;&#160;</a></span>m_colorBtn</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -331,7 +273,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QTcpSocket* GraphWindow::socket = nullptr</td>
+          <td class="memname">QPushButton* GraphWindow::m_colorBtn</td>
         </tr>
       </table>
   </td>
@@ -341,7 +283,235 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
 </table>
 </div><div class="memdoc">
 
-<p>TCP-сокет для получения данных. </p>
+</div>
+</div>
+<a id="a15d2321cdfa7d5ce272e6a6715f0013a" name="a15d2321cdfa7d5ce272e6a6715f0013a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15d2321cdfa7d5ce272e6a6715f0013a">&#9670;&#160;</a></span>m_deleteBtn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* GraphWindow::m_deleteBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9032a7cc614a99f64db079fbbd7be3a7" name="a9032a7cc614a99f64db079fbbd7be3a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9032a7cc614a99f64db079fbbd7be3a7">&#9670;&#160;</a></span>m_exportPDFBtn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* GraphWindow::m_exportPDFBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad860010ed27a641078bc43cdfaaa3b14" name="ad860010ed27a641078bc43cdfaaa3b14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad860010ed27a641078bc43cdfaaa3b14">&#9670;&#160;</a></span>m_exportPNGBtn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* GraphWindow::m_exportPNGBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab84db4e51b17c15e86c9e614b33fd303" name="ab84db4e51b17c15e86c9e614b33fd303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab84db4e51b17c15e86c9e614b33fd303">&#9670;&#160;</a></span>m_fracColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor GraphWindow::m_fracColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Цвет графика дробно-линейной функции. </p>
+
+</div>
+</div>
+<a id="aa8964a979591eb83ab82d9ebaf8cae65" name="aa8964a979591eb83ab82d9ebaf8cae65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8964a979591eb83ab82d9ebaf8cae65">&#9670;&#160;</a></span>m_loadBtn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* GraphWindow::m_loadBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a203d5a74bab656d09e99118fcd9ce071" name="a203d5a74bab656d09e99118fcd9ce071"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a203d5a74bab656d09e99118fcd9ce071">&#9670;&#160;</a></span>m_saveBtn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* GraphWindow::m_saveBtn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af59c2c8e0ce83a0b6611305ff5a72e64" name="af59c2c8e0ce83a0b6611305ff5a72e64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af59c2c8e0ce83a0b6611305ff5a72e64">&#9670;&#160;</a></span>m_sessionCheckInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int GraphWindow::m_sessionCheckInterval</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Интервал проверки сессии (в миллисекундах). </p>
+
+</div>
+</div>
+<a id="ab6a430427f006692e94d9eaffc34ad51" name="ab6a430427f006692e94d9eaffc34ad51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6a430427f006692e94d9eaffc34ad51">&#9670;&#160;</a></span>m_sessionCheckTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* GraphWindow::m_sessionCheckTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Таймер проверки актуальности сессии. </p>
+
+</div>
+</div>
+<a id="ab3d5ac2c6c7bd6a248d5c2d3c0642793" name="ab3d5ac2c6c7bd6a248d5c2d3c0642793"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d5ac2c6c7bd6a248d5c2d3c0642793">&#9670;&#160;</a></span>m_sinColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor GraphWindow::m_sinColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Цвет графика sin. </p>
+
+</div>
+</div>
+<a id="a56f0532c709be24ebb53f272af1959f1" name="a56f0532c709be24ebb53f272af1959f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56f0532c709be24ebb53f272af1959f1">&#9670;&#160;</a></span>m_sqrtColor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QColor GraphWindow::m_sqrtColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Цвет графика sqrt. </p>
 
 </div>
 </div>
@@ -365,12 +535,12 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
 </table>
 </div><div class="memdoc">
 
-<p>Указатель на пользовательский интерфейс окна. </p>
+<p>Указатель на UI-форму. </p>
 
 </div>
 </div>
-<a id="ae5c7eab02fb7be9cba92ec1ab095feea" name="ae5c7eab02fb7be9cba92ec1ab095feea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5c7eab02fb7be9cba92ec1ab095feea">&#9670;&#160;</a></span>xData</h2>
+<a id="a8d7ca89bbc0a2cbbb5c056518657d2e2" name="a8d7ca89bbc0a2cbbb5c056518657d2e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d7ca89bbc0a2cbbb5c056518657d2e2">&#9670;&#160;</a></span>xDataFrac</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -379,7 +549,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;double&gt; GraphWindow::xData</td>
+          <td class="memname">QVector&lt;double&gt; GraphWindow::xDataFrac</td>
         </tr>
       </table>
   </td>
@@ -389,12 +559,10 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
 </table>
 </div><div class="memdoc">
 
-<p>Массив данных по оси X. </p>
-
 </div>
 </div>
-<a id="a361ad2f79eaef0cb5abf5fb35cf64672" name="a361ad2f79eaef0cb5abf5fb35cf64672"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a361ad2f79eaef0cb5abf5fb35cf64672">&#9670;&#160;</a></span>yData</h2>
+<a id="a501c6c5d372094e07eb54ed60888f8e5" name="a501c6c5d372094e07eb54ed60888f8e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a501c6c5d372094e07eb54ed60888f8e5">&#9670;&#160;</a></span>xDataSin</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -403,7 +571,7 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">QVector&lt;double&gt; GraphWindow::yData</td>
+          <td class="memname">QVector&lt;double&gt; GraphWindow::xDataSin</td>
         </tr>
       </table>
   </td>
@@ -413,12 +581,99 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('class_graph_wi
 </table>
 </div><div class="memdoc">
 
-<p>Массив данных по оси Y. </p>
+</div>
+</div>
+<a id="a0a4648170caa2e3f026a120bee9cfbf7" name="a0a4648170caa2e3f026a120bee9cfbf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a4648170caa2e3f026a120bee9cfbf7">&#9670;&#160;</a></span>xDataSqrt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;double&gt; GraphWindow::xDataSqrt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
-<hr/>Объявления и описания членов класса находятся в файле:<ul>
-<li>C:/Users/пп/Desktop/Исходники/Timpproject/<a class="el" href="graphwindow_8h_source.html">graphwindow.h</a></li>
+<a id="ad3f5905a42f3c24aa96cc5ff6d3620ad" name="ad3f5905a42f3c24aa96cc5ff6d3620ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f5905a42f3c24aa96cc5ff6d3620ad">&#9670;&#160;</a></span>yDataFrac</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;double&gt; GraphWindow::yDataFrac</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a552f899c6d6c5d5d93f13af62c7e8bb0" name="a552f899c6d6c5d5d93f13af62c7e8bb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a552f899c6d6c5d5d93f13af62c7e8bb0">&#9670;&#160;</a></span>yDataSin</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;double&gt; GraphWindow::yDataSin</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0fb1bbdcdc2c903340759fa64ccba647" name="a0fb1bbdcdc2c903340759fa64ccba647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fb1bbdcdc2c903340759fa64ccba647">&#9670;&#160;</a></span>yDataSqrt</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;double&gt; GraphWindow::yDataSqrt</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li>C:/Users/пп/Desktop/New/Clientdox/Timpproject/<a class="el" href="graphwindow_8h_source.html">graphwindow.h</a></li>
+<li>C:/Users/пп/Desktop/New/Clientdox/Timpproject/<a class="el" href="graphwindow_8cpp.html">graphwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

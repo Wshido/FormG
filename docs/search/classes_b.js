@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['welcomewindow_0',['WelcomeWindow',['../class_ui_1_1_welcome_window.html',1,'Ui::WelcomeWindow'],['../class_welcome_window.html',1,'WelcomeWindow']]]
+  ['serverdb_0',['ServerDB',['../class_server_d_b.html',1,'']]],
+  ['servicemanager_1',['ServiceManager',['../class_service_manager.html',1,'']]],
+  ['sessiondata_2',['SessionData',['../struct_server_d_b_1_1_session_data.html',1,'ServerDB']]]
 ];

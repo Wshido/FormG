@@ -1,0 +1,651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;: Реализация менеджера базы данных</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__databasemanager__impl.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Реализация менеджера базы данных <div class="ingroups"><a class="el" href="group__client.html">Клиент</a> &raquo; <a class="el" href="group__databasemanager.html">Менеджер базы данных</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ga4abb527066e28f3928ef45af856e134c" id="r_ga4abb527066e28f3928ef45af856e134c"><td class="memItemLeft">static <a class="el" href="class_database_manager.html">DatabaseManager</a> &amp;&#160;</td><td class="memItemRight"><a class="el" href="#ga4abb527066e28f3928ef45af856e134c">DatabaseManager::instance</a> ()</td></tr>
+<tr class="memdesc:ga4abb527066e28f3928ef45af856e134c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает единственный экземпляр менеджера базы данных.  <br /></td></tr>
+<tr class="memitem:gaebfb8cc7427256623ccbe059b30b6450" id="r_gaebfb8cc7427256623ccbe059b30b6450"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#gaebfb8cc7427256623ccbe059b30b6450">DatabaseManager::DatabaseManager</a> (QObject *parent=nullptr)</td></tr>
+<tr class="memdesc:gaebfb8cc7427256623ccbe059b30b6450"><td class="mdescLeft">&#160;</td><td class="mdescRight">Приватный конструктор (Singleton).  <br /></td></tr>
+<tr class="memitem:gae9b3a5da1e04fbb00faf8a034da1d063" id="r_gae9b3a5da1e04fbb00faf8a034da1d063"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#gae9b3a5da1e04fbb00faf8a034da1d063">DatabaseManager::~DatabaseManager</a> ()</td></tr>
+<tr class="memdesc:gae9b3a5da1e04fbb00faf8a034da1d063"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор.  <br /></td></tr>
+<tr class="memitem:ga92088595633cff356e64628b5820f267" id="r_ga92088595633cff356e64628b5820f267"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga92088595633cff356e64628b5820f267">DatabaseManager::initDatabase</a> ()</td></tr>
+<tr class="memdesc:ga92088595633cff356e64628b5820f267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Инициализирует подключение к базе данных.  <br /></td></tr>
+<tr class="memitem:ga90600e6de3ad5fd99a81409054626dfa" id="r_ga90600e6de3ad5fd99a81409054626dfa"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga90600e6de3ad5fd99a81409054626dfa">DatabaseManager::createTables</a> ()</td></tr>
+<tr class="memdesc:ga90600e6de3ad5fd99a81409054626dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Создаёт необходимые таблицы в базе данных.  <br /></td></tr>
+<tr class="memitem:ga6cac023af947fa742fb00b4f3b36d030" id="r_ga6cac023af947fa742fb00b4f3b36d030"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#ga6cac023af947fa742fb00b4f3b36d030">DatabaseManager::hashPassword</a> (const QString &amp;password)</td></tr>
+<tr class="memdesc:ga6cac023af947fa742fb00b4f3b36d030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Хэширует пароль с использованием соли.  <br /></td></tr>
+<tr class="memitem:ga7f6378423887ad229790d1efcad835ad" id="r_ga7f6378423887ad229790d1efcad835ad"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#ga7f6378423887ad229790d1efcad835ad">DatabaseManager::getEmailByLogin</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga7f6378423887ad229790d1efcad835ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает email пользователя по логину.  <br /></td></tr>
+<tr class="memitem:ga70191af866ccccca5db1477768c27033" id="r_ga70191af866ccccca5db1477768c27033"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga70191af866ccccca5db1477768c27033">DatabaseManager::registerUser</a> (const QString &amp;login, const QString &amp;email, const QString &amp;password)</td></tr>
+<tr class="memdesc:ga70191af866ccccca5db1477768c27033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Регистрирует нового пользователя.  <br /></td></tr>
+<tr class="memitem:gae79ef8e7770a0b50d919f7c84b112d48" id="r_gae79ef8e7770a0b50d919f7c84b112d48"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#gae79ef8e7770a0b50d919f7c84b112d48">DatabaseManager::getFailedAttempts</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:gae79ef8e7770a0b50d919f7c84b112d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает количество неудачных попыток входа.  <br /></td></tr>
+<tr class="memitem:gadc0902f7d0e2b4b99285d5b31431bbd3" id="r_gadc0902f7d0e2b4b99285d5b31431bbd3"><td class="memItemLeft">QDateTime&#160;</td><td class="memItemRight"><a class="el" href="#gadc0902f7d0e2b4b99285d5b31431bbd3">DatabaseManager::getLockUntil</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:gadc0902f7d0e2b4b99285d5b31431bbd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Возвращает время, до которого аккаунт заблокирован.  <br /></td></tr>
+<tr class="memitem:ga6825517c8d4bf091e1c863494a109fc0" id="r_ga6825517c8d4bf091e1c863494a109fc0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6825517c8d4bf091e1c863494a109fc0">DatabaseManager::incrementFailedAttempts</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga6825517c8d4bf091e1c863494a109fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Увеличивает счётчик неудачных попыток входа.  <br /></td></tr>
+<tr class="memitem:gabdd9d9f3740b6af3f41f1fc4eab73fc8" id="r_gabdd9d9f3740b6af3f41f1fc4eab73fc8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gabdd9d9f3740b6af3f41f1fc4eab73fc8">DatabaseManager::resetFailedAttempts</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:gabdd9d9f3740b6af3f41f1fc4eab73fc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сбрасывает счётчик неудачных попыток.  <br /></td></tr>
+<tr class="memitem:ga7a2ac3defc8180a6ed7ce3d65df54b61" id="r_ga7a2ac3defc8180a6ed7ce3d65df54b61"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga7a2ac3defc8180a6ed7ce3d65df54b61">DatabaseManager::loginUser</a> (const QString &amp;login, const QString &amp;password)</td></tr>
+<tr class="memdesc:ga7a2ac3defc8180a6ed7ce3d65df54b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выполняет вход пользователя.  <br /></td></tr>
+<tr class="memitem:ga4de8a21495a20fc23114c5293b0548d5" id="r_ga4de8a21495a20fc23114c5293b0548d5"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga4de8a21495a20fc23114c5293b0548d5">DatabaseManager::userExists</a> (const QString &amp;login)</td></tr>
+<tr class="memdesc:ga4de8a21495a20fc23114c5293b0548d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет существование пользователя по логину.  <br /></td></tr>
+<tr class="memitem:gaf535cb24769e032ffe01884e3068adae" id="r_gaf535cb24769e032ffe01884e3068adae"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#gaf535cb24769e032ffe01884e3068adae">DatabaseManager::emailExists</a> (const QString &amp;email)</td></tr>
+<tr class="memdesc:gaf535cb24769e032ffe01884e3068adae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверяет существование email в базе.  <br /></td></tr>
+<tr class="memitem:ga0f0b21ce89ce569342ef8a75d2d2643e" id="r_ga0f0b21ce89ce569342ef8a75d2d2643e"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga0f0b21ce89ce569342ef8a75d2d2643e">DatabaseManager::changePassword</a> (const QString &amp;login, const QString &amp;newPassword)</td></tr>
+<tr class="memdesc:ga0f0b21ce89ce569342ef8a75d2d2643e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Изменяет пароль пользователя.  <br /></td></tr>
+<tr class="memitem:gaeecf73be8fbb4cdead016bd7b700b2e7" id="r_gaeecf73be8fbb4cdead016bd7b700b2e7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaeecf73be8fbb4cdead016bd7b700b2e7">DatabaseManager::printAllUsers</a> ()</td></tr>
+<tr class="memdesc:gaeecf73be8fbb4cdead016bd7b700b2e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Выводит всех пользователей в консоль (для отладки).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"></div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="ga0f0b21ce89ce569342ef8a75d2d2643e" name="ga0f0b21ce89ce569342ef8a75d2d2643e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0f0b21ce89ce569342ef8a75d2d2643e">&#9670;&#160;</a></span>changePassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DatabaseManager::changePassword </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>newPassword</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Изменяет пароль пользователя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя. </td></tr>
+    <tr><td class="paramname">newPassword</td><td>Новый пароль. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true в случае успеха. </dd></dl>
+
+</div>
+</div>
+<a id="ga90600e6de3ad5fd99a81409054626dfa" name="ga90600e6de3ad5fd99a81409054626dfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga90600e6de3ad5fd99a81409054626dfa">&#9670;&#160;</a></span>createTables()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DatabaseManager::createTables </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Создаёт необходимые таблицы в базе данных. </p>
+<p>Создаёт или обновляет таблицы базы данных.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true в случае успеха. </dd></dl>
+
+</div>
+</div>
+<a id="gaebfb8cc7427256623ccbe059b30b6450" name="gaebfb8cc7427256623ccbe059b30b6450"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaebfb8cc7427256623ccbe059b30b6450">&#9670;&#160;</a></span>DatabaseManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DatabaseManager::DatabaseManager </td>
+          <td>(</td>
+          <td class="paramtype">QObject *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Приватный конструктор (Singleton). </p>
+<p>Конструктор <a class="el" href="class_database_manager.html" title="Singleton-класс для управления базой данных.">DatabaseManager</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский объект. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaf535cb24769e032ffe01884e3068adae" name="gaf535cb24769e032ffe01884e3068adae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf535cb24769e032ffe01884e3068adae">&#9670;&#160;</a></span>emailExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DatabaseManager::emailExists </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет существование email в базе. </p>
+<p>Проверяет существование email.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>Email для проверки. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если email уже зарегистрирован. </dd></dl>
+
+</div>
+</div>
+<a id="ga7f6378423887ad229790d1efcad835ad" name="ga7f6378423887ad229790d1efcad835ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f6378423887ad229790d1efcad835ad">&#9670;&#160;</a></span>getEmailByLogin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DatabaseManager::getEmailByLogin </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает email пользователя по логину. </p>
+<p>Возвращает email по логину пользователя.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Email пользователя. </dd></dl>
+
+</div>
+</div>
+<a id="gae79ef8e7770a0b50d919f7c84b112d48" name="gae79ef8e7770a0b50d919f7c84b112d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae79ef8e7770a0b50d919f7c84b112d48">&#9670;&#160;</a></span>getFailedAttempts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int DatabaseManager::getFailedAttempts </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает количество неудачных попыток входа. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Количество неудачных попыток. </dd></dl>
+
+</div>
+</div>
+<a id="gadc0902f7d0e2b4b99285d5b31431bbd3" name="gadc0902f7d0e2b4b99285d5b31431bbd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadc0902f7d0e2b4b99285d5b31431bbd3">&#9670;&#160;</a></span>getLockUntil()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QDateTime DatabaseManager::getLockUntil </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Возвращает время, до которого аккаунт заблокирован. </p>
+<p>Возвращает время блокировки аккаунта.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Дата и время разблокировки. </dd></dl>
+
+</div>
+</div>
+<a id="ga6cac023af947fa742fb00b4f3b36d030" name="ga6cac023af947fa742fb00b4f3b36d030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6cac023af947fa742fb00b4f3b36d030">&#9670;&#160;</a></span>hashPassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DatabaseManager::hashPassword </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Хэширует пароль с использованием соли. </p>
+<p>Хеширует пароль пользователя.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">password</td><td>Исходный пароль. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>Хэш пароля. </dd></dl>
+
+</div>
+</div>
+<a id="ga6825517c8d4bf091e1c863494a109fc0" name="ga6825517c8d4bf091e1c863494a109fc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6825517c8d4bf091e1c863494a109fc0">&#9670;&#160;</a></span>incrementFailedAttempts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DatabaseManager::incrementFailedAttempts </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Увеличивает счётчик неудачных попыток входа. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga92088595633cff356e64628b5820f267" name="ga92088595633cff356e64628b5820f267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga92088595633cff356e64628b5820f267">&#9670;&#160;</a></span>initDatabase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DatabaseManager::initDatabase </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Инициализирует подключение к базе данных. </p>
+<p>Инициализация базы данных.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true в случае успеха.</dd></dl>
+<p>Создаёт подключение SQLite и инициализирует таблицы. </p>
+
+</div>
+</div>
+<a id="ga4abb527066e28f3928ef45af856e134c" name="ga4abb527066e28f3928ef45af856e134c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4abb527066e28f3928ef45af856e134c">&#9670;&#160;</a></span>instance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_database_manager.html">DatabaseManager</a> &amp; DatabaseManager::instance </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Возвращает единственный экземпляр менеджера базы данных. </p>
+<p>Возвращает singleton-экземпляр <a class="el" href="class_database_manager.html" title="Singleton-класс для управления базой данных.">DatabaseManager</a>.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Ссылка на экземпляр <a class="el" href="class_database_manager.html" title="Singleton-класс для управления базой данных.">DatabaseManager</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ga7a2ac3defc8180a6ed7ce3d65df54b61" name="ga7a2ac3defc8180a6ed7ce3d65df54b61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7a2ac3defc8180a6ed7ce3d65df54b61">&#9670;&#160;</a></span>loginUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DatabaseManager::loginUser </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выполняет вход пользователя. </p>
+<p>Авторизация пользователя.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин. </td></tr>
+    <tr><td class="paramname">password</td><td>Пароль. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true при успешной авторизации. </dd></dl>
+
+</div>
+</div>
+<a id="gaeecf73be8fbb4cdead016bd7b700b2e7" name="gaeecf73be8fbb4cdead016bd7b700b2e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeecf73be8fbb4cdead016bd7b700b2e7">&#9670;&#160;</a></span>printAllUsers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DatabaseManager::printAllUsers </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Выводит всех пользователей в консоль (для отладки). </p>
+<p>Выводит всех пользователей в лог. </p>
+
+</div>
+</div>
+<a id="ga70191af866ccccca5db1477768c27033" name="ga70191af866ccccca5db1477768c27033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga70191af866ccccca5db1477768c27033">&#9670;&#160;</a></span>registerUser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DatabaseManager::registerUser </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>email</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Регистрирует нового пользователя. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя. </td></tr>
+    <tr><td class="paramname">email</td><td>Email пользователя. </td></tr>
+    <tr><td class="paramname">password</td><td>Пароль пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true в случае успешной регистрации. </dd></dl>
+
+</div>
+</div>
+<a id="gabdd9d9f3740b6af3f41f1fc4eab73fc8" name="gabdd9d9f3740b6af3f41f1fc4eab73fc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabdd9d9f3740b6af3f41f1fc4eab73fc8">&#9670;&#160;</a></span>resetFailedAttempts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DatabaseManager::resetFailedAttempts </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Сбрасывает счётчик неудачных попыток. </p>
+<p>Сбрасывает неудачные попытки входа.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4de8a21495a20fc23114c5293b0548d5" name="ga4de8a21495a20fc23114c5293b0548d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4de8a21495a20fc23114c5293b0548d5">&#9670;&#160;</a></span>userExists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DatabaseManager::userExists </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>login</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Проверяет существование пользователя по логину. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">login</td><td>Логин пользователя. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если пользователь существует. </dd></dl>
+
+</div>
+</div>
+<a id="gae9b3a5da1e04fbb00faf8a034da1d063" name="gae9b3a5da1e04fbb00faf8a034da1d063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae9b3a5da1e04fbb00faf8a034da1d063">&#9670;&#160;</a></span>~DatabaseManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DatabaseManager::~DatabaseManager </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Деструктор. </p>
+<p>Деструктор <a class="el" href="class_database_manager.html" title="Singleton-класс для управления базой данных.">DatabaseManager</a>. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

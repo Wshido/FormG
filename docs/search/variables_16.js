@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['yaxis_0',['yAxis',['../class_q_custom_plot.html#af6fea5679725b152c14facd920b19367',1,'QCustomPlot']]],
-  ['yaxis2_1',['yAxis2',['../class_q_custom_plot.html#af13fdc5bce7d0fabd640f13ba805c0b7',1,'QCustomPlot']]],
-  ['ydata_2',['yData',['../class_graph_window.html#a361ad2f79eaef0cb5abf5fb35cf64672',1,'GraphWindow']]]
+  ['xaxis_0',['xAxis',['../class_q_custom_plot.html#a968b5ac86c181a49bba78c2b62a80cb3',1,'QCustomPlot']]],
+  ['xaxis2_1',['xAxis2',['../class_q_custom_plot.html#ada41599f22cad901c030f3dcbdd82fd9',1,'QCustomPlot']]],
+  ['xdatafrac_2',['xDataFrac',['../class_graph_window.html#a8d7ca89bbc0a2cbbb5c056518657d2e2',1,'GraphWindow']]],
+  ['xdatasin_3',['xDataSin',['../class_graph_window.html#a501c6c5d372094e07eb54ed60888f8e5',1,'GraphWindow']]],
+  ['xdatasqrt_4',['xDataSqrt',['../class_graph_window.html#a0a4648170caa2e3f026a120bee9cfbf7',1,'GraphWindow']]]
 ];

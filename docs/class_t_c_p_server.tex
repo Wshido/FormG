@@ -2,77 +2,44 @@
 \hypertarget{class_t_c_p_server}{}\label{class_t_c_p_server}\index{TCPServer@{TCPServer}}
 
 
-Класс TCP-\/сервера для проекта по предмету "{}Технологии и методы программирования"{}.  
+TCP сервер для обработки клиентских подключений.  
 
 
 
 
-{\ttfamily \+\#include $<$TCPServer.\+h$>$}
+{\ttfamily \+\#include $<$tcpserver.\+h$>$}
 
+Граф наследования:\+TCPServer:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_t_c_p_server}
+\end{center}
+\end{figure}
 \doxysubsubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-void \doxymbox{\hyperlink{group__servercpp_ga5fe156c6ef8e554b61805a5093bc3f72}{setup}} (int port)
-\begin{DoxyCompactList}\small\item\em Метод для запуска сервера \end{DoxyCompactList}\item 
-string \doxymbox{\hyperlink{group__servercpp_gaec7165331f5c13317ad31529167760dc}{receive}} ()
-\begin{DoxyCompactList}\small\item\em Принятие сообщения от клиента \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Открытые атрибуты}
+\doxymbox{\hyperlink{group__tcpserver_gaf9980f4c39e88fb8d8ff473764d3723d}{TCPServer}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_t_c_p_server}{TCPServer}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__tcpserver_gaa944cbd79352ca38fdb431f92f7ba88c}{start}} (quint16 port)
+\begin{DoxyCompactList}\small\item\em Запуск сервера. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__tcpserver_gac69710216804516e5a91f4dff2bb2771}{set\+Smtp\+Config}} (const QString \&host, quint16 port, const QString \&user, const QString \&pass, const QString \&from)
+\begin{DoxyCompactList}\small\item\em Настройка SMTP для контроллера. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Защищенные члены}
 \begin{DoxyCompactItemize}
 \item 
-int \doxymbox{\hyperlink{class_t_c_p_server_a5760b0d1dad5583ccf109256ff28cc08}{sockfd}}
-\begin{DoxyCompactList}\small\item\em сокет сервера \end{DoxyCompactList}\item 
-struct sockaddr\+\_\+in \doxymbox{\hyperlink{class_t_c_p_server_a8158542abc8b434935935452e7bbba5e}{server\+Address}}
-\begin{DoxyCompactList}\small\item\em адрес сервера \end{DoxyCompactList}\item 
-struct sockaddr\+\_\+in \doxymbox{\hyperlink{class_t_c_p_server_ad701eade413d190ae412033e924df362}{client\+Address}}
-\begin{DoxyCompactList}\small\item\em адрес клиента \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsubsection*{Закрытые статические члены}
+void \doxymbox{\hyperlink{group__tcpserver_gaf1df9d80f25034148ed588e7fa2d4ab7}{incoming\+Connection}} (qintptr socket\+Descriptor) override
+\begin{DoxyCompactList}\small\item\em Обработка входящего подключения. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
 \begin{DoxyCompactItemize}
 \item 
-static void \doxymbox{\hyperlink{group__servercpp_ga4619223db24f14afec55a32abda5d456}{Task}} (int client\+Sock)
-\begin{DoxyCompactList}\small\item\em Работа с запросами клиентом \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxymbox{\hyperlink{class_controller}{Controller}} \doxymbox{\hyperlink{group__tcpserver_ga755a1b7ced220307fe724f6d3c0ee723}{m\+\_\+controller}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Класс TCP-\/сервера для проекта по предмету "{}Технологии и методы программирования"{}. 
-
-Сервер способен принимать запросы и отправлять данные 
-
-\label{class_t_c_p_server_doc-variable-members}
-\Hypertarget{class_t_c_p_server_doc-variable-members}
-\doxysubsection{Данные класса}
-\Hypertarget{class_t_c_p_server_ad701eade413d190ae412033e924df362}\index{TCPServer@{TCPServer}!clientAddress@{clientAddress}}
-\index{clientAddress@{clientAddress}!TCPServer@{TCPServer}}
-\doxysubsubsection{\texorpdfstring{clientAddress}{clientAddress}}
-{\footnotesize\ttfamily \label{class_t_c_p_server_ad701eade413d190ae412033e924df362} 
-struct sockaddr\+\_\+in TCPServer::\+client\+Address}
-
-
-
-адрес клиента 
-
-\Hypertarget{class_t_c_p_server_a8158542abc8b434935935452e7bbba5e}\index{TCPServer@{TCPServer}!serverAddress@{serverAddress}}
-\index{serverAddress@{serverAddress}!TCPServer@{TCPServer}}
-\doxysubsubsection{\texorpdfstring{serverAddress}{serverAddress}}
-{\footnotesize\ttfamily \label{class_t_c_p_server_a8158542abc8b434935935452e7bbba5e} 
-struct sockaddr\+\_\+in TCPServer::\+server\+Address}
-
-
-
-адрес сервера 
-
-\Hypertarget{class_t_c_p_server_a5760b0d1dad5583ccf109256ff28cc08}\index{TCPServer@{TCPServer}!sockfd@{sockfd}}
-\index{sockfd@{sockfd}!TCPServer@{TCPServer}}
-\doxysubsubsection{\texorpdfstring{sockfd}{sockfd}}
-{\footnotesize\ttfamily \label{class_t_c_p_server_a5760b0d1dad5583ccf109256ff28cc08} 
-int TCPServer::\+sockfd}
-
-
-
-сокет сервера 
-
-
+TCP сервер для обработки клиентских подключений. 
 
 Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
 \item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+server/\+server/\+\doxymbox{\hyperlink{_t_c_p_server_8h}{TCPServer.\+h}}\item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+server/\+server/\+\doxymbox{\hyperlink{_t_c_p_server_8cpp}{TCPServer.\+cpp}}\end{DoxyCompactItemize}
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Serverdox/\+002\+TCPserver/\+\+TCPserver/\+\doxymbox{\hyperlink{tcpserver_8h}{tcpserver.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Serverdox/\+002\+TCPserver/\+\+TCPserver/\+\doxymbox{\hyperlink{tcpserver_8cpp}{tcpserver.\+cpp}}\end{DoxyCompactItemize}

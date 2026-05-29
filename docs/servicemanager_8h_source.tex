@@ -1,0 +1,140 @@
+\doxysection{servicemanager.\+h}
+\hypertarget{servicemanager_8h_source}{}\label{servicemanager_8h_source}\index{C:/Users/пп/Desktop/New/Clientdox/Timpproject/servicemanager.h@{C:/Users/пп/Desktop/New/Clientdox/Timpproject/servicemanager.h}}
+\doxymbox{\hyperlink{servicemanager_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERVICEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERVICEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QDebug>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__servicemanager__impl_gaeb86d399546b8e9a6af17f4e1cc7e879}{ServiceManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{group__servicemanager__impl_gaeb86d399546b8e9a6af17f4e1cc7e879}{ServiceManager}}\&\ \doxymbox{\hyperlink{group__servicemanager__impl_gad78e686a5fcf0c9a345fa67fd5128009}{instance}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga6eb6b09949825b1b7f51bb72970f11bd}{connectToServer}}(\textcolor{keyword}{const}\ QString\&\ host\ =\ \textcolor{stringliteral}{"{}127.0.0.1"{}},\ \textcolor{keywordtype}{int}\ port\ =\ 11999);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga05ea46d1f2b9bb23755f1321b6fa06d1}{disconnectFromServer}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga31a8621f6e76064f79904d4ef73beaaf}{isConnected}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{//\ ======================\ Регистрация\ ======================}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga338f5d7e72952a3cac5ef214c270d0e7}{sendRegRequestCode}}(\textcolor{keyword}{const}\ QString\&\ email);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga77b9b876c6a64bb59bd784c2eef6ec04}{sendRegConfirm}}(\textcolor{keyword}{const}\ QString\&\ login,\ \textcolor{keyword}{const}\ QString\&\ password,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ email,\ \textcolor{keyword}{const}\ QString\&\ code);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//\ ======================\ Авторизация\ ======================}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga3d8d6ea1f956a24cde338fface093520}{sendAuthRequestCode}}(\textcolor{keyword}{const}\ QString\&\ login,\ \textcolor{keyword}{const}\ QString\&\ password);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga9c4e411c5ac14aabad536257243ec40a}{sendAuthConfirm}}(\textcolor{keyword}{const}\ QString\&\ email,\ \textcolor{keyword}{const}\ QString\&\ code);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//\ ======================\ Восстановление\ пароля\ ======================}}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga6081858496466768d87050382a8b82b3}{sendRequestCode}}(\textcolor{keyword}{const}\ QString\&\ login);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga792b61f20d9babf739d7976337e91c00}{sendChangePasswordWithCode}}(\textcolor{keyword}{const}\ QString\&\ login,\ \textcolor{keyword}{const}\ QString\&\ code,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ newPassword);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//\ ======================\ Графики\ ======================}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga7c1b088e492bd88eeb6fcb4304d43d06}{sendFunctionParams}}(\textcolor{keywordtype}{double}\ a,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ c);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ ======================\ Logout\ ======================}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga41127553579ebfc8e21b21783d409d2c}{sendLogout}}(\textcolor{keyword}{const}\ QString\&\ login);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga238b45437f4c66c7e068f1b09d402290}{sendLogoutAll}}(\textcolor{keyword}{const}\ QString\&\ login);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//\ ======================\ Токены\ и\ сессия\ ======================}}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga97a89354b8e2be0667c0f3459cd6a101}{sendRefreshToken}}(\textcolor{keyword}{const}\ QString\&\ login,\ \textcolor{keyword}{const}\ QString\&\ oldToken);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga1cf5fb001fa93bf1ea2315a445677c68}{setCurrentLogin}}(\textcolor{keyword}{const}\ QString\&\ login);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__servicemanager__impl_ga5a089f552b3e77023e4521a6afa98e7b}{currentLogin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga83fda3f1765b8cc39da671590a9a79fb}{setCurrentToken}}(\textcolor{keyword}{const}\ QString\&\ token);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__servicemanager__impl_gad2fa0e0146bab5c947b5f98d0762ac0a}{currentToken}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{comment}{//\ ======================\ Устаревшие\ методы\ ======================}}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga016f586efe7cfe024c7fb4e74af2255d}{sendAuth}}(\textcolor{keyword}{const}\ QString\&\ login,\ \textcolor{keyword}{const}\ QString\&\ password);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_gaf43cf19ef918401a69a702ce5c79f554}{sendReg}}(\textcolor{keyword}{const}\ QString\&\ login,\ \textcolor{keyword}{const}\ QString\&\ password,\ \textcolor{keyword}{const}\ QString\&\ email);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ signals:}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a8e5729ef7eeb92652fc51a97b558f937}{connected}}();}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_aa6d1c5e9701142ea2d474d933bcfa405}{disconnected}}();}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_adc1f5d3380975102d4e7ece7e8d31d08}{error}}(\textcolor{keyword}{const}\ QString\&\ message);}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_aaee6db2df0974351a4752aa8ccdd360d}{connectionFailed}}();}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a44415aacd9e6b656b2c6bae17312532e}{reconnecting}}();}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{comment}{//\ Сигналы\ регистрации}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_ae0fcd2837b882e6d0aed75d9ace40f6f}{regRequestCodeResult}}(\textcolor{keywordtype}{bool}\ success,\ \textcolor{keyword}{const}\ QString\&\ code);}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_adc5d5613f83ad7151de7fc42ce1ff7e2}{regConfirmResult}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ Сигналы\ авторизации}}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a70796b3bb4080b26c96fb0b83a61f7fb}{authRequestCodeResult}}(\textcolor{keywordtype}{bool}\ success,\ \textcolor{keyword}{const}\ QString\&\ email,\ \textcolor{keyword}{const}\ QString\&\ code);}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a328f0bcd1a0bda2c8b27f8c48d3a81e6}{authConfirmResult}}(\textcolor{keywordtype}{bool}\ success,\ \textcolor{keyword}{const}\ QString\&\ sessionToken);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{comment}{//\ Сигналы\ восстановления\ пароля}}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a8aafa68a396536066074a5de9399d59a}{codeRequestResult}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a74ff0745275d3cdd6a9096164d573e1f}{passwordChangeWithCodeResult}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{comment}{//\ Сигналы\ для\ графиков}}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a4c8c0abcc256c3b33d5b0f5e4027d4e9}{functionDataReceived}}(\textcolor{keyword}{const}\ QString\&\ data);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a3c615d44e04e16d7617fd0e81b79fff5}{authResult}}(\textcolor{keywordtype}{bool}\ success,\ \textcolor{keyword}{const}\ QString\&\ login);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ Сигналы\ logout}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a20bbdbf993af6d8328ac7929896539d1}{logoutResult}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_a3ec9dbcb12a0fcd45dc1084e2d8c18ee}{logoutAllResult}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{comment}{//\ Сигналы\ обновления\ токена}}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_service_manager_af4623e3acffff271b765bc7d929f4fcb}{refreshTokenResult}}(\textcolor{keywordtype}{bool}\ success,\ \textcolor{keyword}{const}\ QString\&\ newToken);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_gadf23733f9c3b0b2618fee492fe84e76a}{onReadyRead}}();}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga453a8f166f6b86e15aa3d21d339ead6f}{onConnected}}();}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga1d705e073fc7abb0ec77f58cf95eab09}{onDisconnected}}();}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga28a94cb6435600716ea479fc30ad68b4}{onError}}(QAbstractSocket::SocketError\ socketError);}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga5b35f8aebcb6b449ffd188e3e36d17bb}{onReconnectTimer}}();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{group__servicemanager__impl_gaeb86d399546b8e9a6af17f4e1cc7e879}{ServiceManager}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00174\ \ \ \ \ \doxymbox{\hyperlink{group__servicemanager__impl_ga87b207df58ccd316320d490c003c7eda}{\string~ServiceManager}}();}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_ga6a16c2a7297161552f5f77b9449f4a70}{sendRequest}}(\textcolor{keyword}{const}\ QString\&\ request);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__servicemanager__impl_gae4e561638332a03d6230e30427b0b097}{attemptReconnect}}();}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00190\ \ \ \ \ QTcpSocket*\ \doxymbox{\hyperlink{class_service_manager_a46c313a6bded6dbe4b7509d632c444c1}{m\_socket}};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00195\ \ \ \ \ QByteArray\ \doxymbox{\hyperlink{class_service_manager_a08407e0a88621534010948a42799b490}{m\_readBuffer}};}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00200\ \ \ \ \ QByteArray\ \doxymbox{\hyperlink{class_service_manager_a28c567a9ef815c545de379497632d260}{m\_graphDataBuffer}};}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_service_manager_aba7e7ded1195e030a3b9aa118663fd62}{m\_receivingGraphData}};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00210\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_service_manager_a3b64a950eb8268e24646c0fec4e185d2}{m\_currentLogin}};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00215\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_service_manager_aea3170c33b7b56e74a6c9f01657b7a61}{m\_currentToken}};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_service_manager_a426cce7dd115376e793cae597440be25}{m\_reconnectAttempts}};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00225\ \ \ \ \ QTimer*\ \doxymbox{\hyperlink{class_service_manager_ab88019d81dd9a431f2631c884115b815}{m\_reconnectTimer}};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_service_manager_a4c8a5c33817d69e217ff03dbe65b38b1}{MAX\_RECONNECT\_ATTEMPTS}}\ =\ 5;}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_service_manager_aa263d9769dbaf6de72577d9e70965722}{RECONNECT\_INTERVAL\_MS}}\ =\ 3000;}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00233\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_service_manager_aac51e466240c22b86bd414b7c867b41f}{m\_host}};}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_service_manager_abeb49f0cef292e0d314fa91d24c7dca3}{m\_port}};}
+\DoxyCodeLine{00239\ \};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SERVICEMANAGER\_H}}
+
+\end{DoxyCode}

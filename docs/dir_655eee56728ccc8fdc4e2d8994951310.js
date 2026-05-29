@@ -1,0 +1,5 @@
+var dir_655eee56728ccc8fdc4e2d8994951310 =
+[
+    [ "moc_predefs.h", "002_t_c_pserver_2002_t_c_pserver_2_t_c_pserver_2build_2_desktop___qt__6__10__3__llvm__mingw__64_ed8e8a4a6cf4e491ebeb10ac4d23f878.html", "002_t_c_pserver_2002_t_c_pserver_2_t_c_pserver_2build_2_desktop___qt__6__10__3__llvm__mingw__64_ed8e8a4a6cf4e491ebeb10ac4d23f878" ],
+    [ "moc_tcpserver.cpp", "build_2_desktop___qt__6__10__3__llvm__mingw__64__bit-u041eu0442u043bu0430u0434u043au0430_2debug_2moc__tcpserver_8cpp.html", "build_2_desktop___qt__6__10__3__llvm__mingw__64__bit-u041eu0442u043bu0430u0434u043au0430_2debug_2moc__tcpserver_8cpp" ]
+];

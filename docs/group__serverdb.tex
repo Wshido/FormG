@@ -1,0 +1,652 @@
+\doxysubsection{Работа с базой данных сервера и управлением сессиями }
+\hypertarget{group__serverdb}{}\label{group__serverdb}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection*{Разделы}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__serverdb__impl}{Описание работы с базой данных сервера}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_server_d_b}{Server\+DB}}
+\begin{DoxyCompactList}\small\item\em Работа с базой данных сервера и управлением сессиями. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_session_data}{Server\+DB::\+\+Session\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные сессии. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reg_data}{Server\+DB::\+\+Temp\+Reg\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные временной регистрации. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_auth_data}{Server\+DB::\+\+Temp\+Auth\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные временной авторизации. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reset_data}{Server\+DB::\+\+Temp\+Reset\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные сброса пароля. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_rate_limit_data}{Server\+DB::\+\+Rate\+Limit\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные rate limit. \end{DoxyCompactList}\item 
+struct \doxymbox{\hyperlink{struct_server_d_b_1_1_brute_force_data}{Server\+DB::\+\+Brute\+Force\+Data}}
+\begin{DoxyCompactList}\small\item\em Данные защиты от brute force. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__serverdb_ga16de4b24afb55595bfb5859324ec60fa}{Server\+DB::\+\+Server\+DB}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_server_d_b}{Server\+DB}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__serverdb_ga3a79b19dddda5b43bf0bf9a1d8cb1491}{Server\+DB::\+\texorpdfstring{$\sim$}{\string~}\+Server\+DB}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор \doxylink{class_server_d_b}{Server\+DB}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga36ac2e1ef9f0c32549515d6ef55ad773}{Server\+DB::\+request\+Reg\+Code}} (const QString \&email, QString \&code)
+\begin{DoxyCompactList}\small\item\em Запрос регистрационного кода. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga994ac2d5c132cfc9f9bd1356731edda1}{Server\+DB::\+confirm\+Reg}} (const QString \&login, const QString \&password, const QString \&email, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Подтверждение регистрации. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_gaf12d0258f79d2e1d0d9b65d1ea2a0f97}{Server\+DB::\+request\+Auth\+Code}} (const QString \&login, const QString \&password, QString \&email, QString \&code)
+\begin{DoxyCompactList}\small\item\em Запрос кода авторизации. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga1b9ee71036824da8376e7b4bf3a6afc5}{Server\+DB::\+confirm\+Auth}} (const QString \&email, const QString \&code, QString \&session\+Token)
+\begin{DoxyCompactList}\small\item\em Подтверждение авторизации. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga1bf6da3938e44f7f01e6b6cca636a5a8}{Server\+DB::\+request\+Reset\+Code}} (const QString \&login\+Or\+Email, QString \&code, QString \&out\+Email)
+\begin{DoxyCompactList}\small\item\em Запрос кода сброса пароля. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_gaaab5737ce3cfd315699697037db34c19}{Server\+DB::\+confirm\+Reset\+Password}} (const QString \&email, const QString \&code, const QString \&new\+Password)
+\begin{DoxyCompactList}\small\item\em Подтверждение сброса пароля. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gad10fa166639efe678c2ef0f838b16a8c}{Server\+DB::\+get\+Stat}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Получение статистики пользователя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_gaf1c086f5b5f988311b427a5acd4124db}{Server\+DB::\+check\+Session}} (const QString \&login, const QString \&session\+Token)
+\begin{DoxyCompactList}\small\item\em Проверка сессии. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gadb401b2e1e6008328125e4aa97d6df39}{Server\+DB::\+get\+Email\+By\+Login\+Or\+Email}} (const QString \&login\+Or\+Email)
+\begin{DoxyCompactList}\small\item\em Получение email по логину или email. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga29840ab235049436a5d7a0490a3d7587}{Server\+DB::\+logout\+Session}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Завершение сессии пользователя. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga16416b749e67eac8a9cbe95c02c57b8d}{Server\+DB::\+logout\+All\+Sessions}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Завершение всех сессий пользователя. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_gae6e3113ec64b259e8aa2763a12b8e4af}{Server\+DB::\+cleanup\+Expired\+Sessions}} ()
+\begin{DoxyCompactList}\small\item\em Очистка просроченных сессий. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga93f29f71d6a4b9410202891b35867000}{Server\+DB::\+refresh\+Token}} (const QString \&login, const QString \&old\+Token, QString \&new\+Token)
+\begin{DoxyCompactList}\small\item\em Обновление токена сессии. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga2ba8c2228e0fb8ab015b3d2317711037}{Server\+DB::\+is\+Rate\+Limited}} (const QString \&identifier)
+\begin{DoxyCompactList}\small\item\em Проверка rate limit. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga01bda8412bffb2fb13ee6082a549d8e7}{Server\+DB::\+is\+Brute\+Force\+Blocked}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Проверка блокировки brute force. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga50c90efdde5f057f115ffa395ffc2aa1}{Server\+DB::\+record\+Failed\+Attempt}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Запись неудачной попытки входа. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_gaf25d4c2c73bb88c62ada8ba06c398ce7}{Server\+DB::\+reset\+Failed\+Attempts}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Сброс неудачных попыток. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga30c1f4dbc30c1f3c91c6cd01df0bd2c1}{Server\+DB::\+connect\+To\+DB}} ()
+\begin{DoxyCompactList}\small\item\em Подключение к базе данных. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gafea47eb5d3c5eba7585fbc7d3807604c}{Server\+DB::\+hash\+Password}} (const QString \&password, const QString \&salt=QString())
+\begin{DoxyCompactList}\small\item\em Хеширование пароля. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_ga9b63d8ad80969b2bdf2564f11fd413eb}{Server\+DB::\+generate\+Salt}} ()
+\begin{DoxyCompactList}\small\item\em Генерация соли. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gac5357b70af1adf828816f14c6505157c}{Server\+DB::\+generate\+Session\+Token}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Генерация токена сессии. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_ga23862f00ad76853e89f0d77639061f34}{Server\+DB::\+generate\+Verification\+Code}} ()
+\begin{DoxyCompactList}\small\item\em Генерация кода подтверждения. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga1ec6994696b70eb747e89c7fe27ed603}{Server\+DB::\+cleanup\+Expired\+Codes}} ()
+\begin{DoxyCompactList}\small\item\em Очистка просроченных кодов. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__serverdb_gad546286597a31595e531db8e55748cd1}{Server\+DB::\+get\+Email\+By\+Login}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Получение email по логину. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_gac92a1cc800b6c58386e7fef2554a025a}{Server\+DB::\+check\+Email\+Exists}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Проверка существования email. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga77c8b9b85320af631c01d76b03c957e0}{Server\+DB::\+check\+Login\+Exists}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Проверка существования логина. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__serverdb_ga642aac0dc186c6d53addfc833c554a96}{Server\+DB::\+validate\+Input\+Length}} (const QString \&login, const QString \&email, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Проверка длины входных данных. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__serverdb_ga240ecff1deb8d18f397d7e981dbb00e3}{Server\+DB::\+update\+Session\+Activity}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Обновление активности сессии. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_gae61a68c8c2b2f426cc729c581eddafaa}{Server\+DB::\+\+MAX\+\_\+\+LOGIN\+\_\+\+LENGTH}} = 16
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_ga7fdcbdd4312b9432834059c53c5b4635}{Server\+DB::\+\+MAX\+\_\+\+EMAIL\+\_\+\+LENGTH}} = 100
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_gaca59ab9db5bea5ac6cc3bc107488450b}{Server\+DB::\+\+MAX\+\_\+\+PASSWORD\+\_\+\+LENGTH}} = 64
+\item 
+PGconn \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__serverdb_ga08a5e08f3aef18146cc9c23c9abbbf6f}{Server\+DB::\+m\+\_\+conn}}
+\item 
+QMutex \doxymbox{\hyperlink{group__serverdb_ga105a514d477fa54440bff554943d7323}{Server\+DB::\+m\+\_\+mutex}}
+\item 
+QString \doxymbox{\hyperlink{group__serverdb_gac6d549851b9529dfe22cfef4243f6594}{Server\+DB::\+\+Session\+Data::\+token}}
+\item 
+qint64 \doxymbox{\hyperlink{group__serverdb_ga4780e1c7a6f615f5fe4f7bd9a74b6c53}{Server\+DB::\+\+Session\+Data::\+created\+At}}
+\item 
+qint64 \doxymbox{\hyperlink{group__serverdb_gae0591ad1ca19fbea8fb645f6d53375c9}{Server\+DB::\+\+Session\+Data::\+last\+Activity}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_session_data}{Session\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga9a5c3606cb4ac2883efb7cb38825fa6b}{Server\+DB::\+m\+\_\+session\+Cache}}
+\item 
+QString \doxymbox{\hyperlink{group__serverdb_ga13e07f55d4dd3db53e16cb04b708cc72}{Server\+DB::\+\+Temp\+Reg\+Data::\+email}}
+\item 
+qint64 \doxymbox{\hyperlink{group__serverdb_gaeedede61f7e7fd07215ffe440c1fbb5a}{Server\+DB::\+\+Temp\+Reg\+Data::\+created\+At}}
+\item 
+QString \doxymbox{\hyperlink{group__serverdb_ga50678c74275e35284cf7f32642824d47}{Server\+DB::\+\+Temp\+Auth\+Data::\+login}}
+\item 
+QString \doxymbox{\hyperlink{group__serverdb_ga6fb3ffb82e3fdec3987e6689c6bebfae}{Server\+DB::\+\+Temp\+Auth\+Data::\+email}}
+\item 
+qint64 \doxymbox{\hyperlink{group__serverdb_ga0ec4dfec0932c1596090e6c88147631b}{Server\+DB::\+\+Temp\+Auth\+Data::\+created\+At}}
+\item 
+QString \doxymbox{\hyperlink{group__serverdb_gae4bfe65ca0caa1741e641eacdfcd81fa}{Server\+DB::\+\+Temp\+Reset\+Data::\+email}}
+\item 
+qint64 \doxymbox{\hyperlink{group__serverdb_ga117c37abe808d690314049567a146a9e}{Server\+DB::\+\+Temp\+Reset\+Data::\+created\+At}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reg_data}{Temp\+Reg\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga28a4d734f897b1a2f3e69803e9817f57}{Server\+DB::\+m\+\_\+temp\+Regs}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_auth_data}{Temp\+Auth\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_gaadb320472cc15fafebfc04e4af7d4d85}{Server\+DB::\+m\+\_\+temp\+Auths}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reset_data}{Temp\+Reset\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga33f2c9f8fe02efbe806344260ad446bb}{Server\+DB::\+m\+\_\+temp\+Resets}}
+\item 
+int \doxymbox{\hyperlink{group__serverdb_ga15454d67d03eefa34dc36f39706fb5a8}{Server\+DB::\+\+Rate\+Limit\+Data::\+attempt\+Count}}
+\item 
+qint64 \doxymbox{\hyperlink{group__serverdb_ga42711d5b865bac716f4b81597e4f468e}{Server\+DB::\+\+Rate\+Limit\+Data::\+window\+Start}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_rate_limit_data}{Rate\+Limit\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga61763a32ff9a93cda0ce7ff492fe7c31}{Server\+DB::\+m\+\_\+rate\+Limits}}
+\item 
+int \doxymbox{\hyperlink{group__serverdb_ga8d674736f99a754c8235a213c373ee97}{Server\+DB::\+\+Brute\+Force\+Data::\+failed\+Attempts}}
+\item 
+qint64 \doxymbox{\hyperlink{group__serverdb_ga23cb5c5a460003ce8ad6a5a90384d9c4}{Server\+DB::\+\+Brute\+Force\+Data::\+lockout\+Until}}
+\item 
+QMap$<$ QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_brute_force_data}{Brute\+Force\+Data}} $>$ \doxymbox{\hyperlink{group__serverdb_ga4337d1854419b1fe1132595028266cbc}{Server\+DB::\+m\+\_\+brute\+Force}}
+\item 
+static const qint64 \doxymbox{\hyperlink{group__serverdb_gacaf460b147f596440afd6992ae52d423}{Server\+DB::\+\+CODE\+\_\+\+EXPIRY\+\_\+\+MS}} = 5 \texorpdfstring{$\ast$}{*} 60 \texorpdfstring{$\ast$}{*} 1000
+\item 
+static const qint64 \doxymbox{\hyperlink{group__serverdb_ga700ad026b4ae53cea9dfe2c31a63c1ac}{Server\+DB::\+\+SESSION\+\_\+\+TTL\+\_\+\+MS}} = 30 \texorpdfstring{$\ast$}{*} 60 \texorpdfstring{$\ast$}{*} 1000
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_gadfbecd665825b46deb74d92665cd6cf1}{Server\+DB::\+\+RATE\+\_\+\+LIMIT\+\_\+\+MAX\+\_\+\+ATTEMPTS}} = 10
+\item 
+static const qint64 \doxymbox{\hyperlink{group__serverdb_ga7f64051d1e530064726ce7b9b85218a2}{Server\+DB::\+\+RATE\+\_\+\+LIMIT\+\_\+\+WINDOW\+\_\+\+MS}} = 60 \texorpdfstring{$\ast$}{*} 1000
+\item 
+static const int \doxymbox{\hyperlink{group__serverdb_gaf975a14f1744972fcc55b36be00d3dd5}{Server\+DB::\+\+BRUTE\+\_\+\+FORCE\+\_\+\+MAX\+\_\+\+ATTEMPTS}} = 5
+\item 
+static const qint64 \doxymbox{\hyperlink{group__serverdb_gac8dab327f34ef6f5bcad00871830e5fb}{Server\+DB::\+\+BRUTE\+\_\+\+FORCE\+\_\+\+LOCKOUT\+\_\+\+MS}} = 15 \texorpdfstring{$\ast$}{*} 60 \texorpdfstring{$\ast$}{*} 1000
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+
+
+\label{group__serverdb_doc-func-members}
+\Hypertarget{group__serverdb_doc-func-members}
+\doxysubsubsection{Функции}
+\Hypertarget{group__serverdb_gac92a1cc800b6c58386e7fef2554a025a}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!checkEmailExists@{checkEmailExists}}
+\index{checkEmailExists@{checkEmailExists}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{checkEmailExists()}{checkEmailExists()}}
+{\footnotesize\ttfamily \label{group__serverdb_gac92a1cc800b6c58386e7fef2554a025a} 
+bool Server\+DB::\+check\+Email\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка существования email. 
+
+Проверяет существование email в базе данных. \Hypertarget{group__serverdb_ga77c8b9b85320af631c01d76b03c957e0}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!checkLoginExists@{checkLoginExists}}
+\index{checkLoginExists@{checkLoginExists}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{checkLoginExists()}{checkLoginExists()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga77c8b9b85320af631c01d76b03c957e0} 
+bool Server\+DB::\+check\+Login\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка существования логина. 
+
+Проверяет существование логина в базе данных. \Hypertarget{group__serverdb_gaf1c086f5b5f988311b427a5acd4124db}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!checkSession@{checkSession}}
+\index{checkSession@{checkSession}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{checkSession()}{checkSession()}}
+{\footnotesize\ttfamily \label{group__serverdb_gaf1c086f5b5f988311b427a5acd4124db} 
+bool Server\+DB::\+check\+Session (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{session\+Token}{}\end{DoxyParamCaption})}
+
+
+
+Проверка сессии. 
+
+Проверяет валидность пользовательской сессии. \Hypertarget{group__serverdb_ga1ec6994696b70eb747e89c7fe27ed603}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!cleanupExpiredCodes@{cleanupExpiredCodes}}
+\index{cleanupExpiredCodes@{cleanupExpiredCodes}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{cleanupExpiredCodes()}{cleanupExpiredCodes()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga1ec6994696b70eb747e89c7fe27ed603} 
+void Server\+DB::\+cleanup\+Expired\+Codes (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Очистка просроченных кодов. 
+
+Очистка просроченных кодов подтверждения. \Hypertarget{group__serverdb_gae6e3113ec64b259e8aa2763a12b8e4af}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!cleanupExpiredSessions@{cleanupExpiredSessions}}
+\index{cleanupExpiredSessions@{cleanupExpiredSessions}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{cleanupExpiredSessions()}{cleanupExpiredSessions()}}
+{\footnotesize\ttfamily \label{group__serverdb_gae6e3113ec64b259e8aa2763a12b8e4af} 
+void Server\+DB::\+cleanup\+Expired\+Sessions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Очистка просроченных сессий. 
+
+\Hypertarget{group__serverdb_ga1b9ee71036824da8376e7b4bf3a6afc5}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!confirmAuth@{confirmAuth}}
+\index{confirmAuth@{confirmAuth}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{confirmAuth()}{confirmAuth()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga1b9ee71036824da8376e7b4bf3a6afc5} 
+bool Server\+DB::\+confirm\+Auth (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{, }\item[{const QString \&}]{code}{, }\item[{QString \&}]{session\+Token}{}\end{DoxyParamCaption})}
+
+
+
+Подтверждение авторизации. 
+
+Подтверждает авторизацию пользователя. \Hypertarget{group__serverdb_ga994ac2d5c132cfc9f9bd1356731edda1}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!confirmReg@{confirmReg}}
+\index{confirmReg@{confirmReg}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{confirmReg()}{confirmReg()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga994ac2d5c132cfc9f9bd1356731edda1} 
+bool Server\+DB::\+confirm\+Reg (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Подтверждение регистрации. 
+
+Подтверждает регистрацию пользователя. \Hypertarget{group__serverdb_gaaab5737ce3cfd315699697037db34c19}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!confirmResetPassword@{confirmResetPassword}}
+\index{confirmResetPassword@{confirmResetPassword}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{confirmResetPassword()}{confirmResetPassword()}}
+{\footnotesize\ttfamily \label{group__serverdb_gaaab5737ce3cfd315699697037db34c19} 
+bool Server\+DB::\+confirm\+Reset\+Password (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{, }\item[{const QString \&}]{code}{, }\item[{const QString \&}]{new\+Password}{}\end{DoxyParamCaption})}
+
+
+
+Подтверждение сброса пароля. 
+
+Подтверждает смену пароля пользователя. \Hypertarget{group__serverdb_ga30c1f4dbc30c1f3c91c6cd01df0bd2c1}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!connectToDB@{connectToDB}}
+\index{connectToDB@{connectToDB}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{connectToDB()}{connectToDB()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga30c1f4dbc30c1f3c91c6cd01df0bd2c1} 
+bool Server\+DB::\+connect\+To\+DB (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Подключение к базе данных. 
+
+Подключение к Postgre\+SQL базе данных. \Hypertarget{group__serverdb_ga9b63d8ad80969b2bdf2564f11fd413eb}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!generateSalt@{generateSalt}}
+\index{generateSalt@{generateSalt}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{generateSalt()}{generateSalt()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga9b63d8ad80969b2bdf2564f11fd413eb} 
+QString Server\+DB::\+generate\+Salt (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Генерация соли. 
+
+Генерация соли для пароля. \Hypertarget{group__serverdb_gac5357b70af1adf828816f14c6505157c}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!generateSessionToken@{generateSessionToken}}
+\index{generateSessionToken@{generateSessionToken}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{generateSessionToken()}{generateSessionToken()}}
+{\footnotesize\ttfamily \label{group__serverdb_gac5357b70af1adf828816f14c6505157c} 
+QString Server\+DB::\+generate\+Session\+Token (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Генерация токена сессии. 
+
+\Hypertarget{group__serverdb_ga23862f00ad76853e89f0d77639061f34}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!generateVerificationCode@{generateVerificationCode}}
+\index{generateVerificationCode@{generateVerificationCode}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{generateVerificationCode()}{generateVerificationCode()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga23862f00ad76853e89f0d77639061f34} 
+QString Server\+DB::\+generate\+Verification\+Code (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Генерация кода подтверждения. 
+
+\Hypertarget{group__serverdb_gad546286597a31595e531db8e55748cd1}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!getEmailByLogin@{getEmailByLogin}}
+\index{getEmailByLogin@{getEmailByLogin}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{getEmailByLogin()}{getEmailByLogin()}}
+{\footnotesize\ttfamily \label{group__serverdb_gad546286597a31595e531db8e55748cd1} 
+QString Server\+DB::\+get\+Email\+By\+Login (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Получение email по логину. 
+
+Получает email пользователя по логину. \Hypertarget{group__serverdb_gadb401b2e1e6008328125e4aa97d6df39}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!getEmailByLoginOrEmail@{getEmailByLoginOrEmail}}
+\index{getEmailByLoginOrEmail@{getEmailByLoginOrEmail}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{getEmailByLoginOrEmail()}{getEmailByLoginOrEmail()}}
+{\footnotesize\ttfamily \label{group__serverdb_gadb401b2e1e6008328125e4aa97d6df39} 
+QString Server\+DB::\+get\+Email\+By\+Login\+Or\+Email (\begin{DoxyParamCaption}\item[{const QString \&}]{login\+Or\+Email}{}\end{DoxyParamCaption})}
+
+
+
+Получение email по логину или email. 
+
+Получает email по логину или email. \Hypertarget{group__serverdb_gad10fa166639efe678c2ef0f838b16a8c}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!getStat@{getStat}}
+\index{getStat@{getStat}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{getStat()}{getStat()}}
+{\footnotesize\ttfamily \label{group__serverdb_gad10fa166639efe678c2ef0f838b16a8c} 
+QString Server\+DB::\+get\+Stat (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Получение статистики пользователя. 
+
+Получает статистику сервера. \Hypertarget{group__serverdb_gafea47eb5d3c5eba7585fbc7d3807604c}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!hashPassword@{hashPassword}}
+\index{hashPassword@{hashPassword}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{hashPassword()}{hashPassword()}}
+{\footnotesize\ttfamily \label{group__serverdb_gafea47eb5d3c5eba7585fbc7d3807604c} 
+QString Server\+DB::\+hash\+Password (\begin{DoxyParamCaption}\item[{const QString \&}]{password}{, }\item[{const QString \&}]{salt}{ = {\ttfamily QString()}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Хеширование пароля. 
+
+Хеширование пароля с солью. \Hypertarget{group__serverdb_ga01bda8412bffb2fb13ee6082a549d8e7}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!isBruteForceBlocked@{isBruteForceBlocked}}
+\index{isBruteForceBlocked@{isBruteForceBlocked}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{isBruteForceBlocked()}{isBruteForceBlocked()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga01bda8412bffb2fb13ee6082a549d8e7} 
+bool Server\+DB::\+is\+Brute\+Force\+Blocked (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Проверка блокировки brute force. 
+
+Проверяет наличие блокировки brute force. \Hypertarget{group__serverdb_ga2ba8c2228e0fb8ab015b3d2317711037}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!isRateLimited@{isRateLimited}}
+\index{isRateLimited@{isRateLimited}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{isRateLimited()}{isRateLimited()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga2ba8c2228e0fb8ab015b3d2317711037} 
+bool Server\+DB::\+is\+Rate\+Limited (\begin{DoxyParamCaption}\item[{const QString \&}]{identifier}{}\end{DoxyParamCaption})}
+
+
+
+Проверка rate limit. 
+
+Проверяет превышение лимита запросов. \Hypertarget{group__serverdb_ga16416b749e67eac8a9cbe95c02c57b8d}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!logoutAllSessions@{logoutAllSessions}}
+\index{logoutAllSessions@{logoutAllSessions}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{logoutAllSessions()}{logoutAllSessions()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga16416b749e67eac8a9cbe95c02c57b8d} 
+void Server\+DB::\+logout\+All\+Sessions (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Завершение всех сессий пользователя. 
+
+\Hypertarget{group__serverdb_ga29840ab235049436a5d7a0490a3d7587}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!logoutSession@{logoutSession}}
+\index{logoutSession@{logoutSession}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{logoutSession()}{logoutSession()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga29840ab235049436a5d7a0490a3d7587} 
+void Server\+DB::\+logout\+Session (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Завершение сессии пользователя. 
+
+\Hypertarget{group__serverdb_ga50c90efdde5f057f115ffa395ffc2aa1}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!recordFailedAttempt@{recordFailedAttempt}}
+\index{recordFailedAttempt@{recordFailedAttempt}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{recordFailedAttempt()}{recordFailedAttempt()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga50c90efdde5f057f115ffa395ffc2aa1} 
+void Server\+DB::\+record\+Failed\+Attempt (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Запись неудачной попытки входа. 
+
+Регистрирует неудачную попытку входа. \Hypertarget{group__serverdb_ga93f29f71d6a4b9410202891b35867000}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!refreshToken@{refreshToken}}
+\index{refreshToken@{refreshToken}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{refreshToken()}{refreshToken()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga93f29f71d6a4b9410202891b35867000} 
+bool Server\+DB::\+refresh\+Token (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{old\+Token}{, }\item[{QString \&}]{new\+Token}{}\end{DoxyParamCaption})}
+
+
+
+Обновление токена сессии. 
+
+\Hypertarget{group__serverdb_gaf12d0258f79d2e1d0d9b65d1ea2a0f97}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!requestAuthCode@{requestAuthCode}}
+\index{requestAuthCode@{requestAuthCode}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{requestAuthCode()}{requestAuthCode()}}
+{\footnotesize\ttfamily \label{group__serverdb_gaf12d0258f79d2e1d0d9b65d1ea2a0f97} 
+bool Server\+DB::\+request\+Auth\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{password}{, }\item[{QString \&}]{email}{, }\item[{QString \&}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Запрос кода авторизации. 
+
+Запрашивает код подтверждения авторизации. \Hypertarget{group__serverdb_ga36ac2e1ef9f0c32549515d6ef55ad773}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!requestRegCode@{requestRegCode}}
+\index{requestRegCode@{requestRegCode}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{requestRegCode()}{requestRegCode()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga36ac2e1ef9f0c32549515d6ef55ad773} 
+bool Server\+DB::\+request\+Reg\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{, }\item[{QString \&}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Запрос регистрационного кода. 
+
+Создаёт код подтверждения регистрации. \Hypertarget{group__serverdb_ga1bf6da3938e44f7f01e6b6cca636a5a8}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!requestResetCode@{requestResetCode}}
+\index{requestResetCode@{requestResetCode}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{requestResetCode()}{requestResetCode()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga1bf6da3938e44f7f01e6b6cca636a5a8} 
+bool Server\+DB::\+request\+Reset\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{login\+Or\+Email}{, }\item[{QString \&}]{code}{, }\item[{QString \&}]{out\+Email}{}\end{DoxyParamCaption})}
+
+
+
+Запрос кода сброса пароля. 
+
+Создаёт код восстановления пароля. \Hypertarget{group__serverdb_gaf25d4c2c73bb88c62ada8ba06c398ce7}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!resetFailedAttempts@{resetFailedAttempts}}
+\index{resetFailedAttempts@{resetFailedAttempts}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{resetFailedAttempts()}{resetFailedAttempts()}}
+{\footnotesize\ttfamily \label{group__serverdb_gaf25d4c2c73bb88c62ada8ba06c398ce7} 
+void Server\+DB::\+reset\+Failed\+Attempts (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Сброс неудачных попыток. 
+
+Сбрасывает счётчик неудачных попыток входа. \Hypertarget{group__serverdb_ga16de4b24afb55595bfb5859324ec60fa}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!ServerDB@{ServerDB}}
+\index{ServerDB@{ServerDB}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{ServerDB()}{ServerDB()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga16de4b24afb55595bfb5859324ec60fa} 
+Server\+DB::\+\+Server\+DB (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор \doxylink{class_server_d_b}{Server\+DB}. 
+
+\Hypertarget{group__serverdb_ga240ecff1deb8d18f397d7e981dbb00e3}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!updateSessionActivity@{updateSessionActivity}}
+\index{updateSessionActivity@{updateSessionActivity}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{updateSessionActivity()}{updateSessionActivity()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga240ecff1deb8d18f397d7e981dbb00e3} 
+void Server\+DB::\+update\+Session\+Activity (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Обновление активности сессии. 
+
+\Hypertarget{group__serverdb_ga642aac0dc186c6d53addfc833c554a96}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!validateInputLength@{validateInputLength}}
+\index{validateInputLength@{validateInputLength}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{validateInputLength()}{validateInputLength()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga642aac0dc186c6d53addfc833c554a96} 
+bool Server\+DB::\+validate\+Input\+Length (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка длины входных данных. 
+
+Проверяет допустимую длину входных данных. \Hypertarget{group__serverdb_ga3a79b19dddda5b43bf0bf9a1d8cb1491}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!````~ServerDB@{\texorpdfstring{$\sim$}{\string~}ServerDB}}
+\index{````~ServerDB@{\texorpdfstring{$\sim$}{\string~}ServerDB}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ServerDB()}{\string~ServerDB()}}
+{\footnotesize\ttfamily \label{group__serverdb_ga3a79b19dddda5b43bf0bf9a1d8cb1491} 
+Server\+DB::\+\texorpdfstring{$\sim$}{\string~}\+Server\+DB (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Деструктор \doxylink{class_server_d_b}{Server\+DB}. 
+
+
+
+\label{group__serverdb_doc-var-members}
+\Hypertarget{group__serverdb_doc-var-members}
+\doxysubsubsection{Переменные}
+\Hypertarget{group__serverdb_ga15454d67d03eefa34dc36f39706fb5a8}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!attemptCount@{attemptCount}}
+\index{attemptCount@{attemptCount}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{attemptCount}{attemptCount}}
+{\footnotesize\ttfamily \label{group__serverdb_ga15454d67d03eefa34dc36f39706fb5a8} 
+int Server\+DB::\+\+Rate\+Limit\+Data::\+attempt\+Count}
+
+\Hypertarget{group__serverdb_gac8dab327f34ef6f5bcad00871830e5fb}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!BRUTE\_FORCE\_LOCKOUT\_MS@{BRUTE\_FORCE\_LOCKOUT\_MS}}
+\index{BRUTE\_FORCE\_LOCKOUT\_MS@{BRUTE\_FORCE\_LOCKOUT\_MS}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{BRUTE\_FORCE\_LOCKOUT\_MS}{BRUTE\_FORCE\_LOCKOUT\_MS}}
+{\footnotesize\ttfamily \label{group__serverdb_gac8dab327f34ef6f5bcad00871830e5fb} 
+const qint64 Server\+DB::\+\+BRUTE\+\_\+\+FORCE\+\_\+\+LOCKOUT\+\_\+\+MS = 15 \texorpdfstring{$\ast$}{*} 60 \texorpdfstring{$\ast$}{*} 1000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{group__serverdb_gaf975a14f1744972fcc55b36be00d3dd5}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!BRUTE\_FORCE\_MAX\_ATTEMPTS@{BRUTE\_FORCE\_MAX\_ATTEMPTS}}
+\index{BRUTE\_FORCE\_MAX\_ATTEMPTS@{BRUTE\_FORCE\_MAX\_ATTEMPTS}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{BRUTE\_FORCE\_MAX\_ATTEMPTS}{BRUTE\_FORCE\_MAX\_ATTEMPTS}}
+{\footnotesize\ttfamily \label{group__serverdb_gaf975a14f1744972fcc55b36be00d3dd5} 
+const int Server\+DB::\+\+BRUTE\+\_\+\+FORCE\+\_\+\+MAX\+\_\+\+ATTEMPTS = 5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{group__serverdb_gacaf460b147f596440afd6992ae52d423}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!CODE\_EXPIRY\_MS@{CODE\_EXPIRY\_MS}}
+\index{CODE\_EXPIRY\_MS@{CODE\_EXPIRY\_MS}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{CODE\_EXPIRY\_MS}{CODE\_EXPIRY\_MS}}
+{\footnotesize\ttfamily \label{group__serverdb_gacaf460b147f596440afd6992ae52d423} 
+const qint64 Server\+DB::\+\+CODE\+\_\+\+EXPIRY\+\_\+\+MS = 5 \texorpdfstring{$\ast$}{*} 60 \texorpdfstring{$\ast$}{*} 1000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{group__serverdb_ga4780e1c7a6f615f5fe4f7bd9a74b6c53}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!createdAt@{createdAt}}
+\index{createdAt@{createdAt}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{createdAt}{createdAt}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{group__serverdb_ga4780e1c7a6f615f5fe4f7bd9a74b6c53} 
+qint64 Server\+DB::\+\+Session\+Data::\+created\+At}
+
+\Hypertarget{group__serverdb_ga0ec4dfec0932c1596090e6c88147631b}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!createdAt@{createdAt}}
+\index{createdAt@{createdAt}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{createdAt}{createdAt}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{group__serverdb_ga0ec4dfec0932c1596090e6c88147631b} 
+qint64 Server\+DB::\+\+Temp\+Auth\+Data::\+created\+At}
+
+\Hypertarget{group__serverdb_gaeedede61f7e7fd07215ffe440c1fbb5a}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!createdAt@{createdAt}}
+\index{createdAt@{createdAt}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{createdAt}{createdAt}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{group__serverdb_gaeedede61f7e7fd07215ffe440c1fbb5a} 
+qint64 Server\+DB::\+\+Temp\+Reg\+Data::\+created\+At}
+
+\Hypertarget{group__serverdb_ga117c37abe808d690314049567a146a9e}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!createdAt@{createdAt}}
+\index{createdAt@{createdAt}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{createdAt}{createdAt}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{group__serverdb_ga117c37abe808d690314049567a146a9e} 
+qint64 Server\+DB::\+\+Temp\+Reset\+Data::\+created\+At}
+
+\Hypertarget{group__serverdb_ga6fb3ffb82e3fdec3987e6689c6bebfae}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!email@{email}}
+\index{email@{email}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{email}{email}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{group__serverdb_ga6fb3ffb82e3fdec3987e6689c6bebfae} 
+QString Server\+DB::\+\+Temp\+Auth\+Data::\+email}
+
+\Hypertarget{group__serverdb_ga13e07f55d4dd3db53e16cb04b708cc72}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!email@{email}}
+\index{email@{email}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{email}{email}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{group__serverdb_ga13e07f55d4dd3db53e16cb04b708cc72} 
+QString Server\+DB::\+\+Temp\+Reg\+Data::\+email}
+
+\Hypertarget{group__serverdb_gae4bfe65ca0caa1741e641eacdfcd81fa}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!email@{email}}
+\index{email@{email}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{email}{email}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{group__serverdb_gae4bfe65ca0caa1741e641eacdfcd81fa} 
+QString Server\+DB::\+\+Temp\+Reset\+Data::\+email}
+
+\Hypertarget{group__serverdb_ga8d674736f99a754c8235a213c373ee97}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!failedAttempts@{failedAttempts}}
+\index{failedAttempts@{failedAttempts}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{failedAttempts}{failedAttempts}}
+{\footnotesize\ttfamily \label{group__serverdb_ga8d674736f99a754c8235a213c373ee97} 
+int Server\+DB::\+\+Brute\+Force\+Data::\+failed\+Attempts}
+
+\Hypertarget{group__serverdb_gae0591ad1ca19fbea8fb645f6d53375c9}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!lastActivity@{lastActivity}}
+\index{lastActivity@{lastActivity}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{lastActivity}{lastActivity}}
+{\footnotesize\ttfamily \label{group__serverdb_gae0591ad1ca19fbea8fb645f6d53375c9} 
+qint64 Server\+DB::\+\+Session\+Data::\+last\+Activity}
+
+\Hypertarget{group__serverdb_ga23cb5c5a460003ce8ad6a5a90384d9c4}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!lockoutUntil@{lockoutUntil}}
+\index{lockoutUntil@{lockoutUntil}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{lockoutUntil}{lockoutUntil}}
+{\footnotesize\ttfamily \label{group__serverdb_ga23cb5c5a460003ce8ad6a5a90384d9c4} 
+qint64 Server\+DB::\+\+Brute\+Force\+Data::\+lockout\+Until}
+
+\Hypertarget{group__serverdb_ga50678c74275e35284cf7f32642824d47}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!login@{login}}
+\index{login@{login}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{login}{login}}
+{\footnotesize\ttfamily \label{group__serverdb_ga50678c74275e35284cf7f32642824d47} 
+QString Server\+DB::\+\+Temp\+Auth\+Data::\+login}
+
+\Hypertarget{group__serverdb_ga4337d1854419b1fe1132595028266cbc}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!m\_bruteForce@{m\_bruteForce}}
+\index{m\_bruteForce@{m\_bruteForce}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{m\_bruteForce}{m\_bruteForce}}
+{\footnotesize\ttfamily \label{group__serverdb_ga4337d1854419b1fe1132595028266cbc} 
+QMap$<$QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_brute_force_data}{Brute\+Force\+Data}}$>$ Server\+DB::\+m\+\_\+brute\+Force\hspace{0.3cm}{\ttfamily [private]}}
+
+Блокировки brute force \Hypertarget{group__serverdb_ga08a5e08f3aef18146cc9c23c9abbbf6f}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!m\_conn@{m\_conn}}
+\index{m\_conn@{m\_conn}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{m\_conn}{m\_conn}}
+{\footnotesize\ttfamily \label{group__serverdb_ga08a5e08f3aef18146cc9c23c9abbbf6f} 
+PGconn\texorpdfstring{$\ast$}{*} Server\+DB::\+m\+\_\+conn\hspace{0.3cm}{\ttfamily [private]}}
+
+Подключение к Postgre\+SQL \Hypertarget{group__serverdb_ga105a514d477fa54440bff554943d7323}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!m\_mutex@{m\_mutex}}
+\index{m\_mutex@{m\_mutex}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{m\_mutex}{m\_mutex}}
+{\footnotesize\ttfamily \label{group__serverdb_ga105a514d477fa54440bff554943d7323} 
+QMutex Server\+DB::\+m\+\_\+mutex\hspace{0.3cm}{\ttfamily [private]}}
+
+Мьютекс потокобезопасности \Hypertarget{group__serverdb_ga61763a32ff9a93cda0ce7ff492fe7c31}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!m\_rateLimits@{m\_rateLimits}}
+\index{m\_rateLimits@{m\_rateLimits}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{m\_rateLimits}{m\_rateLimits}}
+{\footnotesize\ttfamily \label{group__serverdb_ga61763a32ff9a93cda0ce7ff492fe7c31} 
+QMap$<$QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_rate_limit_data}{Rate\+Limit\+Data}}$>$ Server\+DB::\+m\+\_\+rate\+Limits\hspace{0.3cm}{\ttfamily [private]}}
+
+Ограничение запросов \Hypertarget{group__serverdb_ga9a5c3606cb4ac2883efb7cb38825fa6b}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!m\_sessionCache@{m\_sessionCache}}
+\index{m\_sessionCache@{m\_sessionCache}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{m\_sessionCache}{m\_sessionCache}}
+{\footnotesize\ttfamily \label{group__serverdb_ga9a5c3606cb4ac2883efb7cb38825fa6b} 
+QMap$<$QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_session_data}{Session\+Data}}$>$ Server\+DB::\+m\+\_\+session\+Cache\hspace{0.3cm}{\ttfamily [private]}}
+
+Кэш сессий \Hypertarget{group__serverdb_gaadb320472cc15fafebfc04e4af7d4d85}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!m\_tempAuths@{m\_tempAuths}}
+\index{m\_tempAuths@{m\_tempAuths}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{m\_tempAuths}{m\_tempAuths}}
+{\footnotesize\ttfamily \label{group__serverdb_gaadb320472cc15fafebfc04e4af7d4d85} 
+QMap$<$QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_auth_data}{Temp\+Auth\+Data}}$>$ Server\+DB::\+m\+\_\+temp\+Auths\hspace{0.3cm}{\ttfamily [private]}}
+
+Временные авторизации \Hypertarget{group__serverdb_ga28a4d734f897b1a2f3e69803e9817f57}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!m\_tempRegs@{m\_tempRegs}}
+\index{m\_tempRegs@{m\_tempRegs}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{m\_tempRegs}{m\_tempRegs}}
+{\footnotesize\ttfamily \label{group__serverdb_ga28a4d734f897b1a2f3e69803e9817f57} 
+QMap$<$QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reg_data}{Temp\+Reg\+Data}}$>$ Server\+DB::\+m\+\_\+temp\+Regs\hspace{0.3cm}{\ttfamily [private]}}
+
+Временные регистрации \Hypertarget{group__serverdb_ga33f2c9f8fe02efbe806344260ad446bb}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!m\_tempResets@{m\_tempResets}}
+\index{m\_tempResets@{m\_tempResets}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{m\_tempResets}{m\_tempResets}}
+{\footnotesize\ttfamily \label{group__serverdb_ga33f2c9f8fe02efbe806344260ad446bb} 
+QMap$<$QString, \doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reset_data}{Temp\+Reset\+Data}}$>$ Server\+DB::\+m\+\_\+temp\+Resets\hspace{0.3cm}{\ttfamily [private]}}
+
+Временные сбросы \Hypertarget{group__serverdb_ga7fdcbdd4312b9432834059c53c5b4635}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!MAX\_EMAIL\_LENGTH@{MAX\_EMAIL\_LENGTH}}
+\index{MAX\_EMAIL\_LENGTH@{MAX\_EMAIL\_LENGTH}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{MAX\_EMAIL\_LENGTH}{MAX\_EMAIL\_LENGTH}}
+{\footnotesize\ttfamily \label{group__serverdb_ga7fdcbdd4312b9432834059c53c5b4635} 
+const int Server\+DB::\+\+MAX\+\_\+\+EMAIL\+\_\+\+LENGTH = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+Макс длина email \Hypertarget{group__serverdb_gae61a68c8c2b2f426cc729c581eddafaa}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!MAX\_LOGIN\_LENGTH@{MAX\_LOGIN\_LENGTH}}
+\index{MAX\_LOGIN\_LENGTH@{MAX\_LOGIN\_LENGTH}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{MAX\_LOGIN\_LENGTH}{MAX\_LOGIN\_LENGTH}}
+{\footnotesize\ttfamily \label{group__serverdb_gae61a68c8c2b2f426cc729c581eddafaa} 
+const int Server\+DB::\+\+MAX\+\_\+\+LOGIN\+\_\+\+LENGTH = 16\hspace{0.3cm}{\ttfamily [static]}}
+
+Макс длина логина \Hypertarget{group__serverdb_gaca59ab9db5bea5ac6cc3bc107488450b}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!MAX\_PASSWORD\_LENGTH@{MAX\_PASSWORD\_LENGTH}}
+\index{MAX\_PASSWORD\_LENGTH@{MAX\_PASSWORD\_LENGTH}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{MAX\_PASSWORD\_LENGTH}{MAX\_PASSWORD\_LENGTH}}
+{\footnotesize\ttfamily \label{group__serverdb_gaca59ab9db5bea5ac6cc3bc107488450b} 
+const int Server\+DB::\+\+MAX\+\_\+\+PASSWORD\+\_\+\+LENGTH = 64\hspace{0.3cm}{\ttfamily [static]}}
+
+Макс длина пароля \Hypertarget{group__serverdb_gadfbecd665825b46deb74d92665cd6cf1}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!RATE\_LIMIT\_MAX\_ATTEMPTS@{RATE\_LIMIT\_MAX\_ATTEMPTS}}
+\index{RATE\_LIMIT\_MAX\_ATTEMPTS@{RATE\_LIMIT\_MAX\_ATTEMPTS}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{RATE\_LIMIT\_MAX\_ATTEMPTS}{RATE\_LIMIT\_MAX\_ATTEMPTS}}
+{\footnotesize\ttfamily \label{group__serverdb_gadfbecd665825b46deb74d92665cd6cf1} 
+const int Server\+DB::\+\+RATE\+\_\+\+LIMIT\+\_\+\+MAX\+\_\+\+ATTEMPTS = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{group__serverdb_ga7f64051d1e530064726ce7b9b85218a2}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!RATE\_LIMIT\_WINDOW\_MS@{RATE\_LIMIT\_WINDOW\_MS}}
+\index{RATE\_LIMIT\_WINDOW\_MS@{RATE\_LIMIT\_WINDOW\_MS}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{RATE\_LIMIT\_WINDOW\_MS}{RATE\_LIMIT\_WINDOW\_MS}}
+{\footnotesize\ttfamily \label{group__serverdb_ga7f64051d1e530064726ce7b9b85218a2} 
+const qint64 Server\+DB::\+\+RATE\+\_\+\+LIMIT\+\_\+\+WINDOW\+\_\+\+MS = 60 \texorpdfstring{$\ast$}{*} 1000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{group__serverdb_ga700ad026b4ae53cea9dfe2c31a63c1ac}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!SESSION\_TTL\_MS@{SESSION\_TTL\_MS}}
+\index{SESSION\_TTL\_MS@{SESSION\_TTL\_MS}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{SESSION\_TTL\_MS}{SESSION\_TTL\_MS}}
+{\footnotesize\ttfamily \label{group__serverdb_ga700ad026b4ae53cea9dfe2c31a63c1ac} 
+const qint64 Server\+DB::\+\+SESSION\+\_\+\+TTL\+\_\+\+MS = 30 \texorpdfstring{$\ast$}{*} 60 \texorpdfstring{$\ast$}{*} 1000\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\Hypertarget{group__serverdb_gac6d549851b9529dfe22cfef4243f6594}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!token@{token}}
+\index{token@{token}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{token}{token}}
+{\footnotesize\ttfamily \label{group__serverdb_gac6d549851b9529dfe22cfef4243f6594} 
+QString Server\+DB::\+\+Session\+Data::\+token}
+
+\Hypertarget{group__serverdb_ga42711d5b865bac716f4b81597e4f468e}\index{Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}!windowStart@{windowStart}}
+\index{windowStart@{windowStart}!Работа с базой данных сервера и управлением сессиями@{Работа с базой данных сервера и управлением сессиями}}
+\doxysubsubsubsection{\texorpdfstring{windowStart}{windowStart}}
+{\footnotesize\ttfamily \label{group__serverdb_ga42711d5b865bac716f4b81597e4f468e} 
+qint64 Server\+DB::\+\+Rate\+Limit\+Data::\+window\+Start}
+
+\input{group__serverdb__impl}

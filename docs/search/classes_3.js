@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['forgotpassword_0',['ForgotPassword',['../class_forgot_password.html',1,'ForgotPassword'],['../class_ui_1_1_forgot_password.html',1,'Ui::ForgotPassword']]]
+  ['databasemanager_0',['DatabaseManager',['../class_database_manager.html',1,'']]]
 ];

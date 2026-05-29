@@ -1,0 +1,59 @@
+\doxysection{Класс Email\+Service}
+\hypertarget{class_email_service}{}\label{class_email_service}\index{EmailService@{EmailService}}
+
+
+Сервис отправки email через SMTP.  
+
+
+
+
+{\ttfamily \+\#include $<$emailservice.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__emailservice_ga4320aeb9b8f0ccbdb11cf66ba2f5c524}{Email\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_email_service}{Email\+Service}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__emailservice_gae28763d6fe820a38a396eb47ca4013c6}{set\+Smtp\+Config}} (const QString \&host, quint16 port, const QString \&username, const QString \&password, const QString \&from\+Email)
+\begin{DoxyCompactList}\small\item\em Настройка SMTP конфигурации. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailservice_gaec3104589c9f21167e4e034388a9252d}{send\+Email}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Отправка email сообщения. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{group__emailservice_ga8d93c2d6f288040137407e4497d0e342}{send\+Via\+Smtp}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Отправка через SMTP протокол. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailservice_ga172088fab7d205980d71402884a03fbf}{wait\+For\+Response}} (QSsl\+Socket \&socket, int expected\+Code=-\/1)
+\begin{DoxyCompactList}\small\item\em Ожидание ответа от сервера SMTP. \end{DoxyCompactList}\item 
+QByte\+Array \doxymbox{\hyperlink{group__emailservice_ga69e50484bf28b74fc7cdc70b5a570b5a}{base64\+Encode}} (const QString \&str)
+\begin{DoxyCompactList}\small\item\em Base64 кодирование строки. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailservice_ga1e804ab94bf8cd580d866dc4e582cf55}{check\+Ssl\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Проверка доступности SSL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+QString \doxymbox{\hyperlink{group__emailservice_gaaadcfc8d97ce2454428ed08d80db018a}{m\+\_\+smtp\+Host}}
+\item 
+quint16 \doxymbox{\hyperlink{group__emailservice_ga929b4c6a088ec396b3a1cb581a0258ad}{m\+\_\+smtp\+Port}}
+\item 
+QString \doxymbox{\hyperlink{group__emailservice_gacffe9bad52a91f235fdec5bc1488616e}{m\+\_\+smtp\+Username}}
+\item 
+QString \doxymbox{\hyperlink{group__emailservice_ga4898ad71d30ce7809d7771e49116d83b}{m\+\_\+smtp\+Password}}
+\item 
+QString \doxymbox{\hyperlink{group__emailservice_gac2abb57ea02abda5dee0cdf53d5866d9}{m\+\_\+from\+Email}}
+\item 
+bool \doxymbox{\hyperlink{group__emailservice_ga1c15208c5c118bfd22b45dc24f3235f1}{m\+\_\+configured}}
+\item 
+bool \doxymbox{\hyperlink{group__emailservice_gafacd4e437e1ca3206bd0c599acec926b}{m\+\_\+ssl\+Available}}
+\item 
+QMutex \doxymbox{\hyperlink{group__emailservice_ga156bf5f4ad34d1d0ecd2b069bdb55b6c}{m\+\_\+mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Сервис отправки email через SMTP. 
+
+Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Serverdox/\+002\+TCPserver/\+\+TCPserver/\+\doxymbox{\hyperlink{emailservice_8h}{emailservice.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Serverdox/\+002\+TCPserver/\+\+TCPserver/\+\doxymbox{\hyperlink{emailservice_8cpp}{emailservice.\+cpp}}\end{DoxyCompactItemize}

@@ -1,36 +1,61 @@
 \doxysection{registerwindow.\+h}
-\hypertarget{registerwindow_8h_source}{}\label{registerwindow_8h_source}\index{C:/Users/пп/Desktop/Исходники/Timpproject/registerwindow.h@{C:/Users/пп/Desktop/Исходники/Timpproject/registerwindow.h}}
+\hypertarget{registerwindow_8h_source}{}\label{registerwindow_8h_source}\index{C:/Users/пп/Desktop/New/Clientdox/Timpproject/registerwindow.h@{C:/Users/пп/Desktop/New/Clientdox/Timpproject/registerwindow.h}}
 \doxymbox{\hyperlink{registerwindow_8h}{См. документацию.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ REGISTERWINDOW\_H}}
 \DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ REGISTERWINDOW\_H}}
 \DoxyCodeLine{00003\ }
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QWidget>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QDebug>}}
-\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_ui}{Ui}}\ \{}
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_ui_1_1_register_window}{RegisterWindow}};}
-\DoxyCodeLine{00012\ \}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__regcpp_ga0afbe90533f73fb296bfd483c3738baf}{RegisterWindow}}\ :\ \textcolor{keyword}{public}\ QWidget}
-\DoxyCodeLine{00021\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{group__regcpp_ga0afbe90533f73fb296bfd483c3738baf}{RegisterWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00034\ \ \ \ \ \doxymbox{\hyperlink{group__regcpp_gaaeb4a1dc724077a1c30dc96659371d42}{\string~RegisterWindow}}();}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ signals:}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_register_window_af2b798e7adecbc7c516ac15926246784}{backRequested}}();}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \textcolor{keyword}{private}\ slots:}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__regcpp_gaecf16f485f03b5464f773671a4cfb1f0}{on\_createButton\_clicked}}();}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__regcpp_gaba2b744664e7127e6dfa03783e67a194}{on\_backButton\_clicked}}();}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00057\ \ \ \ \ \doxymbox{\hyperlink{class_ui_1_1_register_window}{Ui::RegisterWindow}}\ *\doxymbox{\hyperlink{class_register_window_a5d3564e1c9436435a5a158073e15198c}{ui}};}
-\DoxyCodeLine{00058\ \};}
-\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTimer>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\doxymbox{\hyperlink{namespace_ui}{Ui}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_ui_1_1_register_window}{RegisterWindow}};}
+\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__registerwindow__impl_ga0afbe90533f73fb296bfd483c3738baf}{RegisterWindow}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{group__registerwindow__impl_ga0afbe90533f73fb296bfd483c3738baf}{RegisterWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \doxymbox{\hyperlink{group__registerwindow__impl_gaaeb4a1dc724077a1c30dc96659371d42}{\string~RegisterWindow}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ signals:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_register_window_af2b798e7adecbc7c516ac15926246784}{backRequested}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__registerwindow__impl_ga41c4aaddf04f1cbe8d5b2f4b3d57eae7}{on\_getCodeButton\_clicked}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__registerwindow__impl_gaecf16f485f03b5464f773671a4cfb1f0}{on\_createButton\_clicked}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__registerwindow__impl_gaba2b744664e7127e6dfa03783e67a194}{on\_backButton\_clicked}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__registerwindow__impl_gab2f43a2cb19d2ac1a7f215650b8f0195}{onRegRequestCodeResult}}(\textcolor{keywordtype}{bool}\ success,\ \textcolor{keyword}{const}\ QString\&\ code);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__registerwindow__impl_ga15c21faaf83ffe35ba3deb2b89991bf5}{onRegConfirmResult}}(\textcolor{keywordtype}{bool}\ success);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ \doxymbox{\hyperlink{class_ui_1_1_register_window}{Ui::RegisterWindow}}\ *\doxymbox{\hyperlink{class_register_window_a5d3564e1c9436435a5a158073e15198c}{ui}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00081\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_register_window_abbd834ef495b926b94941c82ccdeb889}{m\_tempLogin}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_register_window_aa7d302e6fa2d839de6afce44aa0fe8f4}{m\_tempPassword}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00091\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_register_window_a4135b383f5867c376561ec8d1a01fd2d}{m\_tempEmail}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00096\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_register_window_a3838c9f44c784047a8c1ddc5ab9e4809}{m\_tempCode}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00101\ \ \ \ \ QTimer\ \doxymbox{\hyperlink{class_register_window_a54e21fbdc072ea18c992816ffeca13c0}{m\_codeTimer}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_register_window_ac1c8c77555f642f85b286b27e018b406}{m\_remainingSeconds}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__registerwindow__impl_ga6ac70cb58a8fd250dbc176c73ab7da52}{startCodeTimer}}();}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__registerwindow__impl_gada6c7ddee9e5114c8687d68b5532aaff}{updateTimerDisplay}}();}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ REGISTERWINDOW\_H}}
 
 \end{DoxyCode}

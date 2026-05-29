@@ -25,7 +25,12 @@ var searchData=
   ['linestyle_22',['lineStyle',['../class_q_c_p_graph.html#ac3e6f4b3387338df45992b47691b2551',1,'QCPGraph::lineStyle()'],['../class_q_c_p_curve.html#a06e3cf3f8f1add689254b3cda66e040e',1,'QCPCurve::lineStyle()'],['../class_q_c_p_polar_graph.html#aa35f92a3d9e02bc5c629034c7e0c13d0',1,'QCPPolarGraph::lineStyle()']]],
   ['loadpreset_23',['loadPreset',['../class_q_c_p_color_gradient.html#aa0aeec1528241728b9671bf8e60b1622',1,'QCPColorGradient']]],
   ['logbase_24',['logBase',['../class_q_c_p_axis_ticker_log.html#a841a97f2b6850ff1ef3aa73e89d94775',1,'QCPAxisTickerLog']]],
-  ['logintimp_25',['LoginTimp',['../group__logincpp.html#gac6ae6157f5f9df2e3e32e86d0a4f8c0f',1,'LoginTimp']]],
-  ['loginuser_26',['loginUser',['../group__dbcpp.html#ga7a2ac3defc8180a6ed7ce3d65df54b61',1,'DatabaseManager']]],
-  ['lowerending_27',['lowerEnding',['../class_q_c_p_axis.html#a0cc60e5694ed4df6a2c3554e53ee6ae7',1,'QCPAxis']]]
+  ['logintimp_25',['LoginTimp',['../group__logintimp__impl.html#gac6ae6157f5f9df2e3e32e86d0a4f8c0f',1,'LoginTimp']]],
+  ['loginuser_26',['loginUser',['../group__databasemanager__impl.html#ga7a2ac3defc8180a6ed7ce3d65df54b61',1,'DatabaseManager']]],
+  ['logoutallresult_27',['logoutAllResult',['../class_service_manager.html#a3ec9dbcb12a0fcd45dc1084e2d8c18ee',1,'ServiceManager']]],
+  ['logoutallsessions_28',['logoutAllSessions',['../group__serverdb.html#ga16416b749e67eac8a9cbe95c02c57b8d',1,'ServerDB']]],
+  ['logoutrequested_29',['logoutRequested',['../class_welcome_window.html#ad66e2c9a962c8a583ae395b4264c0298',1,'WelcomeWindow']]],
+  ['logoutresult_30',['logoutResult',['../class_service_manager.html#a20bbdbf993af6d8328ac7929896539d1',1,'ServiceManager']]],
+  ['logoutsession_31',['logoutSession',['../group__serverdb.html#ga29840ab235049436a5d7a0490a3d7587',1,'ServerDB']]],
+  ['lowerending_32',['lowerEnding',['../class_q_c_p_axis.html#a0cc60e5694ed4df6a2c3554e53ee6ae7',1,'QCPAxis']]]
 ];

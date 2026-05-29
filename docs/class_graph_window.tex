@@ -2,7 +2,7 @@
 \hypertarget{class_graph_window}{}\label{class_graph_window}\index{GraphWindow@{GraphWindow}}
 
 
-Окно отображения графиков.  
+Класс окна для построения графиков функций.  
 
 
 
@@ -18,126 +18,210 @@
 \doxysubsubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{class_graph_window_a68f193cacc0237a41d8c44923b53c11a}{Graph\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\begin{DoxyCompactList}\small\item\em Конструктор окна \doxylink{class_graph_window}{Graph\+Window}. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{class_graph_window_acca1dc8c3eefe6608ae2de3cee2e22ee}{\texorpdfstring{$\sim$}{\string~}\+Graph\+Window}} ()
-\begin{DoxyCompactList}\small\item\em Деструктор класса \doxylink{class_graph_window}{Graph\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxymbox{\hyperlink{group__graphwindow__impl_ga68f193cacc0237a41d8c44923b53c11a}{Graph\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__graphwindow__impl_gacca1dc8c3eefe6608ae2de3cee2e22ee}{\texorpdfstring{$\sim$}{\string~}\+Graph\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Закрытые слоты}
 \begin{DoxyCompactItemize}
 \item 
-void \doxymbox{\hyperlink{class_graph_window_a15bda247268f26b45a583eab5ba5d725}{on\+Slider\+Changed}} ()
-\begin{DoxyCompactList}\small\item\em Обработчик изменения значения слайдера. \end{DoxyCompactList}\item 
-void \doxymbox{\hyperlink{class_graph_window_adcba78f9f4bfda717686e5c48dc11a48}{on\+Ready\+Read}} ()
-\begin{DoxyCompactList}\small\item\em Обработчик поступления данных от сокета. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga15bda247268f26b45a583eab5ba5d725}{on\+Slider\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик изменения значений слайдеров параметров. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga1d47676c2decdaafd45f2c566a7f4889}{on\+Export\+PNG}} ()
+\begin{DoxyCompactList}\small\item\em Экспорт графика в PNG. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga1e5cb4d993ea6ae86482d7c522ebbbb1}{on\+Export\+PDF}} ()
+\begin{DoxyCompactList}\small\item\em Экспорт графика в PDF. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga995b6c258c4be1386b4c4addb29b4410}{on\+Save\+To\+File}} ()
+\begin{DoxyCompactList}\small\item\em Сохранение текущих параметров графика в файл. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga6fe5959aeb025689ef9a5eaec2793a5e}{on\+Load\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Загрузка параметров графика из файла. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga35740ef1f5af4c41dcf8a2459165a0d0}{on\+Delete\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Удаление сохранённого графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga7b4c8a1e56aac849ba89ffe2b591ce2a}{on\+Clear\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Очистка графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_gaa877ad44e207acbe1ce314beaf29f0e1}{on\+Color\+Button\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки изменения цвета. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga16fc3589840eaa3490cffe9d3a12c405}{on\+Zoom\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик изменения зума графика. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga4b03485cf882a3f877b9e5deb224e031}{parse\+Server\+Data}} (const QString \&response)
+\begin{DoxyCompactList}\small\item\em Разбор данных, полученных от сервера. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_gabbf7f8452a63d2869e9e20a97208c46d}{compute\+Local}} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Локальный расчёт значений функций. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{group__graphwindow__impl_ga770987712af13f4e4bcf2a39d2cfd504}{calculate\+Function}} (double a, double b, double c, double x)
+\begin{DoxyCompactList}\small\item\em Вычисление значения функции по параметрам. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga406bf05becacaa723de2ca91ec842d41}{update\+Parameter\+Labels}} ()
+\begin{DoxyCompactList}\small\item\em Обновление значений параметров на лейблах. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_gab0d531603118d01a7bf74bd4de515522}{setup\+Graph\+Style}} ()
+\begin{DoxyCompactList}\small\item\em Настройка внешнего вида графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga2169d6bf25fc610c707949e7d75c36fb}{setup\+Export\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Настройка кнопок экспорта. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga55f65b01e22c63714d02c5e162f4e6ba}{setup\+Zoom\+Drag}} ()
+\begin{DoxyCompactList}\small\item\em Настройка зума и перетаскивания графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_gaa6a4422e499c500a28408fb9a9ce972f}{setup\+Keyboard\+Nav}} ()
+\begin{DoxyCompactList}\small\item\em Настройка управления с клавиатуры. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga04f862d37034c141071e10029dc1bf8d}{update\+Graph\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Обновление цветов графиков. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__graphwindow__impl_ga5946cbbc48379f6f1378ae468d78c324}{get\+Cache\+Key}} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Генерация ключа для кэша по параметрам. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__graphwindow__impl_ga24612ecaac3563e66d289832471c5bf4}{check\+Session\+Valid}} ()
+\begin{DoxyCompactList}\small\item\em Проверка валидности текущей сессии. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Закрытые данные}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{class_ui_1_1_graph_window}{Ui::\+\+Graph\+Window}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_a3b5fbf4682a8712745b3845f595cb851}{ui}}
-\begin{DoxyCompactList}\small\item\em Указатель на пользовательский интерфейс окна. \end{DoxyCompactList}\item 
-QTcp\+Socket \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_a0867c157661b36b3651fe455a811f4d4}{socket}} = nullptr
-\begin{DoxyCompactList}\small\item\em TCP-\/сокет для получения данных. \end{DoxyCompactList}\item 
-QByte\+Array \doxymbox{\hyperlink{class_graph_window_acc17d171885733d9f7afb48635df3b12}{buffer}}
-\begin{DoxyCompactList}\small\item\em Буфер для хранения входящих данных. \end{DoxyCompactList}\item 
-double \doxymbox{\hyperlink{class_graph_window_afdfcd0a42fc95bee3d0efc3ff6320920}{data}} \+[4]\+ = \{1, 2, 3, 0.\+01\}
-\begin{DoxyCompactList}\small\item\em Массив параметров для построения графика. \end{DoxyCompactList}\item 
-QVector$<$ double $>$ \doxymbox{\hyperlink{class_graph_window_ae5c7eab02fb7be9cba92ec1ab095feea}{x\+Data}}
-\begin{DoxyCompactList}\small\item\em Массив данных по оси X. \end{DoxyCompactList}\item 
-QVector$<$ double $>$ \doxymbox{\hyperlink{class_graph_window_a361ad2f79eaef0cb5abf5fb35cf64672}{y\+Data}}
-\begin{DoxyCompactList}\small\item\em Массив данных по оси Y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Указатель на UI-\/форму. \end{DoxyCompactList}\item 
+QVector$<$ double $>$ \doxymbox{\hyperlink{class_graph_window_a501c6c5d372094e07eb54ed60888f8e5}{x\+Data\+Sin}}
+\item 
+QVector$<$ double $>$ \doxymbox{\hyperlink{class_graph_window_a552f899c6d6c5d5d93f13af62c7e8bb0}{y\+Data\+Sin}}
+\item 
+QVector$<$ double $>$ \doxymbox{\hyperlink{class_graph_window_a0a4648170caa2e3f026a120bee9cfbf7}{x\+Data\+Sqrt}}
+\item 
+QVector$<$ double $>$ \doxymbox{\hyperlink{class_graph_window_a0fb1bbdcdc2c903340759fa64ccba647}{y\+Data\+Sqrt}}
+\item 
+QVector$<$ double $>$ \doxymbox{\hyperlink{class_graph_window_a8d7ca89bbc0a2cbbb5c056518657d2e2}{x\+Data\+Frac}}
+\item 
+QVector$<$ double $>$ \doxymbox{\hyperlink{class_graph_window_ad3f5905a42f3c24aa96cc5ff6d3620ad}{y\+Data\+Frac}}
+\item 
+QMap$<$ QString, QPair$<$ QVector$<$ double $>$, QVector$<$ double $>$ $>$ $>$ \doxymbox{\hyperlink{class_graph_window_a56b7be35c4cc8e57013fee5ae6b191fb}{m\+\_\+cache}}
+\begin{DoxyCompactList}\small\item\em Кэш ранее вычисленных данных функций. \end{DoxyCompactList}\item 
+QColor \doxymbox{\hyperlink{class_graph_window_ab3d5ac2c6c7bd6a248d5c2d3c0642793}{m\+\_\+sin\+Color}}
+\begin{DoxyCompactList}\small\item\em Цвет графика sin. \end{DoxyCompactList}\item 
+QColor \doxymbox{\hyperlink{class_graph_window_a56f0532c709be24ebb53f272af1959f1}{m\+\_\+sqrt\+Color}}
+\begin{DoxyCompactList}\small\item\em Цвет графика sqrt. \end{DoxyCompactList}\item 
+QColor \doxymbox{\hyperlink{class_graph_window_ab84db4e51b17c15e86c9e614b33fd303}{m\+\_\+frac\+Color}}
+\begin{DoxyCompactList}\small\item\em Цвет графика дробно-\/линейной функции. \end{DoxyCompactList}\item 
+QTimer \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_ab6a430427f006692e94d9eaffc34ad51}{m\+\_\+session\+Check\+Timer}}
+\begin{DoxyCompactList}\small\item\em Таймер проверки актуальности сессии. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_graph_window_af59c2c8e0ce83a0b6611305ff5a72e64}{m\+\_\+session\+Check\+Interval}}
+\begin{DoxyCompactList}\small\item\em Интервал проверки сессии (в миллисекундах). \end{DoxyCompactList}\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_ad860010ed27a641078bc43cdfaaa3b14}{m\+\_\+export\+PNGBtn}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_a9032a7cc614a99f64db079fbbd7be3a7}{m\+\_\+export\+PDFBtn}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_a203d5a74bab656d09e99118fcd9ce071}{m\+\_\+save\+Btn}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_aa8964a979591eb83ab82d9ebaf8cae65}{m\+\_\+load\+Btn}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_a15d2321cdfa7d5ce272e6a6715f0013a}{m\+\_\+delete\+Btn}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_a479c7727e934814edd44513715399ca9}{m\+\_\+clear\+Btn}}
+\item 
+QPush\+Button \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_graph_window_a5036995a458785e5149a1eef1bb17dbe}{m\+\_\+color\+Btn}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Окно отображения графиков. 
+Класс окна для построения графиков функций. 
 
-Класс предназначен для получения данных по сети и построения графиков с использованием библиотеки \doxylink{class_q_custom_plot}{QCustom\+Plot}. 
-
-\label{class_graph_window_doc-constructors}
-\Hypertarget{class_graph_window_doc-constructors}
-\doxysubsection{Конструктор(ы)}
-\Hypertarget{class_graph_window_a68f193cacc0237a41d8c44923b53c11a}\index{GraphWindow@{GraphWindow}!GraphWindow@{GraphWindow}}
-\index{GraphWindow@{GraphWindow}!GraphWindow@{GraphWindow}}
-\doxysubsubsection{\texorpdfstring{GraphWindow()}{GraphWindow()}}
-{\footnotesize\ttfamily \label{class_graph_window_a68f193cacc0237a41d8c44923b53c11a} 
-Graph\+Window::\+\+Graph\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
-
-
-
-Конструктор окна \doxylink{class_graph_window}{Graph\+Window}. 
-
-
-\begin{DoxyParams}{Аргументы}
-{\em parent} & Родительский виджет. \\
-\hline
-\end{DoxyParams}
-\Hypertarget{class_graph_window_acca1dc8c3eefe6608ae2de3cee2e22ee}\index{GraphWindow@{GraphWindow}!````~GraphWindow@{\texorpdfstring{$\sim$}{\string~}GraphWindow}}
-\index{````~GraphWindow@{\texorpdfstring{$\sim$}{\string~}GraphWindow}!GraphWindow@{GraphWindow}}
-\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GraphWindow()}{\string~GraphWindow()}}
-{\footnotesize\ttfamily \label{class_graph_window_acca1dc8c3eefe6608ae2de3cee2e22ee} 
-Graph\+Window::\+\texorpdfstring{$\sim$}{\string~}\+Graph\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
-
-
-
-Деструктор класса \doxylink{class_graph_window}{Graph\+Window}. 
-
-
-
-\label{class_graph_window_doc-func-members}
-\Hypertarget{class_graph_window_doc-func-members}
-\doxysubsection{Методы}
-\Hypertarget{class_graph_window_adcba78f9f4bfda717686e5c48dc11a48}\index{GraphWindow@{GraphWindow}!onReadyRead@{onReadyRead}}
-\index{onReadyRead@{onReadyRead}!GraphWindow@{GraphWindow}}
-\doxysubsubsection{\texorpdfstring{onReadyRead}{onReadyRead}}
-{\footnotesize\ttfamily \label{class_graph_window_adcba78f9f4bfda717686e5c48dc11a48} 
-void Graph\+Window::\+on\+Ready\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-Обработчик поступления данных от сокета. 
-
-Выполняет чтение входящих данных и обновление графика. \Hypertarget{class_graph_window_a15bda247268f26b45a583eab5ba5d725}\index{GraphWindow@{GraphWindow}!onSliderChanged@{onSliderChanged}}
-\index{onSliderChanged@{onSliderChanged}!GraphWindow@{GraphWindow}}
-\doxysubsubsection{\texorpdfstring{onSliderChanged}{onSliderChanged}}
-{\footnotesize\ttfamily \label{class_graph_window_a15bda247268f26b45a583eab5ba5d725} 
-void Graph\+Window::\+on\+Slider\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
-
-
-
-Обработчик изменения значения слайдера. 
-
-Используется для обновления параметров графика. 
+Поддерживает визуализацию функций sin, sqrt и дробно-\/линейной функции, работу с кэшем, экспорт графиков и управление сессией. 
 
 \label{class_graph_window_doc-variable-members}
 \Hypertarget{class_graph_window_doc-variable-members}
 \doxysubsection{Данные класса}
-\Hypertarget{class_graph_window_acc17d171885733d9f7afb48635df3b12}\index{GraphWindow@{GraphWindow}!buffer@{buffer}}
-\index{buffer@{buffer}!GraphWindow@{GraphWindow}}
-\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
-{\footnotesize\ttfamily \label{class_graph_window_acc17d171885733d9f7afb48635df3b12} 
-QByte\+Array Graph\+Window::\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{class_graph_window_a56b7be35c4cc8e57013fee5ae6b191fb}\index{GraphWindow@{GraphWindow}!m\_cache@{m\_cache}}
+\index{m\_cache@{m\_cache}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_cache}{m\_cache}}
+{\footnotesize\ttfamily \label{class_graph_window_a56b7be35c4cc8e57013fee5ae6b191fb} 
+QMap$<$QString, QPair$<$QVector$<$double$>$, QVector$<$double$>$ $>$ $>$ Graph\+Window::\+m\+\_\+cache\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Буфер для хранения входящих данных. 
+Кэш ранее вычисленных данных функций. 
 
-\Hypertarget{class_graph_window_afdfcd0a42fc95bee3d0efc3ff6320920}\index{GraphWindow@{GraphWindow}!data@{data}}
-\index{data@{data}!GraphWindow@{GraphWindow}}
-\doxysubsubsection{\texorpdfstring{data}{data}}
-{\footnotesize\ttfamily \label{class_graph_window_afdfcd0a42fc95bee3d0efc3ff6320920} 
-double Graph\+Window::\+data\+[4]\+ = \{1, 2, 3, 0.\+01\}\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{class_graph_window_a479c7727e934814edd44513715399ca9}\index{GraphWindow@{GraphWindow}!m\_clearBtn@{m\_clearBtn}}
+\index{m\_clearBtn@{m\_clearBtn}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_clearBtn}{m\_clearBtn}}
+{\footnotesize\ttfamily \label{class_graph_window_a479c7727e934814edd44513715399ca9} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Graph\+Window::\+m\+\_\+clear\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_a5036995a458785e5149a1eef1bb17dbe}\index{GraphWindow@{GraphWindow}!m\_colorBtn@{m\_colorBtn}}
+\index{m\_colorBtn@{m\_colorBtn}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_colorBtn}{m\_colorBtn}}
+{\footnotesize\ttfamily \label{class_graph_window_a5036995a458785e5149a1eef1bb17dbe} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Graph\+Window::\+m\+\_\+color\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_a15d2321cdfa7d5ce272e6a6715f0013a}\index{GraphWindow@{GraphWindow}!m\_deleteBtn@{m\_deleteBtn}}
+\index{m\_deleteBtn@{m\_deleteBtn}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_deleteBtn}{m\_deleteBtn}}
+{\footnotesize\ttfamily \label{class_graph_window_a15d2321cdfa7d5ce272e6a6715f0013a} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Graph\+Window::\+m\+\_\+delete\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_a9032a7cc614a99f64db079fbbd7be3a7}\index{GraphWindow@{GraphWindow}!m\_exportPDFBtn@{m\_exportPDFBtn}}
+\index{m\_exportPDFBtn@{m\_exportPDFBtn}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_exportPDFBtn}{m\_exportPDFBtn}}
+{\footnotesize\ttfamily \label{class_graph_window_a9032a7cc614a99f64db079fbbd7be3a7} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Graph\+Window::\+m\+\_\+export\+PDFBtn\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_ad860010ed27a641078bc43cdfaaa3b14}\index{GraphWindow@{GraphWindow}!m\_exportPNGBtn@{m\_exportPNGBtn}}
+\index{m\_exportPNGBtn@{m\_exportPNGBtn}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_exportPNGBtn}{m\_exportPNGBtn}}
+{\footnotesize\ttfamily \label{class_graph_window_ad860010ed27a641078bc43cdfaaa3b14} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Graph\+Window::\+m\+\_\+export\+PNGBtn\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_ab84db4e51b17c15e86c9e614b33fd303}\index{GraphWindow@{GraphWindow}!m\_fracColor@{m\_fracColor}}
+\index{m\_fracColor@{m\_fracColor}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_fracColor}{m\_fracColor}}
+{\footnotesize\ttfamily \label{class_graph_window_ab84db4e51b17c15e86c9e614b33fd303} 
+QColor Graph\+Window::\+m\+\_\+frac\+Color\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Массив параметров для построения графика. 
+Цвет графика дробно-\/линейной функции. 
 
-\Hypertarget{class_graph_window_a0867c157661b36b3651fe455a811f4d4}\index{GraphWindow@{GraphWindow}!socket@{socket}}
-\index{socket@{socket}!GraphWindow@{GraphWindow}}
-\doxysubsubsection{\texorpdfstring{socket}{socket}}
-{\footnotesize\ttfamily \label{class_graph_window_a0867c157661b36b3651fe455a811f4d4} 
-QTcp\+Socket\texorpdfstring{$\ast$}{*} Graph\+Window::\+socket = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{class_graph_window_aa8964a979591eb83ab82d9ebaf8cae65}\index{GraphWindow@{GraphWindow}!m\_loadBtn@{m\_loadBtn}}
+\index{m\_loadBtn@{m\_loadBtn}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_loadBtn}{m\_loadBtn}}
+{\footnotesize\ttfamily \label{class_graph_window_aa8964a979591eb83ab82d9ebaf8cae65} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Graph\+Window::\+m\+\_\+load\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_a203d5a74bab656d09e99118fcd9ce071}\index{GraphWindow@{GraphWindow}!m\_saveBtn@{m\_saveBtn}}
+\index{m\_saveBtn@{m\_saveBtn}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_saveBtn}{m\_saveBtn}}
+{\footnotesize\ttfamily \label{class_graph_window_a203d5a74bab656d09e99118fcd9ce071} 
+QPush\+Button\texorpdfstring{$\ast$}{*} Graph\+Window::\+m\+\_\+save\+Btn\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_af59c2c8e0ce83a0b6611305ff5a72e64}\index{GraphWindow@{GraphWindow}!m\_sessionCheckInterval@{m\_sessionCheckInterval}}
+\index{m\_sessionCheckInterval@{m\_sessionCheckInterval}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_sessionCheckInterval}{m\_sessionCheckInterval}}
+{\footnotesize\ttfamily \label{class_graph_window_af59c2c8e0ce83a0b6611305ff5a72e64} 
+int Graph\+Window::\+m\+\_\+session\+Check\+Interval\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-TCP-\/сокет для получения данных. 
+Интервал проверки сессии (в миллисекундах). 
+
+\Hypertarget{class_graph_window_ab6a430427f006692e94d9eaffc34ad51}\index{GraphWindow@{GraphWindow}!m\_sessionCheckTimer@{m\_sessionCheckTimer}}
+\index{m\_sessionCheckTimer@{m\_sessionCheckTimer}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_sessionCheckTimer}{m\_sessionCheckTimer}}
+{\footnotesize\ttfamily \label{class_graph_window_ab6a430427f006692e94d9eaffc34ad51} 
+QTimer\texorpdfstring{$\ast$}{*} Graph\+Window::\+m\+\_\+session\+Check\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Таймер проверки актуальности сессии. 
+
+\Hypertarget{class_graph_window_ab3d5ac2c6c7bd6a248d5c2d3c0642793}\index{GraphWindow@{GraphWindow}!m\_sinColor@{m\_sinColor}}
+\index{m\_sinColor@{m\_sinColor}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_sinColor}{m\_sinColor}}
+{\footnotesize\ttfamily \label{class_graph_window_ab3d5ac2c6c7bd6a248d5c2d3c0642793} 
+QColor Graph\+Window::\+m\+\_\+sin\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Цвет графика sin. 
+
+\Hypertarget{class_graph_window_a56f0532c709be24ebb53f272af1959f1}\index{GraphWindow@{GraphWindow}!m\_sqrtColor@{m\_sqrtColor}}
+\index{m\_sqrtColor@{m\_sqrtColor}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{m\_sqrtColor}{m\_sqrtColor}}
+{\footnotesize\ttfamily \label{class_graph_window_a56f0532c709be24ebb53f272af1959f1} 
+QColor Graph\+Window::\+m\+\_\+sqrt\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Цвет графика sqrt. 
 
 \Hypertarget{class_graph_window_a3b5fbf4682a8712745b3845f595cb851}\index{GraphWindow@{GraphWindow}!ui@{ui}}
 \index{ui@{ui}!GraphWindow@{GraphWindow}}
@@ -147,30 +231,47 @@ TCP-\/сокет для получения данных.
 
 
 
-Указатель на пользовательский интерфейс окна. 
+Указатель на UI-\/форму. 
 
-\Hypertarget{class_graph_window_ae5c7eab02fb7be9cba92ec1ab095feea}\index{GraphWindow@{GraphWindow}!xData@{xData}}
-\index{xData@{xData}!GraphWindow@{GraphWindow}}
-\doxysubsubsection{\texorpdfstring{xData}{xData}}
-{\footnotesize\ttfamily \label{class_graph_window_ae5c7eab02fb7be9cba92ec1ab095feea} 
-QVector$<$double$>$ Graph\+Window::\+x\+Data\hspace{0.3cm}{\ttfamily [private]}}
+\Hypertarget{class_graph_window_a8d7ca89bbc0a2cbbb5c056518657d2e2}\index{GraphWindow@{GraphWindow}!xDataFrac@{xDataFrac}}
+\index{xDataFrac@{xDataFrac}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{xDataFrac}{xDataFrac}}
+{\footnotesize\ttfamily \label{class_graph_window_a8d7ca89bbc0a2cbbb5c056518657d2e2} 
+QVector$<$double$>$ Graph\+Window::\+x\+Data\+Frac\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_a501c6c5d372094e07eb54ed60888f8e5}\index{GraphWindow@{GraphWindow}!xDataSin@{xDataSin}}
+\index{xDataSin@{xDataSin}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{xDataSin}{xDataSin}}
+{\footnotesize\ttfamily \label{class_graph_window_a501c6c5d372094e07eb54ed60888f8e5} 
+QVector$<$double$>$ Graph\+Window::\+x\+Data\+Sin\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_a0a4648170caa2e3f026a120bee9cfbf7}\index{GraphWindow@{GraphWindow}!xDataSqrt@{xDataSqrt}}
+\index{xDataSqrt@{xDataSqrt}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{xDataSqrt}{xDataSqrt}}
+{\footnotesize\ttfamily \label{class_graph_window_a0a4648170caa2e3f026a120bee9cfbf7} 
+QVector$<$double$>$ Graph\+Window::\+x\+Data\+Sqrt\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_ad3f5905a42f3c24aa96cc5ff6d3620ad}\index{GraphWindow@{GraphWindow}!yDataFrac@{yDataFrac}}
+\index{yDataFrac@{yDataFrac}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{yDataFrac}{yDataFrac}}
+{\footnotesize\ttfamily \label{class_graph_window_ad3f5905a42f3c24aa96cc5ff6d3620ad} 
+QVector$<$double$>$ Graph\+Window::\+y\+Data\+Frac\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_a552f899c6d6c5d5d93f13af62c7e8bb0}\index{GraphWindow@{GraphWindow}!yDataSin@{yDataSin}}
+\index{yDataSin@{yDataSin}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{yDataSin}{yDataSin}}
+{\footnotesize\ttfamily \label{class_graph_window_a552f899c6d6c5d5d93f13af62c7e8bb0} 
+QVector$<$double$>$ Graph\+Window::\+y\+Data\+Sin\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_graph_window_a0fb1bbdcdc2c903340759fa64ccba647}\index{GraphWindow@{GraphWindow}!yDataSqrt@{yDataSqrt}}
+\index{yDataSqrt@{yDataSqrt}!GraphWindow@{GraphWindow}}
+\doxysubsubsection{\texorpdfstring{yDataSqrt}{yDataSqrt}}
+{\footnotesize\ttfamily \label{class_graph_window_a0fb1bbdcdc2c903340759fa64ccba647} 
+QVector$<$double$>$ Graph\+Window::\+y\+Data\+Sqrt\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Массив данных по оси X. 
-
-\Hypertarget{class_graph_window_a361ad2f79eaef0cb5abf5fb35cf64672}\index{GraphWindow@{GraphWindow}!yData@{yData}}
-\index{yData@{yData}!GraphWindow@{GraphWindow}}
-\doxysubsubsection{\texorpdfstring{yData}{yData}}
-{\footnotesize\ttfamily \label{class_graph_window_a361ad2f79eaef0cb5abf5fb35cf64672} 
-QVector$<$double$>$ Graph\+Window::\+y\+Data\hspace{0.3cm}{\ttfamily [private]}}
-
-
-
-Массив данных по оси Y. 
-
-
-
-Объявления и описания членов класса находятся в файле:\+\begin{DoxyCompactItemize}
+Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
 \item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+\doxymbox{\hyperlink{graphwindow_8h}{graphwindow.\+h}}\end{DoxyCompactItemize}
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{graphwindow_8h}{graphwindow.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{graphwindow_8cpp}{graphwindow.\+cpp}}\end{DoxyCompactItemize}

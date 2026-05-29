@@ -1,0 +1,342 @@
+\doxysubsubsection{Реализация менеджера базы данных }
+\hypertarget{group__databasemanager__impl}{}\label{group__databasemanager__impl}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_database_manager}{Database\+Manager}} \& \doxymbox{\hyperlink{group__databasemanager__impl_ga4abb527066e28f3928ef45af856e134c}{Database\+Manager::\+instance}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает единственный экземпляр менеджера базы данных. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__databasemanager__impl_gaebfb8cc7427256623ccbe059b30b6450}{Database\+Manager::\+\+Database\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Приватный конструктор (Singleton). \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__databasemanager__impl_gae9b3a5da1e04fbb00faf8a034da1d063}{Database\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Database\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__databasemanager__impl_ga92088595633cff356e64628b5820f267}{Database\+Manager::\+init\+Database}} ()
+\begin{DoxyCompactList}\small\item\em Инициализирует подключение к базе данных. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__databasemanager__impl_ga90600e6de3ad5fd99a81409054626dfa}{Database\+Manager::\+create\+Tables}} ()
+\begin{DoxyCompactList}\small\item\em Создаёт необходимые таблицы в базе данных. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__databasemanager__impl_ga6cac023af947fa742fb00b4f3b36d030}{Database\+Manager::\+hash\+Password}} (const QString \&password)
+\begin{DoxyCompactList}\small\item\em Хэширует пароль с использованием соли. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__databasemanager__impl_ga7f6378423887ad229790d1efcad835ad}{Database\+Manager::\+get\+Email\+By\+Login}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Возвращает email пользователя по логину. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__databasemanager__impl_ga70191af866ccccca5db1477768c27033}{Database\+Manager::\+register\+User}} (const QString \&login, const QString \&email, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Регистрирует нового пользователя. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{group__databasemanager__impl_gae79ef8e7770a0b50d919f7c84b112d48}{Database\+Manager::\+get\+Failed\+Attempts}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Возвращает количество неудачных попыток входа. \end{DoxyCompactList}\item 
+QDate\+Time \doxymbox{\hyperlink{group__databasemanager__impl_gadc0902f7d0e2b4b99285d5b31431bbd3}{Database\+Manager::\+get\+Lock\+Until}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Возвращает время, до которого аккаунт заблокирован. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__databasemanager__impl_ga6825517c8d4bf091e1c863494a109fc0}{Database\+Manager::\+increment\+Failed\+Attempts}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Увеличивает счётчик неудачных попыток входа. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__databasemanager__impl_gabdd9d9f3740b6af3f41f1fc4eab73fc8}{Database\+Manager::\+reset\+Failed\+Attempts}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Сбрасывает счётчик неудачных попыток. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__databasemanager__impl_ga7a2ac3defc8180a6ed7ce3d65df54b61}{Database\+Manager::\+login\+User}} (const QString \&login, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Выполняет вход пользователя. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__databasemanager__impl_ga4de8a21495a20fc23114c5293b0548d5}{Database\+Manager::\+user\+Exists}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Проверяет существование пользователя по логину. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__databasemanager__impl_gaf535cb24769e032ffe01884e3068adae}{Database\+Manager::\+email\+Exists}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Проверяет существование email в базе. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__databasemanager__impl_ga0f0b21ce89ce569342ef8a75d2d2643e}{Database\+Manager::\+change\+Password}} (const QString \&login, const QString \&new\+Password)
+\begin{DoxyCompactList}\small\item\em Изменяет пароль пользователя. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__databasemanager__impl_gaeecf73be8fbb4cdead016bd7b700b2e7}{Database\+Manager::\+print\+All\+Users}} ()
+\begin{DoxyCompactList}\small\item\em Выводит всех пользователей в консоль (для отладки). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Подробное описание}
+
+
+\label{group__databasemanager__impl_doc-func-members}
+\Hypertarget{group__databasemanager__impl_doc-func-members}
+\doxysubsubsubsection{Функции}
+\Hypertarget{group__databasemanager__impl_ga0f0b21ce89ce569342ef8a75d2d2643e}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!changePassword@{changePassword}}
+\index{changePassword@{changePassword}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{changePassword()}{changePassword()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga0f0b21ce89ce569342ef8a75d2d2643e} 
+bool Database\+Manager::\+change\+Password (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{new\+Password}{}\end{DoxyParamCaption})}
+
+
+
+Изменяет пароль пользователя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+{\em new\+Password} & Новый пароль. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true в случае успеха. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_ga90600e6de3ad5fd99a81409054626dfa}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!createTables@{createTables}}
+\index{createTables@{createTables}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{createTables()}{createTables()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga90600e6de3ad5fd99a81409054626dfa} 
+bool Database\+Manager::\+create\+Tables (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Создаёт необходимые таблицы в базе данных. 
+
+Создаёт или обновляет таблицы базы данных.
+
+\begin{DoxyReturn}{Возвращает}
+true в случае успеха. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_gaebfb8cc7427256623ccbe059b30b6450}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!DatabaseManager@{DatabaseManager}}
+\index{DatabaseManager@{DatabaseManager}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{DatabaseManager()}{DatabaseManager()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_gaebfb8cc7427256623ccbe059b30b6450} 
+Database\+Manager::\+\+Database\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+Приватный конструктор (Singleton). 
+
+Конструктор \doxylink{class_database_manager}{Database\+Manager}.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em parent} & Родительский объект. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__databasemanager__impl_gaf535cb24769e032ffe01884e3068adae}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!emailExists@{emailExists}}
+\index{emailExists@{emailExists}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{emailExists()}{emailExists()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_gaf535cb24769e032ffe01884e3068adae} 
+bool Database\+Manager::\+email\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Проверяет существование email в базе. 
+
+Проверяет существование email.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em email} & Email для проверки. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если email уже зарегистрирован. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_ga7f6378423887ad229790d1efcad835ad}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!getEmailByLogin@{getEmailByLogin}}
+\index{getEmailByLogin@{getEmailByLogin}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{getEmailByLogin()}{getEmailByLogin()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga7f6378423887ad229790d1efcad835ad} 
+QString Database\+Manager::\+get\+Email\+By\+Login (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Возвращает email пользователя по логину. 
+
+Возвращает email по логину пользователя.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Email пользователя. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_gae79ef8e7770a0b50d919f7c84b112d48}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!getFailedAttempts@{getFailedAttempts}}
+\index{getFailedAttempts@{getFailedAttempts}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{getFailedAttempts()}{getFailedAttempts()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_gae79ef8e7770a0b50d919f7c84b112d48} 
+int Database\+Manager::\+get\+Failed\+Attempts (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Возвращает количество неудачных попыток входа. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Количество неудачных попыток. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_gadc0902f7d0e2b4b99285d5b31431bbd3}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!getLockUntil@{getLockUntil}}
+\index{getLockUntil@{getLockUntil}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{getLockUntil()}{getLockUntil()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_gadc0902f7d0e2b4b99285d5b31431bbd3} 
+QDate\+Time Database\+Manager::\+get\+Lock\+Until (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Возвращает время, до которого аккаунт заблокирован. 
+
+Возвращает время блокировки аккаунта.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Дата и время разблокировки. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_ga6cac023af947fa742fb00b4f3b36d030}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!hashPassword@{hashPassword}}
+\index{hashPassword@{hashPassword}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{hashPassword()}{hashPassword()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga6cac023af947fa742fb00b4f3b36d030} 
+QString Database\+Manager::\+hash\+Password (\begin{DoxyParamCaption}\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Хэширует пароль с использованием соли. 
+
+Хеширует пароль пользователя.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em password} & Исходный пароль. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+Хэш пароля. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_ga6825517c8d4bf091e1c863494a109fc0}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!incrementFailedAttempts@{incrementFailedAttempts}}
+\index{incrementFailedAttempts@{incrementFailedAttempts}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{incrementFailedAttempts()}{incrementFailedAttempts()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga6825517c8d4bf091e1c863494a109fc0} 
+void Database\+Manager::\+increment\+Failed\+Attempts (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Увеличивает счётчик неудачных попыток входа. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__databasemanager__impl_ga92088595633cff356e64628b5820f267}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!initDatabase@{initDatabase}}
+\index{initDatabase@{initDatabase}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{initDatabase()}{initDatabase()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga92088595633cff356e64628b5820f267} 
+bool Database\+Manager::\+init\+Database (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Инициализирует подключение к базе данных. 
+
+Инициализация базы данных.
+
+\begin{DoxyReturn}{Возвращает}
+true в случае успеха.
+\end{DoxyReturn}
+Создаёт подключение SQLite и инициализирует таблицы. \Hypertarget{group__databasemanager__impl_ga4abb527066e28f3928ef45af856e134c}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!instance@{instance}}
+\index{instance@{instance}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga4abb527066e28f3928ef45af856e134c} 
+\doxymbox{\hyperlink{class_database_manager}{Database\+Manager}} \& Database\+Manager::\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Возвращает единственный экземпляр менеджера базы данных. 
+
+Возвращает singleton-\/экземпляр \doxylink{class_database_manager}{Database\+Manager}.
+
+\begin{DoxyReturn}{Возвращает}
+Ссылка на экземпляр \doxylink{class_database_manager}{Database\+Manager}. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_ga7a2ac3defc8180a6ed7ce3d65df54b61}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!loginUser@{loginUser}}
+\index{loginUser@{loginUser}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{loginUser()}{loginUser()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga7a2ac3defc8180a6ed7ce3d65df54b61} 
+bool Database\+Manager::\+login\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Выполняет вход пользователя. 
+
+Авторизация пользователя.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин. \\
+\hline
+{\em password} & Пароль. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true при успешной авторизации. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_gaeecf73be8fbb4cdead016bd7b700b2e7}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!printAllUsers@{printAllUsers}}
+\index{printAllUsers@{printAllUsers}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{printAllUsers()}{printAllUsers()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_gaeecf73be8fbb4cdead016bd7b700b2e7} 
+void Database\+Manager::\+print\+All\+Users (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Выводит всех пользователей в консоль (для отладки). 
+
+Выводит всех пользователей в лог. \Hypertarget{group__databasemanager__impl_ga70191af866ccccca5db1477768c27033}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga70191af866ccccca5db1477768c27033} 
+bool Database\+Manager::\+register\+User (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Регистрирует нового пользователя. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+{\em email} & Email пользователя. \\
+\hline
+{\em password} & Пароль пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true в случае успешной регистрации. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_gabdd9d9f3740b6af3f41f1fc4eab73fc8}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!resetFailedAttempts@{resetFailedAttempts}}
+\index{resetFailedAttempts@{resetFailedAttempts}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{resetFailedAttempts()}{resetFailedAttempts()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_gabdd9d9f3740b6af3f41f1fc4eab73fc8} 
+void Database\+Manager::\+reset\+Failed\+Attempts (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Сбрасывает счётчик неудачных попыток. 
+
+Сбрасывает неудачные попытки входа.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__databasemanager__impl_ga4de8a21495a20fc23114c5293b0548d5}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!userExists@{userExists}}
+\index{userExists@{userExists}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{userExists()}{userExists()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_ga4de8a21495a20fc23114c5293b0548d5} 
+bool Database\+Manager::\+user\+Exists (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Проверяет существование пользователя по логину. 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+true, если пользователь существует. 
+\end{DoxyReturn}
+\Hypertarget{group__databasemanager__impl_gae9b3a5da1e04fbb00faf8a034da1d063}\index{Реализация менеджера базы данных@{Реализация менеджера базы данных}!````~DatabaseManager@{\texorpdfstring{$\sim$}{\string~}DatabaseManager}}
+\index{````~DatabaseManager@{\texorpdfstring{$\sim$}{\string~}DatabaseManager}!Реализация менеджера базы данных@{Реализация менеджера базы данных}}
+\doxysubsubsubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DatabaseManager()}{\string~DatabaseManager()}}
+{\footnotesize\ttfamily \label{group__databasemanager__impl_gae9b3a5da1e04fbb00faf8a034da1d063} 
+Database\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Database\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Деструктор. 
+
+Деструктор \doxylink{class_database_manager}{Database\+Manager}. 

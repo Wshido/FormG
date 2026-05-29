@@ -1,0 +1,55 @@
+\doxysection{Класс Controller}
+\hypertarget{class_controller}{}\label{class_controller}\index{Controller@{Controller}}
+
+
+Основной контроллер обработки запросов клиента.  
+
+
+
+
+{\ttfamily \+\#include $<$controller.\+h$>$}
+
+\doxysubsubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__controller_ga95c56822d667e94b031451729ce069a9}{Controller}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_controller}{Controller}. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__controller_gab9de7dfc73df67eb6f51258b33cdfa31}{process}} (const QString \&request)
+\begin{DoxyCompactList}\small\item\em Обрабатывает входящий запрос. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{group__controller_ga59793d21ac5bac4ca1853ac4609e5c1b}{calculate\+Function}} (double a, double b, double c, double x)
+\begin{DoxyCompactList}\small\item\em Вычисляет функцию по заданным параметрам. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__controller_gac252bdbeb217f75564a8940ca5c5bb8e}{set\+Smtp\+Config}} (const QString \&host, quint16 port, const QString \&user, const QString \&pass, const QString \&from)
+\begin{DoxyCompactList}\small\item\em Настройка SMTP конфигурации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__controller_gaa918698c2c3e9268a26d035a0629b95b}{handle\+Client\+Disconnect}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Обработка отключения клиента. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{group__controller_gacc00842dd4577f55afeb9f07322d9c40}{check\+Task}} (int task, int variant, int answer)
+\begin{DoxyCompactList}\small\item\em Проверка задания. \end{DoxyCompactList}\item 
+QString\+List \doxymbox{\hyperlink{group__controller_ga721d9e73bdd9db76e1f95094a495ccf9}{split}} (const QString \&str, QChar delim)
+\begin{DoxyCompactList}\small\item\em Разбиение строки по разделителю. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__controller_ga75676e801a96d59ef4491b3a3ea3bb5f}{send\+Email}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Отправка email. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__controller_ga37b277caf40a9a8e6d72092c3fef84d9}{validate\+Password}} (const QString \&password)
+\begin{DoxyCompactList}\small\item\em Проверка пароля. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__controller_gaa9cb9f2b56737421df7ee1f738cddf8c}{validate\+Login}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Проверка логина. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__controller_gaecf725cf38c5d80256f48222516528b9}{validate\+Email}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Проверка email. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_server_d_b}{Server\+DB}} \doxymbox{\hyperlink{group__controller_ga125d43afccc14cd1596289b44da6c3cf}{m\+\_\+db}}
+\item 
+\doxymbox{\hyperlink{class_email_service}{Email\+Service}} \doxymbox{\hyperlink{group__controller_ga49b67cf30d75fe84d7ce0c69cae9a707}{m\+\_\+email\+Service}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Основной контроллер обработки запросов клиента. 
+
+Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
+\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Serverdox/\+002\+TCPserver/\+\+TCPserver/\+\doxymbox{\hyperlink{controller_8h}{controller.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Serverdox/\+002\+TCPserver/\+\+TCPserver/\+\doxymbox{\hyperlink{controller_8cpp}{controller.\+cpp}}\end{DoxyCompactItemize}

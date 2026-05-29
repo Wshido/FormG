@@ -1,0 +1,183 @@
+\doxysubsection{Сервис отправки email через SMTP }
+\hypertarget{group__emailservice}{}\label{group__emailservice}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection*{Разделы}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__emailservice__impl}{Описание сервиса отправки email}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_email_service}{Email\+Service}}
+\begin{DoxyCompactList}\small\item\em Сервис отправки email через SMTP. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__emailservice_ga4320aeb9b8f0ccbdb11cf66ba2f5c524}{Email\+Service::\+\+Email\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_email_service}{Email\+Service}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__emailservice_gae28763d6fe820a38a396eb47ca4013c6}{Email\+Service::\+set\+Smtp\+Config}} (const QString \&host, quint16 port, const QString \&username, const QString \&password, const QString \&from\+Email)
+\begin{DoxyCompactList}\small\item\em Настройка SMTP конфигурации. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailservice_gaec3104589c9f21167e4e034388a9252d}{Email\+Service::\+send\+Email}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Отправка email сообщения. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailservice_ga8d93c2d6f288040137407e4497d0e342}{Email\+Service::\+send\+Via\+Smtp}} (const QString \&to, const QString \&subject, const QString \&body)
+\begin{DoxyCompactList}\small\item\em Отправка через SMTP протокол. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailservice_ga172088fab7d205980d71402884a03fbf}{Email\+Service::\+wait\+For\+Response}} (QSsl\+Socket \&socket, int expected\+Code=-\/1)
+\begin{DoxyCompactList}\small\item\em Ожидание ответа от сервера SMTP. \end{DoxyCompactList}\item 
+QByte\+Array \doxymbox{\hyperlink{group__emailservice_ga69e50484bf28b74fc7cdc70b5a570b5a}{Email\+Service::\+base64\+Encode}} (const QString \&str)
+\begin{DoxyCompactList}\small\item\em Base64 кодирование строки. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__emailservice_ga1e804ab94bf8cd580d866dc4e582cf55}{Email\+Service::\+check\+Ssl\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Проверка доступности SSL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+QString \doxymbox{\hyperlink{group__emailservice_gaaadcfc8d97ce2454428ed08d80db018a}{Email\+Service::\+m\+\_\+smtp\+Host}}
+\item 
+quint16 \doxymbox{\hyperlink{group__emailservice_ga929b4c6a088ec396b3a1cb581a0258ad}{Email\+Service::\+m\+\_\+smtp\+Port}}
+\item 
+QString \doxymbox{\hyperlink{group__emailservice_gacffe9bad52a91f235fdec5bc1488616e}{Email\+Service::\+m\+\_\+smtp\+Username}}
+\item 
+QString \doxymbox{\hyperlink{group__emailservice_ga4898ad71d30ce7809d7771e49116d83b}{Email\+Service::\+m\+\_\+smtp\+Password}}
+\item 
+QString \doxymbox{\hyperlink{group__emailservice_gac2abb57ea02abda5dee0cdf53d5866d9}{Email\+Service::\+m\+\_\+from\+Email}}
+\item 
+bool \doxymbox{\hyperlink{group__emailservice_ga1c15208c5c118bfd22b45dc24f3235f1}{Email\+Service::\+m\+\_\+configured}}
+\item 
+bool \doxymbox{\hyperlink{group__emailservice_gafacd4e437e1ca3206bd0c599acec926b}{Email\+Service::\+m\+\_\+ssl\+Available}}
+\item 
+QMutex \doxymbox{\hyperlink{group__emailservice_ga156bf5f4ad34d1d0ecd2b069bdb55b6c}{Email\+Service::\+m\+\_\+mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+
+
+\label{group__emailservice_doc-func-members}
+\Hypertarget{group__emailservice_doc-func-members}
+\doxysubsubsection{Функции}
+\Hypertarget{group__emailservice_ga69e50484bf28b74fc7cdc70b5a570b5a}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!base64Encode@{base64Encode}}
+\index{base64Encode@{base64Encode}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{base64Encode()}{base64Encode()}}
+{\footnotesize\ttfamily \label{group__emailservice_ga69e50484bf28b74fc7cdc70b5a570b5a} 
+QByte\+Array Email\+Service::\+base64\+Encode (\begin{DoxyParamCaption}\item[{const QString \&}]{str}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Base64 кодирование строки. 
+
+\Hypertarget{group__emailservice_ga1e804ab94bf8cd580d866dc4e582cf55}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!checkSslAvailable@{checkSslAvailable}}
+\index{checkSslAvailable@{checkSslAvailable}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{checkSslAvailable()}{checkSslAvailable()}}
+{\footnotesize\ttfamily \label{group__emailservice_ga1e804ab94bf8cd580d866dc4e582cf55} 
+bool Email\+Service::\+check\+Ssl\+Available (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка доступности SSL. 
+
+Проверка наличия SSL поддержки. \Hypertarget{group__emailservice_ga4320aeb9b8f0ccbdb11cf66ba2f5c524}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!EmailService@{EmailService}}
+\index{EmailService@{EmailService}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{EmailService()}{EmailService()}}
+{\footnotesize\ttfamily \label{group__emailservice_ga4320aeb9b8f0ccbdb11cf66ba2f5c524} 
+Email\+Service::\+\+Email\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Конструктор \doxylink{class_email_service}{Email\+Service}. 
+
+\Hypertarget{group__emailservice_gaec3104589c9f21167e4e034388a9252d}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!sendEmail@{sendEmail}}
+\index{sendEmail@{sendEmail}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{sendEmail()}{sendEmail()}}
+{\footnotesize\ttfamily \label{group__emailservice_gaec3104589c9f21167e4e034388a9252d} 
+bool Email\+Service::\+send\+Email (\begin{DoxyParamCaption}\item[{const QString \&}]{to}{, }\item[{const QString \&}]{subject}{, }\item[{const QString \&}]{body}{}\end{DoxyParamCaption})}
+
+
+
+Отправка email сообщения. 
+
+\begin{DoxyReturn}{Возвращает}
+true если отправка успешна 
+\end{DoxyReturn}
+\Hypertarget{group__emailservice_ga8d93c2d6f288040137407e4497d0e342}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!sendViaSmtp@{sendViaSmtp}}
+\index{sendViaSmtp@{sendViaSmtp}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{sendViaSmtp()}{sendViaSmtp()}}
+{\footnotesize\ttfamily \label{group__emailservice_ga8d93c2d6f288040137407e4497d0e342} 
+bool Email\+Service::\+send\+Via\+Smtp (\begin{DoxyParamCaption}\item[{const QString \&}]{to}{, }\item[{const QString \&}]{subject}{, }\item[{const QString \&}]{body}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Отправка через SMTP протокол. 
+
+Отправка письма через SMTP (SSL). \Hypertarget{group__emailservice_gae28763d6fe820a38a396eb47ca4013c6}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!setSmtpConfig@{setSmtpConfig}}
+\index{setSmtpConfig@{setSmtpConfig}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{setSmtpConfig()}{setSmtpConfig()}}
+{\footnotesize\ttfamily \label{group__emailservice_gae28763d6fe820a38a396eb47ca4013c6} 
+void Email\+Service::\+set\+Smtp\+Config (\begin{DoxyParamCaption}\item[{const QString \&}]{host}{, }\item[{quint16}]{port}{, }\item[{const QString \&}]{username}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{from\+Email}{}\end{DoxyParamCaption})}
+
+
+
+Настройка SMTP конфигурации. 
+
+Настройка SMTP параметров. \Hypertarget{group__emailservice_ga172088fab7d205980d71402884a03fbf}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!waitForResponse@{waitForResponse}}
+\index{waitForResponse@{waitForResponse}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{waitForResponse()}{waitForResponse()}}
+{\footnotesize\ttfamily \label{group__emailservice_ga172088fab7d205980d71402884a03fbf} 
+bool Email\+Service::\+wait\+For\+Response (\begin{DoxyParamCaption}\item[{QSsl\+Socket \&}]{socket}{, }\item[{int}]{expected\+Code}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ожидание ответа от сервера SMTP. 
+
+Ожидание ответа SMTP сервера. 
+
+\label{group__emailservice_doc-var-members}
+\Hypertarget{group__emailservice_doc-var-members}
+\doxysubsubsection{Переменные}
+\Hypertarget{group__emailservice_ga1c15208c5c118bfd22b45dc24f3235f1}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!m\_configured@{m\_configured}}
+\index{m\_configured@{m\_configured}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{m\_configured}{m\_configured}}
+{\footnotesize\ttfamily \label{group__emailservice_ga1c15208c5c118bfd22b45dc24f3235f1} 
+bool Email\+Service::\+m\+\_\+configured\hspace{0.3cm}{\ttfamily [private]}}
+
+Флаг настройки SMTP \Hypertarget{group__emailservice_gac2abb57ea02abda5dee0cdf53d5866d9}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!m\_fromEmail@{m\_fromEmail}}
+\index{m\_fromEmail@{m\_fromEmail}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{m\_fromEmail}{m\_fromEmail}}
+{\footnotesize\ttfamily \label{group__emailservice_gac2abb57ea02abda5dee0cdf53d5866d9} 
+QString Email\+Service::\+m\+\_\+from\+Email\hspace{0.3cm}{\ttfamily [private]}}
+
+Email отправителя \Hypertarget{group__emailservice_ga156bf5f4ad34d1d0ecd2b069bdb55b6c}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!m\_mutex@{m\_mutex}}
+\index{m\_mutex@{m\_mutex}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{m\_mutex}{m\_mutex}}
+{\footnotesize\ttfamily \label{group__emailservice_ga156bf5f4ad34d1d0ecd2b069bdb55b6c} 
+QMutex Email\+Service::\+m\+\_\+mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}
+
+Мьютекс потокобезопасности \Hypertarget{group__emailservice_gaaadcfc8d97ce2454428ed08d80db018a}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!m\_smtpHost@{m\_smtpHost}}
+\index{m\_smtpHost@{m\_smtpHost}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{m\_smtpHost}{m\_smtpHost}}
+{\footnotesize\ttfamily \label{group__emailservice_gaaadcfc8d97ce2454428ed08d80db018a} 
+QString Email\+Service::\+m\+\_\+smtp\+Host\hspace{0.3cm}{\ttfamily [private]}}
+
+SMTP сервер \Hypertarget{group__emailservice_ga4898ad71d30ce7809d7771e49116d83b}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!m\_smtpPassword@{m\_smtpPassword}}
+\index{m\_smtpPassword@{m\_smtpPassword}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{m\_smtpPassword}{m\_smtpPassword}}
+{\footnotesize\ttfamily \label{group__emailservice_ga4898ad71d30ce7809d7771e49116d83b} 
+QString Email\+Service::\+m\+\_\+smtp\+Password\hspace{0.3cm}{\ttfamily [private]}}
+
+Пароль SMTP \Hypertarget{group__emailservice_ga929b4c6a088ec396b3a1cb581a0258ad}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!m\_smtpPort@{m\_smtpPort}}
+\index{m\_smtpPort@{m\_smtpPort}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{m\_smtpPort}{m\_smtpPort}}
+{\footnotesize\ttfamily \label{group__emailservice_ga929b4c6a088ec396b3a1cb581a0258ad} 
+quint16 Email\+Service::\+m\+\_\+smtp\+Port\hspace{0.3cm}{\ttfamily [private]}}
+
+SMTP порт \Hypertarget{group__emailservice_gacffe9bad52a91f235fdec5bc1488616e}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!m\_smtpUsername@{m\_smtpUsername}}
+\index{m\_smtpUsername@{m\_smtpUsername}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{m\_smtpUsername}{m\_smtpUsername}}
+{\footnotesize\ttfamily \label{group__emailservice_gacffe9bad52a91f235fdec5bc1488616e} 
+QString Email\+Service::\+m\+\_\+smtp\+Username\hspace{0.3cm}{\ttfamily [private]}}
+
+Имя пользователя SMTP \Hypertarget{group__emailservice_gafacd4e437e1ca3206bd0c599acec926b}\index{Сервис отправки email через SMTP@{Сервис отправки email через SMTP}!m\_sslAvailable@{m\_sslAvailable}}
+\index{m\_sslAvailable@{m\_sslAvailable}!Сервис отправки email через SMTP@{Сервис отправки email через SMTP}}
+\doxysubsubsubsection{\texorpdfstring{m\_sslAvailable}{m\_sslAvailable}}
+{\footnotesize\ttfamily \label{group__emailservice_gafacd4e437e1ca3206bd0c599acec926b} 
+bool Email\+Service::\+m\+\_\+ssl\+Available\hspace{0.3cm}{\ttfamily [private]}}
+
+Поддержка SSL \input{group__emailservice__impl}

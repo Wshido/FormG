@@ -1,0 +1,60 @@
+\doxysection{tcpserver.\+h}
+\hypertarget{tcpserver_8h_source}{}\label{tcpserver_8h_source}\index{C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/tcpserver.h@{C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/tcpserver.h}}
+\doxymbox{\hyperlink{tcpserver_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TCPSERVER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TCPSERVER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QTcpServer>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QTcpSocket>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QThread>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{controller_8h}{controller.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__tcpserver_ga1899603dc27fb3acf59454344f200a00}{ClientHandler}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00019\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{group__tcpserver_ga1899603dc27fb3acf59454344f200a00}{ClientHandler}}(qintptr\ socketDescriptor,\ \doxymbox{\hyperlink{class_controller}{Controller}}\ *controller,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__tcpserver_ga830271637a50042996c511e48b9110fe}{process}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ signals:}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__tcpserver_gad1594ee75e0c5606bbbb705ce61d998e}{clientDisconnected}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__tcpserver_ga232b13b7e231e00a2ddbd98de6e104ce}{onReadyRead}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__tcpserver_gacc85a10c15db2cfc12faeed47edd9781}{onDisconnected}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \ \ QTcpSocket\ *\doxymbox{\hyperlink{group__tcpserver_gacf8aee20c56e8356fc9d18e6ada1e910}{m\_socket}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ qintptr\ \doxymbox{\hyperlink{group__tcpserver_gab184644e01a21ee92e1bfd1230907ea1}{m\_socketDescriptor}};\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \doxymbox{\hyperlink{class_controller}{Controller}}\ *\doxymbox{\hyperlink{group__tcpserver_ga36b7d241932a4983ee62e1d03ca4655e}{m\_controller}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__tcpserver_gaadcd1ae036a2cfe177688c93d313feb4}{m\_currentLogin}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__tcpserver_gaf9980f4c39e88fb8d8ff473764d3723d}{TCPServer}}\ :\ \textcolor{keyword}{public}\ QTcpServer}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{group__tcpserver_gaf9980f4c39e88fb8d8ff473764d3723d}{TCPServer}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__tcpserver_gaa944cbd79352ca38fdb431f92f7ba88c}{start}}(quint16\ port);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__tcpserver_gac69710216804516e5a91f4dff2bb2771}{setSmtpConfig}}(\textcolor{keyword}{const}\ QString\ \&host,\ quint16\ port,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&user,\ \textcolor{keyword}{const}\ QString\ \&pass,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&from);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__tcpserver_gaf1df9d80f25034148ed588e7fa2d4ab7}{incomingConnection}}(qintptr\ socketDescriptor)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \ \ \doxymbox{\hyperlink{class_controller}{Controller}}\ \doxymbox{\hyperlink{group__tcpserver_ga755a1b7ced220307fe724f6d3c0ee723}{m\_controller}};\ }
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TCPSERVER\_H}}
+
+\end{DoxyCode}

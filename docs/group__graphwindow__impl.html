@@ -1,0 +1,845 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;: Реализация окна графиков</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Отчет по дисциплине &quot;Технологии и Методы Программирования&quot;
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Поиск" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('group__graphwindow__impl.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Загрузка...</div>
+<div class="SRStatus" id="Searching">Поиск...</div>
+<div class="SRStatus" id="NoMatches">Не найдено</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Реализация окна графиков <div class="ingroups"><a class="el" href="group__client.html">Клиент</a> &raquo; <a class="el" href="group__graphwindow.html">Окно графиков</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:ga68f193cacc0237a41d8c44923b53c11a" id="r_ga68f193cacc0237a41d8c44923b53c11a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ga68f193cacc0237a41d8c44923b53c11a">GraphWindow::GraphWindow</a> (QWidget *parent=nullptr)</td></tr>
+<tr class="memdesc:ga68f193cacc0237a41d8c44923b53c11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор.  <br /></td></tr>
+<tr class="memitem:gab0d531603118d01a7bf74bd4de515522" id="r_gab0d531603118d01a7bf74bd4de515522"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gab0d531603118d01a7bf74bd4de515522">GraphWindow::setupGraphStyle</a> ()</td></tr>
+<tr class="memdesc:gab0d531603118d01a7bf74bd4de515522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка внешнего вида графика.  <br /></td></tr>
+<tr class="memitem:ga2169d6bf25fc610c707949e7d75c36fb" id="r_ga2169d6bf25fc610c707949e7d75c36fb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga2169d6bf25fc610c707949e7d75c36fb">GraphWindow::setupExportButtons</a> ()</td></tr>
+<tr class="memdesc:ga2169d6bf25fc610c707949e7d75c36fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка кнопок экспорта.  <br /></td></tr>
+<tr class="memitem:ga55f65b01e22c63714d02c5e162f4e6ba" id="r_ga55f65b01e22c63714d02c5e162f4e6ba"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga55f65b01e22c63714d02c5e162f4e6ba">GraphWindow::setupZoomDrag</a> ()</td></tr>
+<tr class="memdesc:ga55f65b01e22c63714d02c5e162f4e6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка зума и перетаскивания графика.  <br /></td></tr>
+<tr class="memitem:gaa6a4422e499c500a28408fb9a9ce972f" id="r_gaa6a4422e499c500a28408fb9a9ce972f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaa6a4422e499c500a28408fb9a9ce972f">GraphWindow::setupKeyboardNav</a> ()</td></tr>
+<tr class="memdesc:gaa6a4422e499c500a28408fb9a9ce972f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Настройка управления с клавиатуры.  <br /></td></tr>
+<tr class="memitem:ga406bf05becacaa723de2ca91ec842d41" id="r_ga406bf05becacaa723de2ca91ec842d41"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga406bf05becacaa723de2ca91ec842d41">GraphWindow::updateParameterLabels</a> ()</td></tr>
+<tr class="memdesc:ga406bf05becacaa723de2ca91ec842d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление значений параметров на лейблах.  <br /></td></tr>
+<tr class="memitem:ga770987712af13f4e4bcf2a39d2cfd504" id="r_ga770987712af13f4e4bcf2a39d2cfd504"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#ga770987712af13f4e4bcf2a39d2cfd504">GraphWindow::calculateFunction</a> (double a, double b, double c, double x)</td></tr>
+<tr class="memdesc:ga770987712af13f4e4bcf2a39d2cfd504"><td class="mdescLeft">&#160;</td><td class="mdescRight">Вычисление значения функции по параметрам.  <br /></td></tr>
+<tr class="memitem:ga5946cbbc48379f6f1378ae468d78c324" id="r_ga5946cbbc48379f6f1378ae468d78c324"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#ga5946cbbc48379f6f1378ae468d78c324">GraphWindow::getCacheKey</a> (double a, double b, double c)</td></tr>
+<tr class="memdesc:ga5946cbbc48379f6f1378ae468d78c324"><td class="mdescLeft">&#160;</td><td class="mdescRight">Генерация ключа для кэша по параметрам.  <br /></td></tr>
+<tr class="memitem:gabbf7f8452a63d2869e9e20a97208c46d" id="r_gabbf7f8452a63d2869e9e20a97208c46d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gabbf7f8452a63d2869e9e20a97208c46d">GraphWindow::computeLocal</a> (double a, double b, double c)</td></tr>
+<tr class="memdesc:gabbf7f8452a63d2869e9e20a97208c46d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Локальный расчёт значений функций.  <br /></td></tr>
+<tr class="memitem:ga4b03485cf882a3f877b9e5deb224e031" id="r_ga4b03485cf882a3f877b9e5deb224e031"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga4b03485cf882a3f877b9e5deb224e031">GraphWindow::parseServerData</a> (const QString &amp;response)</td></tr>
+<tr class="memdesc:ga4b03485cf882a3f877b9e5deb224e031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Разбор данных, полученных от сервера.  <br /></td></tr>
+<tr class="memitem:ga04f862d37034c141071e10029dc1bf8d" id="r_ga04f862d37034c141071e10029dc1bf8d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga04f862d37034c141071e10029dc1bf8d">GraphWindow::updateGraphColors</a> ()</td></tr>
+<tr class="memdesc:ga04f862d37034c141071e10029dc1bf8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обновление цветов графиков.  <br /></td></tr>
+<tr class="memitem:ga24612ecaac3563e66d289832471c5bf4" id="r_ga24612ecaac3563e66d289832471c5bf4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ga24612ecaac3563e66d289832471c5bf4">GraphWindow::checkSessionValid</a> ()</td></tr>
+<tr class="memdesc:ga24612ecaac3563e66d289832471c5bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверка валидности текущей сессии.  <br /></td></tr>
+<tr class="memitem:gacca1dc8c3eefe6608ae2de3cee2e22ee" id="r_gacca1dc8c3eefe6608ae2de3cee2e22ee"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#gacca1dc8c3eefe6608ae2de3cee2e22ee">GraphWindow::~GraphWindow</a> ()</td></tr>
+<tr class="memdesc:gacca1dc8c3eefe6608ae2de3cee2e22ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Деструктор.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pri-slot-members" class="groupheader"><a id="pri-slot-members" name="pri-slot-members"></a>
+Закрытые слоты</h2></td></tr>
+<tr class="memitem:ga16fc3589840eaa3490cffe9d3a12c405" id="r_ga16fc3589840eaa3490cffe9d3a12c405"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga16fc3589840eaa3490cffe9d3a12c405">GraphWindow::onZoomChanged</a> ()</td></tr>
+<tr class="memdesc:ga16fc3589840eaa3490cffe9d3a12c405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик изменения зума графика.  <br /></td></tr>
+<tr class="memitem:ga15bda247268f26b45a583eab5ba5d725" id="r_ga15bda247268f26b45a583eab5ba5d725"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga15bda247268f26b45a583eab5ba5d725">GraphWindow::onSliderChanged</a> ()</td></tr>
+<tr class="memdesc:ga15bda247268f26b45a583eab5ba5d725"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик изменения значений слайдеров параметров.  <br /></td></tr>
+<tr class="memitem:ga1d47676c2decdaafd45f2c566a7f4889" id="r_ga1d47676c2decdaafd45f2c566a7f4889"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga1d47676c2decdaafd45f2c566a7f4889">GraphWindow::onExportPNG</a> ()</td></tr>
+<tr class="memdesc:ga1d47676c2decdaafd45f2c566a7f4889"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспорт графика в PNG.  <br /></td></tr>
+<tr class="memitem:ga1e5cb4d993ea6ae86482d7c522ebbbb1" id="r_ga1e5cb4d993ea6ae86482d7c522ebbbb1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga1e5cb4d993ea6ae86482d7c522ebbbb1">GraphWindow::onExportPDF</a> ()</td></tr>
+<tr class="memdesc:ga1e5cb4d993ea6ae86482d7c522ebbbb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Экспорт графика в PDF.  <br /></td></tr>
+<tr class="memitem:ga995b6c258c4be1386b4c4addb29b4410" id="r_ga995b6c258c4be1386b4c4addb29b4410"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga995b6c258c4be1386b4c4addb29b4410">GraphWindow::onSaveToFile</a> ()</td></tr>
+<tr class="memdesc:ga995b6c258c4be1386b4c4addb29b4410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сохранение текущих параметров графика в файл.  <br /></td></tr>
+<tr class="memitem:ga6fe5959aeb025689ef9a5eaec2793a5e" id="r_ga6fe5959aeb025689ef9a5eaec2793a5e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga6fe5959aeb025689ef9a5eaec2793a5e">GraphWindow::onLoadFromFile</a> ()</td></tr>
+<tr class="memdesc:ga6fe5959aeb025689ef9a5eaec2793a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Загрузка параметров графика из файла.  <br /></td></tr>
+<tr class="memitem:ga35740ef1f5af4c41dcf8a2459165a0d0" id="r_ga35740ef1f5af4c41dcf8a2459165a0d0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga35740ef1f5af4c41dcf8a2459165a0d0">GraphWindow::onDeleteFromFile</a> ()</td></tr>
+<tr class="memdesc:ga35740ef1f5af4c41dcf8a2459165a0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Удаление сохранённого графика.  <br /></td></tr>
+<tr class="memitem:ga7b4c8a1e56aac849ba89ffe2b591ce2a" id="r_ga7b4c8a1e56aac849ba89ffe2b591ce2a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ga7b4c8a1e56aac849ba89ffe2b591ce2a">GraphWindow::onClearGraph</a> ()</td></tr>
+<tr class="memdesc:ga7b4c8a1e56aac849ba89ffe2b591ce2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Очистка графика.  <br /></td></tr>
+<tr class="memitem:gaa877ad44e207acbe1ce314beaf29f0e1" id="r_gaa877ad44e207acbe1ce314beaf29f0e1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#gaa877ad44e207acbe1ce314beaf29f0e1">GraphWindow::onColorButtonClicked</a> ()</td></tr>
+<tr class="memdesc:gaa877ad44e207acbe1ce314beaf29f0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Обработчик нажатия кнопки изменения цвета.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Подробное описание</h2>
+<div class="textblock"></div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Функции</h2>
+<a id="ga770987712af13f4e4bcf2a39d2cfd504" name="ga770987712af13f4e4bcf2a39d2cfd504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga770987712af13f4e4bcf2a39d2cfd504">&#9670;&#160;</a></span>calculateFunction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double GraphWindow::calculateFunction </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Вычисление значения функции по параметрам. </p>
+<p>Вычисляет значение функции по параметрам.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Значение функции в точке x. </dd></dl>
+
+</div>
+</div>
+<a id="ga24612ecaac3563e66d289832471c5bf4" name="ga24612ecaac3563e66d289832471c5bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24612ecaac3563e66d289832471c5bf4">&#9670;&#160;</a></span>checkSessionValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool GraphWindow::checkSessionValid </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверка валидности текущей сессии. </p>
+<p>Проверка валидности сессии пользователя.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>true, если сессия активна. </dd></dl>
+
+</div>
+</div>
+<a id="gabbf7f8452a63d2869e9e20a97208c46d" name="gabbf7f8452a63d2869e9e20a97208c46d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabbf7f8452a63d2869e9e20a97208c46d">&#9670;&#160;</a></span>computeLocal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::computeLocal </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Локальный расчёт значений функций. </p>
+<p>Локально вычисляет графики функций. </p>
+
+</div>
+</div>
+<a id="ga5946cbbc48379f6f1378ae468d78c324" name="ga5946cbbc48379f6f1378ae468d78c324"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5946cbbc48379f6f1378ae468d78c324">&#9670;&#160;</a></span>getCacheKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString GraphWindow::getCacheKey </td>
+          <td>(</td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>b</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>c</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Генерация ключа для кэша по параметрам. </p>
+<p>Формирует ключ кэша параметров.</p>
+<dl class="section return"><dt>Возвращает</dt><dd>Строковый ключ кэша. </dd></dl>
+
+</div>
+</div>
+<a id="ga68f193cacc0237a41d8c44923b53c11a" name="ga68f193cacc0237a41d8c44923b53c11a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga68f193cacc0237a41d8c44923b53c11a">&#9670;&#160;</a></span>GraphWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GraphWindow::GraphWindow </td>
+          <td>(</td>
+          <td class="paramtype">QWidget *</td>          <td class="paramname"><span class="paramname"><em>parent</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Конструктор. </p>
+<p>Конструктор <a class="el" href="class_graph_window.html" title="Класс окна для построения графиков функций.">GraphWindow</a>.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Родительский виджет.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Инициализирует UI, стили графиков, кнопки экспорта, подключение к серверу и таймер сессии. </p>
+
+</div>
+</div>
+<a id="ga4b03485cf882a3f877b9e5deb224e031" name="ga4b03485cf882a3f877b9e5deb224e031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4b03485cf882a3f877b9e5deb224e031">&#9670;&#160;</a></span>parseServerData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::parseServerData </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>response</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Разбор данных, полученных от сервера. </p>
+<p>Парсит данные от сервера и обновляет графики.</p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">response</td><td>JSON-ответ сервера. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga2169d6bf25fc610c707949e7d75c36fb" name="ga2169d6bf25fc610c707949e7d75c36fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2169d6bf25fc610c707949e7d75c36fb">&#9670;&#160;</a></span>setupExportButtons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::setupExportButtons </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настройка кнопок экспорта. </p>
+<p>Создаёт панель кнопок экспорта и управления графиком. </p>
+
+</div>
+</div>
+<a id="gab0d531603118d01a7bf74bd4de515522" name="gab0d531603118d01a7bf74bd4de515522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab0d531603118d01a7bf74bd4de515522">&#9670;&#160;</a></span>setupGraphStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::setupGraphStyle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настройка внешнего вида графика. </p>
+<p>Настройка визуального стиля графического окна. </p>
+
+</div>
+</div>
+<a id="gaa6a4422e499c500a28408fb9a9ce972f" name="gaa6a4422e499c500a28408fb9a9ce972f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa6a4422e499c500a28408fb9a9ce972f">&#9670;&#160;</a></span>setupKeyboardNav()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::setupKeyboardNav </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настройка управления с клавиатуры. </p>
+<p>Настройка навигации с клавиатуры. </p>
+
+</div>
+</div>
+<a id="ga55f65b01e22c63714d02c5e162f4e6ba" name="ga55f65b01e22c63714d02c5e162f4e6ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga55f65b01e22c63714d02c5e162f4e6ba">&#9670;&#160;</a></span>setupZoomDrag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::setupZoomDrag </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Настройка зума и перетаскивания графика. </p>
+
+</div>
+</div>
+<a id="ga04f862d37034c141071e10029dc1bf8d" name="ga04f862d37034c141071e10029dc1bf8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04f862d37034c141071e10029dc1bf8d">&#9670;&#160;</a></span>updateGraphColors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::updateGraphColors </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновление цветов графиков. </p>
+<p>Обновляет цвета графиков. </p>
+
+</div>
+</div>
+<a id="ga406bf05becacaa723de2ca91ec842d41" name="ga406bf05becacaa723de2ca91ec842d41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga406bf05becacaa723de2ca91ec842d41">&#9670;&#160;</a></span>updateParameterLabels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::updateParameterLabels </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обновление значений параметров на лейблах. </p>
+<p>Обновляет текстовые подписи параметров графика. </p>
+
+</div>
+</div>
+<a id="gacca1dc8c3eefe6608ae2de3cee2e22ee" name="gacca1dc8c3eefe6608ae2de3cee2e22ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacca1dc8c3eefe6608ae2de3cee2e22ee">&#9670;&#160;</a></span>~GraphWindow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GraphWindow::~GraphWindow </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Деструктор. </p>
+<p>Деструктор <a class="el" href="class_graph_window.html" title="Класс окна для построения графиков функций.">GraphWindow</a>. </p>
+
+</div>
+</div>
+<a name="doc-pri-slot-members" id="doc-pri-slot-members"></a><h2 id="header-doc-pri-slot-members" class="groupheader">Закрытые слоты</h2>
+<a id="ga7b4c8a1e56aac849ba89ffe2b591ce2a" name="ga7b4c8a1e56aac849ba89ffe2b591ce2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7b4c8a1e56aac849ba89ffe2b591ce2a">&#9670;&#160;</a></span>onClearGraph</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::onClearGraph </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Очистка графика. </p>
+<p>Очистка всех графиков. </p>
+
+</div>
+</div>
+<a id="gaa877ad44e207acbe1ce314beaf29f0e1" name="gaa877ad44e207acbe1ce314beaf29f0e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa877ad44e207acbe1ce314beaf29f0e1">&#9670;&#160;</a></span>onColorButtonClicked</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::onColorButtonClicked </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик нажатия кнопки изменения цвета. </p>
+<p>Обработчик выбора цвета функции sin(ax). </p>
+
+</div>
+</div>
+<a id="ga35740ef1f5af4c41dcf8a2459165a0d0" name="ga35740ef1f5af4c41dcf8a2459165a0d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga35740ef1f5af4c41dcf8a2459165a0d0">&#9670;&#160;</a></span>onDeleteFromFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::onDeleteFromFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Удаление сохранённого графика. </p>
+<p>Удаление JSON файла с данными графика. </p>
+
+</div>
+</div>
+<a id="ga1e5cb4d993ea6ae86482d7c522ebbbb1" name="ga1e5cb4d993ea6ae86482d7c522ebbbb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e5cb4d993ea6ae86482d7c522ebbbb1">&#9670;&#160;</a></span>onExportPDF</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::onExportPDF </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Экспорт графика в PDF. </p>
+
+</div>
+</div>
+<a id="ga1d47676c2decdaafd45f2c566a7f4889" name="ga1d47676c2decdaafd45f2c566a7f4889"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1d47676c2decdaafd45f2c566a7f4889">&#9670;&#160;</a></span>onExportPNG</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::onExportPNG </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Экспорт графика в PNG. </p>
+
+</div>
+</div>
+<a id="ga6fe5959aeb025689ef9a5eaec2793a5e" name="ga6fe5959aeb025689ef9a5eaec2793a5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6fe5959aeb025689ef9a5eaec2793a5e">&#9670;&#160;</a></span>onLoadFromFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::onLoadFromFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Загрузка параметров графика из файла. </p>
+<p>Загрузка графика из JSON файла. </p>
+
+</div>
+</div>
+<a id="ga995b6c258c4be1386b4c4addb29b4410" name="ga995b6c258c4be1386b4c4addb29b4410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga995b6c258c4be1386b4c4addb29b4410">&#9670;&#160;</a></span>onSaveToFile</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::onSaveToFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Сохранение текущих параметров графика в файл. </p>
+<p>Сохранение графика в JSON файл. </p>
+
+</div>
+</div>
+<a id="ga15bda247268f26b45a583eab5ba5d725" name="ga15bda247268f26b45a583eab5ba5d725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15bda247268f26b45a583eab5ba5d725">&#9670;&#160;</a></span>onSliderChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::onSliderChanged </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик изменения значений слайдеров параметров. </p>
+<p>Обработчик изменения параметров слайдеров. </p>
+
+</div>
+</div>
+<a id="ga16fc3589840eaa3490cffe9d3a12c405" name="ga16fc3589840eaa3490cffe9d3a12c405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga16fc3589840eaa3490cffe9d3a12c405">&#9670;&#160;</a></span>onZoomChanged</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GraphWindow::onZoomChanged </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Обработчик изменения зума графика. </p>
+<p>Обработчик изменения масштаба графика. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

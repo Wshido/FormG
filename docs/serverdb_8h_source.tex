@@ -1,0 +1,143 @@
+\doxysection{serverdb.\+h}
+\hypertarget{serverdb_8h_source}{}\label{serverdb_8h_source}\index{C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/serverdb.h@{C:/Users/пп/Desktop/New/Serverdox/002TCPserver/TCPserver/serverdb.h}}
+\doxymbox{\hyperlink{serverdb_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SERVERDB\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SERVERDB\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QMutex>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QElapsedTimer>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifdef\ \_\_linux\_\_}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <postgresql/libpq-\/fe.h>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <libpq-\/fe.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__serverdb_ga16de4b24afb55595bfb5859324ec60fa}{ServerDB}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \doxymbox{\hyperlink{group__serverdb_ga16de4b24afb55595bfb5859324ec60fa}{ServerDB}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \ \ \ \ \doxymbox{\hyperlink{group__serverdb_ga3a79b19dddda5b43bf0bf9a1d8cb1491}{\string~ServerDB}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga36ac2e1ef9f0c32549515d6ef55ad773}{requestRegCode}}(\textcolor{keyword}{const}\ QString\ \&email,\ QString\ \&code);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga994ac2d5c132cfc9f9bd1356731edda1}{confirmReg}}(\textcolor{keyword}{const}\ QString\ \&login,\ \textcolor{keyword}{const}\ QString\ \&password,\ \textcolor{keyword}{const}\ QString\ \&email,\ \textcolor{keyword}{const}\ QString\ \&code);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_gaf12d0258f79d2e1d0d9b65d1ea2a0f97}{requestAuthCode}}(\textcolor{keyword}{const}\ QString\ \&login,\ \textcolor{keyword}{const}\ QString\ \&password,\ QString\ \&email,\ QString\ \&code);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga1b9ee71036824da8376e7b4bf3a6afc5}{confirmAuth}}(\textcolor{keyword}{const}\ QString\ \&email,\ \textcolor{keyword}{const}\ QString\ \&code,\ QString\ \&sessionToken);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga1bf6da3938e44f7f01e6b6cca636a5a8}{requestResetCode}}(\textcolor{keyword}{const}\ QString\ \&loginOrEmail,\ QString\ \&code,\ QString\ \&outEmail);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_gaaab5737ce3cfd315699697037db34c19}{confirmResetPassword}}(\textcolor{keyword}{const}\ QString\ \&email,\ \textcolor{keyword}{const}\ QString\ \&code,\ \textcolor{keyword}{const}\ QString\ \&newPassword);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_gad10fa166639efe678c2ef0f838b16a8c}{getStat}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_gaf1c086f5b5f988311b427a5acd4124db}{checkSession}}(\textcolor{keyword}{const}\ QString\ \&login,\ \textcolor{keyword}{const}\ QString\ \&sessionToken);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_gadb401b2e1e6008328125e4aa97d6df39}{getEmailByLoginOrEmail}}(\textcolor{keyword}{const}\ QString\ \&loginOrEmail);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__serverdb_ga29840ab235049436a5d7a0490a3d7587}{logoutSession}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__serverdb_ga16416b749e67eac8a9cbe95c02c57b8d}{logoutAllSessions}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__serverdb_gae6e3113ec64b259e8aa2763a12b8e4af}{cleanupExpiredSessions}}();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga93f29f71d6a4b9410202891b35867000}{refreshToken}}(\textcolor{keyword}{const}\ QString\ \&login,\ \textcolor{keyword}{const}\ QString\ \&oldToken,\ QString\ \&newToken);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga2ba8c2228e0fb8ab015b3d2317711037}{isRateLimited}}(\textcolor{keyword}{const}\ QString\ \&identifier);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga01bda8412bffb2fb13ee6082a549d8e7}{isBruteForceBlocked}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__serverdb_ga50c90efdde5f057f115ffa395ffc2aa1}{recordFailedAttempt}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__serverdb_gaf25d4c2c73bb88c62ada8ba06c398ce7}{resetFailedAttempts}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{group__serverdb_gae61a68c8c2b2f426cc729c581eddafaa}{MAX\_LOGIN\_LENGTH}}\ =\ 16;\ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{group__serverdb_ga7fdcbdd4312b9432834059c53c5b4635}{MAX\_EMAIL\_LENGTH}}\ =\ 100;\ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{group__serverdb_gaca59ab9db5bea5ac6cc3bc107488450b}{MAX\_PASSWORD\_LENGTH}}\ =\ 64;\ \ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00126\ \ \ \ \ PGconn\ *\doxymbox{\hyperlink{group__serverdb_ga08a5e08f3aef18146cc9c23c9abbbf6f}{m\_conn}};\ }
+\DoxyCodeLine{00127\ \ \ \ \ QMutex\ \doxymbox{\hyperlink{group__serverdb_ga105a514d477fa54440bff554943d7323}{m\_mutex}};\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_server_d_b_1_1_session_data}{SessionData}}\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_gac6d549851b9529dfe22cfef4243f6594}{token}};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ qint64\ \doxymbox{\hyperlink{group__serverdb_ga4780e1c7a6f615f5fe4f7bd9a74b6c53}{createdAt}};}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ qint64\ \doxymbox{\hyperlink{group__serverdb_gae0591ad1ca19fbea8fb645f6d53375c9}{lastActivity}};}
+\DoxyCodeLine{00136\ \ \ \ \ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ QMap<QString,\ SessionData>\ \doxymbox{\hyperlink{group__serverdb_ga9a5c3606cb4ac2883efb7cb38825fa6b}{m\_sessionCache}};\ }
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reg_data}{TempRegData}}\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_ga13e07f55d4dd3db53e16cb04b708cc72}{email}};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ qint64\ \doxymbox{\hyperlink{group__serverdb_gaeedede61f7e7fd07215ffe440c1fbb5a}{createdAt}};}
+\DoxyCodeLine{00146\ \ \ \ \ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_server_d_b_1_1_temp_auth_data}{TempAuthData}}\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_ga50678c74275e35284cf7f32642824d47}{login}};}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_ga6fb3ffb82e3fdec3987e6689c6bebfae}{email}};}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ qint64\ \doxymbox{\hyperlink{group__serverdb_ga0ec4dfec0932c1596090e6c88147631b}{createdAt}};}
+\DoxyCodeLine{00155\ \ \ \ \ \};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_server_d_b_1_1_temp_reset_data}{TempResetData}}\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_gae4bfe65ca0caa1741e641eacdfcd81fa}{email}};}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ qint64\ \doxymbox{\hyperlink{group__serverdb_ga117c37abe808d690314049567a146a9e}{createdAt}};}
+\DoxyCodeLine{00163\ \ \ \ \ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ QMap<QString,\ TempRegData>\ \doxymbox{\hyperlink{group__serverdb_ga28a4d734f897b1a2f3e69803e9817f57}{m\_tempRegs}};\ \ \ }
+\DoxyCodeLine{00166\ \ \ \ \ QMap<QString,\ TempAuthData>\ \doxymbox{\hyperlink{group__serverdb_gaadb320472cc15fafebfc04e4af7d4d85}{m\_tempAuths}};\ }
+\DoxyCodeLine{00167\ \ \ \ \ QMap<QString,\ TempResetData>\ \doxymbox{\hyperlink{group__serverdb_ga33f2c9f8fe02efbe806344260ad446bb}{m\_tempResets}};\ }
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_server_d_b_1_1_rate_limit_data}{RateLimitData}}\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{group__serverdb_ga15454d67d03eefa34dc36f39706fb5a8}{attemptCount}};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ qint64\ \doxymbox{\hyperlink{group__serverdb_ga42711d5b865bac716f4b81597e4f468e}{windowStart}};}
+\DoxyCodeLine{00175\ \ \ \ \ \};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ QMap<QString,\ RateLimitData>\ \doxymbox{\hyperlink{group__serverdb_ga61763a32ff9a93cda0ce7ff492fe7c31}{m\_rateLimits}};\ }
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keyword}{struct\ }\doxymbox{\hyperlink{struct_server_d_b_1_1_brute_force_data}{BruteForceData}}\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{group__serverdb_ga8d674736f99a754c8235a213c373ee97}{failedAttempts}};}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ qint64\ \doxymbox{\hyperlink{group__serverdb_ga23cb5c5a460003ce8ad6a5a90384d9c4}{lockoutUntil}};}
+\DoxyCodeLine{00185\ \ \ \ \ \};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ QMap<QString,\ BruteForceData>\ \doxymbox{\hyperlink{group__serverdb_ga4337d1854419b1fe1132595028266cbc}{m\_bruteForce}};\ }
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ \doxymbox{\hyperlink{group__serverdb_gacaf460b147f596440afd6992ae52d423}{CODE\_EXPIRY\_MS}}\ =\ 5\ *\ 60\ *\ 1000;}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ \doxymbox{\hyperlink{group__serverdb_ga700ad026b4ae53cea9dfe2c31a63c1ac}{SESSION\_TTL\_MS}}\ =\ 30\ *\ 60\ *\ 1000;}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{group__serverdb_gadfbecd665825b46deb74d92665cd6cf1}{RATE\_LIMIT\_MAX\_ATTEMPTS}}\ =\ 10;}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ \doxymbox{\hyperlink{group__serverdb_ga7f64051d1e530064726ce7b9b85218a2}{RATE\_LIMIT\_WINDOW\_MS}}\ =\ 60\ *\ 1000;}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{group__serverdb_gaf975a14f1744972fcc55b36be00d3dd5}{BRUTE\_FORCE\_MAX\_ATTEMPTS}}\ =\ 5;}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qint64\ \doxymbox{\hyperlink{group__serverdb_gac8dab327f34ef6f5bcad00871830e5fb}{BRUTE\_FORCE\_LOCKOUT\_MS}}\ =\ 15\ *\ 60\ *\ 1000;}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga30c1f4dbc30c1f3c91c6cd01df0bd2c1}{connectToDB}}();}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00204\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_gafea47eb5d3c5eba7585fbc7d3807604c}{hashPassword}}(\textcolor{keyword}{const}\ QString\ \&password,\ \textcolor{keyword}{const}\ QString\ \&salt\ =\ QString());}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00209\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_ga9b63d8ad80969b2bdf2564f11fd413eb}{generateSalt}}();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00214\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_gac5357b70af1adf828816f14c6505157c}{generateSessionToken}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00219\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_ga23862f00ad76853e89f0d77639061f34}{generateVerificationCode}}();}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__serverdb_ga1ec6994696b70eb747e89c7fe27ed603}{cleanupExpiredCodes}}();}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00229\ \ \ \ \ QString\ \doxymbox{\hyperlink{group__serverdb_gad546286597a31595e531db8e55748cd1}{getEmailByLogin}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_gac92a1cc800b6c58386e7fef2554a025a}{checkEmailExists}}(\textcolor{keyword}{const}\ QString\ \&email);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga77c8b9b85320af631c01d76b03c957e0}{checkLoginExists}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__serverdb_ga642aac0dc186c6d53addfc833c554a96}{validateInputLength}}(\textcolor{keyword}{const}\ QString\ \&login,\ \textcolor{keyword}{const}\ QString\ \&email,\ \textcolor{keyword}{const}\ QString\ \&password);}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__serverdb_ga240ecff1deb8d18f397d7e981dbb00e3}{updateSessionActivity}}(\textcolor{keyword}{const}\ QString\ \&login);}
+\DoxyCodeLine{00250\ \};}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SERVERDB\_H}}
+
+\end{DoxyCode}

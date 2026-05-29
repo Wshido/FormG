@@ -1,0 +1,156 @@
+\doxysubsubsection{Реализация окна регистрации }
+\hypertarget{group__registerwindow__impl}{}\label{group__registerwindow__impl}\index{Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__registerwindow__impl_ga0afbe90533f73fb296bfd483c3738baf}{Register\+Window::\+\+Register\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__registerwindow__impl_gaaeb4a1dc724077a1c30dc96659371d42}{Register\+Window::\+\texorpdfstring{$\sim$}{\string~}\+Register\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_gada6c7ddee9e5114c8687d68b5532aaff}{Register\+Window::\+update\+Timer\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Обновляет отображение оставшегося времени. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_ga6ac70cb58a8fd250dbc176c73ab7da52}{Register\+Window::\+start\+Code\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Запускает таймер обратного отсчёта кода. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Закрытые слоты}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_ga41c4aaddf04f1cbe8d5b2f4b3d57eae7}{Register\+Window::\+on\+\_\+get\+Code\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Получить код"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_gab2f43a2cb19d2ac1a7f215650b8f0195}{Register\+Window::\+on\+Reg\+Request\+Code\+Result}} (bool success, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Слот обработки результата запроса кода подтверждения. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_gaecf16f485f03b5464f773671a4cfb1f0}{Register\+Window::\+on\+\_\+create\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Зарегистрироваться"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_ga15c21faaf83ffe35ba3deb2b89991bf5}{Register\+Window::\+on\+Reg\+Confirm\+Result}} (bool success)
+\begin{DoxyCompactList}\small\item\em Слот обработки результата подтверждения регистрации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_gaba2b744664e7127e6dfa03783e67a194}{Register\+Window::\+on\+\_\+back\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Назад"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Подробное описание}
+
+
+\label{group__registerwindow__impl_doc-func-members}
+\Hypertarget{group__registerwindow__impl_doc-func-members}
+\doxysubsubsubsection{Функции}
+\Hypertarget{group__registerwindow__impl_ga0afbe90533f73fb296bfd483c3738baf}\index{Реализация окна регистрации@{Реализация окна регистрации}!RegisterWindow@{RegisterWindow}}
+\index{RegisterWindow@{RegisterWindow}!Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection{\texorpdfstring{RegisterWindow()}{RegisterWindow()}}
+{\footnotesize\ttfamily \label{group__registerwindow__impl_ga0afbe90533f73fb296bfd483c3738baf} 
+Register\+Window::\+\+Register\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Конструктор \doxylink{class_register_window}{Register\+Window}.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em parent} & Родительский виджет.\\
+\hline
+\end{DoxyParams}
+Инициализирует UI, подключает сигналы сервера и таймер кода подтверждения. \Hypertarget{group__registerwindow__impl_ga6ac70cb58a8fd250dbc176c73ab7da52}\index{Реализация окна регистрации@{Реализация окна регистрации}!startCodeTimer@{startCodeTimer}}
+\index{startCodeTimer@{startCodeTimer}!Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection{\texorpdfstring{startCodeTimer()}{startCodeTimer()}}
+{\footnotesize\ttfamily \label{group__registerwindow__impl_ga6ac70cb58a8fd250dbc176c73ab7da52} 
+void Register\+Window::\+start\+Code\+Timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Запускает таймер обратного отсчёта кода. 
+
+Запускает таймер повторной отправки кода (60 секунд). \Hypertarget{group__registerwindow__impl_gada6c7ddee9e5114c8687d68b5532aaff}\index{Реализация окна регистрации@{Реализация окна регистрации}!updateTimerDisplay@{updateTimerDisplay}}
+\index{updateTimerDisplay@{updateTimerDisplay}!Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection{\texorpdfstring{updateTimerDisplay()}{updateTimerDisplay()}}
+{\footnotesize\ttfamily \label{group__registerwindow__impl_gada6c7ddee9e5114c8687d68b5532aaff} 
+void Register\+Window::\+update\+Timer\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Обновляет отображение оставшегося времени. 
+
+Обновляет текст таймера повторной отправки кода. \Hypertarget{group__registerwindow__impl_gaaeb4a1dc724077a1c30dc96659371d42}\index{Реализация окна регистрации@{Реализация окна регистрации}!````~RegisterWindow@{\texorpdfstring{$\sim$}{\string~}RegisterWindow}}
+\index{````~RegisterWindow@{\texorpdfstring{$\sim$}{\string~}RegisterWindow}!Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}RegisterWindow()}{\string~RegisterWindow()}}
+{\footnotesize\ttfamily \label{group__registerwindow__impl_gaaeb4a1dc724077a1c30dc96659371d42} 
+Register\+Window::\+\texorpdfstring{$\sim$}{\string~}\+Register\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Деструктор. 
+
+Деструктор \doxylink{class_register_window}{Register\+Window}. 
+
+\label{group__registerwindow__impl_doc-pri-slot-members}
+\Hypertarget{group__registerwindow__impl_doc-pri-slot-members}
+\doxysubsubsubsection{Закрытые слоты}
+\Hypertarget{group__registerwindow__impl_gaba2b744664e7127e6dfa03783e67a194}\index{Реализация окна регистрации@{Реализация окна регистрации}!on\_backButton\_clicked@{on\_backButton\_clicked}}
+\index{on\_backButton\_clicked@{on\_backButton\_clicked}!Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection{\texorpdfstring{on\_backButton\_clicked}{on\_backButton\_clicked}}
+{\footnotesize\ttfamily \label{group__registerwindow__impl_gaba2b744664e7127e6dfa03783e67a194} 
+void Register\+Window::\+on\+\_\+back\+Button\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик нажатия кнопки "{}Назад"{}. 
+
+Обработчик кнопки "{}Назад"{}. \Hypertarget{group__registerwindow__impl_gaecf16f485f03b5464f773671a4cfb1f0}\index{Реализация окна регистрации@{Реализация окна регистрации}!on\_createButton\_clicked@{on\_createButton\_clicked}}
+\index{on\_createButton\_clicked@{on\_createButton\_clicked}!Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection{\texorpdfstring{on\_createButton\_clicked}{on\_createButton\_clicked}}
+{\footnotesize\ttfamily \label{group__registerwindow__impl_gaecf16f485f03b5464f773671a4cfb1f0} 
+void Register\+Window::\+on\+\_\+create\+Button\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик нажатия кнопки "{}Зарегистрироваться"{}. 
+
+Обработчик кнопки регистрации.
+
+Отправляет код подтверждения и данные пользователя на сервер. \Hypertarget{group__registerwindow__impl_ga41c4aaddf04f1cbe8d5b2f4b3d57eae7}\index{Реализация окна регистрации@{Реализация окна регистрации}!on\_getCodeButton\_clicked@{on\_getCodeButton\_clicked}}
+\index{on\_getCodeButton\_clicked@{on\_getCodeButton\_clicked}!Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection{\texorpdfstring{on\_getCodeButton\_clicked}{on\_getCodeButton\_clicked}}
+{\footnotesize\ttfamily \label{group__registerwindow__impl_ga41c4aaddf04f1cbe8d5b2f4b3d57eae7} 
+void Register\+Window::\+on\+\_\+get\+Code\+Button\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик нажатия кнопки "{}Получить код"{}. 
+
+Обработчик кнопки "{}Получить код"{}.
+
+Проверяет данные пользователя и запрашивает код подтверждения у сервера. \Hypertarget{group__registerwindow__impl_ga15c21faaf83ffe35ba3deb2b89991bf5}\index{Реализация окна регистрации@{Реализация окна регистрации}!onRegConfirmResult@{onRegConfirmResult}}
+\index{onRegConfirmResult@{onRegConfirmResult}!Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection{\texorpdfstring{onRegConfirmResult}{onRegConfirmResult}}
+{\footnotesize\ttfamily \label{group__registerwindow__impl_ga15c21faaf83ffe35ba3deb2b89991bf5} 
+void Register\+Window::\+on\+Reg\+Confirm\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Слот обработки результата подтверждения регистрации. 
+
+Результат подтверждения регистрации.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em success} & Успешность регистрации. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__registerwindow__impl_gab2f43a2cb19d2ac1a7f215650b8f0195}\index{Реализация окна регистрации@{Реализация окна регистрации}!onRegRequestCodeResult@{onRegRequestCodeResult}}
+\index{onRegRequestCodeResult@{onRegRequestCodeResult}!Реализация окна регистрации@{Реализация окна регистрации}}
+\doxysubsubsubsubsection{\texorpdfstring{onRegRequestCodeResult}{onRegRequestCodeResult}}
+{\footnotesize\ttfamily \label{group__registerwindow__impl_gab2f43a2cb19d2ac1a7f215650b8f0195} 
+void Register\+Window::\+on\+Reg\+Request\+Code\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{, }\item[{const QString \&}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Слот обработки результата запроса кода подтверждения. 
+
+Результат запроса кода регистрации.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em success} & Успешность запроса. \\
+\hline
+{\em code} & Отправленный код (для отладки). \\
+\hline
+\end{DoxyParams}

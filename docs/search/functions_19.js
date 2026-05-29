@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['_7eaboutwindow_0',['~AboutWindow',['../group__aboutcpp.html#ga4fd010283844ef86e381a72cf836769c',1,'AboutWindow']]],
-  ['_7edatabasemanager_1',['~DatabaseManager',['../group__dbcpp.html#gae9b3a5da1e04fbb00faf8a034da1d063',1,'DatabaseManager']]],
-  ['_7eforgotpassword_2',['~ForgotPassword',['../group__forgotcpp.html#ga0aae98d52135e4f18599b61dd996c6dc',1,'ForgotPassword']]],
-  ['_7egraphwindow_3',['~GraphWindow',['../class_graph_window.html#acca1dc8c3eefe6608ae2de3cee2e22ee',1,'GraphWindow']]],
-  ['_7elogintimp_4',['~LoginTimp',['../group__logincpp.html#ga74c13a23b2d8fd7e9eed1f864fd2eb67',1,'LoginTimp']]],
-  ['_7emaintimp_5',['~MainTimp',['../group__maincpp.html#ga290c186d7e9138b19b1b8fefa058cb0a',1,'MainTimp']]],
+  ['_7eaboutwindow_0',['~AboutWindow',['../group__aboutwindow__impl.html#ga4fd010283844ef86e381a72cf836769c',1,'AboutWindow']]],
+  ['_7edatabasemanager_1',['~DatabaseManager',['../group__databasemanager__impl.html#gae9b3a5da1e04fbb00faf8a034da1d063',1,'DatabaseManager']]],
+  ['_7eforgotpassword_2',['~ForgotPassword',['../group__forgotpassword__impl.html#ga0aae98d52135e4f18599b61dd996c6dc',1,'ForgotPassword']]],
+  ['_7egraphwindow_3',['~GraphWindow',['../group__graphwindow__impl.html#gacca1dc8c3eefe6608ae2de3cee2e22ee',1,'GraphWindow']]],
+  ['_7elogintimp_4',['~LoginTimp',['../group__logintimp__impl.html#ga74c13a23b2d8fd7e9eed1f864fd2eb67',1,'LoginTimp']]],
+  ['_7emaintimp_5',['~MainTimp',['../group__maintimp__impl.html#ga290c186d7e9138b19b1b8fefa058cb0a',1,'MainTimp']]],
   ['_7eqcpabstractitem_6',['~QCPAbstractItem',['../class_q_c_p_abstract_item.html#a5120698bef63cbaa8544e9f47a2f4abc',1,'QCPAbstractItem']]],
   ['_7eqcpabstractpaintbuffer_7',['~QCPAbstractPaintBuffer',['../class_q_c_p_abstract_paint_buffer.html#a50fbb1265814d019a1707f4cb11e20de',1,'QCPAbstractPaintBuffer']]],
   ['_7eqcpabstractplottable_8',['~QCPAbstractPlottable',['../class_q_c_p_abstract_plottable.html#a3223d1e2073bd1d3516863a1dce554b0',1,'QCPAbstractPlottable']]],
@@ -51,6 +51,8 @@ var searchData=
   ['_7eqcpselectiondecoratorbracket_48',['~QCPSelectionDecoratorBracket',['../class_q_c_p_selection_decorator_bracket.html#ab8ae22784b6803aeebadb8f2d184d873',1,'QCPSelectionDecoratorBracket']]],
   ['_7eqcpselectionrect_49',['~QCPSelectionRect',['../class_q_c_p_selection_rect.html#a5a358140ca202c2b1f049d87a653aa2d',1,'QCPSelectionRect']]],
   ['_7eqcustomplot_50',['~QCustomPlot',['../class_q_custom_plot.html#a6a10e600c05635e9a314597a8a5c94e0',1,'QCustomPlot']]],
-  ['_7eregisterwindow_51',['~RegisterWindow',['../group__regcpp.html#gaaeb4a1dc724077a1c30dc96659371d42',1,'RegisterWindow']]],
-  ['_7ewelcomewindow_52',['~WelcomeWindow',['../group__welcomecpp.html#ga19e92915de4238d9cebfc94c6ff0ed28',1,'WelcomeWindow']]]
+  ['_7eregisterwindow_51',['~RegisterWindow',['../group__registerwindow__impl.html#gaaeb4a1dc724077a1c30dc96659371d42',1,'RegisterWindow']]],
+  ['_7eserverdb_52',['~ServerDB',['../group__serverdb.html#ga3a79b19dddda5b43bf0bf9a1d8cb1491',1,'ServerDB']]],
+  ['_7eservicemanager_53',['~ServiceManager',['../group__servicemanager__impl.html#ga87b207df58ccd316320d490c003c7eda',1,'ServiceManager']]],
+  ['_7ewelcomewindow_54',['~WelcomeWindow',['../group__welcomewindow__impl.html#ga19e92915de4238d9cebfc94c6ff0ed28',1,'WelcomeWindow']]]
 ];

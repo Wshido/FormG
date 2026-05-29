@@ -1,0 +1,211 @@
+\doxysubsection{Обработчик клиентского соединения }
+\hypertarget{group__tcpserver}{}\label{group__tcpserver}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection*{Разделы}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__tcpserver__impl}{Описание обработчика клиентского соединения}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Классы}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_client_handler}{Client\+Handler}}
+\begin{DoxyCompactList}\small\item\em Обработчик одного клиентского соединения. \end{DoxyCompactList}\item 
+class \doxymbox{\hyperlink{class_t_c_p_server}{TCPServer}}
+\begin{DoxyCompactList}\small\item\em TCP сервер для обработки клиентских подключений. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__tcpserver_ga1899603dc27fb3acf59454344f200a00}{Client\+Handler::\+\+Client\+Handler}} (qintptr socket\+Descriptor, \doxymbox{\hyperlink{class_controller}{Controller}} \texorpdfstring{$\ast$}{*}controller, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_client_handler}{Client\+Handler}. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__tcpserver_gaf9980f4c39e88fb8d8ff473764d3723d}{TCPServer::\+\+TCPServer}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор \doxylink{class_t_c_p_server}{TCPServer}. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__tcpserver_gaa944cbd79352ca38fdb431f92f7ba88c}{TCPServer::\+start}} (quint16 port)
+\begin{DoxyCompactList}\small\item\em Запуск сервера. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__tcpserver_gac69710216804516e5a91f4dff2bb2771}{TCPServer::\+set\+Smtp\+Config}} (const QString \&host, quint16 port, const QString \&user, const QString \&pass, const QString \&from)
+\begin{DoxyCompactList}\small\item\em Настройка SMTP для контроллера. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__tcpserver_gaf1df9d80f25034148ed588e7fa2d4ab7}{TCPServer::\+incoming\+Connection}} (qintptr socket\+Descriptor) override
+\begin{DoxyCompactList}\small\item\em Обработка входящего подключения. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Переменные}
+\begin{DoxyCompactItemize}
+\item 
+QTcp\+Socket \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__tcpserver_gacf8aee20c56e8356fc9d18e6ada1e910}{Client\+Handler::\+m\+\_\+socket}}
+\item 
+qintptr \doxymbox{\hyperlink{group__tcpserver_gab184644e01a21ee92e1bfd1230907ea1}{Client\+Handler::\+m\+\_\+socket\+Descriptor}}
+\item 
+\doxymbox{\hyperlink{class_controller}{Controller}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{group__tcpserver_ga36b7d241932a4983ee62e1d03ca4655e}{Client\+Handler::\+m\+\_\+controller}}
+\item 
+QString \doxymbox{\hyperlink{group__tcpserver_gaadcd1ae036a2cfe177688c93d313feb4}{Client\+Handler::\+m\+\_\+current\+Login}}
+\item 
+\doxymbox{\hyperlink{class_controller}{Controller}} \doxymbox{\hyperlink{group__tcpserver_ga755a1b7ced220307fe724f6d3c0ee723}{TCPServer::\+m\+\_\+controller}}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Сигналы}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__tcpserver_gad1594ee75e0c5606bbbb705ce61d998e}{Client\+Handler::\+client\+Disconnected}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Сигнал отключения клиента. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Открытые слоты}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__tcpserver_ga830271637a50042996c511e48b9110fe}{Client\+Handler::\+process}} ()
+\begin{DoxyCompactList}\small\item\em Основной цикл обработки клиента. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Закрытые слоты}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__tcpserver_ga232b13b7e231e00a2ddbd98de6e104ce}{Client\+Handler::\+on\+Ready\+Read}} ()
+\begin{DoxyCompactList}\small\item\em Обработка входящих данных. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__tcpserver_gacc85a10c15db2cfc12faeed47edd9781}{Client\+Handler::\+on\+Disconnected}} ()
+\begin{DoxyCompactList}\small\item\em Обработка отключения клиента. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Подробное описание}
+
+
+\label{group__tcpserver_doc-func-members}
+\Hypertarget{group__tcpserver_doc-func-members}
+\doxysubsubsection{Функции}
+\Hypertarget{group__tcpserver_ga1899603dc27fb3acf59454344f200a00}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!ClientHandler@{ClientHandler}}
+\index{ClientHandler@{ClientHandler}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{ClientHandler()}{ClientHandler()}}
+{\footnotesize\ttfamily \label{group__tcpserver_ga1899603dc27fb3acf59454344f200a00} 
+Client\+Handler::\+\+Client\+Handler (\begin{DoxyParamCaption}\item[{qintptr}]{socket\+Descriptor}{, }\item[{\doxymbox{\hyperlink{class_controller}{Controller}} \texorpdfstring{$\ast$}{*}}]{controller}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор \doxylink{class_client_handler}{Client\+Handler}. 
+
+Конструктор обработчика клиента. \Hypertarget{group__tcpserver_gaf1df9d80f25034148ed588e7fa2d4ab7}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!incomingConnection@{incomingConnection}}
+\index{incomingConnection@{incomingConnection}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{incomingConnection()}{incomingConnection()}}
+{\footnotesize\ttfamily \label{group__tcpserver_gaf1df9d80f25034148ed588e7fa2d4ab7} 
+void TCPServer::\+incoming\+Connection (\begin{DoxyParamCaption}\item[{qintptr}]{socket\+Descriptor}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Обработка входящего подключения. 
+
+Обработка нового входящего соединения. \Hypertarget{group__tcpserver_gac69710216804516e5a91f4dff2bb2771}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!setSmtpConfig@{setSmtpConfig}}
+\index{setSmtpConfig@{setSmtpConfig}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{setSmtpConfig()}{setSmtpConfig()}}
+{\footnotesize\ttfamily \label{group__tcpserver_gac69710216804516e5a91f4dff2bb2771} 
+void TCPServer::\+set\+Smtp\+Config (\begin{DoxyParamCaption}\item[{const QString \&}]{host}{, }\item[{quint16}]{port}{, }\item[{const QString \&}]{user}{, }\item[{const QString \&}]{pass}{, }\item[{const QString \&}]{from}{}\end{DoxyParamCaption})}
+
+
+
+Настройка SMTP для контроллера. 
+
+Настройка SMTP конфигурации. \Hypertarget{group__tcpserver_gaa944cbd79352ca38fdb431f92f7ba88c}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!start@{start}}
+\index{start@{start}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{group__tcpserver_gaa944cbd79352ca38fdb431f92f7ba88c} 
+bool TCPServer::\+start (\begin{DoxyParamCaption}\item[{quint16}]{port}{}\end{DoxyParamCaption})}
+
+
+
+Запуск сервера. 
+
+Запуск TCP сервера.
+
+\begin{DoxyReturn}{Возвращает}
+true если сервер запущен успешно 
+\end{DoxyReturn}
+\Hypertarget{group__tcpserver_gaf9980f4c39e88fb8d8ff473764d3723d}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!TCPServer@{TCPServer}}
+\index{TCPServer@{TCPServer}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{TCPServer()}{TCPServer()}}
+{\footnotesize\ttfamily \label{group__tcpserver_gaf9980f4c39e88fb8d8ff473764d3723d} 
+TCPServer::\+\+TCPServer (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор \doxylink{class_t_c_p_server}{TCPServer}. 
+
+Конструктор TCP сервера. 
+
+\label{group__tcpserver_doc-var-members}
+\Hypertarget{group__tcpserver_doc-var-members}
+\doxysubsubsection{Переменные}
+\Hypertarget{group__tcpserver_ga36b7d241932a4983ee62e1d03ca4655e}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!m\_controller@{m\_controller}}
+\index{m\_controller@{m\_controller}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{m\_controller}{m\_controller}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{group__tcpserver_ga36b7d241932a4983ee62e1d03ca4655e} 
+\doxymbox{\hyperlink{class_controller}{Controller}}\texorpdfstring{$\ast$}{*} Client\+Handler::\+m\+\_\+controller\hspace{0.3cm}{\ttfamily [private]}}
+
+Указатель на контроллер \Hypertarget{group__tcpserver_ga755a1b7ced220307fe724f6d3c0ee723}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!m\_controller@{m\_controller}}
+\index{m\_controller@{m\_controller}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{m\_controller}{m\_controller}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{group__tcpserver_ga755a1b7ced220307fe724f6d3c0ee723} 
+\doxymbox{\hyperlink{class_controller}{Controller}} TCPServer::\+m\+\_\+controller\hspace{0.3cm}{\ttfamily [private]}}
+
+Основной контроллер сервера \Hypertarget{group__tcpserver_gaadcd1ae036a2cfe177688c93d313feb4}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!m\_currentLogin@{m\_currentLogin}}
+\index{m\_currentLogin@{m\_currentLogin}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{m\_currentLogin}{m\_currentLogin}}
+{\footnotesize\ttfamily \label{group__tcpserver_gaadcd1ae036a2cfe177688c93d313feb4} 
+QString Client\+Handler::\+m\+\_\+current\+Login\hspace{0.3cm}{\ttfamily [private]}}
+
+Текущий логин клиента \Hypertarget{group__tcpserver_gacf8aee20c56e8356fc9d18e6ada1e910}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!m\_socket@{m\_socket}}
+\index{m\_socket@{m\_socket}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{m\_socket}{m\_socket}}
+{\footnotesize\ttfamily \label{group__tcpserver_gacf8aee20c56e8356fc9d18e6ada1e910} 
+QTcp\+Socket\texorpdfstring{$\ast$}{*} Client\+Handler::\+m\+\_\+socket\hspace{0.3cm}{\ttfamily [private]}}
+
+Сокет клиента \Hypertarget{group__tcpserver_gab184644e01a21ee92e1bfd1230907ea1}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!m\_socketDescriptor@{m\_socketDescriptor}}
+\index{m\_socketDescriptor@{m\_socketDescriptor}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{m\_socketDescriptor}{m\_socketDescriptor}}
+{\footnotesize\ttfamily \label{group__tcpserver_gab184644e01a21ee92e1bfd1230907ea1} 
+qintptr Client\+Handler::\+m\+\_\+socket\+Descriptor\hspace{0.3cm}{\ttfamily [private]}}
+
+Дескриптор сокета 
+
+\label{group__tcpserver_doc-signal-members}
+\Hypertarget{group__tcpserver_doc-signal-members}
+\doxysubsubsection{Сигналы}
+\Hypertarget{group__tcpserver_gad1594ee75e0c5606bbbb705ce61d998e}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!clientDisconnected@{clientDisconnected}}
+\index{clientDisconnected@{clientDisconnected}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{clientDisconnected}{clientDisconnected}}
+{\footnotesize\ttfamily \label{group__tcpserver_gad1594ee75e0c5606bbbb705ce61d998e} 
+void Client\+Handler::\+client\+Disconnected (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Сигнал отключения клиента. 
+
+
+
+\label{group__tcpserver_doc-pub-slot-members}
+\Hypertarget{group__tcpserver_doc-pub-slot-members}
+\doxysubsubsection{Открытые слоты}
+\Hypertarget{group__tcpserver_ga830271637a50042996c511e48b9110fe}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!process@{process}}
+\index{process@{process}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{process}{process}}
+{\footnotesize\ttfamily \label{group__tcpserver_ga830271637a50042996c511e48b9110fe} 
+void Client\+Handler::\+process (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Основной цикл обработки клиента. 
+
+Инициализация сокета клиента и подключение сигналов. 
+
+\label{group__tcpserver_doc-pri-slot-members}
+\Hypertarget{group__tcpserver_doc-pri-slot-members}
+\doxysubsubsection{Закрытые слоты}
+\Hypertarget{group__tcpserver_gacc85a10c15db2cfc12faeed47edd9781}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!onDisconnected@{onDisconnected}}
+\index{onDisconnected@{onDisconnected}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{onDisconnected}{onDisconnected}}
+{\footnotesize\ttfamily \label{group__tcpserver_gacc85a10c15db2cfc12faeed47edd9781} 
+void Client\+Handler::\+on\+Disconnected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработка отключения клиента. 
+
+\Hypertarget{group__tcpserver_ga232b13b7e231e00a2ddbd98de6e104ce}\index{Обработчик клиентского соединения@{Обработчик клиентского соединения}!onReadyRead@{onReadyRead}}
+\index{onReadyRead@{onReadyRead}!Обработчик клиентского соединения@{Обработчик клиентского соединения}}
+\doxysubsubsubsection{\texorpdfstring{onReadyRead}{onReadyRead}}
+{\footnotesize\ttfamily \label{group__tcpserver_ga232b13b7e231e00a2ddbd98de6e104ce} 
+void Client\+Handler::\+on\+Ready\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработка входящих данных. 
+
+Обработка входящих данных от клиента. \input{group__tcpserver__impl}

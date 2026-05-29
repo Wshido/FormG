@@ -1,0 +1,25 @@
+var group__graphwindow__impl =
+[
+    [ "GraphWindow::calculateFunction", "group__graphwindow__impl.html#ga770987712af13f4e4bcf2a39d2cfd504", null ],
+    [ "GraphWindow::checkSessionValid", "group__graphwindow__impl.html#ga24612ecaac3563e66d289832471c5bf4", null ],
+    [ "GraphWindow::computeLocal", "group__graphwindow__impl.html#gabbf7f8452a63d2869e9e20a97208c46d", null ],
+    [ "GraphWindow::getCacheKey", "group__graphwindow__impl.html#ga5946cbbc48379f6f1378ae468d78c324", null ],
+    [ "GraphWindow::GraphWindow", "group__graphwindow__impl.html#ga68f193cacc0237a41d8c44923b53c11a", null ],
+    [ "GraphWindow::parseServerData", "group__graphwindow__impl.html#ga4b03485cf882a3f877b9e5deb224e031", null ],
+    [ "GraphWindow::setupExportButtons", "group__graphwindow__impl.html#ga2169d6bf25fc610c707949e7d75c36fb", null ],
+    [ "GraphWindow::setupGraphStyle", "group__graphwindow__impl.html#gab0d531603118d01a7bf74bd4de515522", null ],
+    [ "GraphWindow::setupKeyboardNav", "group__graphwindow__impl.html#gaa6a4422e499c500a28408fb9a9ce972f", null ],
+    [ "GraphWindow::setupZoomDrag", "group__graphwindow__impl.html#ga55f65b01e22c63714d02c5e162f4e6ba", null ],
+    [ "GraphWindow::updateGraphColors", "group__graphwindow__impl.html#ga04f862d37034c141071e10029dc1bf8d", null ],
+    [ "GraphWindow::updateParameterLabels", "group__graphwindow__impl.html#ga406bf05becacaa723de2ca91ec842d41", null ],
+    [ "GraphWindow::~GraphWindow", "group__graphwindow__impl.html#gacca1dc8c3eefe6608ae2de3cee2e22ee", null ],
+    [ "GraphWindow::onClearGraph", "group__graphwindow__impl.html#ga7b4c8a1e56aac849ba89ffe2b591ce2a", null ],
+    [ "GraphWindow::onColorButtonClicked", "group__graphwindow__impl.html#gaa877ad44e207acbe1ce314beaf29f0e1", null ],
+    [ "GraphWindow::onDeleteFromFile", "group__graphwindow__impl.html#ga35740ef1f5af4c41dcf8a2459165a0d0", null ],
+    [ "GraphWindow::onExportPDF", "group__graphwindow__impl.html#ga1e5cb4d993ea6ae86482d7c522ebbbb1", null ],
+    [ "GraphWindow::onExportPNG", "group__graphwindow__impl.html#ga1d47676c2decdaafd45f2c566a7f4889", null ],
+    [ "GraphWindow::onLoadFromFile", "group__graphwindow__impl.html#ga6fe5959aeb025689ef9a5eaec2793a5e", null ],
+    [ "GraphWindow::onSaveToFile", "group__graphwindow__impl.html#ga995b6c258c4be1386b4c4addb29b4410", null ],
+    [ "GraphWindow::onSliderChanged", "group__graphwindow__impl.html#ga15bda247268f26b45a583eab5ba5d725", null ],
+    [ "GraphWindow::onZoomChanged", "group__graphwindow__impl.html#ga16fc3589840eaa3490cffe9d3a12c405", null ]
+];

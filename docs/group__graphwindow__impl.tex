@@ -1,0 +1,315 @@
+\doxysubsubsection{Реализация окна графиков }
+\hypertarget{group__graphwindow__impl}{}\label{group__graphwindow__impl}\index{Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__graphwindow__impl_ga68f193cacc0237a41d8c44923b53c11a}{Graph\+Window::\+\+Graph\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_gab0d531603118d01a7bf74bd4de515522}{Graph\+Window::\+setup\+Graph\+Style}} ()
+\begin{DoxyCompactList}\small\item\em Настройка внешнего вида графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga2169d6bf25fc610c707949e7d75c36fb}{Graph\+Window::\+setup\+Export\+Buttons}} ()
+\begin{DoxyCompactList}\small\item\em Настройка кнопок экспорта. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga55f65b01e22c63714d02c5e162f4e6ba}{Graph\+Window::\+setup\+Zoom\+Drag}} ()
+\begin{DoxyCompactList}\small\item\em Настройка зума и перетаскивания графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_gaa6a4422e499c500a28408fb9a9ce972f}{Graph\+Window::\+setup\+Keyboard\+Nav}} ()
+\begin{DoxyCompactList}\small\item\em Настройка управления с клавиатуры. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga406bf05becacaa723de2ca91ec842d41}{Graph\+Window::\+update\+Parameter\+Labels}} ()
+\begin{DoxyCompactList}\small\item\em Обновление значений параметров на лейблах. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{group__graphwindow__impl_ga770987712af13f4e4bcf2a39d2cfd504}{Graph\+Window::\+calculate\+Function}} (double a, double b, double c, double x)
+\begin{DoxyCompactList}\small\item\em Вычисление значения функции по параметрам. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__graphwindow__impl_ga5946cbbc48379f6f1378ae468d78c324}{Graph\+Window::\+get\+Cache\+Key}} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Генерация ключа для кэша по параметрам. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_gabbf7f8452a63d2869e9e20a97208c46d}{Graph\+Window::\+compute\+Local}} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Локальный расчёт значений функций. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga4b03485cf882a3f877b9e5deb224e031}{Graph\+Window::\+parse\+Server\+Data}} (const QString \&response)
+\begin{DoxyCompactList}\small\item\em Разбор данных, полученных от сервера. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga04f862d37034c141071e10029dc1bf8d}{Graph\+Window::\+update\+Graph\+Colors}} ()
+\begin{DoxyCompactList}\small\item\em Обновление цветов графиков. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__graphwindow__impl_ga24612ecaac3563e66d289832471c5bf4}{Graph\+Window::\+check\+Session\+Valid}} ()
+\begin{DoxyCompactList}\small\item\em Проверка валидности текущей сессии. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__graphwindow__impl_gacca1dc8c3eefe6608ae2de3cee2e22ee}{Graph\+Window::\+\texorpdfstring{$\sim$}{\string~}\+Graph\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Закрытые слоты}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga16fc3589840eaa3490cffe9d3a12c405}{Graph\+Window::\+on\+Zoom\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик изменения зума графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga15bda247268f26b45a583eab5ba5d725}{Graph\+Window::\+on\+Slider\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик изменения значений слайдеров параметров. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga1d47676c2decdaafd45f2c566a7f4889}{Graph\+Window::\+on\+Export\+PNG}} ()
+\begin{DoxyCompactList}\small\item\em Экспорт графика в PNG. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga1e5cb4d993ea6ae86482d7c522ebbbb1}{Graph\+Window::\+on\+Export\+PDF}} ()
+\begin{DoxyCompactList}\small\item\em Экспорт графика в PDF. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga995b6c258c4be1386b4c4addb29b4410}{Graph\+Window::\+on\+Save\+To\+File}} ()
+\begin{DoxyCompactList}\small\item\em Сохранение текущих параметров графика в файл. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga6fe5959aeb025689ef9a5eaec2793a5e}{Graph\+Window::\+on\+Load\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Загрузка параметров графика из файла. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga35740ef1f5af4c41dcf8a2459165a0d0}{Graph\+Window::\+on\+Delete\+From\+File}} ()
+\begin{DoxyCompactList}\small\item\em Удаление сохранённого графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_ga7b4c8a1e56aac849ba89ffe2b591ce2a}{Graph\+Window::\+on\+Clear\+Graph}} ()
+\begin{DoxyCompactList}\small\item\em Очистка графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__graphwindow__impl_gaa877ad44e207acbe1ce314beaf29f0e1}{Graph\+Window::\+on\+Color\+Button\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки изменения цвета. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Подробное описание}
+
+
+\label{group__graphwindow__impl_doc-func-members}
+\Hypertarget{group__graphwindow__impl_doc-func-members}
+\doxysubsubsubsection{Функции}
+\Hypertarget{group__graphwindow__impl_ga770987712af13f4e4bcf2a39d2cfd504}\index{Реализация окна графиков@{Реализация окна графиков}!calculateFunction@{calculateFunction}}
+\index{calculateFunction@{calculateFunction}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{calculateFunction()}{calculateFunction()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga770987712af13f4e4bcf2a39d2cfd504} 
+double Graph\+Window::\+calculate\+Function (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{c}{, }\item[{double}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Вычисление значения функции по параметрам. 
+
+Вычисляет значение функции по параметрам.
+
+\begin{DoxyReturn}{Возвращает}
+Значение функции в точке x. 
+\end{DoxyReturn}
+\Hypertarget{group__graphwindow__impl_ga24612ecaac3563e66d289832471c5bf4}\index{Реализация окна графиков@{Реализация окна графиков}!checkSessionValid@{checkSessionValid}}
+\index{checkSessionValid@{checkSessionValid}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{checkSessionValid()}{checkSessionValid()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga24612ecaac3563e66d289832471c5bf4} 
+bool Graph\+Window::\+check\+Session\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверка валидности текущей сессии. 
+
+Проверка валидности сессии пользователя.
+
+\begin{DoxyReturn}{Возвращает}
+true, если сессия активна. 
+\end{DoxyReturn}
+\Hypertarget{group__graphwindow__impl_gabbf7f8452a63d2869e9e20a97208c46d}\index{Реализация окна графиков@{Реализация окна графиков}!computeLocal@{computeLocal}}
+\index{computeLocal@{computeLocal}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{computeLocal()}{computeLocal()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_gabbf7f8452a63d2869e9e20a97208c46d} 
+void Graph\+Window::\+compute\+Local (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Локальный расчёт значений функций. 
+
+Локально вычисляет графики функций. \Hypertarget{group__graphwindow__impl_ga5946cbbc48379f6f1378ae468d78c324}\index{Реализация окна графиков@{Реализация окна графиков}!getCacheKey@{getCacheKey}}
+\index{getCacheKey@{getCacheKey}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{getCacheKey()}{getCacheKey()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga5946cbbc48379f6f1378ae468d78c324} 
+QString Graph\+Window::\+get\+Cache\+Key (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Генерация ключа для кэша по параметрам. 
+
+Формирует ключ кэша параметров.
+
+\begin{DoxyReturn}{Возвращает}
+Строковый ключ кэша. 
+\end{DoxyReturn}
+\Hypertarget{group__graphwindow__impl_ga68f193cacc0237a41d8c44923b53c11a}\index{Реализация окна графиков@{Реализация окна графиков}!GraphWindow@{GraphWindow}}
+\index{GraphWindow@{GraphWindow}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{GraphWindow()}{GraphWindow()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga68f193cacc0237a41d8c44923b53c11a} 
+Graph\+Window::\+\+Graph\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Конструктор \doxylink{class_graph_window}{Graph\+Window}.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em parent} & Родительский виджет.\\
+\hline
+\end{DoxyParams}
+Инициализирует UI, стили графиков, кнопки экспорта, подключение к серверу и таймер сессии. \Hypertarget{group__graphwindow__impl_ga4b03485cf882a3f877b9e5deb224e031}\index{Реализация окна графиков@{Реализация окна графиков}!parseServerData@{parseServerData}}
+\index{parseServerData@{parseServerData}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{parseServerData()}{parseServerData()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga4b03485cf882a3f877b9e5deb224e031} 
+void Graph\+Window::\+parse\+Server\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{response}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Разбор данных, полученных от сервера. 
+
+Парсит данные от сервера и обновляет графики.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em response} & JSON-\/ответ сервера. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__graphwindow__impl_ga2169d6bf25fc610c707949e7d75c36fb}\index{Реализация окна графиков@{Реализация окна графиков}!setupExportButtons@{setupExportButtons}}
+\index{setupExportButtons@{setupExportButtons}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{setupExportButtons()}{setupExportButtons()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga2169d6bf25fc610c707949e7d75c36fb} 
+void Graph\+Window::\+setup\+Export\+Buttons (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Настройка кнопок экспорта. 
+
+Создаёт панель кнопок экспорта и управления графиком. \Hypertarget{group__graphwindow__impl_gab0d531603118d01a7bf74bd4de515522}\index{Реализация окна графиков@{Реализация окна графиков}!setupGraphStyle@{setupGraphStyle}}
+\index{setupGraphStyle@{setupGraphStyle}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{setupGraphStyle()}{setupGraphStyle()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_gab0d531603118d01a7bf74bd4de515522} 
+void Graph\+Window::\+setup\+Graph\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Настройка внешнего вида графика. 
+
+Настройка визуального стиля графического окна. \Hypertarget{group__graphwindow__impl_gaa6a4422e499c500a28408fb9a9ce972f}\index{Реализация окна графиков@{Реализация окна графиков}!setupKeyboardNav@{setupKeyboardNav}}
+\index{setupKeyboardNav@{setupKeyboardNav}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{setupKeyboardNav()}{setupKeyboardNav()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_gaa6a4422e499c500a28408fb9a9ce972f} 
+void Graph\+Window::\+setup\+Keyboard\+Nav (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Настройка управления с клавиатуры. 
+
+Настройка навигации с клавиатуры. \Hypertarget{group__graphwindow__impl_ga55f65b01e22c63714d02c5e162f4e6ba}\index{Реализация окна графиков@{Реализация окна графиков}!setupZoomDrag@{setupZoomDrag}}
+\index{setupZoomDrag@{setupZoomDrag}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{setupZoomDrag()}{setupZoomDrag()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga55f65b01e22c63714d02c5e162f4e6ba} 
+void Graph\+Window::\+setup\+Zoom\+Drag (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Настройка зума и перетаскивания графика. 
+
+\Hypertarget{group__graphwindow__impl_ga04f862d37034c141071e10029dc1bf8d}\index{Реализация окна графиков@{Реализация окна графиков}!updateGraphColors@{updateGraphColors}}
+\index{updateGraphColors@{updateGraphColors}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{updateGraphColors()}{updateGraphColors()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga04f862d37034c141071e10029dc1bf8d} 
+void Graph\+Window::\+update\+Graph\+Colors (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Обновление цветов графиков. 
+
+Обновляет цвета графиков. \Hypertarget{group__graphwindow__impl_ga406bf05becacaa723de2ca91ec842d41}\index{Реализация окна графиков@{Реализация окна графиков}!updateParameterLabels@{updateParameterLabels}}
+\index{updateParameterLabels@{updateParameterLabels}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{updateParameterLabels()}{updateParameterLabels()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga406bf05becacaa723de2ca91ec842d41} 
+void Graph\+Window::\+update\+Parameter\+Labels (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Обновление значений параметров на лейблах. 
+
+Обновляет текстовые подписи параметров графика. \Hypertarget{group__graphwindow__impl_gacca1dc8c3eefe6608ae2de3cee2e22ee}\index{Реализация окна графиков@{Реализация окна графиков}!````~GraphWindow@{\texorpdfstring{$\sim$}{\string~}GraphWindow}}
+\index{````~GraphWindow@{\texorpdfstring{$\sim$}{\string~}GraphWindow}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}GraphWindow()}{\string~GraphWindow()}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_gacca1dc8c3eefe6608ae2de3cee2e22ee} 
+Graph\+Window::\+\texorpdfstring{$\sim$}{\string~}\+Graph\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Деструктор. 
+
+Деструктор \doxylink{class_graph_window}{Graph\+Window}. 
+
+\label{group__graphwindow__impl_doc-pri-slot-members}
+\Hypertarget{group__graphwindow__impl_doc-pri-slot-members}
+\doxysubsubsubsection{Закрытые слоты}
+\Hypertarget{group__graphwindow__impl_ga7b4c8a1e56aac849ba89ffe2b591ce2a}\index{Реализация окна графиков@{Реализация окна графиков}!onClearGraph@{onClearGraph}}
+\index{onClearGraph@{onClearGraph}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{onClearGraph}{onClearGraph}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga7b4c8a1e56aac849ba89ffe2b591ce2a} 
+void Graph\+Window::\+on\+Clear\+Graph (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Очистка графика. 
+
+Очистка всех графиков. \Hypertarget{group__graphwindow__impl_gaa877ad44e207acbe1ce314beaf29f0e1}\index{Реализация окна графиков@{Реализация окна графиков}!onColorButtonClicked@{onColorButtonClicked}}
+\index{onColorButtonClicked@{onColorButtonClicked}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{onColorButtonClicked}{onColorButtonClicked}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_gaa877ad44e207acbe1ce314beaf29f0e1} 
+void Graph\+Window::\+on\+Color\+Button\+Clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик нажатия кнопки изменения цвета. 
+
+Обработчик выбора цвета функции sin(ax). \Hypertarget{group__graphwindow__impl_ga35740ef1f5af4c41dcf8a2459165a0d0}\index{Реализация окна графиков@{Реализация окна графиков}!onDeleteFromFile@{onDeleteFromFile}}
+\index{onDeleteFromFile@{onDeleteFromFile}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{onDeleteFromFile}{onDeleteFromFile}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga35740ef1f5af4c41dcf8a2459165a0d0} 
+void Graph\+Window::\+on\+Delete\+From\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Удаление сохранённого графика. 
+
+Удаление JSON файла с данными графика. \Hypertarget{group__graphwindow__impl_ga1e5cb4d993ea6ae86482d7c522ebbbb1}\index{Реализация окна графиков@{Реализация окна графиков}!onExportPDF@{onExportPDF}}
+\index{onExportPDF@{onExportPDF}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{onExportPDF}{onExportPDF}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga1e5cb4d993ea6ae86482d7c522ebbbb1} 
+void Graph\+Window::\+on\+Export\+PDF (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Экспорт графика в PDF. 
+
+\Hypertarget{group__graphwindow__impl_ga1d47676c2decdaafd45f2c566a7f4889}\index{Реализация окна графиков@{Реализация окна графиков}!onExportPNG@{onExportPNG}}
+\index{onExportPNG@{onExportPNG}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{onExportPNG}{onExportPNG}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga1d47676c2decdaafd45f2c566a7f4889} 
+void Graph\+Window::\+on\+Export\+PNG (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Экспорт графика в PNG. 
+
+\Hypertarget{group__graphwindow__impl_ga6fe5959aeb025689ef9a5eaec2793a5e}\index{Реализация окна графиков@{Реализация окна графиков}!onLoadFromFile@{onLoadFromFile}}
+\index{onLoadFromFile@{onLoadFromFile}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{onLoadFromFile}{onLoadFromFile}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga6fe5959aeb025689ef9a5eaec2793a5e} 
+void Graph\+Window::\+on\+Load\+From\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Загрузка параметров графика из файла. 
+
+Загрузка графика из JSON файла. \Hypertarget{group__graphwindow__impl_ga995b6c258c4be1386b4c4addb29b4410}\index{Реализация окна графиков@{Реализация окна графиков}!onSaveToFile@{onSaveToFile}}
+\index{onSaveToFile@{onSaveToFile}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{onSaveToFile}{onSaveToFile}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga995b6c258c4be1386b4c4addb29b4410} 
+void Graph\+Window::\+on\+Save\+To\+File (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Сохранение текущих параметров графика в файл. 
+
+Сохранение графика в JSON файл. \Hypertarget{group__graphwindow__impl_ga15bda247268f26b45a583eab5ba5d725}\index{Реализация окна графиков@{Реализация окна графиков}!onSliderChanged@{onSliderChanged}}
+\index{onSliderChanged@{onSliderChanged}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{onSliderChanged}{onSliderChanged}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga15bda247268f26b45a583eab5ba5d725} 
+void Graph\+Window::\+on\+Slider\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик изменения значений слайдеров параметров. 
+
+Обработчик изменения параметров слайдеров. \Hypertarget{group__graphwindow__impl_ga16fc3589840eaa3490cffe9d3a12c405}\index{Реализация окна графиков@{Реализация окна графиков}!onZoomChanged@{onZoomChanged}}
+\index{onZoomChanged@{onZoomChanged}!Реализация окна графиков@{Реализация окна графиков}}
+\doxysubsubsubsubsection{\texorpdfstring{onZoomChanged}{onZoomChanged}}
+{\footnotesize\ttfamily \label{group__graphwindow__impl_ga16fc3589840eaa3490cffe9d3a12c405} 
+void Graph\+Window::\+on\+Zoom\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик изменения зума графика. 
+
+Обработчик изменения масштаба графика. 

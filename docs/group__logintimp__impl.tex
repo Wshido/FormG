@@ -1,0 +1,201 @@
+\doxysubsubsection{Реализация окна авторизации }
+\hypertarget{group__logintimp__impl}{}\label{group__logintimp__impl}\index{Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{group__logintimp__impl_gac6ae6157f5f9df2e3e32e86d0a4f8c0f}{Login\+Timp::\+\+Login\+Timp}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__logintimp__impl_ga74c13a23b2d8fd7e9eed1f864fd2eb67}{Login\+Timp::\+\texorpdfstring{$\sim$}{\string~}\+Login\+Timp}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga79d1dfe3c3fad81791afc05fabe1dfd4}{Login\+Timp::\+update\+Timer\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Обновляет отображение оставшегося времени на форме. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga064f14cab3d572f6db66c5b7f45da0e2}{Login\+Timp::\+start\+Code\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Запускает таймер обратного отсчёта кода. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Закрытые слоты}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_gaceaf43a6f8d65cecde9020d470f87b0b}{Login\+Timp::\+on\+\_\+login\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Войти"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_gaaffdd63f28783267b58d5b7aa2307b2e}{Login\+Timp::\+on\+Auth\+Request\+Code\+Result}} (bool success, const QString \&email, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Слот обработки результата запроса кода подтверждения. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_gad54ec26857a7b44dffe43dfae106071b}{Login\+Timp::\+on\+\_\+confirm\+Code\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик подтверждения кода из email. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga71770db937a97694c7bf316da730a95f}{Login\+Timp::\+on\+Auth\+Confirm\+Result}} (bool success, const QString \&session\+Token)
+\begin{DoxyCompactList}\small\item\em Слот обработки результата подтверждения кода. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga5b5852e171cb2a0d270ecee76c752348}{Login\+Timp::\+on\+\_\+back\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик кнопки "{}Назад"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga0073fa7faca8bf8c1224d3ff55acdc4f}{Login\+Timp::\+on\+\_\+forgot\+Label\+\_\+link\+Activated}} (const QString \&link)
+\begin{DoxyCompactList}\small\item\em Обработчик клика по ссылке "{}Забыли пароль?"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_gad5b2a563320b03efcee945f98fa1cb53}{Login\+Timp::\+on\+\_\+register\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик перехода на окно регистрации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__logintimp__impl_ga8de99e24ea72174104bdb1d41b984fae}{Login\+Timp::\+on\+\_\+logout\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик кнопки выхода из аккаунта. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Подробное описание}
+
+
+\label{group__logintimp__impl_doc-func-members}
+\Hypertarget{group__logintimp__impl_doc-func-members}
+\doxysubsubsubsection{Функции}
+\Hypertarget{group__logintimp__impl_gac6ae6157f5f9df2e3e32e86d0a4f8c0f}\index{Реализация окна авторизации@{Реализация окна авторизации}!LoginTimp@{LoginTimp}}
+\index{LoginTimp@{LoginTimp}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{LoginTimp()}{LoginTimp()}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_gac6ae6157f5f9df2e3e32e86d0a4f8c0f} 
+Login\+Timp::\+\+Login\+Timp (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор. 
+
+Конструктор \doxylink{class_login_timp}{Login\+Timp}.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em parent} & Родительский виджет.\\
+\hline
+\end{DoxyParams}
+Инициализирует UI, подключает сервер и настраивает таймер кода подтверждения. \Hypertarget{group__logintimp__impl_ga064f14cab3d572f6db66c5b7f45da0e2}\index{Реализация окна авторизации@{Реализация окна авторизации}!startCodeTimer@{startCodeTimer}}
+\index{startCodeTimer@{startCodeTimer}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{startCodeTimer()}{startCodeTimer()}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_ga064f14cab3d572f6db66c5b7f45da0e2} 
+void Login\+Timp::\+start\+Code\+Timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Запускает таймер обратного отсчёта кода. 
+
+Запускает таймер кода подтверждения (5 минут). \Hypertarget{group__logintimp__impl_ga79d1dfe3c3fad81791afc05fabe1dfd4}\index{Реализация окна авторизации@{Реализация окна авторизации}!updateTimerDisplay@{updateTimerDisplay}}
+\index{updateTimerDisplay@{updateTimerDisplay}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{updateTimerDisplay()}{updateTimerDisplay()}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_ga79d1dfe3c3fad81791afc05fabe1dfd4} 
+void Login\+Timp::\+update\+Timer\+Display (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Обновляет отображение оставшегося времени на форме. 
+
+Обновляет отображение таймера кода подтверждения. \Hypertarget{group__logintimp__impl_ga74c13a23b2d8fd7e9eed1f864fd2eb67}\index{Реализация окна авторизации@{Реализация окна авторизации}!````~LoginTimp@{\texorpdfstring{$\sim$}{\string~}LoginTimp}}
+\index{````~LoginTimp@{\texorpdfstring{$\sim$}{\string~}LoginTimp}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}LoginTimp()}{\string~LoginTimp()}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_ga74c13a23b2d8fd7e9eed1f864fd2eb67} 
+Login\+Timp::\+\texorpdfstring{$\sim$}{\string~}\+Login\+Timp (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Деструктор. 
+
+Деструктор \doxylink{class_login_timp}{Login\+Timp}. 
+
+\label{group__logintimp__impl_doc-pri-slot-members}
+\Hypertarget{group__logintimp__impl_doc-pri-slot-members}
+\doxysubsubsubsection{Закрытые слоты}
+\Hypertarget{group__logintimp__impl_ga5b5852e171cb2a0d270ecee76c752348}\index{Реализация окна авторизации@{Реализация окна авторизации}!on\_backButton\_clicked@{on\_backButton\_clicked}}
+\index{on\_backButton\_clicked@{on\_backButton\_clicked}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{on\_backButton\_clicked}{on\_backButton\_clicked}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_ga5b5852e171cb2a0d270ecee76c752348} 
+void Login\+Timp::\+on\+\_\+back\+Button\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик кнопки "{}Назад"{}. 
+
+\Hypertarget{group__logintimp__impl_gad54ec26857a7b44dffe43dfae106071b}\index{Реализация окна авторизации@{Реализация окна авторизации}!on\_confirmCodeButton\_clicked@{on\_confirmCodeButton\_clicked}}
+\index{on\_confirmCodeButton\_clicked@{on\_confirmCodeButton\_clicked}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{on\_confirmCodeButton\_clicked}{on\_confirmCodeButton\_clicked}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_gad54ec26857a7b44dffe43dfae106071b} 
+void Login\+Timp::\+on\+\_\+confirm\+Code\+Button\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик подтверждения кода из email. 
+
+Обработчик ввода кода подтверждения. \Hypertarget{group__logintimp__impl_ga0073fa7faca8bf8c1224d3ff55acdc4f}\index{Реализация окна авторизации@{Реализация окна авторизации}!on\_forgotLabel\_linkActivated@{on\_forgotLabel\_linkActivated}}
+\index{on\_forgotLabel\_linkActivated@{on\_forgotLabel\_linkActivated}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{on\_forgotLabel\_linkActivated}{on\_forgotLabel\_linkActivated}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_ga0073fa7faca8bf8c1224d3ff55acdc4f} 
+void Login\+Timp::\+on\+\_\+forgot\+Label\+\_\+link\+Activated (\begin{DoxyParamCaption}\item[{const QString \&}]{link}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик клика по ссылке "{}Забыли пароль?"{}. 
+
+Открывает окно восстановления пароля.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em link} & Текст ссылки. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__logintimp__impl_gaceaf43a6f8d65cecde9020d470f87b0b}\index{Реализация окна авторизации@{Реализация окна авторизации}!on\_loginButton\_clicked@{on\_loginButton\_clicked}}
+\index{on\_loginButton\_clicked@{on\_loginButton\_clicked}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{on\_loginButton\_clicked}{on\_loginButton\_clicked}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_gaceaf43a6f8d65cecde9020d470f87b0b} 
+void Login\+Timp::\+on\+\_\+login\+Button\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик нажатия кнопки "{}Войти"{}. 
+
+Обработчик кнопки входа.
+
+Отправляет запрос авторизации на сервер. \Hypertarget{group__logintimp__impl_ga8de99e24ea72174104bdb1d41b984fae}\index{Реализация окна авторизации@{Реализация окна авторизации}!on\_logoutButton\_clicked@{on\_logoutButton\_clicked}}
+\index{on\_logoutButton\_clicked@{on\_logoutButton\_clicked}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{on\_logoutButton\_clicked}{on\_logoutButton\_clicked}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_ga8de99e24ea72174104bdb1d41b984fae} 
+void Login\+Timp::\+on\+\_\+logout\+Button\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик кнопки выхода из аккаунта. 
+
+Выполняет выход пользователя. \Hypertarget{group__logintimp__impl_gad5b2a563320b03efcee945f98fa1cb53}\index{Реализация окна авторизации@{Реализация окна авторизации}!on\_registerButton\_clicked@{on\_registerButton\_clicked}}
+\index{on\_registerButton\_clicked@{on\_registerButton\_clicked}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{on\_registerButton\_clicked}{on\_registerButton\_clicked}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_gad5b2a563320b03efcee945f98fa1cb53} 
+void Login\+Timp::\+on\+\_\+register\+Button\+\_\+clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик перехода на окно регистрации. 
+
+Открывает окно регистрации. \Hypertarget{group__logintimp__impl_ga71770db937a97694c7bf316da730a95f}\index{Реализация окна авторизации@{Реализация окна авторизации}!onAuthConfirmResult@{onAuthConfirmResult}}
+\index{onAuthConfirmResult@{onAuthConfirmResult}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{onAuthConfirmResult}{onAuthConfirmResult}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_ga71770db937a97694c7bf316da730a95f} 
+void Login\+Timp::\+on\+Auth\+Confirm\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{, }\item[{const QString \&}]{session\+Token}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Слот обработки результата подтверждения кода. 
+
+Результат подтверждения кода авторизации.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em success} & Успешность подтверждения. \\
+\hline
+{\em session\+Token} & Токен сессии при успешном входе. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__logintimp__impl_gaaffdd63f28783267b58d5b7aa2307b2e}\index{Реализация окна авторизации@{Реализация окна авторизации}!onAuthRequestCodeResult@{onAuthRequestCodeResult}}
+\index{onAuthRequestCodeResult@{onAuthRequestCodeResult}!Реализация окна авторизации@{Реализация окна авторизации}}
+\doxysubsubsubsubsection{\texorpdfstring{onAuthRequestCodeResult}{onAuthRequestCodeResult}}
+{\footnotesize\ttfamily \label{group__logintimp__impl_gaaffdd63f28783267b58d5b7aa2307b2e} 
+void Login\+Timp::\+on\+Auth\+Request\+Code\+Result (\begin{DoxyParamCaption}\item[{bool}]{success}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{code}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Слот обработки результата запроса кода подтверждения. 
+
+Результат запроса кода авторизации.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em success} & Успешность запроса. \\
+\hline
+{\em email} & Email пользователя. \\
+\hline
+{\em code} & Отправленный код (для отладки/\+тестирования). \\
+\hline
+\end{DoxyParams}

@@ -1,4 +1,4 @@
 var dir_307edf49785a59cf1aa5b8df556d46f3 =
 [
-    [ "Исходники", "dir_2142ae3f9401299deead8bfcb2778f85.html", "dir_2142ae3f9401299deead8bfcb2778f85" ]
+    [ "New", "dir_d0930cd81a197bae32eda4c5efcb9e4a.html", "dir_d0930cd81a197bae32eda4c5efcb9e4a" ]
 ];

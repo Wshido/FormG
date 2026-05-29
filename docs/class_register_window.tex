@@ -2,7 +2,7 @@
 \hypertarget{class_register_window}{}\label{class_register_window}\index{RegisterWindow@{RegisterWindow}}
 
 
-Окно регистрации нового пользователя.  
+Класс окна регистрации пользователя.  
 
 
 
@@ -19,32 +19,57 @@
 \begin{DoxyCompactItemize}
 \item 
 void \doxymbox{\hyperlink{class_register_window_af2b798e7adecbc7c516ac15926246784}{back\+Requested}} ()
-\begin{DoxyCompactList}\small\item\em Сигнал возврата к предыдущему окну. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Сигнал запроса возврата на предыдущее окно. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Открытые члены}
 \begin{DoxyCompactItemize}
 \item 
-\doxymbox{\hyperlink{group__regcpp_ga0afbe90533f73fb296bfd483c3738baf}{Register\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\begin{DoxyCompactList}\small\item\em Конструктор окна \doxylink{class_register_window}{Register\+Window}. \end{DoxyCompactList}\item 
-\doxymbox{\hyperlink{group__regcpp_gaaeb4a1dc724077a1c30dc96659371d42}{\texorpdfstring{$\sim$}{\string~}\+Register\+Window}} ()
-\begin{DoxyCompactList}\small\item\em Деструктор класса \doxylink{class_register_window}{Register\+Window}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxymbox{\hyperlink{group__registerwindow__impl_ga0afbe90533f73fb296bfd483c3738baf}{Register\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__registerwindow__impl_gaaeb4a1dc724077a1c30dc96659371d42}{\texorpdfstring{$\sim$}{\string~}\+Register\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Закрытые слоты}
 \begin{DoxyCompactItemize}
 \item 
-void \doxymbox{\hyperlink{group__regcpp_gaecf16f485f03b5464f773671a4cfb1f0}{on\+\_\+create\+Button\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки создания аккаунта. \end{DoxyCompactList}\item 
-void \doxymbox{\hyperlink{group__regcpp_gaba2b744664e7127e6dfa03783e67a194}{on\+\_\+back\+Button\+\_\+clicked}} ()
-\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки возврата. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \doxymbox{\hyperlink{group__registerwindow__impl_ga41c4aaddf04f1cbe8d5b2f4b3d57eae7}{on\+\_\+get\+Code\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Получить код"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_gaecf16f485f03b5464f773671a4cfb1f0}{on\+\_\+create\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Зарегистрироваться"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_gaba2b744664e7127e6dfa03783e67a194}{on\+\_\+back\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик нажатия кнопки "{}Назад"{}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_gab2f43a2cb19d2ac1a7f215650b8f0195}{on\+Reg\+Request\+Code\+Result}} (bool success, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Слот обработки результата запроса кода подтверждения. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_ga15c21faaf83ffe35ba3deb2b89991bf5}{on\+Reg\+Confirm\+Result}} (bool success)
+\begin{DoxyCompactList}\small\item\em Слот обработки результата подтверждения регистрации. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_ga6ac70cb58a8fd250dbc176c73ab7da52}{start\+Code\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Запускает таймер обратного отсчёта кода. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__registerwindow__impl_gada6c7ddee9e5114c8687d68b5532aaff}{update\+Timer\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Обновляет отображение оставшегося времени. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Закрытые данные}
 \begin{DoxyCompactItemize}
 \item 
 \doxymbox{\hyperlink{class_ui_1_1_register_window}{Ui::\+\+Register\+Window}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_register_window_a5d3564e1c9436435a5a158073e15198c}{ui}}
-\begin{DoxyCompactList}\small\item\em Указатель на пользовательский интерфейс окна. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Указатель на UI-\/форму. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_register_window_abbd834ef495b926b94941c82ccdeb889}{m\+\_\+temp\+Login}}
+\begin{DoxyCompactList}\small\item\em Временное хранение логина. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_register_window_aa7d302e6fa2d839de6afce44aa0fe8f4}{m\+\_\+temp\+Password}}
+\begin{DoxyCompactList}\small\item\em Временное хранение пароля. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_register_window_a4135b383f5867c376561ec8d1a01fd2d}{m\+\_\+temp\+Email}}
+\begin{DoxyCompactList}\small\item\em Временное хранение email. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{class_register_window_a3838c9f44c784047a8c1ddc5ab9e4809}{m\+\_\+temp\+Code}}
+\begin{DoxyCompactList}\small\item\em Временное хранение кода подтверждения. \end{DoxyCompactList}\item 
+QTimer \doxymbox{\hyperlink{class_register_window_a54e21fbdc072ea18c992816ffeca13c0}{m\+\_\+code\+Timer}}
+\begin{DoxyCompactList}\small\item\em Таймер обратного отсчёта для кода подтверждения. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{class_register_window_ac1c8c77555f642f85b286b27e018b406}{m\+\_\+remaining\+Seconds}}
+\begin{DoxyCompactList}\small\item\em Оставшееся время действия кода (в секундах). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Подробное описание}
-Окно регистрации нового пользователя. 
+Класс окна регистрации пользователя. 
 
-Класс предоставляет интерфейс для создания новой учетной записи пользователя. 
+Реализует процесс регистрации с подтверждением email-\/кода. 
 
 \label{class_register_window_doc-func-members}
 \Hypertarget{class_register_window_doc-func-members}
@@ -57,13 +82,73 @@ void Register\+Window::\+back\+Requested (\begin{DoxyParamCaption}{}{}\end{DoxyP
 
 
 
-Сигнал возврата к предыдущему окну. 
+Сигнал запроса возврата на предыдущее окно. 
 
 
 
 \label{class_register_window_doc-variable-members}
 \Hypertarget{class_register_window_doc-variable-members}
 \doxysubsection{Данные класса}
+\Hypertarget{class_register_window_a54e21fbdc072ea18c992816ffeca13c0}\index{RegisterWindow@{RegisterWindow}!m\_codeTimer@{m\_codeTimer}}
+\index{m\_codeTimer@{m\_codeTimer}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{m\_codeTimer}{m\_codeTimer}}
+{\footnotesize\ttfamily \label{class_register_window_a54e21fbdc072ea18c992816ffeca13c0} 
+QTimer Register\+Window::\+m\+\_\+code\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Таймер обратного отсчёта для кода подтверждения. 
+
+\Hypertarget{class_register_window_ac1c8c77555f642f85b286b27e018b406}\index{RegisterWindow@{RegisterWindow}!m\_remainingSeconds@{m\_remainingSeconds}}
+\index{m\_remainingSeconds@{m\_remainingSeconds}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{m\_remainingSeconds}{m\_remainingSeconds}}
+{\footnotesize\ttfamily \label{class_register_window_ac1c8c77555f642f85b286b27e018b406} 
+int Register\+Window::\+m\+\_\+remaining\+Seconds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Оставшееся время действия кода (в секундах). 
+
+\Hypertarget{class_register_window_a3838c9f44c784047a8c1ddc5ab9e4809}\index{RegisterWindow@{RegisterWindow}!m\_tempCode@{m\_tempCode}}
+\index{m\_tempCode@{m\_tempCode}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{m\_tempCode}{m\_tempCode}}
+{\footnotesize\ttfamily \label{class_register_window_a3838c9f44c784047a8c1ddc5ab9e4809} 
+QString Register\+Window::\+m\+\_\+temp\+Code\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Временное хранение кода подтверждения. 
+
+\Hypertarget{class_register_window_a4135b383f5867c376561ec8d1a01fd2d}\index{RegisterWindow@{RegisterWindow}!m\_tempEmail@{m\_tempEmail}}
+\index{m\_tempEmail@{m\_tempEmail}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{m\_tempEmail}{m\_tempEmail}}
+{\footnotesize\ttfamily \label{class_register_window_a4135b383f5867c376561ec8d1a01fd2d} 
+QString Register\+Window::\+m\+\_\+temp\+Email\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Временное хранение email. 
+
+\Hypertarget{class_register_window_abbd834ef495b926b94941c82ccdeb889}\index{RegisterWindow@{RegisterWindow}!m\_tempLogin@{m\_tempLogin}}
+\index{m\_tempLogin@{m\_tempLogin}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{m\_tempLogin}{m\_tempLogin}}
+{\footnotesize\ttfamily \label{class_register_window_abbd834ef495b926b94941c82ccdeb889} 
+QString Register\+Window::\+m\+\_\+temp\+Login\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Временное хранение логина. 
+
+\Hypertarget{class_register_window_aa7d302e6fa2d839de6afce44aa0fe8f4}\index{RegisterWindow@{RegisterWindow}!m\_tempPassword@{m\_tempPassword}}
+\index{m\_tempPassword@{m\_tempPassword}!RegisterWindow@{RegisterWindow}}
+\doxysubsubsection{\texorpdfstring{m\_tempPassword}{m\_tempPassword}}
+{\footnotesize\ttfamily \label{class_register_window_aa7d302e6fa2d839de6afce44aa0fe8f4} 
+QString Register\+Window::\+m\+\_\+temp\+Password\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Временное хранение пароля. 
+
 \Hypertarget{class_register_window_a5d3564e1c9436435a5a158073e15198c}\index{RegisterWindow@{RegisterWindow}!ui@{ui}}
 \index{ui@{ui}!RegisterWindow@{RegisterWindow}}
 \doxysubsubsection{\texorpdfstring{ui}{ui}}
@@ -72,12 +157,12 @@ void Register\+Window::\+back\+Requested (\begin{DoxyParamCaption}{}{}\end{DoxyP
 
 
 
-Указатель на пользовательский интерфейс окна. 
+Указатель на UI-\/форму. 
 
 
 
 Объявления и описания членов классов находятся в файлах:\+\begin{DoxyCompactItemize}
 \item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+\doxymbox{\hyperlink{registerwindow_8h}{registerwindow.\+h}}\item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+build/\+\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+10\+\_\+3\+\_\+\+Min\+GW\+\_\+64\+\_\+bit-\/u041eu0442u043bu0430u0434u043au0430/\+debug/\+\doxymbox{\hyperlink{moc__registerwindow_8cpp}{moc\+\_\+registerwindow.\+cpp}}\item 
-C:\+/\+\+Users/\+пп/\+\+Desktop/\+Исходники/\+\+Timpproject/\+\doxymbox{\hyperlink{registerwindow_8cpp}{registerwindow.\+cpp}}\end{DoxyCompactItemize}
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{registerwindow_8h}{registerwindow.\+h}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+build/\+\+Desktop\+\_\+\+Qt\+\_\+6\+\_\+10\+\_\+3\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/u041eu0442u043bu0430u0434u043au0430/\+debug/\+\doxymbox{\hyperlink{moc__registerwindow_8cpp}{moc\+\_\+registerwindow.\+cpp}}\item 
+C:\+/\+\+Users/\+пп/\+\+Desktop/\+\+New/\+\+Clientdox/\+\+Timpproject/\+\doxymbox{\hyperlink{registerwindow_8cpp}{registerwindow.\+cpp}}\end{DoxyCompactItemize}

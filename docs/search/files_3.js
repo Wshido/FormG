@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['graphwindow_2ecpp_0',['graphwindow.cpp',['../graphwindow_8cpp.html',1,'']]],
-  ['graphwindow_2eh_1',['graphwindow.h',['../graphwindow_8h.html',1,'']]]
+  ['emailsender_2ecpp_0',['emailsender.cpp',['../emailsender_8cpp.html',1,'']]],
+  ['emailsender_2eh_1',['emailsender.h',['../emailsender_8h.html',1,'']]],
+  ['emailservice_2ecpp_2',['emailservice.cpp',['../emailservice_8cpp.html',1,'']]],
+  ['emailservice_2eh_3',['emailservice.h',['../emailservice_8h.html',1,'']]]
 ];

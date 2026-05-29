@@ -1,0 +1,419 @@
+\doxysubsubsection{Реализация сетевого менеджера }
+\hypertarget{group__servicemanager__impl}{}\label{group__servicemanager__impl}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+static \doxymbox{\hyperlink{class_service_manager}{Service\+Manager}} \& \doxymbox{\hyperlink{group__servicemanager__impl_gad78e686a5fcf0c9a345fa67fd5128009}{Service\+Manager::\+instance}} ()
+\begin{DoxyCompactList}\small\item\em Возвращает единственный экземпляр сервисного менеджера. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__servicemanager__impl_gaeb86d399546b8e9a6af17f4e1cc7e879}{Service\+Manager::\+\+Service\+Manager}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Приватный конструктор (Singleton). \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{group__servicemanager__impl_ga87b207df58ccd316320d490c003c7eda}{Service\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Service\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em Деструктор. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga6eb6b09949825b1b7f51bb72970f11bd}{Service\+Manager::\+connect\+To\+Server}} (const QString \&host="{}127.\+0.\+0.\+1"{}, int port=11999)
+\begin{DoxyCompactList}\small\item\em Подключается к серверу. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga05ea46d1f2b9bb23755f1321b6fa06d1}{Service\+Manager::\+disconnect\+From\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Отключается от сервера. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{group__servicemanager__impl_ga31a8621f6e76064f79904d4ef73beaaf}{Service\+Manager::\+is\+Connected}} () const
+\begin{DoxyCompactList}\small\item\em Проверяет, установлено ли соединение. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga6a16c2a7297161552f5f77b9449f4a70}{Service\+Manager::\+send\+Request}} (const QString \&request)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос на сервер. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga338f5d7e72952a3cac5ef214c270d0e7}{Service\+Manager::\+send\+Reg\+Request\+Code}} (const QString \&email)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос на получение кода подтверждения регистрации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga77b9b876c6a64bb59bd784c2eef6ec04}{Service\+Manager::\+send\+Reg\+Confirm}} (const QString \&login, const QString \&password, const QString \&email, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Отправляет подтверждение регистрации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga3d8d6ea1f956a24cde338fface093520}{Service\+Manager::\+send\+Auth\+Request\+Code}} (const QString \&login, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос кода для двухфакторной авторизации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga9c4e411c5ac14aabad536257243ec40a}{Service\+Manager::\+send\+Auth\+Confirm}} (const QString \&email, const QString \&code)
+\begin{DoxyCompactList}\small\item\em Подтверждает код при авторизации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga6081858496466768d87050382a8b82b3}{Service\+Manager::\+send\+Request\+Code}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Запрашивает код для восстановления пароля. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga792b61f20d9babf739d7976337e91c00}{Service\+Manager::\+send\+Change\+Password\+With\+Code}} (const QString \&login, const QString \&code, const QString \&new\+Password)
+\begin{DoxyCompactList}\small\item\em Отправляет новый пароль вместе с кодом подтверждения. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga41127553579ebfc8e21b21783d409d2c}{Service\+Manager::\+send\+Logout}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Выход из текущей сессии. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga238b45437f4c66c7e068f1b09d402290}{Service\+Manager::\+send\+Logout\+All}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Выход из всех сессий пользователя. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga97a89354b8e2be0667c0f3459cd6a101}{Service\+Manager::\+send\+Refresh\+Token}} (const QString \&login, const QString \&old\+Token)
+\begin{DoxyCompactList}\small\item\em Обновляет токен сессии. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga1cf5fb001fa93bf1ea2315a445677c68}{Service\+Manager::\+set\+Current\+Login}} (const QString \&login)
+\begin{DoxyCompactList}\small\item\em Устанавливает текущий логин пользователя. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__servicemanager__impl_ga5a089f552b3e77023e4521a6afa98e7b}{Service\+Manager::\+current\+Login}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает текущий логин. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga83fda3f1765b8cc39da671590a9a79fb}{Service\+Manager::\+set\+Current\+Token}} (const QString \&token)
+\begin{DoxyCompactList}\small\item\em Устанавливает текущий токен сессии. \end{DoxyCompactList}\item 
+QString \doxymbox{\hyperlink{group__servicemanager__impl_gad2fa0e0146bab5c947b5f98d0762ac0a}{Service\+Manager::\+current\+Token}} () const
+\begin{DoxyCompactList}\small\item\em Возвращает токен сессии. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga7c1b088e492bd88eeb6fcb4304d43d06}{Service\+Manager::\+send\+Function\+Params}} (double a, double b, double c)
+\begin{DoxyCompactList}\small\item\em Отправляет параметры функций для построения графика. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga016f586efe7cfe024c7fb4e74af2255d}{Service\+Manager::\+send\+Auth}} (const QString \&login, const QString \&password)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос авторизации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_gaf43cf19ef918401a69a702ce5c79f554}{Service\+Manager::\+send\+Reg}} (const QString \&login, const QString \&password, const QString \&email)
+\begin{DoxyCompactList}\small\item\em Отправляет запрос регистрации. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_gae4e561638332a03d6230e30427b0b097}{Service\+Manager::\+attempt\+Reconnect}} ()
+\begin{DoxyCompactList}\small\item\em Пытается переподключиться к серверу. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsubsection*{Закрытые слоты}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga5b35f8aebcb6b449ffd188e3e36d17bb}{Service\+Manager::\+on\+Reconnect\+Timer}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик таймера переподключения. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_gadf23733f9c3b0b2618fee492fe84e76a}{Service\+Manager::\+on\+Ready\+Read}} ()
+\begin{DoxyCompactList}\small\item\em Обрабатывает входящие данные от сервера. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga453a8f166f6b86e15aa3d21d339ead6f}{Service\+Manager::\+on\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик успешного подключения к серверу. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga1d705e073fc7abb0ec77f58cf95eab09}{Service\+Manager::\+on\+Disconnected}} ()
+\begin{DoxyCompactList}\small\item\em Обработчик отключения от сервера. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{group__servicemanager__impl_ga28a94cb6435600716ea479fc30ad68b4}{Service\+Manager::\+on\+Error}} (QAbstract\+Socket::\+\+Socket\+Error socket\+Error)
+\begin{DoxyCompactList}\small\item\em Обработчик ошибок сокета. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsubsection{Подробное описание}
+
+
+\label{group__servicemanager__impl_doc-func-members}
+\Hypertarget{group__servicemanager__impl_doc-func-members}
+\doxysubsubsubsection{Функции}
+\Hypertarget{group__servicemanager__impl_gae4e561638332a03d6230e30427b0b097}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!attemptReconnect@{attemptReconnect}}
+\index{attemptReconnect@{attemptReconnect}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{attemptReconnect()}{attemptReconnect()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_gae4e561638332a03d6230e30427b0b097} 
+void Service\+Manager::\+attempt\+Reconnect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Пытается переподключиться к серверу. 
+
+Выполняет попытку переподключения к серверу. \Hypertarget{group__servicemanager__impl_ga6eb6b09949825b1b7f51bb72970f11bd}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!connectToServer@{connectToServer}}
+\index{connectToServer@{connectToServer}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{connectToServer()}{connectToServer()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga6eb6b09949825b1b7f51bb72970f11bd} 
+void Service\+Manager::\+connect\+To\+Server (\begin{DoxyParamCaption}\item[{const QString \&}]{host}{ = {\ttfamily "{}127.0.0.1"{}}, }\item[{int}]{port}{ = {\ttfamily 11999}}\end{DoxyParamCaption})}
+
+
+
+Подключается к серверу. 
+
+Подключение к серверу.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em host} & Адрес сервера. \\
+\hline
+{\em port} & Порт сервера.\\
+\hline
+{\em host} & адрес сервера \\
+\hline
+{\em port} & порт сервера \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__servicemanager__impl_ga5a089f552b3e77023e4521a6afa98e7b}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!currentLogin@{currentLogin}}
+\index{currentLogin@{currentLogin}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{currentLogin()}{currentLogin()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga5a089f552b3e77023e4521a6afa98e7b} 
+QString Service\+Manager::\+current\+Login (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Возвращает текущий логин. 
+
+\Hypertarget{group__servicemanager__impl_gad2fa0e0146bab5c947b5f98d0762ac0a}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!currentToken@{currentToken}}
+\index{currentToken@{currentToken}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{currentToken()}{currentToken()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_gad2fa0e0146bab5c947b5f98d0762ac0a} 
+QString Service\+Manager::\+current\+Token (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Возвращает токен сессии. 
+
+\Hypertarget{group__servicemanager__impl_ga05ea46d1f2b9bb23755f1321b6fa06d1}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!disconnectFromServer@{disconnectFromServer}}
+\index{disconnectFromServer@{disconnectFromServer}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{disconnectFromServer()}{disconnectFromServer()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga05ea46d1f2b9bb23755f1321b6fa06d1} 
+void Service\+Manager::\+disconnect\+From\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Отключается от сервера. 
+
+Отключение от сервера. \Hypertarget{group__servicemanager__impl_gad78e686a5fcf0c9a345fa67fd5128009}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!instance@{instance}}
+\index{instance@{instance}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_gad78e686a5fcf0c9a345fa67fd5128009} 
+\doxymbox{\hyperlink{class_service_manager}{Service\+Manager}} \& Service\+Manager::\+instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Возвращает единственный экземпляр сервисного менеджера. 
+
+Возвращает singleton-\/экземпляр \doxylink{class_service_manager}{Service\+Manager}.
+
+\begin{DoxyReturn}{Возвращает}
+Ссылка на экземпляр \doxylink{class_service_manager}{Service\+Manager}. 
+\end{DoxyReturn}
+\Hypertarget{group__servicemanager__impl_ga31a8621f6e76064f79904d4ef73beaaf}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga31a8621f6e76064f79904d4ef73beaaf} 
+bool Service\+Manager::\+is\+Connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Проверяет, установлено ли соединение. 
+
+Проверяет состояние подключения.
+
+\begin{DoxyReturn}{Возвращает}
+true, если подключено. 
+\end{DoxyReturn}
+\Hypertarget{group__servicemanager__impl_ga016f586efe7cfe024c7fb4e74af2255d}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendAuth@{sendAuth}}
+\index{sendAuth@{sendAuth}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendAuth()}{sendAuth()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga016f586efe7cfe024c7fb4e74af2255d} 
+void Service\+Manager::\+send\+Auth (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет запрос авторизации. 
+
+\Hypertarget{group__servicemanager__impl_ga9c4e411c5ac14aabad536257243ec40a}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendAuthConfirm@{sendAuthConfirm}}
+\index{sendAuthConfirm@{sendAuthConfirm}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendAuthConfirm()}{sendAuthConfirm()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga9c4e411c5ac14aabad536257243ec40a} 
+void Service\+Manager::\+send\+Auth\+Confirm (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{, }\item[{const QString \&}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Подтверждает код при авторизации. 
+
+Подтверждение авторизации по email-\/коду. \Hypertarget{group__servicemanager__impl_ga3d8d6ea1f956a24cde338fface093520}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendAuthRequestCode@{sendAuthRequestCode}}
+\index{sendAuthRequestCode@{sendAuthRequestCode}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendAuthRequestCode()}{sendAuthRequestCode()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga3d8d6ea1f956a24cde338fface093520} 
+void Service\+Manager::\+send\+Auth\+Request\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{password}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет запрос кода для двухфакторной авторизации. 
+
+Запрос кода авторизации. \Hypertarget{group__servicemanager__impl_ga792b61f20d9babf739d7976337e91c00}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendChangePasswordWithCode@{sendChangePasswordWithCode}}
+\index{sendChangePasswordWithCode@{sendChangePasswordWithCode}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendChangePasswordWithCode()}{sendChangePasswordWithCode()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga792b61f20d9babf739d7976337e91c00} 
+void Service\+Manager::\+send\+Change\+Password\+With\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{code}{, }\item[{const QString \&}]{new\+Password}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет новый пароль вместе с кодом подтверждения. 
+
+Подтверждение смены пароля по коду. \Hypertarget{group__servicemanager__impl_ga7c1b088e492bd88eeb6fcb4304d43d06}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendFunctionParams@{sendFunctionParams}}
+\index{sendFunctionParams@{sendFunctionParams}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendFunctionParams()}{sendFunctionParams()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga7c1b088e492bd88eeb6fcb4304d43d06} 
+void Service\+Manager::\+send\+Function\+Params (\begin{DoxyParamCaption}\item[{double}]{a}{, }\item[{double}]{b}{, }\item[{double}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет параметры функций для построения графика. 
+
+Отправка параметров функции для построения графика. \Hypertarget{group__servicemanager__impl_ga41127553579ebfc8e21b21783d409d2c}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendLogout@{sendLogout}}
+\index{sendLogout@{sendLogout}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendLogout()}{sendLogout()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga41127553579ebfc8e21b21783d409d2c} 
+void Service\+Manager::\+send\+Logout (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Выход из текущей сессии. 
+
+Выход из аккаунта. \Hypertarget{group__servicemanager__impl_ga238b45437f4c66c7e068f1b09d402290}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendLogoutAll@{sendLogoutAll}}
+\index{sendLogoutAll@{sendLogoutAll}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendLogoutAll()}{sendLogoutAll()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga238b45437f4c66c7e068f1b09d402290} 
+void Service\+Manager::\+send\+Logout\+All (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Выход из всех сессий пользователя. 
+
+Выход со всех устройств. \Hypertarget{group__servicemanager__impl_ga97a89354b8e2be0667c0f3459cd6a101}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendRefreshToken@{sendRefreshToken}}
+\index{sendRefreshToken@{sendRefreshToken}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendRefreshToken()}{sendRefreshToken()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga97a89354b8e2be0667c0f3459cd6a101} 
+void Service\+Manager::\+send\+Refresh\+Token (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{old\+Token}{}\end{DoxyParamCaption})}
+
+
+
+Обновляет токен сессии. 
+
+Обновление токена сессии. \Hypertarget{group__servicemanager__impl_gaf43cf19ef918401a69a702ce5c79f554}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendReg@{sendReg}}
+\index{sendReg@{sendReg}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendReg()}{sendReg()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_gaf43cf19ef918401a69a702ce5c79f554} 
+void Service\+Manager::\+send\+Reg (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет запрос регистрации. 
+
+\Hypertarget{group__servicemanager__impl_ga77b9b876c6a64bb59bd784c2eef6ec04}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendRegConfirm@{sendRegConfirm}}
+\index{sendRegConfirm@{sendRegConfirm}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendRegConfirm()}{sendRegConfirm()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga77b9b876c6a64bb59bd784c2eef6ec04} 
+void Service\+Manager::\+send\+Reg\+Confirm (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{, }\item[{const QString \&}]{password}{, }\item[{const QString \&}]{email}{, }\item[{const QString \&}]{code}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет подтверждение регистрации. 
+
+Подтверждение регистрации. \Hypertarget{group__servicemanager__impl_ga338f5d7e72952a3cac5ef214c270d0e7}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendRegRequestCode@{sendRegRequestCode}}
+\index{sendRegRequestCode@{sendRegRequestCode}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendRegRequestCode()}{sendRegRequestCode()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga338f5d7e72952a3cac5ef214c270d0e7} 
+void Service\+Manager::\+send\+Reg\+Request\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{email}{}\end{DoxyParamCaption})}
+
+
+
+Отправляет запрос на получение кода подтверждения регистрации. 
+
+Запрос кода регистрации на email.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em email} & Email пользователя. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__servicemanager__impl_ga6a16c2a7297161552f5f77b9449f4a70}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendRequest@{sendRequest}}
+\index{sendRequest@{sendRequest}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendRequest()}{sendRequest()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga6a16c2a7297161552f5f77b9449f4a70} 
+void Service\+Manager::\+send\+Request (\begin{DoxyParamCaption}\item[{const QString \&}]{request}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Отправляет запрос на сервер. 
+
+Отправляет сырой запрос на сервер.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em request} & Текст запроса.\\
+\hline
+{\em request} & строка запроса \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__servicemanager__impl_ga6081858496466768d87050382a8b82b3}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!sendRequestCode@{sendRequestCode}}
+\index{sendRequestCode@{sendRequestCode}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{sendRequestCode()}{sendRequestCode()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga6081858496466768d87050382a8b82b3} 
+void Service\+Manager::\+send\+Request\+Code (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Запрашивает код для восстановления пароля. 
+
+Запрос кода восстановления пароля.
+
+
+\begin{DoxyParams}{Аргументы}
+{\em login} & Логин пользователя. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__servicemanager__impl_gaeb86d399546b8e9a6af17f4e1cc7e879}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!ServiceManager@{ServiceManager}}
+\index{ServiceManager@{ServiceManager}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{ServiceManager()}{ServiceManager()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_gaeb86d399546b8e9a6af17f4e1cc7e879} 
+Service\+Manager::\+\+Service\+Manager (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+
+
+
+Приватный конструктор (Singleton). 
+
+Конструктор \doxylink{class_service_manager}{Service\+Manager}.
+
+Инициализирует сокет, таймер переподключения и внутреннее состояние. \Hypertarget{group__servicemanager__impl_ga1cf5fb001fa93bf1ea2315a445677c68}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!setCurrentLogin@{setCurrentLogin}}
+\index{setCurrentLogin@{setCurrentLogin}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{setCurrentLogin()}{setCurrentLogin()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga1cf5fb001fa93bf1ea2315a445677c68} 
+void Service\+Manager::\+set\+Current\+Login (\begin{DoxyParamCaption}\item[{const QString \&}]{login}{}\end{DoxyParamCaption})}
+
+
+
+Устанавливает текущий логин пользователя. 
+
+Устанавливает текущий логин. \Hypertarget{group__servicemanager__impl_ga83fda3f1765b8cc39da671590a9a79fb}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!setCurrentToken@{setCurrentToken}}
+\index{setCurrentToken@{setCurrentToken}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{setCurrentToken()}{setCurrentToken()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga83fda3f1765b8cc39da671590a9a79fb} 
+void Service\+Manager::\+set\+Current\+Token (\begin{DoxyParamCaption}\item[{const QString \&}]{token}{}\end{DoxyParamCaption})}
+
+
+
+Устанавливает текущий токен сессии. 
+
+Устанавливает токен сессии. \Hypertarget{group__servicemanager__impl_ga87b207df58ccd316320d490c003c7eda}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!````~ServiceManager@{\texorpdfstring{$\sim$}{\string~}ServiceManager}}
+\index{````~ServiceManager@{\texorpdfstring{$\sim$}{\string~}ServiceManager}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ServiceManager()}{\string~ServiceManager()}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga87b207df58ccd316320d490c003c7eda} 
+Service\+Manager::\+\texorpdfstring{$\sim$}{\string~}\+Service\+Manager (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Деструктор. 
+
+Деструктор \doxylink{class_service_manager}{Service\+Manager}.
+
+Останавливает таймер и отключается от сервера. 
+
+\label{group__servicemanager__impl_doc-pri-slot-members}
+\Hypertarget{group__servicemanager__impl_doc-pri-slot-members}
+\doxysubsubsubsection{Закрытые слоты}
+\Hypertarget{group__servicemanager__impl_ga453a8f166f6b86e15aa3d21d339ead6f}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!onConnected@{onConnected}}
+\index{onConnected@{onConnected}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{onConnected}{onConnected}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga453a8f166f6b86e15aa3d21d339ead6f} 
+void Service\+Manager::\+on\+Connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик успешного подключения к серверу. 
+
+Метод вызывается после успешного соединения с сервером и сбрасывает состояние переподключения. \Hypertarget{group__servicemanager__impl_ga1d705e073fc7abb0ec77f58cf95eab09}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!onDisconnected@{onDisconnected}}
+\index{onDisconnected@{onDisconnected}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{onDisconnected}{onDisconnected}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga1d705e073fc7abb0ec77f58cf95eab09} 
+void Service\+Manager::\+on\+Disconnected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик отключения от сервера. 
+
+Метод вызывается при потере соединения. Запускает механизм автоматического переподключения. \Hypertarget{group__servicemanager__impl_ga28a94cb6435600716ea479fc30ad68b4}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!onError@{onError}}
+\index{onError@{onError}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{onError}{onError}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga28a94cb6435600716ea479fc30ad68b4} 
+void Service\+Manager::\+on\+Error (\begin{DoxyParamCaption}\item[{QAbstract\+Socket::\+\+Socket\+Error}]{socket\+Error}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик ошибок сокета. 
+
+\Hypertarget{group__servicemanager__impl_gadf23733f9c3b0b2618fee492fe84e76a}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!onReadyRead@{onReadyRead}}
+\index{onReadyRead@{onReadyRead}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{onReadyRead}{onReadyRead}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_gadf23733f9c3b0b2618fee492fe84e76a} 
+void Service\+Manager::\+on\+Ready\+Read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обрабатывает входящие данные от сервера. 
+
+\Hypertarget{group__servicemanager__impl_ga5b35f8aebcb6b449ffd188e3e36d17bb}\index{Реализация сетевого менеджера@{Реализация сетевого менеджера}!onReconnectTimer@{onReconnectTimer}}
+\index{onReconnectTimer@{onReconnectTimer}!Реализация сетевого менеджера@{Реализация сетевого менеджера}}
+\doxysubsubsubsubsection{\texorpdfstring{onReconnectTimer}{onReconnectTimer}}
+{\footnotesize\ttfamily \label{group__servicemanager__impl_ga5b35f8aebcb6b449ffd188e3e36d17bb} 
+void Service\+Manager::\+on\+Reconnect\+Timer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Обработчик таймера переподключения. 
+

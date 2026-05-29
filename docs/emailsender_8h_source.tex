@@ -1,0 +1,60 @@
+\doxysection{emailsender.\+h}
+\hypertarget{emailsender_8h_source}{}\label{emailsender_8h_source}\index{C:/Users/пп/Desktop/New/Clientdox/Timpproject/emailsender.h@{C:/Users/пп/Desktop/New/Clientdox/Timpproject/emailsender.h}}
+\doxymbox{\hyperlink{emailsender_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EMAILSENDER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EMAILSENDER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QSslSocket>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QByteArray>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{group__emailsender__impl_ga65c111763fafc4468dc0da07f4db8da1}{EmailSender}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{static}\ \doxymbox{\hyperlink{group__emailsender__impl_ga65c111763fafc4468dc0da07f4db8da1}{EmailSender}}\&\ \doxymbox{\hyperlink{group__emailsender__impl_ga0933b0cefaf8b7be6c1edc540bd94099}{instance}}();}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{group__emailsender__impl_gacb886a9a6244609bdddef4f4e7f1f4a9}{setSmtpConfig}}(\textcolor{keyword}{const}\ QString\ \&host,\ quint16\ port,}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&username,\ \textcolor{keyword}{const}\ QString\ \&password,}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&fromEmail);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailsender__impl_ga23f1ecae960428cf50947cce69e25c0e}{sendVerificationCode}}(\textcolor{keyword}{const}\ QString\ \&to,\ \textcolor{keyword}{const}\ QString\ \&code);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailsender__impl_gacf5f9677ecd112635307c722872bcb1c}{sendWelcomeEmail}}(\textcolor{keyword}{const}\ QString\ \&to,\ \textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailsender__impl_ga9f00bb572e89a4e6d5c725b724a32988}{sendPasswordChangedEmail}}(\textcolor{keyword}{const}\ QString\ \&to,\ \textcolor{keyword}{const}\ QString\ \&username);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailsender__impl_ga0cb3d2ce5ba83a884edf32846f6a62dd}{isSslAvailable}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{explicit}\ \doxymbox{\hyperlink{group__emailsender__impl_ga65c111763fafc4468dc0da07f4db8da1}{EmailSender}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00082\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_email_sender_ad18558efacc73b39c5d2f1bd709b9d1a}{m\_smtpHost}};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ quint16\ \doxymbox{\hyperlink{class_email_sender_a6397b9d4ac3d19e656a1f33d7f2522ab}{m\_smtpPort}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00092\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_email_sender_adc018f22a27ba32fc4a0e367e74ecd18}{m\_smtpUsername}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00097\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_email_sender_a21d86bec61c3b637021f7aa0c95ab54c}{m\_smtpPassword}};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00102\ \ \ \ \ QString\ \doxymbox{\hyperlink{class_email_sender_a104d84a3303eea853720347923080a9b}{m\_fromEmail}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_email_sender_a4e7159a2491763c0a474cd48651e570e}{m\_configured}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_email_sender_a24bda734294a753f5f71290115b31502}{m\_sslAvailable}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailsender__impl_ga3f11a5360b244cd559dc698e60d29492}{sendEmail}}(\textcolor{keyword}{const}\ QString\ \&to,\ \textcolor{keyword}{const}\ QString\ \&subject,\ \textcolor{keyword}{const}\ QString\ \&body);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailsender__impl_gadaa872a3cf77107935d8d674593b7292}{sendViaSmtp}}(\textcolor{keyword}{const}\ QString\ \&to,\ \textcolor{keyword}{const}\ QString\ \&subject,\ \textcolor{keyword}{const}\ QString\ \&body);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{group__emailsender__impl_gaa4f7e0040a3a65fba1f0bf503c5328d0}{waitForResponse}}(QSslSocket\ \&socket,\ \textcolor{keywordtype}{int}\ expectedCode\ =\ -\/1);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00141\ \ \ \ \ QByteArray\ \doxymbox{\hyperlink{group__emailsender__impl_ga5ddbf2201ab1aa39c0ca5ac28c2d1d36}{base64Encode}}(\textcolor{keyword}{const}\ QString\ \&str);}
+\DoxyCodeLine{00142\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EMAILSENDER\_H}}
+
+\end{DoxyCode}
