@@ -2,6 +2,7 @@
 #include "ui_aboutwindow.h"
 #include "logintimp.h"
 #include "welcomewindow.h"
+#include "servicemanager.h"
 
 AboutWindow::AboutWindow(QWidget *parent)
     : QWidget(parent)
@@ -25,6 +26,11 @@ void AboutWindow::on_nextButton_clicked()
         WelcomeWindow *ww = new WelcomeWindow();
         connect(ww, &WelcomeWindow::backRequested, this, [this, ww]() {
             ww->deleteLater();
+            this->show();
+        });
+        connect(ww, &WelcomeWindow::logoutRequested, this, [this, ww]() {
+            ww->deleteLater();
+            ServiceManager::instance().sendLogout(ServiceManager::instance().currentLogin());
             this->show();
         });
         ww->setAttribute(Qt::WA_DeleteOnClose);

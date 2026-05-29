@@ -5,6 +5,7 @@
 #include <QString>
 #include <QMap>
 #include <QMutex>
+#include <QElapsedTimer>
 #ifdef __linux__
 #include <postgresql/libpq-fe.h>
 #else
@@ -31,10 +32,30 @@ public:
 
     QString getEmailByLoginOrEmail(const QString &loginOrEmail);
 
+    void logoutSession(const QString &login);
+    void logoutAllSessions(const QString &login);
+    void cleanupExpiredSessions();
+    bool refreshToken(const QString &login, const QString &oldToken, QString &newToken);
+
+    bool isRateLimited(const QString &identifier);
+    bool isBruteForceBlocked(const QString &login);
+    void recordFailedAttempt(const QString &login);
+    void resetFailedAttempts(const QString &login);
+
+    static const int MAX_LOGIN_LENGTH = 16;
+    static const int MAX_EMAIL_LENGTH = 100;
+    static const int MAX_PASSWORD_LENGTH = 64;
+
 private:
     PGconn *m_conn;
     QMutex m_mutex;
-    QMap<QString, QString> m_sessionCache;
+
+    struct SessionData {
+        QString token;
+        qint64 createdAt;
+        qint64 lastActivity;
+    };
+    QMap<QString, SessionData> m_sessionCache;
 
     struct TempRegData {
         QString email;
@@ -54,7 +75,24 @@ private:
     QMap<QString, TempAuthData> m_tempAuths;
     QMap<QString, TempResetData> m_tempResets;
 
+    struct RateLimitData {
+        int attemptCount;
+        qint64 windowStart;
+    };
+    QMap<QString, RateLimitData> m_rateLimits;
+
+    struct BruteForceData {
+        int failedAttempts;
+        qint64 lockoutUntil;
+    };
+    QMap<QString, BruteForceData> m_bruteForce;
+
     static const qint64 CODE_EXPIRY_MS = 5 * 60 * 1000;
+    static const qint64 SESSION_TTL_MS = 30 * 60 * 1000;
+    static const int RATE_LIMIT_MAX_ATTEMPTS = 10;
+    static const qint64 RATE_LIMIT_WINDOW_MS = 60 * 1000;
+    static const int BRUTE_FORCE_MAX_ATTEMPTS = 5;
+    static const qint64 BRUTE_FORCE_LOCKOUT_MS = 15 * 60 * 1000;
 
     bool connectToDB();
     QString hashPassword(const QString &password, const QString &salt = QString());
@@ -65,6 +103,9 @@ private:
     QString getEmailByLogin(const QString &login);
     bool checkEmailExists(const QString &email);
     bool checkLoginExists(const QString &login);
+
+    bool validateInputLength(const QString &login, const QString &email, const QString &password);
+    void updateSessionActivity(const QString &login);
 };
 
 #endif // SERVERDB_H

@@ -17,6 +17,8 @@ public:
                        const QString &user, const QString &pass,
                        const QString &from);
 
+    void handleClientDisconnect(const QString &login);
+
 private:
     ServerDB m_db;
     EmailService m_emailService;
@@ -24,6 +26,10 @@ private:
     bool checkTask(int task, int variant, int answer);
     QStringList split(const QString &str, QChar delim);
     bool sendEmail(const QString &to, const QString &subject, const QString &body);
+
+    bool validatePassword(const QString &password);
+    bool validateLogin(const QString &login);
+    bool validateEmail(const QString &email);
 };
 
 #endif // CONTROLLER_H

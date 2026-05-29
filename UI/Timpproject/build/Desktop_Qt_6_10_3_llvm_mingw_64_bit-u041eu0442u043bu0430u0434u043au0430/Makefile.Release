@@ -1093,12 +1093,24 @@ release/moc_graphwindow.cpp: ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QVector \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvector.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QColor \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtimer.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QLabel \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpicture.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextdocument.h \
 		../../qcustomplot.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qpointer.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QSharedPointer \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimer \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QPainter \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextoption.h \
@@ -1109,8 +1121,6 @@ release/moc_graphwindow.cpp: ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QWheelEvent \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QPixmap \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QVector \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QString \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QDateTime \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qdatetime.h \
@@ -1268,7 +1278,6 @@ release/moc_graphwindow.cpp: ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvariantlist.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvariantmap.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qwaitcondition.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QDeadlineTimer \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qwineventnotifier.h \
@@ -1283,7 +1292,6 @@ release/moc_graphwindow.cpp: ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qrawfont.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qfontdatabase.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextformat.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qaccessibilityhints.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qaccessible.h \
@@ -1323,7 +1331,6 @@ release/moc_graphwindow.cpp: ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpainterstateguard.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpdfoutputintent.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpdfwriter.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpixmapcache.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qquaternion.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qrasterwindow.h \
@@ -1347,7 +1354,6 @@ release/moc_graphwindow.cpp: ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qwindowsmimeconverter.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QtWidgets \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QtWidgetsDepends \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qstyleoption.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractspinbox.h \
@@ -1357,7 +1363,6 @@ release/moc_graphwindow.cpp: ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qtabbar.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qrubberband.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qaccessiblewidget.h \
@@ -1379,7 +1384,6 @@ release/moc_graphwindow.cpp: ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcolumnview.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcombobox.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcommandlinkbutton.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcommonstyle.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcompleter.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qdatawidgetmapper.h \
@@ -1424,7 +1428,6 @@ release/moc_graphwindow.cpp: ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qitemdelegate.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qitemeditorfactory.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qkeysequenceedit.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlabel.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlcdnumber.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlistview.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlistwidget.h \
@@ -2848,6 +2851,8 @@ release/moc_servicemanager.cpp: ../../servicemanager.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qalloc.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/q23utility.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/q20utility.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QDebug \
 		release/moc_predefs.h \
 		C:/Qt/6.10.3/llvm-mingw_64/bin/moc.exe
@@ -3924,7 +3929,16 @@ release/aboutwindow.o: ../../aboutwindow.cpp ../../aboutwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qdialog.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimer \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtimer.h \
-		../../welcomewindow.h
+		../../welcomewindow.h \
+		../../servicemanager.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/QTcpSocket \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtnetworkexports.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qhostaddress.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\aboutwindow.o ..\..\aboutwindow.cpp
 
 release/databasemanager.o: ../../databasemanager.cpp ../../databasemanager.h \
@@ -4686,12 +4700,24 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qinputmethod.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qguiapplication_platform.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QVector \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvector.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QColor \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtimer.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QPushButton \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qpushbutton.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QLabel \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlabel.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpicture.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextdocument.h \
 		../../qcustomplot.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qpointer.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QSharedPointer \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimer \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QPainter \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextoption.h \
@@ -4702,8 +4728,6 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QWheelEvent \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QPixmap \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QVector \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QString \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QDateTime \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qdatetime.h \
@@ -4861,7 +4885,6 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QVariant \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvariantlist.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvariantmap.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qwaitcondition.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QDeadlineTimer \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qwineventnotifier.h \
@@ -4876,7 +4899,6 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qrawfont.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qfontdatabase.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextcursor.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextformat.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qaccessibilityhints.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qaccessible.h \
@@ -4916,7 +4938,6 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpainterstateguard.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpdfoutputintent.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpdfwriter.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpixmapcache.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qquaternion.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qrasterwindow.h \
@@ -4940,7 +4961,6 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qwindowsmimeconverter.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QtWidgets \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QtWidgetsDepends \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qstyleoption.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractspinbox.h \
@@ -4950,7 +4970,6 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qtabbar.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qtabwidget.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qrubberband.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qframe.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qabstractscrollarea.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qaccessiblewidget.h \
@@ -4972,7 +4991,6 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcolumnview.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcombobox.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcommandlinkbutton.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qpushbutton.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcommonstyle.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qcompleter.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qdatawidgetmapper.h \
@@ -5017,7 +5035,6 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qitemdelegate.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qitemeditorfactory.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qkeysequenceedit.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlabel.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlcdnumber.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlistview.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/qlistwidget.h \
@@ -5089,7 +5106,6 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QFrame \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QHBoxLayout \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QLabel \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QSlider \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QSpacerItem \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QVBoxLayout \
@@ -5101,7 +5117,15 @@ release/graphwindow.o: ../../graphwindow.cpp ../../graphwindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtnetworkexports.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qabstractsocket.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qhostaddress.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/QAbstractSocket
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/QAbstractSocket \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QFileDialog \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QMessageBox \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QColorDialog \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QJsonDocument \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QJsonObject \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QJsonArray \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QFile \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QGridLayout
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\graphwindow.o ..\..\graphwindow.cpp
 
 release/logintimp.o: ../../logintimp.cpp ../../logintimp.h \
@@ -6772,6 +6796,8 @@ release/servicemanager.o: ../../servicemanager.cpp ../../servicemanager.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qalloc.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/q23utility.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/q20utility.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\servicemanager.o ..\..\servicemanager.cpp
 
@@ -6995,12 +7021,16 @@ release/welcomewindow.o: ../../welcomewindow.cpp ../../welcomewindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QSpacerItem \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QVBoxLayout \
 		../../graphwindow.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QVector \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvector.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QColor \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtimer.h \
 		../../qcustomplot.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QPointer \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qpointer.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QSharedPointer \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimer \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtimer.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QPainter \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/qtextoption.h \
@@ -7011,8 +7041,6 @@ release/welcomewindow.o: ../../welcomewindow.cpp ../../welcomewindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QMouseEvent \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QWheelEvent \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtGui/QPixmap \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QVector \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvector.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QString \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QDateTime \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qdatetime.h \
@@ -7169,7 +7197,6 @@ release/welcomewindow.o: ../../welcomewindow.cpp ../../welcomewindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QHash \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvariantlist.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qvariantmap.h \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qwaitcondition.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QDeadlineTimer \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qwineventnotifier.h \
@@ -7381,7 +7408,16 @@ release/welcomewindow.o: ../../welcomewindow.cpp ../../welcomewindow.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtPrintSupport/qprintpreviewwidget.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtPrintSupport/qtprintsupportversion.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QElapsedTimer \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimeZone
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QTimeZone \
+		../../servicemanager.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/QTcpSocket \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtnetworkglobal.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtnetwork-config.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtnetworkexports.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qhostaddress.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtWidgets/QMessageBox
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\welcomewindow.o ..\..\welcomewindow.cpp
 
 release/qrc_images.o: release/qrc_images.cpp 

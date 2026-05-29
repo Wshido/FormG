@@ -82,9 +82,9 @@ void RegisterWindow::on_getCodeButton_clicked()
     }
 
     // Проверка пароля
-    QRegularExpression passwordRegex("^[A-Za-z0-9]{8,}$");
+    QRegularExpression passwordRegex("^[A-Za-z0-9]{8,64}$");
     if (!passwordRegex.match(pass1).hasMatch()) {
-        QMessageBox::warning(this, "Ошибка", "Пароль должен содержать минимум 8 символов, только латиница и цифры!");
+        QMessageBox::warning(this, "Ошибка", "Пароль должен содержать от 8 до 64 символов, только латиница и цифры!");
         return;
     }
 

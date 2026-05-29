@@ -174,9 +174,9 @@ void ForgotPassword::on_changePasswordButton_clicked()
         return;
     }
 
-    // Проверка пароля: минимум 8 символов, только латиница и цифры
+    // Проверка пароля: минимум 8 символов, максимум 64, только латиница и цифры
     bool validPassword = true;
-    if (newPass.length() < 8) {
+    if (newPass.length() < 8 || newPass.length() > 64) {
         validPassword = false;
     } else {
         for (int i = 0; i < newPass.length(); ++i) {
@@ -192,7 +192,7 @@ void ForgotPassword::on_changePasswordButton_clicked()
 
     if (!validPassword) {
         QMessageBox::warning(this, "Ошибка",
-                             "Пароль должен содержать минимум 8 символов и только латинские буквы и цифры!");
+                             "Пароль должен содержать от 8 до 64 символов и только латинские буквы и цифры!");
         return;
     }
 

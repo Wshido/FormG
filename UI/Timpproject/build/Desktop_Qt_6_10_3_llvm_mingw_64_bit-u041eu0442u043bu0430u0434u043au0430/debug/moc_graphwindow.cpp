@@ -42,12 +42,36 @@ template <> constexpr inline auto GraphWindow::qt_create_metaobjectdata<qt_meta_
     QtMocHelpers::StringRefStorage qt_stringData {
         "GraphWindow",
         "onSliderChanged",
-        ""
+        "",
+        "onExportPNG",
+        "onExportPDF",
+        "onSaveToFile",
+        "onLoadFromFile",
+        "onDeleteFromFile",
+        "onClearGraph",
+        "onColorButtonClicked",
+        "onZoomChanged"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Slot 'onSliderChanged'
         QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onExportPNG'
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onExportPDF'
+        QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onSaveToFile'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onLoadFromFile'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onDeleteFromFile'
+        QtMocHelpers::SlotData<void()>(7, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onClearGraph'
+        QtMocHelpers::SlotData<void()>(8, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onColorButtonClicked'
+        QtMocHelpers::SlotData<void()>(9, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'onZoomChanged'
+        QtMocHelpers::SlotData<void()>(10, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -72,6 +96,14 @@ void GraphWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->onSliderChanged(); break;
+        case 1: _t->onExportPNG(); break;
+        case 2: _t->onExportPDF(); break;
+        case 3: _t->onSaveToFile(); break;
+        case 4: _t->onLoadFromFile(); break;
+        case 5: _t->onDeleteFromFile(); break;
+        case 6: _t->onClearGraph(); break;
+        case 7: _t->onColorButtonClicked(); break;
+        case 8: _t->onZoomChanged(); break;
         default: ;
         }
     }
@@ -97,14 +129,14 @@ int GraphWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 9)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 9;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 9)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 9;
     }
     return _id;
 }

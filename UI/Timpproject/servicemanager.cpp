@@ -10,16 +10,28 @@ ServiceManager::ServiceManager(QObject *parent)
     : QObject(parent)
     , m_socket(nullptr)
     , m_receivingGraphData(false)
+    , m_reconnectAttempts(0)
+    , m_reconnectTimer(nullptr)
+    , m_host("127.0.0.1")
+    , m_port(11999)
 {
+    m_reconnectTimer = new QTimer(this);
+    connect(m_reconnectTimer, &QTimer::timeout, this, &ServiceManager::onReconnectTimer);
 }
 
 ServiceManager::~ServiceManager()
 {
+    if (m_reconnectTimer) {
+        m_reconnectTimer->stop();
+    }
     disconnectFromServer();
 }
 
 void ServiceManager::connectToServer(const QString& host, int port)
 {
+    m_host = host;
+    m_port = port;
+
     if (m_socket) {
         disconnectFromServer();
     }
@@ -37,6 +49,12 @@ void ServiceManager::connectToServer(const QString& host, int port)
 
 void ServiceManager::disconnectFromServer()
 {
+    m_reconnectAttempts = MAX_RECONNECT_ATTEMPTS;
+
+    if (m_reconnectTimer) {
+        m_reconnectTimer->stop();
+    }
+
     if (m_socket) {
         m_socket->disconnectFromHost();
         m_socket->deleteLater();
@@ -100,6 +118,51 @@ void ServiceManager::sendChangePasswordWithCode(const QString& login, const QStr
     sendRequest(request);
 }
 
+// ========== LOGOUT ==========
+void ServiceManager::sendLogout(const QString& login)
+{
+    QString request = QString("logout&%1").arg(login);
+    sendRequest(request);
+    m_currentLogin.clear();
+    m_currentToken.clear();
+}
+
+void ServiceManager::sendLogoutAll(const QString& login)
+{
+    QString request = QString("logout_all&%1").arg(login);
+    sendRequest(request);
+    m_currentLogin.clear();
+    m_currentToken.clear();
+}
+
+// ========== REFRESH TOKEN ==========
+void ServiceManager::sendRefreshToken(const QString& login, const QString& oldToken)
+{
+    QString request = QString("refresh_token&%1&%2").arg(login).arg(oldToken);
+    sendRequest(request);
+}
+
+// ========== SESSION ==========
+void ServiceManager::setCurrentLogin(const QString& login)
+{
+    m_currentLogin = login;
+}
+
+QString ServiceManager::currentLogin() const
+{
+    return m_currentLogin;
+}
+
+void ServiceManager::setCurrentToken(const QString& token)
+{
+    m_currentToken = token;
+}
+
+QString ServiceManager::currentToken() const
+{
+    return m_currentToken;
+}
+
 // ========== ДЛЯ ГРАФИКА ==========
 void ServiceManager::sendFunctionParams(double a, double b, double c)
 {
@@ -130,6 +193,42 @@ void ServiceManager::sendReg(const QString& login, const QString& password, cons
     Q_UNUSED(login)
     Q_UNUSED(password)
     sendRegRequestCode(email);
+}
+
+// ========== AUTO-RECONNECT ==========
+void ServiceManager::attemptReconnect()
+{
+    if (m_reconnectAttempts >= MAX_RECONNECT_ATTEMPTS) {
+        qDebug() << "Превышено максимальное количество попыток переподключения";
+        if (m_reconnectTimer) {
+            m_reconnectTimer->stop();
+        }
+        emit connectionFailed();
+        return;
+    }
+
+    m_reconnectAttempts++;
+    qDebug() << "Попытка переподключения #" << m_reconnectAttempts;
+
+    emit reconnecting();
+
+    if (m_socket) {
+        m_socket->deleteLater();
+        m_socket = nullptr;
+    }
+
+    m_socket = new QTcpSocket(this);
+    connect(m_socket, &QTcpSocket::connected, this, &ServiceManager::onConnected);
+    connect(m_socket, &QTcpSocket::disconnected, this, &ServiceManager::onDisconnected);
+    connect(m_socket, &QTcpSocket::readyRead, this, &ServiceManager::onReadyRead);
+    connect(m_socket, &QTcpSocket::errorOccurred, this, &ServiceManager::onError);
+
+    m_socket->connectToHost(m_host, m_port);
+}
+
+void ServiceManager::onReconnectTimer()
+{
+    attemptReconnect();
 }
 
 void ServiceManager::onReadyRead()
@@ -205,6 +304,26 @@ void ServiceManager::onReadyRead()
         else if (parts[0] == "reset_confirm-") {
             emit passwordChangeWithCodeResult(false);
         }
+        else if (parts[0] == "logout+") {
+            emit logoutResult(true);
+        }
+        else if (parts[0] == "logout-") {
+            emit logoutResult(false);
+        }
+        else if (parts[0] == "logout_all+") {
+            emit logoutAllResult(true);
+        }
+        else if (parts[0] == "logout_all-") {
+            emit logoutAllResult(false);
+        }
+        else if (parts[0] == "refresh_token+") {
+            QString newToken = parts.size() > 1 ? parts[1] : "";
+            m_currentToken = newToken;
+            emit refreshTokenResult(true, newToken);
+        }
+        else if (parts[0] == "refresh_token-") {
+            emit refreshTokenResult(false, "");
+        }
         else {
             emit functionDataReceived(response);
         }
@@ -221,6 +340,12 @@ void ServiceManager::onReadyRead()
 void ServiceManager::onConnected()
 {
     qDebug() << "Подключен к серверу";
+
+    m_reconnectAttempts = 0;
+    if (m_reconnectTimer) {
+        m_reconnectTimer->stop();
+    }
+
     emit connected();
 }
 
@@ -235,6 +360,12 @@ void ServiceManager::onDisconnected()
     }
 
     emit disconnected();
+
+    // Start auto-reconnect
+    m_reconnectAttempts = 0;
+    if (m_reconnectTimer && !m_reconnectTimer->isActive()) {
+        m_reconnectTimer->start(RECONNECT_INTERVAL_MS);
+    }
 }
 
 void ServiceManager::onError(QAbstractSocket::SocketError socketError)

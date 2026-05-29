@@ -10,6 +10,7 @@ ClientHandler::ClientHandler(qintptr socketDescriptor, Controller *controller, Q
     : QObject(parent)
     , m_socketDescriptor(socketDescriptor)
     , m_controller(controller)
+    , m_currentLogin("")
 {
 }
 
@@ -92,6 +93,22 @@ void ClientHandler::onReadyRead()
         QString request = QString::fromUtf8(data).trimmed();
         qDebug() << "Текстовый запрос:" << request;
 
+        // Track login for disconnect cleanup
+        QStringList parts = request.split('&');
+        if (!parts.isEmpty()) {
+            QString command = parts[0];
+            if (command == "auth_confirm" && parts.size() >= 3) {
+                QString email = parts[1];
+                // Store email as login identifier for disconnect cleanup
+                if (m_currentLogin.isEmpty()) {
+                    m_currentLogin = email;
+                }
+            }
+            if (command == "logout" && parts.size() >= 2) {
+                m_currentLogin = parts[1];
+            }
+        }
+
         QString response = m_controller->process(request);
 
         m_socket->write(response.toUtf8() + "\n");
@@ -102,6 +119,12 @@ void ClientHandler::onReadyRead()
 void ClientHandler::onDisconnected()
 {
     qDebug() << "Клиент отключен:" << m_socket->peerAddress().toString();
+
+    // Clean up session on disconnect
+    if (!m_currentLogin.isEmpty()) {
+        m_controller->handleClientDisconnect(m_currentLogin);
+    }
+
     m_socket->deleteLater();
     deleteLater();
 }

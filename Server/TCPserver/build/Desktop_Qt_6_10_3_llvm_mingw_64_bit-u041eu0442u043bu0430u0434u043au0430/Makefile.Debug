@@ -257,14 +257,16 @@ debug/moc_tcpserver.cpp: ../../tcpserver.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/q20utility.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QThread \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qthread.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
 		../../controller.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QString \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
 		../../serverdb.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QObject \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMutex \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qmutex.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QElapsedTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qelapsedtimer.h \
 		C:/Program\ Files/PostgreSQL/16/include/libpq-fe.h \
 		C:/Program\ Files/PostgreSQL/16/include/postgres_ext.h \
 		C:/Program\ Files/PostgreSQL/16/include/pg_config_ext.h \
@@ -452,12 +454,14 @@ debug/main.o: ../../main.cpp C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QCoreAppl
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/QTcpSocket \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtNetwork/qtcpsocket.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QThread \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
 		../../controller.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QString \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
 		../../serverdb.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QObject \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMutex \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QElapsedTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qelapsedtimer.h \
 		C:/Program\ Files/PostgreSQL/16/include/libpq-fe.h \
 		C:/Program\ Files/PostgreSQL/16/include/postgres_ext.h \
 		C:/Program\ Files/PostgreSQL/16/include/pg_config_ext.h \
@@ -614,14 +618,16 @@ debug/tcpserver.o: ../../tcpserver.cpp ../../tcpserver.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/q20utility.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QThread \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qthread.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
 		../../controller.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QString \
-		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMap \
 		../../serverdb.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QObject \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMutex \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qmutex.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QElapsedTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qelapsedtimer.h \
 		C:/Program\ Files/PostgreSQL/16/include/libpq-fe.h \
 		C:/Program\ Files/PostgreSQL/16/include/postgres_ext.h \
 		C:/Program\ Files/PostgreSQL/16/include/pg_config_ext.h \
@@ -759,6 +765,8 @@ debug/controller.o: ../../controller.cpp ../../controller.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMutex \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qmutex.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QElapsedTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qelapsedtimer.h \
 		C:/Program\ Files/PostgreSQL/16/include/libpq-fe.h \
 		C:/Program\ Files/PostgreSQL/16/include/postgres_ext.h \
 		C:/Program\ Files/PostgreSQL/16/include/pg_config_ext.h \
@@ -916,6 +924,8 @@ debug/serverdb.o: ../../serverdb.cpp ../../serverdb.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QMutex \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qmutex.h \
 		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qtsan_impl.h \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/QElapsedTimer \
+		C:/Qt/6.10.3/llvm-mingw_64/include/QtCore/qelapsedtimer.h \
 		C:/Program\ Files/PostgreSQL/16/include/libpq-fe.h \
 		C:/Program\ Files/PostgreSQL/16/include/postgres_ext.h \
 		C:/Program\ Files/PostgreSQL/16/include/pg_config_ext.h \

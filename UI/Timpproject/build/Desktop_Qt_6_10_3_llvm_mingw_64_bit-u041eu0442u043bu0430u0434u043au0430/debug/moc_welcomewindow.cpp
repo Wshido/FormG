@@ -41,17 +41,23 @@ template <> constexpr inline auto WelcomeWindow::qt_create_metaobjectdata<qt_met
         "WelcomeWindow",
         "backRequested",
         "",
+        "logoutRequested",
         "on_nextButton_clicked",
-        "on_backButton_clicked"
+        "on_backButton_clicked",
+        "on_logoutButton_clicked"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'backRequested'
         QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        // Signal 'logoutRequested'
+        QtMocHelpers::SignalData<void()>(3, 2, QMC::AccessPublic, QMetaType::Void),
         // Slot 'on_nextButton_clicked'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_backButton_clicked'
         QtMocHelpers::SlotData<void()>(4, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_backButton_clicked'
+        QtMocHelpers::SlotData<void()>(5, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_logoutButton_clicked'
+        QtMocHelpers::SlotData<void()>(6, 2, QMC::AccessPrivate, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -76,13 +82,17 @@ void WelcomeWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->backRequested(); break;
-        case 1: _t->on_nextButton_clicked(); break;
-        case 2: _t->on_backButton_clicked(); break;
+        case 1: _t->logoutRequested(); break;
+        case 2: _t->on_nextButton_clicked(); break;
+        case 3: _t->on_backButton_clicked(); break;
+        case 4: _t->on_logoutButton_clicked(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (WelcomeWindow::*)()>(_a, &WelcomeWindow::backRequested, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (WelcomeWindow::*)()>(_a, &WelcomeWindow::logoutRequested, 1))
             return;
     }
 }
@@ -106,14 +116,14 @@ int WelcomeWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 5)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 5;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 5)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 5;
     }
     return _id;
 }
@@ -122,5 +132,11 @@ int WelcomeWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void WelcomeWindow::backRequested()
 {
     QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+}
+
+// SIGNAL 1
+void WelcomeWindow::logoutRequested()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP

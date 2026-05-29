@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QTcpSocket>
+#include <QTimer>
 #include <QDebug>
 
 class ServiceManager : public QObject
@@ -31,6 +32,19 @@ public:
     // Функция для графика
     void sendFunctionParams(double a, double b, double c);
 
+    // Logout
+    void sendLogout(const QString& login);
+    void sendLogoutAll(const QString& login);
+
+    // Refresh token
+    void sendRefreshToken(const QString& login, const QString& oldToken);
+
+    // Session
+    void setCurrentLogin(const QString& login);
+    QString currentLogin() const;
+    void setCurrentToken(const QString& token);
+    QString currentToken() const;
+
     // Старые методы (для совместимости)
     void sendAuth(const QString& login, const QString& password);
     void sendReg(const QString& login, const QString& password, const QString& email);
@@ -39,6 +53,8 @@ signals:
     void connected();
     void disconnected();
     void error(const QString& message);
+    void connectionFailed();
+    void reconnecting();
 
     // Сигналы для регистрации
     void regRequestCodeResult(bool success, const QString& code);
@@ -56,22 +72,42 @@ signals:
     void functionDataReceived(const QString& data);
     void authResult(bool success, const QString& login);
 
+    // Logout signals
+    void logoutResult(bool success);
+    void logoutAllResult(bool success);
+
+    // Refresh token signals
+    void refreshTokenResult(bool success, const QString& newToken);
+
 private slots:
     void onReadyRead();
     void onConnected();
     void onDisconnected();
     void onError(QAbstractSocket::SocketError socketError);
+    void onReconnectTimer();
 
 private:
     explicit ServiceManager(QObject *parent = nullptr);
     ~ServiceManager();
 
     void sendRequest(const QString& request);
+    void attemptReconnect();
 
     QTcpSocket* m_socket;
     QByteArray m_readBuffer;
     QByteArray m_graphDataBuffer;
     bool m_receivingGraphData;
+
+    QString m_currentLogin;
+    QString m_currentToken;
+
+    int m_reconnectAttempts;
+    QTimer* m_reconnectTimer;
+    static const int MAX_RECONNECT_ATTEMPTS = 5;
+    static const int RECONNECT_INTERVAL_MS = 3000;
+
+    QString m_host;
+    int m_port;
 };
 
 #endif // SERVICEMANAGER_H

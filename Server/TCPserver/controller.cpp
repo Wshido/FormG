@@ -23,6 +23,7 @@ double Controller::calculateFunction(double a, double b, double c, double x)
     if (x < 0) {
         return sin(a * x);
     } else if (x < 1) {
+        if (b * x < 0) return 0;
         return sqrt(b * x);
     } else {
         if (fabs(c * x - 1.0) < 0.0001) {
@@ -48,16 +49,61 @@ bool Controller::sendEmail(const QString &to, const QString &subject, const QStr
     return sent;
 }
 
+// ==================== VALIDATION ====================
+bool Controller::validatePassword(const QString &password)
+{
+    if (password.length() < 8 || password.length() > ServerDB::MAX_PASSWORD_LENGTH) {
+        return false;
+    }
+    for (int i = 0; i < password.length(); ++i) {
+        QChar ch = password[i];
+        bool isLetter = (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z');
+        bool isDigit = (ch >= '0' && ch <= '9');
+        if (!isLetter && !isDigit) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool Controller::validateLogin(const QString &login)
+{
+    return !login.isEmpty() && login.length() >= 3 && login.length() <= ServerDB::MAX_LOGIN_LENGTH;
+}
+
+bool Controller::validateEmail(const QString &email)
+{
+    return !email.isEmpty() && email.length() <= ServerDB::MAX_EMAIL_LENGTH && email.contains('@') && email.contains('.');
+}
+
+// ==================== CLIENT DISCONNECT ====================
+void Controller::handleClientDisconnect(const QString &login)
+{
+    if (!login.isEmpty()) {
+        qDebug() << "Клиент отключён, деактивация сессии:" << login;
+        m_db.logoutSession(login);
+    }
+}
+
+// ==================== MAIN PROCESS ====================
 QString Controller::process(const QString &request)
 {
     QStringList parts = split(request, '&');
 
     if (parts.isEmpty()) return "unknown";
 
+    QString command = parts[0].trimmed();
+    QString clientIP = parts.size() > 1 ? parts[parts.size()-1] : "";
+
     // ========== РЕГИСТРАЦИЯ: ЗАПРОС КОДА ==========
-    if (parts[0] == "reg_request_code") {
+    if (command == "reg_request_code") {
         if (parts.size() >= 2) {
             QString email = parts[1];
+
+            if (!validateEmail(email)) {
+                return "reg_request_code-";
+            }
+
             QString code;
             bool ok = m_db.requestRegCode(email, code);
             if (ok) {
@@ -81,29 +127,24 @@ QString Controller::process(const QString &request)
     }
 
     // ========== РЕГИСТРАЦИЯ: ПОДТВЕРЖДЕНИЕ ==========
-    if (parts[0] == "reg_confirm") {
+    if (command == "reg_confirm") {
         if (parts.size() >= 5) {
             QString login = parts[1];
             QString password = parts[2];
             QString email = parts[3];
             QString code = parts[4];
 
-            bool validPassword = true;
-            if (password.length() < 8) {
-                validPassword = false;
-            } else {
-                for (int i = 0; i < password.length(); ++i) {
-                    QChar ch = password[i];
-                    bool isLetter = (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z');
-                    bool isDigit = (ch >= '0' && ch <= '9');
-                    if (!isLetter && !isDigit) {
-                        validPassword = false;
-                        break;
-                    }
-                }
+            if (!validateLogin(login)) {
+                qDebug() << "reg_confirm- (неверный формат логина)";
+                return "reg_confirm-";
             }
 
-            if (!validPassword) {
+            if (!validateEmail(email)) {
+                qDebug() << "reg_confirm- (неверный формат email)";
+                return "reg_confirm-";
+            }
+
+            if (!validatePassword(password)) {
                 qDebug() << "reg_confirm- (неверный формат пароля)";
                 return "reg_confirm-";
             }
@@ -129,12 +170,13 @@ QString Controller::process(const QString &request)
     }
 
     // ========== ВХОД: ЗАПРОС КОДА ==========
-    if (parts[0] == "auth_request_code") {
+    if (command == "auth_request_code") {
         if (parts.size() >= 3) {
             QString login = parts[1];
             QString password = parts[2];
-            QString email;
+
             QString code;
+            QString email;
             bool ok = m_db.requestAuthCode(login, password, email, code);
             if (ok) {
                 qDebug() << "auth_request_code+ для" << login;
@@ -158,7 +200,7 @@ QString Controller::process(const QString &request)
     }
 
     // ========== ВХОД: ПОДТВЕРЖДЕНИЕ ==========
-    if (parts[0] == "auth_confirm") {
+    if (command == "auth_confirm") {
         if (parts.size() >= 3) {
             QString email = parts[1];
             QString code = parts[2];
@@ -182,7 +224,7 @@ QString Controller::process(const QString &request)
     }
 
     // ========== СБРОС ПАРОЛЯ: ЗАПРОС КОДА ==========
-    if (parts[0] == "reset_request_code") {
+    if (command == "reset_request_code") {
         if (parts.size() >= 2) {
             QString loginOrEmail = parts[1];
             QString code;
@@ -208,28 +250,13 @@ QString Controller::process(const QString &request)
     }
 
     // ========== СБРОС ПАРОЛЯ: ПОДТВЕРЖДЕНИЕ ==========
-    if (parts[0] == "reset_confirm") {
+    if (command == "reset_confirm") {
         if (parts.size() >= 4) {
             QString loginOrEmail = parts[1];
             QString code = parts[2];
             QString newPassword = parts[3];
 
-            bool validPassword = true;
-            if (newPassword.length() < 8) {
-                validPassword = false;
-            } else {
-                for (int i = 0; i < newPassword.length(); ++i) {
-                    QChar ch = newPassword[i];
-                    bool isLetter = (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z');
-                    bool isDigit = (ch >= '0' && ch <= '9');
-                    if (!isLetter && !isDigit) {
-                        validPassword = false;
-                        break;
-                    }
-                }
-            }
-
-            if (!validPassword) {
+            if (!validatePassword(newPassword)) {
                 qDebug() << "reset_confirm- (неверный формат пароля)";
                 return "reset_confirm-";
             }
@@ -256,7 +283,7 @@ QString Controller::process(const QString &request)
     }
 
     // ========== ПРОВЕРКА СЕССИИ ==========
-    if (parts[0] == "checksession") {
+    if (command == "checksession") {
         if (parts.size() >= 3) {
             bool ok = m_db.checkSession(parts[1], parts[2]);
             if (ok) {
@@ -269,8 +296,47 @@ QString Controller::process(const QString &request)
         return "checksession-";
     }
 
+    // ========== ОБНОВЛЕНИЕ ТОКЕНА ==========
+    if (command == "refresh_token") {
+        if (parts.size() >= 3) {
+            QString login = parts[1];
+            QString oldToken = parts[2];
+            QString newToken;
+            bool ok = m_db.refreshToken(login, oldToken, newToken);
+            if (ok) {
+                qDebug() << "refresh_token+ для" << login;
+                return "refresh_token+&" + newToken;
+            }
+            qDebug() << "refresh_token-";
+            return "refresh_token-";
+        }
+        return "refresh_token-";
+    }
+
+    // ========== LOGOUT ==========
+    if (command == "logout") {
+        if (parts.size() >= 2) {
+            QString login = parts[1];
+            m_db.logoutSession(login);
+            qDebug() << "logout+ для" << login;
+            return "logout+";
+        }
+        return "logout-";
+    }
+
+    // ========== LOGOUT ALL ==========
+    if (command == "logout_all") {
+        if (parts.size() >= 2) {
+            QString login = parts[1];
+            m_db.logoutAllSessions(login);
+            qDebug() << "logout_all+ для" << login;
+            return "logout_all+";
+        }
+        return "logout_all-";
+    }
+
     // ========== СТАТИСТИКА ==========
-    if (parts[0] == "stat") {
+    if (command == "stat") {
         if (parts.size() >= 2) {
             return m_db.getStat(parts[1]);
         }
@@ -278,7 +344,7 @@ QString Controller::process(const QString &request)
     }
 
     // ========== ПРОВЕРКА ЗАДАНИЯ ==========
-    if (parts[0] == "check") {
+    if (command == "check") {
         if (parts.size() >= 4) {
             bool ok = checkTask(parts[1].toInt(), parts[2].toInt(), parts[3].toInt());
             if (ok) {

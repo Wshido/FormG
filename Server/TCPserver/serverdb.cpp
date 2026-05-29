@@ -139,6 +139,179 @@ void ServerDB::cleanupExpiredCodes()
     }
 }
 
+void ServerDB::cleanupExpiredSessions()
+{
+    qint64 now = QDateTime::currentMSecsSinceEpoch();
+
+    auto it = m_sessionCache.begin();
+    while (it != m_sessionCache.end()) {
+        if (now - it.value().lastActivity > SESSION_TTL_MS) {
+            qDebug() << "Сессия для" << it.key() << "истекла — очищена";
+            it = m_sessionCache.erase(it);
+        } else {
+            ++it;
+        }
+    }
+}
+
+void ServerDB::updateSessionActivity(const QString &login)
+{
+    if (m_sessionCache.contains(login)) {
+        m_sessionCache[login].lastActivity = QDateTime::currentMSecsSinceEpoch();
+    }
+}
+
+void ServerDB::logoutSession(const QString &login)
+{
+    QMutexLocker locker(&m_mutex);
+    if (m_sessionCache.remove(login) > 0) {
+        qDebug() << "Сессия для" << login << "деактивирована";
+    }
+}
+
+void ServerDB::logoutAllSessions(const QString &login)
+{
+    QMutexLocker locker(&m_mutex);
+    m_sessionCache.remove(login);
+    qDebug() << "Все сессии для" << login << "деактивированы";
+}
+
+bool ServerDB::refreshToken(const QString &login, const QString &oldToken, QString &newToken)
+{
+    QMutexLocker locker(&m_mutex);
+
+    cleanupExpiredSessions();
+
+    if (!m_sessionCache.contains(login)) {
+        return false;
+    }
+
+    if (m_sessionCache[login].token != oldToken) {
+        return false;
+    }
+
+    if (QDateTime::currentMSecsSinceEpoch() - m_sessionCache[login].lastActivity > SESSION_TTL_MS / 2) {
+        newToken = generateSessionToken(login);
+        m_sessionCache[login].token = newToken;
+        m_sessionCache[login].lastActivity = QDateTime::currentMSecsSinceEpoch();
+        qDebug() << "Токен обновлён для" << login;
+        return true;
+    }
+
+    newToken = oldToken;
+    return true;
+}
+
+// ==================== RATE LIMITING ====================
+bool ServerDB::isRateLimited(const QString &identifier)
+{
+    QMutexLocker locker(&m_mutex);
+
+    qint64 now = QDateTime::currentMSecsSinceEpoch();
+
+    if (!m_rateLimits.contains(identifier)) {
+        RateLimitData data;
+        data.attemptCount = 1;
+        data.windowStart = now;
+        m_rateLimits[identifier] = data;
+        return false;
+    }
+
+    RateLimitData &data = m_rateLimits[identifier];
+
+    if (now - data.windowStart > RATE_LIMIT_WINDOW_MS) {
+        data.attemptCount = 1;
+        data.windowStart = now;
+        return false;
+    }
+
+    if (data.attemptCount >= RATE_LIMIT_MAX_ATTEMPTS) {
+        qDebug() << "Rate limit превышен для" << identifier;
+        return true;
+    }
+
+    data.attemptCount++;
+    return false;
+}
+
+// ==================== BRUTE FORCE ====================
+bool ServerDB::isBruteForceBlocked(const QString &login)
+{
+    QMutexLocker locker(&m_mutex);
+
+    if (!m_bruteForce.contains(login)) {
+        return false;
+    }
+
+    BruteForceData &data = m_bruteForce[login];
+    qint64 now = QDateTime::currentMSecsSinceEpoch();
+
+    if (data.lockoutUntil > 0 && now < data.lockoutUntil) {
+        qDebug() << "Brute force блокировка для" << login
+                 << "до" << QDateTime::fromMSecsSinceEpoch(data.lockoutUntil).toString();
+        return true;
+    }
+
+    if (data.lockoutUntil > 0 && now >= data.lockoutUntil) {
+        data.failedAttempts = 0;
+        data.lockoutUntil = 0;
+        qDebug() << "Brute force блокировка снята для" << login;
+    }
+
+    return false;
+}
+
+void ServerDB::recordFailedAttempt(const QString &login)
+{
+    QMutexLocker locker(&m_mutex);
+
+    if (!m_bruteForce.contains(login)) {
+        BruteForceData data;
+        data.failedAttempts = 1;
+        data.lockoutUntil = 0;
+        m_bruteForce[login] = data;
+        return;
+    }
+
+    BruteForceData &data = m_bruteForce[login];
+    data.failedAttempts++;
+
+    if (data.failedAttempts >= BRUTE_FORCE_MAX_ATTEMPTS) {
+        data.lockoutUntil = QDateTime::currentMSecsSinceEpoch() + BRUTE_FORCE_LOCKOUT_MS;
+        qDebug() << "Brute force блокировка установлена для" << login
+                 << "на 15 минут (попыток:" << data.failedAttempts << ")";
+    }
+}
+
+void ServerDB::resetFailedAttempts(const QString &login)
+{
+    QMutexLocker locker(&m_mutex);
+
+    if (m_bruteForce.contains(login)) {
+        m_bruteForce[login].failedAttempts = 0;
+        m_bruteForce[login].lockoutUntil = 0;
+    }
+}
+
+// ==================== INPUT VALIDATION ====================
+bool ServerDB::validateInputLength(const QString &login, const QString &email, const QString &password)
+{
+    if (!login.isEmpty() && login.length() > MAX_LOGIN_LENGTH) {
+        qDebug() << "Логин слишком длинный:" << login.length() << ">" << MAX_LOGIN_LENGTH;
+        return false;
+    }
+    if (!email.isEmpty() && email.length() > MAX_EMAIL_LENGTH) {
+        qDebug() << "Email слишком длинный:" << email.length() << ">" << MAX_EMAIL_LENGTH;
+        return false;
+    }
+    if (!password.isEmpty() && password.length() > MAX_PASSWORD_LENGTH) {
+        qDebug() << "Пароль слишком длинный:" << password.length() << ">" << MAX_PASSWORD_LENGTH;
+        return false;
+    }
+    return true;
+}
+
+// ==================== DB OPERATIONS ====================
 QString ServerDB::getEmailByLogin(const QString &login)
 {
     QString sql = "SELECT email FROM users WHERE login = $1";
@@ -220,6 +393,10 @@ bool ServerDB::confirmReg(const QString &login, const QString &password, const Q
 {
     QMutexLocker locker(&m_mutex);
 
+    if (!validateInputLength(login, email, password)) {
+        return false;
+    }
+
     cleanupExpiredCodes();
 
     if (!m_tempRegs.contains(code)) {
@@ -250,6 +427,7 @@ bool ServerDB::confirmReg(const QString &login, const QString &password, const Q
     PGresult* res = PQexecParams(m_conn, sql.toUtf8().constData(), 4, NULL, params, NULL, NULL, 0);
 
     if (PQresultStatus(res) != PGRES_COMMAND_OK) {
+        qDebug() << "Ошибка SQL при регистрации:" << PQerrorMessage(m_conn);
         PQclear(res);
         return false;
     }
@@ -266,6 +444,11 @@ bool ServerDB::requestAuthCode(const QString &login, const QString &password, QS
 {
     QMutexLocker locker(&m_mutex);
 
+    if (isBruteForceBlocked(login)) {
+        qDebug() << "Brute force блокировка для" << login;
+        return false;
+    }
+
     cleanupExpiredCodes();
 
     QString sql = "SELECT password_hash, email FROM users WHERE login = $1";
@@ -276,6 +459,7 @@ bool ServerDB::requestAuthCode(const QString &login, const QString &password, QS
     if (PQresultStatus(res) != PGRES_TUPLES_OK || PQntuples(res) == 0) {
         PQclear(res);
         qDebug() << "Логин не найден:" << login;
+        recordFailedAttempt(login);
         return false;
     }
 
@@ -292,8 +476,11 @@ bool ServerDB::requestAuthCode(const QString &login, const QString &password, QS
     }
     if (storedHash != inputHash) {
         qDebug() << "Неверный пароль для:" << login;
+        recordFailedAttempt(login);
         return false;
     }
+
+    resetFailedAttempts(login);
 
     code = generateVerificationCode();
 
@@ -331,7 +518,12 @@ bool ServerDB::confirmAuth(const QString &email, const QString &code, QString &s
     }
 
     sessionToken = generateSessionToken(tempData.login);
-    m_sessionCache[tempData.login] = sessionToken;
+
+    SessionData session;
+    session.token = sessionToken;
+    session.createdAt = QDateTime::currentMSecsSinceEpoch();
+    session.lastActivity = QDateTime::currentMSecsSinceEpoch();
+    m_sessionCache[tempData.login] = session;
 
     m_tempAuths.remove(code);
 
@@ -379,6 +571,10 @@ bool ServerDB::confirmResetPassword(const QString &loginOrEmail, const QString &
 {
     QMutexLocker locker(&m_mutex);
 
+    if (!validateInputLength("", "", newPassword)) {
+        return false;
+    }
+
     cleanupExpiredCodes();
 
     QString email;
@@ -424,7 +620,19 @@ bool ServerDB::confirmResetPassword(const QString &loginOrEmail, const QString &
 bool ServerDB::checkSession(const QString &login, const QString &sessionToken)
 {
     QMutexLocker locker(&m_mutex);
-    return m_sessionCache.contains(login) && m_sessionCache[login] == sessionToken;
+
+    cleanupExpiredSessions();
+
+    if (!m_sessionCache.contains(login)) {
+        return false;
+    }
+
+    if (m_sessionCache[login].token != sessionToken) {
+        return false;
+    }
+
+    updateSessionActivity(login);
+    return true;
 }
 
 QString ServerDB::getStat(const QString &login)

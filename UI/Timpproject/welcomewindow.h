@@ -15,6 +15,7 @@ class WelcomeWindow : public QWidget
     Q_OBJECT
 signals:
     void backRequested();
+    void logoutRequested();
 public:
     explicit WelcomeWindow(QWidget *parent = nullptr);
     ~WelcomeWindow();
@@ -22,6 +23,7 @@ public:
 private slots:
     void on_nextButton_clicked();
     void on_backButton_clicked();
+    void on_logoutButton_clicked();
 
 private:
     Ui::WelcomeWindow *ui;

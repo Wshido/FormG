@@ -1,7 +1,9 @@
 #include "welcomewindow.h"
 #include "ui_welcomewindow.h"
 #include "graphwindow.h"
+#include "servicemanager.h"
 #include <QPixmap>
+#include <QMessageBox>
 
 WelcomeWindow::WelcomeWindow(QWidget *parent)
     : QWidget(parent),
@@ -43,5 +45,15 @@ void WelcomeWindow::on_nextButton_clicked()
 void WelcomeWindow::on_backButton_clicked()
 {
     emit backRequested();
+    this->hide();
+}
+
+void WelcomeWindow::on_logoutButton_clicked()
+{
+    QString login = ServiceManager::instance().currentLogin();
+    if (!login.isEmpty()) {
+        ServiceManager::instance().sendLogout(login);
+    }
+    emit logoutRequested();
     this->hide();
 }

@@ -4,6 +4,7 @@
 #include <QTcpServer>
 #include <QTcpSocket>
 #include <QThread>
+#include <QMap>
 #include "controller.h"
 
 class ClientHandler : public QObject
@@ -15,6 +16,9 @@ public:
 public slots:
     void process();
 
+signals:
+    void clientDisconnected(const QString &login);
+
 private slots:
     void onReadyRead();
     void onDisconnected();
@@ -23,6 +27,7 @@ private:
     QTcpSocket *m_socket;
     qintptr m_socketDescriptor;
     Controller *m_controller;
+    QString m_currentLogin;
 };
 
 class TCPServer : public QTcpServer

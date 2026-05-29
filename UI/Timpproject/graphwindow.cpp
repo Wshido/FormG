@@ -4,15 +4,41 @@
 #include <QSlider>
 #include <QAbstractSocket>
 #include <QDebug>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QColorDialog>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QFile>
+#include <QTimer>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QGridLayout>
 #include <cmath>
 
 GraphWindow::GraphWindow(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::GraphWindow)
+    , m_sinColor(QColor(231, 76, 60))
+    , m_sqrtColor(QColor(46, 204, 113))
+    , m_fracColor(QColor(52, 152, 219))
+    , m_sessionCheckTimer(nullptr)
+    , m_sessionCheckInterval(60000)
+    , m_exportPNGBtn(nullptr)
+    , m_exportPDFBtn(nullptr)
+    , m_saveBtn(nullptr)
+    , m_loadBtn(nullptr)
+    , m_deleteBtn(nullptr)
+    , m_clearBtn(nullptr)
+    , m_colorBtn(nullptr)
 {
     ui->setupUi(this);
 
     setupGraphStyle();
+    setupExportButtons();
+    setupZoomDrag();
+    setupKeyboardNav();
 
     connect(&ServiceManager::instance(), &ServiceManager::functionDataReceived,
             this, &GraphWindow::parseServerData);
@@ -22,24 +48,21 @@ GraphWindow::GraphWindow(QWidget *parent)
     }
 
     ui->customPlot->addGraph();
-    ui->customPlot->graph(0)->setPen(QPen(QColor(231, 76, 60), 2.5));
+    ui->customPlot->graph(0)->setPen(QPen(m_sinColor, 2.5));
     ui->customPlot->graph(0)->setName("sin(ax)");
 
     ui->customPlot->addGraph();
-    ui->customPlot->graph(1)->setPen(QPen(QColor(46, 204, 113), 2.5));
+    ui->customPlot->graph(1)->setPen(QPen(m_sqrtColor, 2.5));
     ui->customPlot->graph(1)->setName("sqrt(x+b)");
 
     ui->customPlot->addGraph();
-    ui->customPlot->graph(2)->setPen(QPen(QColor(52, 152, 219), 2.5));
+    ui->customPlot->graph(2)->setPen(QPen(m_fracColor, 2.5));
     ui->customPlot->graph(2)->setName("1/(x-c)");
 
     ui->customPlot->xAxis->setLabel("X");
     ui->customPlot->yAxis->setLabel("Y");
     ui->customPlot->xAxis->setRange(-10, 10);
     ui->customPlot->yAxis->setRange(-10, 10);
-
-    ui->customPlot->setInteraction(QCP::iRangeZoom, false);
-    ui->customPlot->setInteraction(QCP::iRangeDrag, false);
 
     ui->customPlot->legend->setVisible(true);
     ui->customPlot->legend->setBrush(QBrush(QColor(255, 255, 255, 220)));
@@ -65,6 +88,10 @@ GraphWindow::GraphWindow(QWidget *parent)
     ui->sliderSin->setValue(1);
     ui->sliderSqrt->setValue(1);
     ui->sliderFrac->setValue(1);
+
+    m_sessionCheckTimer = new QTimer(this);
+    connect(m_sessionCheckTimer, &QTimer::timeout, this, &GraphWindow::checkSessionValid);
+    m_sessionCheckTimer->start(m_sessionCheckInterval);
 }
 
 void GraphWindow::setupGraphStyle()
@@ -72,7 +99,70 @@ void GraphWindow::setupGraphStyle()
     setStyleSheet(
         "QWidget { background-color: #f5f7fa; font-family: 'Segoe UI', Arial; }"
         "QLabel { color: #2c3e50; background: transparent; }"
+        "QPushButton { background-color: #3498db; color: white; border: none; "
+        "  padding: 6px 12px; border-radius: 4px; font-size: 10px; }"
+        "QPushButton:hover { background-color: #2980b9; }"
     );
+}
+
+void GraphWindow::setupExportButtons()
+{
+    QWidget *toolbar = new QWidget(this);
+    QHBoxLayout *toolbarLayout = new QHBoxLayout(toolbar);
+    toolbarLayout->setContentsMargins(0, 0, 0, 0);
+
+    m_exportPNGBtn = new QPushButton("Export PNG", toolbar);
+    m_exportPDFBtn = new QPushButton("Export PDF", toolbar);
+    m_saveBtn = new QPushButton("Save", toolbar);
+    m_loadBtn = new QPushButton("Load", toolbar);
+    m_deleteBtn = new QPushButton("Delete", toolbar);
+    m_clearBtn = new QPushButton("Clear All", toolbar);
+    m_colorBtn = new QPushButton("Color", toolbar);
+
+    toolbarLayout->addWidget(m_exportPNGBtn);
+    toolbarLayout->addWidget(m_exportPDFBtn);
+    toolbarLayout->addWidget(m_saveBtn);
+    toolbarLayout->addWidget(m_loadBtn);
+    toolbarLayout->addWidget(m_deleteBtn);
+    toolbarLayout->addWidget(m_clearBtn);
+    toolbarLayout->addWidget(m_colorBtn);
+    toolbarLayout->addStretch();
+
+    connect(m_exportPNGBtn, &QPushButton::clicked, this, &GraphWindow::onExportPNG);
+    connect(m_exportPDFBtn, &QPushButton::clicked, this, &GraphWindow::onExportPDF);
+    connect(m_saveBtn, &QPushButton::clicked, this, &GraphWindow::onSaveToFile);
+    connect(m_loadBtn, &QPushButton::clicked, this, &GraphWindow::onLoadFromFile);
+    connect(m_deleteBtn, &QPushButton::clicked, this, &GraphWindow::onDeleteFromFile);
+    connect(m_clearBtn, &QPushButton::clicked, this, &GraphWindow::onClearGraph);
+    connect(m_colorBtn, &QPushButton::clicked, this, &GraphWindow::onColorButtonClicked);
+
+    QVBoxLayout *mainLayout = qobject_cast<QVBoxLayout*>(layout());
+    if (mainLayout) {
+        mainLayout->insertWidget(0, toolbar);
+    }
+}
+
+void GraphWindow::setupZoomDrag()
+{
+    ui->customPlot->setInteraction(QCP::iRangeZoom, true);
+    ui->customPlot->setInteraction(QCP::iRangeDrag, true);
+
+    connect(ui->customPlot, &QCustomPlot::mouseWheel, this, &GraphWindow::onZoomChanged);
+}
+
+void GraphWindow::setupKeyboardNav()
+{
+    ui->sliderSin->setFocusPolicy(Qt::StrongFocus);
+    ui->sliderSqrt->setFocusPolicy(Qt::StrongFocus);
+    ui->sliderFrac->setFocusPolicy(Qt::StrongFocus);
+
+    setTabOrder(ui->sliderSin, ui->sliderSqrt);
+    setTabOrder(ui->sliderSqrt, ui->sliderFrac);
+}
+
+void GraphWindow::onZoomChanged()
+{
+    ui->customPlot->replot();
 }
 
 void GraphWindow::updateParameterLabels()
@@ -97,6 +187,11 @@ double GraphWindow::calculateFunction(double a, double b, double c, double x)
         if (fabs(c * x - 1.0) < 0.0001) return 0;
         return 1.0 / (c * x - 1.0);
     }
+}
+
+QString GraphWindow::getCacheKey(double a, double b, double c)
+{
+    return QString("%1_%2_%3").arg(a, 0, 'f', 2).arg(b, 0, 'f', 2).arg(c, 0, 'f', 2);
 }
 
 void GraphWindow::computeLocal(double a, double b, double c)
@@ -210,7 +305,139 @@ void GraphWindow::onSliderChanged()
     }
 }
 
+void GraphWindow::onExportPNG()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, "Export PNG", "graph.png", "PNG (*.png)");
+    if (!fileName.isEmpty()) {
+        ui->customPlot->savePng(fileName, 1920, 1080, 1.0);
+        QMessageBox::information(this, "Success", "Graph exported to PNG");
+    }
+}
+
+void GraphWindow::onExportPDF()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, "Export PDF", "graph.pdf", "PDF (*.pdf)");
+    if (!fileName.isEmpty()) {
+        ui->customPlot->savePdf(fileName, 1920, 1080);
+        QMessageBox::information(this, "Success", "Graph exported to PDF");
+    }
+}
+
+void GraphWindow::onSaveToFile()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, "Save Graph", "graph_data.json", "JSON (*.json)");
+    if (fileName.isEmpty()) return;
+
+    QJsonObject root;
+    root["a"] = ui->sliderSin->value();
+    root["b"] = ui->sliderSqrt->value();
+    root["c"] = ui->sliderFrac->value();
+
+    QJsonObject colors;
+    colors["sin"] = m_sinColor.name();
+    colors["sqrt"] = m_sqrtColor.name();
+    colors["frac"] = m_fracColor.name();
+    root["colors"] = colors;
+
+    QFile file(fileName);
+    if (file.open(QIODevice::WriteOnly)) {
+        file.write(QJsonDocument(root).toJson());
+        file.close();
+        QMessageBox::information(this, "Success", "Graph data saved");
+    } else {
+        QMessageBox::warning(this, "Error", "Failed to save file");
+    }
+}
+
+void GraphWindow::onLoadFromFile()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, "Load Graph", "", "JSON (*.json)");
+    if (fileName.isEmpty()) return;
+
+    QFile file(fileName);
+    if (!file.open(QIODevice::ReadOnly)) {
+        QMessageBox::warning(this, "Error", "Failed to open file");
+        return;
+    }
+
+    QJsonDocument doc = QJsonDocument::fromJson(file.readAll());
+    file.close();
+
+    QJsonObject root = doc.object();
+    if (root.contains("a")) ui->sliderSin->setValue(root["a"].toInt());
+    if (root.contains("b")) ui->sliderSqrt->setValue(root["b"].toInt());
+    if (root.contains("c")) ui->sliderFrac->setValue(root["c"].toInt());
+
+    if (root.contains("colors")) {
+        QJsonObject colors = root["colors"].toObject();
+        if (colors.contains("sin")) m_sinColor = QColor(colors["sin"].toString());
+        if (colors.contains("sqrt")) m_sqrtColor = QColor(colors["sqrt"].toString());
+        if (colors.contains("frac")) m_fracColor = QColor(colors["frac"].toString());
+        updateGraphColors();
+    }
+
+    QMessageBox::information(this, "Success", "Graph data loaded");
+}
+
+void GraphWindow::onDeleteFromFile()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, "Delete Graph File", "", "JSON (*.json)");
+    if (fileName.isEmpty()) return;
+
+    if (QMessageBox::question(this, "Confirm", "Delete file " + fileName + "?") == QMessageBox::Yes) {
+        if (QFile::remove(fileName)) {
+            QMessageBox::information(this, "Success", "File deleted");
+        } else {
+            QMessageBox::warning(this, "Error", "Failed to delete file");
+        }
+    }
+}
+
+void GraphWindow::onClearGraph()
+{
+    ui->customPlot->graph(0)->data()->clear();
+    ui->customPlot->graph(1)->data()->clear();
+    ui->customPlot->graph(2)->data()->clear();
+    ui->customPlot->replot();
+}
+
+void GraphWindow::onColorButtonClicked()
+{
+    QColor color = QColorDialog::getColor(m_sinColor, this, "Choose sin(ax) color");
+    if (color.isValid()) {
+        m_sinColor = color;
+        updateGraphColors();
+    }
+}
+
+void GraphWindow::updateGraphColors()
+{
+    ui->customPlot->graph(0)->setPen(QPen(m_sinColor, 2.5));
+    ui->customPlot->graph(1)->setPen(QPen(m_sqrtColor, 2.5));
+    ui->customPlot->graph(2)->setPen(QPen(m_fracColor, 2.5));
+    ui->customPlot->replot();
+}
+
+bool GraphWindow::checkSessionValid()
+{
+    QString login = ServiceManager::instance().currentLogin();
+    QString token = ServiceManager::instance().currentToken();
+
+    if (login.isEmpty() || token.isEmpty()) {
+        return true;
+    }
+
+    if (ServiceManager::instance().isConnected()) {
+        ServiceManager::instance().sendRefreshToken(login, token);
+    }
+
+    return true;
+}
+
 GraphWindow::~GraphWindow()
 {
+    if (m_sessionCheckTimer) {
+        m_sessionCheckTimer->stop();
+    }
     delete ui;
 }
