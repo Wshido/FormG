@@ -4,7 +4,7 @@
 
 Фреймворк: Qt 6 (Widgets, Network, SQL)
 
-БД: SQLite (через QSqlDatabase, драйвер QSQLITE)
+БД: PostgreSQL
 
 Протокол: TCP, порт 33333, текстовый протокол с разделителем ||
 
@@ -44,6 +44,8 @@
 ├── docs/                    # Doxygen-конфиг и сгенерированная документация
 │   ├── Doxyfile
 │   └── html/                # HTML-документация
+├── docs/
+    └── BDbackup.sql
 ├── .gitignore
 └── README.md
 ```
