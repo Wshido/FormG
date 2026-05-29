@@ -1,51 +1,138 @@
-### Клиент-серверное приложение для графического отображения ветвящейся (кусочной) функции. Реализовано в рамках дисциплины «Технологии и методы программирования».
-## Технологии
-Язык: C++17
+<div align="center">
 
-Фреймворк: Qt 6 (Widgets, Network, SQL)
+# FormG
 
-БД: PostgreSQL
+**Клиент-серверное приложение для графического отображения ветвящейся (кусочной) функции**
 
-Протокол: TCP, порт 33333, текстовый протокол с разделителем ||
+![C++](https://img.shields.io/badge/C%2B%2B-17-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![Qt](https://img.shields.io/badge/Qt-6-41CD52?style=for-the-badge&logo=qt&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 
-Почта: SMTP через Gmail (SSL, порт 465)
+[GitHub](https://github.com/Wshido/FormG) &bull; [Wiki](https://github.com/Wshido/FormG/wiki)
 
-Контейнеризация: Docker (Ubuntu 22.04)
+Реализовано в рамках дисциплины «Технологии и методы программирования»
 
-Тестирование: Qt Test
+</div>
 
-Документация: Doxygen (русский язык)
+---
+
+## О проекте
+
+Приложение предназначено для построения и визуализации кусочных функций. Клиент подключается к серверу по TCP, передаёт параметры функции, а сервер выполняет вычисления, сохраняет результаты в базу данных и отправляет уведомления по электронной почте.
+
+## Технологический стек
+
+| Компонент | Технология |
+|-----------|------------|
+| Язык | C++17 |
+| Фреймворк | Qt 6 (Widgets, Network, SQL) |
+| База данных | PostgreSQL 16 |
+| Протокол | TCP, порт 11999 |
+| Почта | SMTP через Gmail (SSL, порт 465) |
+| Контейнеризация | Docker (Ubuntu 24.04) |
+| Тестирование | Qt Test |
+| Документация | Doxygen |
 
 ## Архитектура
 
+```
+┌──────────────┐       TCP        ┌──────────────┐      SQL       ┌──────────────┐
+│              │ ──────────────►  │              │ ────────────►  │              │
+│    Клиент    │                  │    Сервер    │                │  PostgreSQL  │
+│  (Qt Widgets)│ ◄──────────────  │  (Qt 6 Net)  │ ◄────────────  │   Database   │
+│              │                  │              │                │              │
+└──────────────┘                  └──────┬───────┘                └──────────────┘
+                                         │
+                                         │ SMTP
+                                         ▼
+                                  ┌──────────────┐
+                                  │   Почтовый   │
+                                  │   сервер     │
+                                  └──────────────┘
+```
+
 Приложение состоит из двух частей:
 
-- **Клиент** (`UI/Timpproject/`) — GUI на Qt Widgets, подключается к серверу по TCP.
-- **Сервер** (`server/`) — TCP-сервер на Qt 6 (Network + SQL), обрабатывает запросы клиентов, работает с SQLite и отправляет email через SMTP.
+- **Клиент** (`UI/Timpproject/`) — GUI на Qt Widgets, подключается к серверу по TCP
+- **Сервер** (`Server/TCPserver/`) — TCP-сервер на Qt 6 (Network + SQL), обрабатывает запросы клиентов, работает с PostgreSQL и отправляет email через SMTP
 
-### Сервер и Docker
+## Docker
 
-Серверная часть инкапсулирована в Docker-контейнер (Ubuntu 22.04). Это обеспечивает:
+Контейнеризация серверной части обеспечивает изоляцию окружения, портативность и единообразие среды. Контейнер экспортирует TCP-порт **11999** для приёма клиентских подключений.
 
-- Изоляцию серверного окружения от хост-машины.
-- Портативность — для запуска достаточно Docker, без необходимости устанавливать Qt/ зависимости локально.
-- Единообразие среды при разработке и деплое.
+Сборка и запуск:
 
-Контейнер экспортирует TCP-порт 33333 для приёма клиентских подключений. Сборка и запуск выполняются через скрипты в `docker/`.
+```bash
+cd Server/TCPserver/docker
+docker-compose up --build
+```
+
+Поднимаются два контейнера:
+- **PostgreSQL** — порт `5432`
+- **TCP-сервер** — порт `11999`
 
 ## Структура проекта
 
-```text
-├── UI/Timpproject/          # GUI-клиент (Qt Widgets)
-├── server/                  # TCP-сервер + БД + SMTP
-│    └── docker/                  # Dockerfile, docker-compose и скрипты запуска
-├── tests/                   # Модульные тесты (Qt Test)
-│   ├── Test_doc.docx        # Документация к тестированию
-├── docs/                    # Doxygen-конфиг и сгенерированная документация
-│   ├── Doxyfile
-│   └── html/                # HTML-документация
-├── docs/
-    └── BDbackup.sql
+```
+FormG/
+├── UI/
+│   └── Timpproject/          # GUI-клиент (Qt Widgets)
+│       ├── *.pro             # Проектный файл Qt
+│       ├── *.cpp / *.h       # Исходные коды
+│       └── *.ui              # UI-формы
+├── Server/
+│   └── TCPserver/
+│       ├── docker/           # Dockerfile + docker-compose.yml
+│       ├── tcpserver.*       # TCP-сервер
+│       ├── controller.*      # Контроллер
+│       ├── serverdb.*        # Работа с БД
+│       └── emailservice.*    # Отправка email
+├── BD/
+│   └── BDbackup.sql          # Резервная копия БД
+├── tests/                    # Модульные тесты (Qt Test)
+├── docs/                     # Doxygen-документация (HTML)
+├── GIT.txt                   # Ссылки на репозиторий
+├── otchet.pdf                # Отчёт по проекту
 ├── .gitignore
 └── README.md
 ```
+
+## Сборка и запуск
+
+### Клиент (локально)
+
+```bash
+cd UI/Timpproject
+qmake6 Timpproject.pro
+make -j$(nproc)
+./Timpproject
+```
+
+### Сервер (Docker)
+
+```bash
+cd Server/TCPserver/docker
+docker-compose up --build
+```
+
+### Документация
+
+```bash
+cd docs
+doxygen Doxyfile
+# Открыть docs/html/index.html
+```
+
+### Тестирование
+
+```bash
+cd tests
+qmake && make
+./tests
+```
+
+## Ссылки
+
+- [GitHub репозиторий](https://github.com/Wshido/FormG)
+- [Wiki проекта](https://github.com/Wshido/FormG/wiki)
