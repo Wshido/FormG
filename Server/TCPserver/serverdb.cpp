@@ -3,6 +3,7 @@
 #include <QCryptographicHash>
 #include <QRandomGenerator>
 #include <QDateTime>
+#include <cstdlib>
 
 ServerDB::ServerDB()
     : m_conn(nullptr)
@@ -19,11 +20,23 @@ ServerDB::~ServerDB()
 
 bool ServerDB::connectToDB()
 {
-    QString conninfo = "host=127.0.0.1 "
-                       "port=5432 "
-                       "dbname=postgres "
-                       "user=postgres "
-                       "password=1234";
+    const char* envHost = std::getenv("DB_HOST");
+    const char* envPort = std::getenv("DB_PORT");
+    const char* envName = std::getenv("DB_NAME");
+    const char* envUser = std::getenv("DB_USER");
+    const char* envPass = std::getenv("DB_PASSWORD");
+
+    QString host = envHost ? envHost : "127.0.0.1";
+    QString port = envPort ? envPort : "5432";
+    QString dbname = envName ? envName : "postgres";
+    QString user = envUser ? envUser : "postgres";
+    QString password = envPass ? envPass : "1234";
+
+    QString conninfo = "host=" + host +
+                       " port=" + port +
+                       " dbname=" + dbname +
+                       " user=" + user +
+                       " password=" + password;
 
     m_conn = PQconnectdb(conninfo.toUtf8().constData());
 

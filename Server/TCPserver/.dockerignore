@@ -1,0 +1,8 @@
+build/
+.git/
+qtcreator/
+*.user
+*.stash
+Makefile*
+release/
+debug/

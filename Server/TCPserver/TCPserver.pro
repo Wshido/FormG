@@ -4,8 +4,12 @@ QT += core network sql
 CONFIG += c++17 console
 CONFIG -= app_bundle
 
-LIBS += -L"C:/Program Files/PostgreSQL/16/lib" -llibpq
-INCLUDEPATH += "C:/Program Files/PostgreSQL/16/include"
+win32 {
+    LIBS += -L"C:/Program Files/PostgreSQL/16/lib" -llibpq
+    INCLUDEPATH += "C:/Program Files/PostgreSQL/16/include"
+} else {
+    LIBS += -lpq
+}
 
 SOURCES += \
     main.cpp \

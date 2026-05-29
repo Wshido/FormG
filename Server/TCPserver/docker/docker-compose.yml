@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "1234"
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  tcpserver:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "11999:11999"
+    environment:
+      DB_HOST: db
+      DB_PORT: "5432"
+      DB_NAME: postgres
+      DB_USER: postgres
+      DB_PASSWORD: "1234"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

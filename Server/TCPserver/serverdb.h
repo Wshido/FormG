@@ -5,7 +5,11 @@
 #include <QString>
 #include <QMap>
 #include <QMutex>
+#ifdef __linux__
+#include <postgresql/libpq-fe.h>
+#else
 #include <libpq-fe.h>
+#endif
 
 class ServerDB
 {
