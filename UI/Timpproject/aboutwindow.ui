@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>AboutWindow</class>
-
  <widget class="QWidget" name="AboutWindow">
-
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,152 +10,176 @@
     <height>600</height>
    </rect>
   </property>
-
   <property name="windowTitle">
-   <string>О разработчике</string>
+   <string>О проекте</string>
   </property>
-
   <property name="styleSheet">
    <string notr="true">
-
 QWidget {
     background-color: #eef3fb;
-    font-family: "Segoe UI";
+    font-family: "Segoe UI", Arial;
     font-size: 14px;
 }
 
 QFrame#mainFrame {
     background-color: white;
-    border-radius: 15px;
-    border: 1px solid #cfd8e3;
+    border-radius: 16px;
+    border: 1px solid #d5dde8;
 }
 
 QLabel {
-    color: black;
+    color: #2c3e50;
+    background: transparent;
 }
 
 QLabel#titleLabel {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
+    color: #1a5276;
 }
 
-QPushButton {
-    background-color: #e0e6ef;
-    border-radius: 8px;
-    padding: 6px 14px;
-    font-size: 18px;
+QLabel#infoLabel {
+    font-size: 14px;
+    color: #555e68;
+    line-height: 1.6;
 }
 
-QPushButton:hover {
-    background-color: #cfd8e3;
+QPushButton#nextButton {
+    background-color: #3498db;
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    min-width: 60px;
+    min-height: 40px;
 }
 
+QPushButton#nextButton:hover {
+    background-color: #2980b9;
+}
+
+QPushButton#nextButton:pressed {
+    background-color: #1a5276;
+}
    </string>
   </property>
-
   <layout class="QVBoxLayout" name="mainLayout">
-
    <item>
-
     <widget class="QFrame" name="mainFrame">
-
      <layout class="QVBoxLayout" name="verticalLayout">
-
       <item>
-       <widget class="QLabel" name="titleLabel">
-        <property name="text">
-         <string>Информация о разработчике</string>
-        </property>
-
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-
-      <item>
-       <widget class="QLabel" name="infoLabel">
-
-        <property name="text">
-         <string>
-Проект разработан студентом.
-
-Команда разработки:
-• Имя 1
-• Имя 2
-• Имя 3
-
-Курсовой проект на Qt Creator.
-         </string>
-        </property>
-
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-
-       </widget>
-      </item>
-
-      <item>
-       <spacer name="verticalSpacer">
-
+       <spacer name="topSpacer">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
        </spacer>
       </item>
-
       <item>
+       <widget class="QLabel" name="titleLabel">
+        <property name="text">
+         <string>Графическое отображение цифровой информации</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="spacer1">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="infoLabel">
+        <property name="text">
+         <string>Клиент-серверное приложение для вычисления
+и визуализации кусочно-заданных функций
 
+Участники проекта:
+
+    Смирнов Ярослав
+    Гылка Глеб
+    Звёздкин Егор
+    Иван Рубцов
+
+Курсовой проект · Qt Creator · 2024</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="spacer2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
        <layout class="QHBoxLayout" name="bottomLayout">
-
         <item>
          <spacer name="horizontalSpacer">
-
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
           </property>
-
          </spacer>
         </item>
-
         <item>
          <widget class="QPushButton" name="nextButton">
-
           <property name="text">
-           <string>▶</string>
+           <string>&#9654;</string>
           </property>
-
           <property name="minimumSize">
            <size>
             <width>60</width>
             <height>40</height>
            </size>
           </property>
-
          </widget>
         </item>
-
        </layout>
-
       </item>
-
+      <item>
+       <spacer name="bottomSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>0</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
      </layout>
-
     </widget>
-
    </item>
-
   </layout>
-
  </widget>
-
  <resources/>
  <connections/>
-
 </ui>

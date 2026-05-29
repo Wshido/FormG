@@ -1,18 +1,12 @@
 #ifndef GRAPHWINDOW_H
 #define GRAPHWINDOW_H
 
-#pragma once
-
 #include <QWidget>
-#include <QTcpSocket>
-#include <QVector>
+#include "qcustomplot.h"
 
-QT_BEGIN_NAMESPACE
-namespace Ui
-{
+namespace Ui {
 class GraphWindow;
 }
-QT_END_NAMESPACE
 
 class GraphWindow : public QWidget
 {
@@ -20,30 +14,28 @@ class GraphWindow : public QWidget
 
 public:
     explicit GraphWindow(QWidget *parent = nullptr);
-
     ~GraphWindow();
 
 private slots:
-
     void onSliderChanged();
 
-    void onReadyRead();
-
 private:
-
     Ui::GraphWindow *ui;
 
-    QTcpSocket* socket;
+    QVector<double> xDataSin;
+    QVector<double> yDataSin;
 
-    void drawGraph(QString response);
+    QVector<double> xDataSqrt;
+    QVector<double> yDataSqrt;
 
-    // данные графиков
+    QVector<double> xDataFrac;
+    QVector<double> yDataFrac;
 
-    QVector<double> x1, y1;
-
-    QVector<double> x2, y2;
-
-    QVector<double> x3, y3;
+    void parseServerData(const QString& response);
+    void computeLocal(double a, double b, double c);
+    double calculateFunction(double a, double b, double c, double x);
+    void updateParameterLabels();
+    void setupGraphStyle();
 };
 
 #endif

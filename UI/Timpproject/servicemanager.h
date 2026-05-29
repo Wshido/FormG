@@ -4,7 +4,6 @@
 #include <QObject>
 #include <QTcpSocket>
 #include <QDebug>
-#include <QString>
 
 class ServiceManager : public QObject
 {
@@ -13,29 +12,49 @@ class ServiceManager : public QObject
 public:
     static ServiceManager& instance();
 
-    void connectToServer(const QString& host = "172.20.10.3", int port = 11999);
+    void connectToServer(const QString& host = "127.0.0.1", int port = 11999);
     void disconnectFromServer();
     bool isConnected() const;
 
-    void sendAuth(const QString& login, const QString& password);
-    void sendReg(const QString& login, const QString& password, const QString& email);
+    // Регистрация (2 шага)
+    void sendRegRequestCode(const QString& email);
+    void sendRegConfirm(const QString& login, const QString& password, const QString& email, const QString& code);
+
+    // Авторизация (2 шага)
+    void sendAuthRequestCode(const QString& login, const QString& password);
+    void sendAuthConfirm(const QString& email, const QString& code);
+
+    // Восстановление пароля (по логину)
+    void sendRequestCode(const QString& login);
+    void sendChangePasswordWithCode(const QString& login, const QString& code, const QString& newPassword);
+
+    // Функция для графика
     void sendFunctionParams(double a, double b, double c);
 
-    // НОВЫЕ МЕТОДЫ ДЛЯ ВОССТАНОВЛЕНИЯ ПАРОЛЯ
-    void sendRequestCode(const QString& email);
-    void sendChangePasswordWithCode(const QString& email, const QString& code, const QString& newPassword);
+    // Старые методы (для совместимости)
+    void sendAuth(const QString& login, const QString& password);
+    void sendReg(const QString& login, const QString& password, const QString& email);
 
 signals:
     void connected();
     void disconnected();
-    void authResult(bool success, const QString& login);
-    void regResult(bool success);
-    void functionDataReceived(const QString& data);
     void error(const QString& message);
 
-    // НОВЫЕ СИГНАЛЫ
+    // Сигналы для регистрации
+    void regRequestCodeResult(bool success, const QString& code);
+    void regConfirmResult(bool success);
+
+    // Сигналы для авторизации
+    void authRequestCodeResult(bool success, const QString& email, const QString& code);
+    void authConfirmResult(bool success, const QString& sessionToken);
+
+    // Сигналы для восстановления
     void codeRequestResult(bool success);
     void passwordChangeWithCodeResult(bool success);
+
+    // Для графика
+    void functionDataReceived(const QString& data);
+    void authResult(bool success, const QString& login);
 
 private slots:
     void onReadyRead();
@@ -50,6 +69,9 @@ private:
     void sendRequest(const QString& request);
 
     QTcpSocket* m_socket;
+    QByteArray m_readBuffer;
+    QByteArray m_graphDataBuffer;
+    bool m_receivingGraphData;
 };
 
 #endif // SERVICEMANAGER_H

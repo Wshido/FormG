@@ -1,6 +1,7 @@
 #include "logintimp.h"
 #include "ui_logintimp.h"
 #include "servicemanager.h"
+#include "emailsender.h"
 #include "registerwindow.h"
 #include "forgotpassword.h"
 #include <QMessageBox>
@@ -8,32 +9,41 @@
 LoginTimp::LoginTimp(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::LoginTimp)
+    , m_remainingSeconds(0)
 {
     ui->setupUi(this);
     setWindowTitle("Авторизация");
-    setFixedSize(420, 420);
+    setFixedSize(440, 560);
 
-    // Подключаемся к серверу одногруппника
+    // Подключаемся к серверу
     ServiceManager::instance().connectToServer("127.0.0.1", 11999);
 
-    connect(&ServiceManager::instance(), &ServiceManager::codeRequestResult,
-            this, [this](bool success) {
-                // Можно добавить логирование или уведомление
-                qDebug() << "Code request result:" << success;
-            });
+    // Подключаем сигналы для двухфакторной авторизации
+    connect(&ServiceManager::instance(), &ServiceManager::authRequestCodeResult,
+            this, &LoginTimp::onAuthRequestCodeResult);
+    connect(&ServiceManager::instance(), &ServiceManager::authConfirmResult,
+            this, &LoginTimp::onAuthConfirmResult);
 
-    connect(&ServiceManager::instance(), &ServiceManager::passwordChangeWithCodeResult,
-            this, [this](bool success) {
-                qDebug() << "Password change with code result:" << success;
-            });
+    // Изначально показываем поля логина/пароля, скрываем поля для кода
+    ui->codeEdit->setVisible(false);
+    ui->confirmCodeButton->setVisible(false);
+    ui->codeLabel->setVisible(false);
+    ui->timerLabel->setVisible(false);
 
-    // Подключаем сигналы
-    connect(&ServiceManager::instance(), &ServiceManager::authResult,
-            this, &LoginTimp::onAuthResult);
-    connect(&ServiceManager::instance(), &ServiceManager::error,
-            this, [this](const QString& error) {
-                QMessageBox::warning(this, "Ошибка сервера", error);
-            });
+    // Таймер для обратного отсчета
+    connect(&m_codeTimer, &QTimer::timeout, [this]() {
+        if (m_remainingSeconds > 0) {
+            m_remainingSeconds--;
+            updateTimerDisplay();
+        } else {
+            m_codeTimer.stop();
+            ui->timerLabel->setVisible(false);
+            ui->codeEdit->setEnabled(false);
+            ui->confirmCodeButton->setEnabled(false);
+            ui->loginButton->setEnabled(true);
+            ui->loginButton->setText("Войти");
+        }
+    });
 }
 
 LoginTimp::~LoginTimp()
@@ -41,6 +51,21 @@ LoginTimp::~LoginTimp()
     delete ui;
 }
 
+void LoginTimp::updateTimerDisplay()
+{
+    ui->timerLabel->setText(QString("Код действителен: %1 сек").arg(m_remainingSeconds));
+    ui->timerLabel->setVisible(true);
+}
+
+void LoginTimp::startCodeTimer()
+{
+    m_remainingSeconds = 300; // 5 минут = 300 секунд
+    ui->confirmCodeButton->setEnabled(true);
+    ui->codeEdit->setEnabled(true);
+    m_codeTimer.start(1000);
+}
+
+// ШАГ 1: Ввод логина и пароля
 void LoginTimp::on_loginButton_clicked()
 {
     QString username = ui->usernameLineEdit->text();
@@ -51,25 +76,92 @@ void LoginTimp::on_loginButton_clicked()
         return;
     }
 
+    if (password.length() < 8) {
+        QMessageBox::warning(this, "Ошибка", "Пароль должен содержать минимум 8 символов!");
+        return;
+    }
+
     if (!ServiceManager::instance().isConnected()) {
         QMessageBox::warning(this, "Ошибка", "Нет подключения к серверу!");
         return;
     }
 
     ui->loginButton->setEnabled(false);
-    ServiceManager::instance().sendAuth(username, password);
+    ui->loginButton->setText("Проверка...");
+
+    // Запрашиваем код на почту
+    ServiceManager::instance().sendAuthRequestCode(username, password);
 }
 
-void LoginTimp::onAuthResult(bool success, const QString& login)
+void LoginTimp::onAuthRequestCodeResult(bool success, const QString& email, const QString& code)
 {
     ui->loginButton->setEnabled(true);
-    Q_UNUSED(login);
+    ui->loginButton->setText("Войти");
+
+    if (success) {
+        m_tempEmail = email;
+        m_tempCode = code;
+
+        // Показываем поля для ввода кода
+        ui->codeLabel->setVisible(true);
+        ui->codeEdit->setVisible(true);
+        ui->confirmCodeButton->setVisible(true);
+        ui->codeEdit->clear();
+        ui->codeEdit->setFocus();
+
+        // Скрываем поля логина/пароля во время ввода кода
+        ui->usernameLineEdit->setEnabled(false);
+        ui->passwordLineEdit->setEnabled(false);
+        ui->loginButton->setVisible(false);
+
+        // Запускаем таймер
+        startCodeTimer();
+
+        QMessageBox::information(this, "Код отправлен",
+                                 QString("На почту %1 отправлен код подтверждения.\n\n"
+                                         "Введите его для входа.\nКод действителен 5 минут.")
+                                     .arg(email));
+    } else {
+        QMessageBox::warning(this, "Ошибка", "Неверный логин или пароль!");
+    }
+}
+
+// ШАГ 2: Подтверждение кода
+void LoginTimp::on_confirmCodeButton_clicked()
+{
+    QString code = ui->codeEdit->text();
+
+    if (code.isEmpty()) {
+        QMessageBox::warning(this, "Ошибка", "Введите код подтверждения!");
+        return;
+    }
+
+    if (code.length() != 6) {
+        QMessageBox::warning(this, "Ошибка", "Код должен состоять из 6 цифр!");
+        return;
+    }
+
+    ui->confirmCodeButton->setEnabled(false);
+    ui->confirmCodeButton->setText("Проверка...");
+
+    ServiceManager::instance().sendAuthConfirm(m_tempEmail, code);
+}
+
+void LoginTimp::onAuthConfirmResult(bool success, const QString& /*sessionToken*/)
+{
+    ui->confirmCodeButton->setEnabled(true);
+    ui->confirmCodeButton->setText("Подтвердить");
+    m_codeTimer.stop();
 
     if (success) {
         QMessageBox::information(this, "Успех", "Вход выполнен успешно!");
         accept();
     } else {
-        QMessageBox::warning(this, "Ошибка", "Неверный логин или пароль!");
+        QMessageBox::warning(this, "Ошибка", "Неверный код подтверждения!");
+        ui->codeEdit->clear();
+        ui->codeEdit->setFocus();
+        // Продолжаем таймер, можно попробовать снова
+        ui->confirmCodeButton->setEnabled(true);
     }
 }
 
@@ -83,7 +175,6 @@ void LoginTimp::on_forgotLabel_linkActivated(const QString &link)
     Q_UNUSED(link);
     ForgotPassword *fp = new ForgotPassword();
     fp->setAttribute(Qt::WA_DeleteOnClose);
-    fp->setWindowFlags(fp->windowFlags() | Qt::WindowStaysOnTopHint);
     connect(fp, &ForgotPassword::backRequested, this, [this, fp]() {
         this->show();
         fp->close();
@@ -96,7 +187,6 @@ void LoginTimp::on_registerButton_clicked()
 {
     RegisterWindow *reg = new RegisterWindow();
     reg->setAttribute(Qt::WA_DeleteOnClose);
-    reg->setWindowFlags(reg->windowFlags() | Qt::WindowStaysOnTopHint);
     connect(reg, &RegisterWindow::backRequested, this, [this, reg]() {
         this->show();
         reg->close();
